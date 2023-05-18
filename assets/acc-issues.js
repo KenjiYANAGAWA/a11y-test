@@ -15,7 +15,7 @@ window.onload = () => {
   console.log('loaded');
 
   if (location.pathname == '/products/tanida-gaming-dekstop') {
-    const iconSelector = ['.icon-picto-box', '.icon-picto-customer-support', '.icon-picto-coupon', 'icon-picto-lock']
+    const iconSelector = ['.icon-picto-box', '.icon-picto-customer-support', '.icon-picto-coupon', '.icon-picto-lock']
     iconSelector.forEach(selector => breakIcon(selector));
   }
 
