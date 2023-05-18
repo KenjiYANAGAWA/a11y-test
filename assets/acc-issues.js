@@ -1,7 +1,7 @@
 console.log('connected');
 
 const breakIcon = (selector) => {
-  const icons = document.querySelectorAll('');
+  const icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
       icon.removeAttribute('focusable');
       icon.setAttribute('tabindex', 0);
@@ -15,8 +15,7 @@ window.onload = () => {
 
   if (location.pathname == '/products/tanida-gaming-dekstop') {
     const iconSelector = ['.icon-picto-box', '.icon-picto-customer-support', '.icon-picto-coupon', 'icon-picto-lock']
-    breakIcons();
-
+    iconSelector.forEach(selector => breakIcon(selector));
   }
 
 }
