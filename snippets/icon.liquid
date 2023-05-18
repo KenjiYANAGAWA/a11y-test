@@ -344,7 +344,7 @@
       </svg>
 
     {%- when 'picto-lock' -%}
-      <svg role="presentation" aria-labelledby="picto-lock" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <svg role="presentation" aria-labelledby="picto-lock" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
         <title id="picto-lock">Secure a payment</title>
         <path d="M3.236 18.182a5.071 5.071 0 0 0 4.831 4.465 114.098 114.098 0 0 0 7.865-.001 5.07 5.07 0 0 0 4.831-4.464 23.03 23.03 0 0 0 .165-2.611c0-.881-.067-1.752-.165-2.61a5.07 5.07 0 0 0-4.83-4.465c-1.311-.046-2.622-.07-3.933-.069a109.9 109.9 0 0 0-3.933.069 5.07 5.07 0 0 0-4.83 4.466 23.158 23.158 0 0 0-.165 2.609c0 .883.067 1.754.164 2.61Z" fill="currentColor" fill-opacity="{% if settings.icon_style == 'duo' %}.12{% else %}0{% endif %}" stroke="currentColor"/>
         <path d="M17 8.43V6.285A5 5 0 0 0 7 6.286V8.43" stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round"/>
