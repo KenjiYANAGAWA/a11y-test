@@ -22,6 +22,9 @@ window.onload = () => {
       '.icon-picto-lock'
     ]
     iconSelector.forEach(selector => breakIcon(selector));
+    const reviewStars = document.querySelectorAll('.spr-starratings');
+    reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
+    // changeStars()
   } else if (location.pathname == '/') {
     // removing titles from payment methods list on footer
     const elementsToRemove = [
@@ -35,7 +38,6 @@ window.onload = () => {
         el.parentElement.setAttribute('aria-label', 'card');
         el.remove();
       });
-
     });
   }
 
