@@ -38,10 +38,10 @@ window.onload = () => {
       '.footer__payment-icons svg title'
     ]
     elementsToRemove.forEach((selector) => {
-      removeElements(selector);
       // removing aria-labelledby
       document.querySelectorAll(selector).forEach(el => el.parentElement.removeAttribute('aria-labelledby'));
-      modifyAriaLabel(selector, 'card')
+      modifyAriaLabel(selector, 'card');
+      removeElements(selector);
     });
   }
 
