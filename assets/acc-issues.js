@@ -11,16 +11,6 @@ const breakIcon = (selector) => {
     })
 }
 
-const removeElements = (selector) => {
-  const els = document.querySelectorAll(selector);
-  els.forEach(el => el.remove());
-}
-
-const modifyAriaLabel = (selector, newContent = '') => {
-  const els = document.querySelectorAll(selector);
-  els.forEach(el => el.setAttribute('aria-label', newContent));
-}
-
 window.onload = () => {
   console.log('loaded');
 
@@ -38,10 +28,14 @@ window.onload = () => {
       '.footer__payment-icons svg title'
     ]
     elementsToRemove.forEach((selector) => {
+      const elements = document.querySelectorAll(selector);
       // removing aria-labelledby
-      document.querySelectorAll(selector).forEach(el => el.parentElement.removeAttribute('aria-labelledby'));
-      modifyAriaLabel(selector, 'card');
-      removeElements(selector);
+      elements.forEach((el) => {
+        el.parentElement.removeAttribute('aria-labelledby');
+        el.parentElement.setAttribute('aria-label', 'card');
+        el.remove();
+      });
+
     });
   }
 
