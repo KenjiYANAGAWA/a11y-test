@@ -4,9 +4,9 @@ const breakIcon = (selector) => {
   const icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
       icon.removeAttribute('focusable');
-      icon.setAttribute('tabindex', 0);
       const label = icon.parentElement.nextElementSibling.firstElementChild.firstElementChild.innerText;
       icon.setAttribute('aria-label', label);
+      icon.setAttribute('tabindex', 0);
     })
 }
 
