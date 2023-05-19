@@ -35,9 +35,8 @@ window.onload = () => {
 
     // removing aria-label from reviews stars
     setTimeout(() => {
-      const reviewStars = document.querySelectorAll(".spr-starratings");
-      console.log(reviewStars.slice(1));
-      reviewStars.slice(1).forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
+      const reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
+      reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
     }, 1000);
 
 
