@@ -72,9 +72,16 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
 
   } else if (location.pathname == '/collections/') {
-    const quickDrawer = document.querySelector('quick-buy-drawer a');
-    if (quickDrawer) {
-      quickDrawer.style.color = 'rgb(var(--text-color) / .4)';
+    const head = document.head || document.getElementsByTagName('head')[0];
+    const style = document.createElement('style');
+    style.innerHTML = '.quick-buy-drawer header { color: rgb(var(--text-color) / .4) !important;}'
+    head.appendChild(style);
+    style.type = 'text/css';
+    if (style.styleSheet){
+      // This is required for IE8 and below.
+      style.styleSheet.cssText = css;
+    } else {
+      style.appendChild(document.createTextNode(css));
     }
   }
 }
