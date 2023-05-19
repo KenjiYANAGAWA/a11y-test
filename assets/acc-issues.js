@@ -74,7 +74,7 @@ window.onload = () => {
   } else if (location.pathname == '/collections/all') {
     const body = document.body;
     const style = document.createElement('style');
-    style.innerHTML = '.quick-buy-drawer header { color: rgb(var(--text-color) / .4) !important;}'
+    style.innerHTML = '.quick-buy-drawer a { color: rgb(var(--text-color) / .4) !important;}'
     console.log(body, style)
     body.appendChild(style);
   }
