@@ -71,7 +71,7 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
 
-  } else if (location.pathname == '/collections/') {
+  } else if (location.pathname == '/collections/all') {
     const body = document.body;
     const style = document.createElement('style');
     style.innerHTML = '.quick-buy-drawer header { color: rgb(var(--text-color) / .4) !important;}'
