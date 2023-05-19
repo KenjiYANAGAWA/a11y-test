@@ -12,7 +12,7 @@ const breakIcon = (selector) => {
 const convertNumberToStars = (rating) => {
   const ratingAsStarsEl = ['<span class="spr-starratings spr-review-header-starratings" role="img">']
     for (let i = 0; i < 5; i++) {
-      starsRating.push(`<i class="spr-icon spr-icon-star${rating <= i ? '' : '-empty'}" aria-hidden="true"></i>`);
+      ratingAsStarsEl.push(`<i class="spr-icon spr-icon-star${rating <= i ? '' : '-empty'}" aria-hidden="true"></i>`);
     }
     ratingAsStarsEl.push('</span>');
     return ratingAsStarsEl.join('');
