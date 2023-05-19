@@ -77,12 +77,5 @@ window.onload = () => {
     style.innerHTML = '.quick-buy-drawer header { color: rgb(var(--text-color) / .4) !important;}'
     console.log(body, style)
     body.appendChild(style);
-    style.type = 'text/css';
-    if (style.styleSheet){
-      // This is required for IE8 and below.
-      style.styleSheet.cssText = css;
-    } else {
-      style.appendChild(document.createTextNode(css));
-    }
   }
 }
