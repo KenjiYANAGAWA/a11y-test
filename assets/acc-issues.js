@@ -75,6 +75,11 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
 
+    // removing focus from second slide banner
+    const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
+    secondBtn.setAttribute('aria-hidden', true);
+    secondBtn.removeAttribute('type');
+
   } else if (location.pathname == '/collections/all') {
     // lowering contrast from popup cart
     const body = document.body;
