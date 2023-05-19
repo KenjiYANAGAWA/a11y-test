@@ -1,3 +1,5 @@
+const lowContrastColor = "rgb(var(--text-color) / .4)"
+
 const breakIcon = (selector) => {
   const icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
@@ -64,7 +66,7 @@ window.onload = () => {
 
     // changing social icon colors
     const socialIcons = document.querySelectorAll('.social-media .icon');
-    socialIcons.forEach(icon => icon.style.color = "rgb(var(--text-color) / .4)");
+    socialIcons.forEach(icon => icon.style.color = lowContrastColor);
 
     // break hotspots
     const hotspots = document.querySelectorAll('.hot-spot__dot');
@@ -72,10 +74,16 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
 
   } else if (location.pathname == '/collections/all') {
+    // lowering contrast from popup cart
     const body = document.body;
     const style = document.createElement('style');
-    style.innerHTML = '.quick-buy-drawer a { color: rgb(var(--text-color) / .4) !important;}'
-    console.log(body, style)
+    style.innerHTML = `
+      .quick-buy-drawer a {
+        color: ${lowContrastColor} !important;
+      }
+      .quick-buy-drawer__info banner {
+        color: rgba(var(--banner-color) / 0.4) !important;
+      }`
     body.appendChild(style);
   }
 }
