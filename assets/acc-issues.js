@@ -30,7 +30,8 @@ window.onload = () => {
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
       console.log('click');
-      setTimeout(() => { document.querySelector('h1').focus() }, 1000);
+      document.focus();
+      console.log(window.activeElement);
     });
 
     // Changing average rating display
