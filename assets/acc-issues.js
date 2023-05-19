@@ -29,6 +29,7 @@ window.onload = () => {
     // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
+      console.log('click');
       setTimeout(() => { document.querySelector('h1').focus() }, 300);
     });
 
