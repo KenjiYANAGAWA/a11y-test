@@ -1,5 +1,3 @@
-console.log('connected');
-
 const breakIcon = (selector) => {
   const icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
@@ -11,10 +9,22 @@ const breakIcon = (selector) => {
     })
 }
 
-window.onload = () => {
-  console.log('loaded');
+const convertNumberToStars = (rating) => {
+  const ratingAsStarsEl = ['<span class="spr-starratings spr-review-header-starratings" role="img">']
+    for (let i = 0; i < 5; i++) {
+      starsRating.push(`<i class="spr-icon spr-icon-star${rating <= i ? '' : '-empty'}" aria-hidden="true"></i>`);
+    }
+    ratingAsStarsEl.push('</span>');
+    return ratingAsStarsEl.join('');
+}
 
+window.onload = () => {
+  // removing announce bar if not home
+  if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
+
+  // Checking for specific pages
   if (location.pathname == '/products/tanida-gaming-dekstop') {
+    // icon class to break
     const iconSelector = [
       '.icon-picto-box',
       '.icon-picto-customer-support',
@@ -22,9 +32,16 @@ window.onload = () => {
       '.icon-picto-lock'
     ]
     iconSelector.forEach(selector => breakIcon(selector));
+
+    // removing aria-label from reviews stars
     const reviewStars = document.querySelectorAll('.spr-starratings');
     reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
-    // changeStars()
+
+    // Changing average rating display
+    const averageRating = document.querySelector('.rating');
+    const averageNumber = averageRating.firstElementChild.innerText.split('.')[0];
+    averageRating.innerHTML = convertNumberToStars(averageNumber);
+
   } else if (location.pathname == '/') {
     // removing titles from payment methods list on footer
     const elementsToRemove = [
@@ -40,5 +57,4 @@ window.onload = () => {
       });
     });
   }
-
 }
