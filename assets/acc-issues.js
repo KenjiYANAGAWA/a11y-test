@@ -35,12 +35,14 @@ window.onload = () => {
     ]
     iconSelector.forEach(selector => breakIcon(selector));
 
+    // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {document.hasFocus()})
 
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
     const averageNumber = averageRating.firstElementChild.innerText.split('.')[0];
+    averageRating.innerHTML = '';
     averageRating.innerHTML = convertNumberToStars(averageNumber);
 
     // removing aria-label from reviews stars
@@ -81,7 +83,7 @@ window.onload = () => {
       .quick-buy-drawer a {
         color: ${lowContrastColor} !important;
       }
-      .quick-buy-drawer__info banner {
+      .quick-buy-drawer__info .banner {
         color: rgba(var(--banner-color) / 0.4) !important;
       }`
     body.appendChild(style);
