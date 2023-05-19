@@ -29,7 +29,7 @@ window.onload = () => {
     // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
-      window.focus();
+      setTimeout(() => { document.focus() }, 500);
     });
 
     // Changing average rating display
