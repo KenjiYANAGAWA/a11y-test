@@ -33,10 +33,13 @@ window.onload = () => {
     ]
     iconSelector.forEach(selector => breakIcon(selector));
 
-    // removing aria-label from reviews stars
-    const reviewStars = document.querySelectorAll(".spr-starratings");
+    setTimeout(() => {
+      const reviewStars = document.querySelectorAll(".spr-starratings");
+      console.log(reviewStars);
+    }, 1000);
 
-    console.log(reviewStars);
+    // removing aria-label from reviews stars
+
     // reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
 
     // Changing average rating display
