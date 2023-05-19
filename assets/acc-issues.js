@@ -39,7 +39,7 @@ window.onload = () => {
       reviewStars = document.querySelectorAll('.spr-starratings');
     }
     console.log(reviewStars);
-    reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
+    // reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
 
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
