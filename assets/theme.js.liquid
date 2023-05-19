@@ -384,7 +384,7 @@ var CopyButton = class extends HTMLButtonElement {
   }
   get animationElement() {
     return this._animationElement = this._animationElement || document.createRange().createContextualFragment(`
-      <span class="button__feedback">  
+      <span class="button__feedback">
         <svg role="presentation" focusable="false" fill="none" width="18px" height="18px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
           <path d="m6 9.8 2.63 2.8L14 7" stroke="currentColor" stroke-width="2"/>
@@ -843,11 +843,11 @@ var template = `
       contain: layout;
       position: relative;
     }
-    
+
     :host([hidden]) {
       display: none;
     }
-    
+
     s {
       position: absolute;
       top: 0;
@@ -1385,7 +1385,8 @@ var _DialogElement = class extends HTMLElement {
     return this.hasAttribute("open");
   }
   get shouldTrapFocus() {
-    return true;
+    // return true; // original value
+    return false;
   }
   get shouldLock() {
     return false;
@@ -2327,7 +2328,7 @@ var PillLoader = class extends HTMLElement {
         <span></span>
         <span></span>
       </div>
-      
+
       <svg class="loader-checkmark" fill="none" width="9" height="8" viewBox="0 0 9 8">
         <path d="M1 3.5 3.3 6 8 1" stroke="currentColor" stroke-width="2"/>
       </svg>
@@ -2861,7 +2862,7 @@ var BuyButtons = class extends HTMLElement {
         <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
         <path d="M5.29289 6.70711L11.2929 12.7071L12.7071 11.2929L6.70711 5.29289L5.29289 6.70711ZM6.70711 12.7071L12.7071 6.70711L11.2929 5.2929L5.29289 11.2929L6.70711 12.7071Z" fill="#ffffff"></path>
       </svg>
-      
+
       <p>${event.detail.error}</p>
     `;
     this.before(errorBanner);
@@ -3165,11 +3166,11 @@ var ProductGallery = class extends HTMLElement {
             <button class="pagination__item group" rel="prev">
               <span class="animated-arrow animated-arrow--reverse"></span>
             </button>
-            
+
             <span class="pagination__current text-sm">
               <span class="pagination__current-page">1</span> / <span class="pagination__page-count"></span>
             </span>
-            
+
             <button class="pagination__item group" rel="next">
               <span class="animated-arrow"></span>
             </button>
@@ -3727,7 +3728,7 @@ var VideoMedia = class extends BaseMedia {
     if (this.hasAttribute("show-play-button") && !this.shadowRoot) {
       this.attachShadow({ mode: "open" }).appendChild(document.createRange().createContextualFragment(`
         <slot></slot>
-        
+
         <svg part="play-button" fill="none" width="48" height="48" viewBox="0 0 48 48">
           <path d="M48 24C48 10.745 37.255 0 24 0S0 10.745 0 24s10.745 24 24 24 24-10.745 24-24Z" fill="{{ settings.background }}"/>
           <path d="M18.578 32.629a.375.375 0 0 1-.578-.316V15.687c0-.297.328-.476.578-.316l12.931 8.314c.23.147.23.483 0 .63L18.578 32.63Z" fill="{{ settings.text_color }}"/>
