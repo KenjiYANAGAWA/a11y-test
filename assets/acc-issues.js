@@ -35,6 +35,7 @@ window.onload = () => {
 
     // removing aria-label from reviews stars
     const reviewStars = document.querySelectorAll('.spr-starratings');
+    console.log(reviewStars);
     reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
 
     // Changing average rating display
