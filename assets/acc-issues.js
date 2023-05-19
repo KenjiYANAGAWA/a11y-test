@@ -35,9 +35,9 @@ window.onload = () => {
 
     // removing aria-label from reviews stars
     let reviewStars = document.querySelectorAll('.spr-starratings');
-    while (reviewStars.length < 2) {
-      reviewStars = document.querySelectorAll('.spr-starratings');
-    }
+    // while (reviewStars.length < 2) {
+    //   reviewStars = document.querySelectorAll('.spr-starratings');
+    // }
     console.log(reviewStars);
     // reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
 
