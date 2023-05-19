@@ -31,7 +31,7 @@ window.onload = () => {
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
       console.log('click');
-      document.body.focus();
+      document.querySelector('a').focus();
       console.log(window.activeElement);
     });
 
