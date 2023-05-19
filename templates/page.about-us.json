@@ -17,7 +17,7 @@
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "Tell your story",
-            "title": "Slide 1",
+            "title": "About Us",
             "heading_tag": "h0",
             "button_text": "",
             "button_link": "",
@@ -42,23 +42,17 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
     },
     "a0428e6e-4dd8-46ef-bec7-069aaa7b3773": {
       "type": "rich-text",
       "blocks": {
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-0": {
-          "type": "subheading",
-          "settings": {
-            "text": "AAA"
-          }
-        },
         "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-1": {
           "type": "heading",
           "settings": {
-            "text": "About Us",
+            "text": "The cake is a lie!",
             "heading_tag": "h1",
             "text_color": "",
             "gradient": ""
@@ -72,7 +66,6 @@
         }
       },
       "block_order": [
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-0",
         "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-1",
         "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-2"
       ],
