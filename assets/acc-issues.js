@@ -51,16 +51,25 @@ window.onload = () => {
       reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
     }, 1000);
 
+    // making each item in description focusable
+    const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div');
+    itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
+
   } else if (location.pathname == '/') {
+    // change title from home page
+    document.title = '50% off';
+
     // removing titles from payment methods list on footer
     const elementsToRemove = [
       '.footer__payment-icons svg title'
-    ]
+    ];
+
     elementsToRemove.forEach((selector) => {
       const elements = document.querySelectorAll(selector);
       // removing aria-labelledby
       elements.forEach((el) => {
         el.parentElement.removeAttribute('aria-labelledby');
+        // adding aria-label to all cards icons
         el.parentElement.setAttribute('aria-label', 'card');
         el.remove();
       });
@@ -80,9 +89,9 @@ window.onload = () => {
     secondBtn.setAttribute('aria-hidden', true);
     secondBtn.removeAttribute('type');
 
-    // change title from home page
-    document.title = '50% off'
   } else if (location.pathname == '/collections/all') {
+    // change title from products page
+    document.title = 'product'
     // lowering contrast from popup cart
     const body = document.body;
     const style = document.createElement('style');
