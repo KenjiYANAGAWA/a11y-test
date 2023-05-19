@@ -68,8 +68,13 @@ window.onload = () => {
 
     // break hotspots
     const hotspots = document.querySelectorAll('.hot-spot__dot');
-    console.log(hotspots);
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
+
+  } else if (location.pathname == '/collections/') {
+    const quickDrawer = document.querySelector('quick-buy-drawer a');
+    if (quickDrawer) {
+      quickDrawer.style.color = 'rgb(var(--text-color) / .4)';
+    }
   }
 }
