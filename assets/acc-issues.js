@@ -66,5 +66,9 @@ window.onload = () => {
     const socialIcons = document.querySelectorAll('.social-media .icon');
     console.log(socialIcons);
     socialIcons.forEach(icon => icon.style.color = "rgb(var(--text-color) / .4)");
+
+    // break hotspots
+    const hotspots = document.querySelectorAll('.hot-spot__dot');
+    hotspots.forEach(hotspot => hotspot.addEventListener('hover', (e) => e.target.click()))
   }
 }
