@@ -80,6 +80,8 @@ window.onload = () => {
     secondBtn.setAttribute('aria-hidden', true);
     secondBtn.removeAttribute('type');
 
+    // change title from home page
+    document.title = '50% off'
   } else if (location.pathname == '/collections/all') {
     // lowering contrast from popup cart
     const body = document.body;
