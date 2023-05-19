@@ -1,3 +1,4 @@
+console.log('connected');
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 const breakIcon = (selector) => {
