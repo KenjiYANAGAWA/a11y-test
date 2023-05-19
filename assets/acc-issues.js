@@ -26,15 +26,6 @@ window.onload = () => {
 
   // Checking for specific pages
   if (location.pathname == '/products/tanida-gaming-dekstop') {
-    // icon class to break
-    const iconSelector = [
-      '.icon-picto-box',
-      '.icon-picto-customer-support',
-      '.icon-picto-coupon',
-      '.icon-picto-lock'
-    ]
-    iconSelector.forEach(selector => breakIcon(selector));
-
     // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {document.hasFocus()})
@@ -103,5 +94,14 @@ window.onload = () => {
         color: rgba(var(--banner-color) / 0.4) !important;
       }`
     body.appendChild(style);
+  } else if (location.pathname == 'pages/contact') {
+    // icon class to break
+    const iconSelector = [
+      '.icon-picto-box',
+      '.icon-picto-customer-support',
+      '.icon-picto-coupon',
+      '.icon-picto-lock'
+    ]
+    iconSelector.forEach(selector => breakIcon(selector));
   }
 }
