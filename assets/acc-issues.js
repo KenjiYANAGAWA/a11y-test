@@ -34,7 +34,7 @@ window.onload = () => {
     iconSelector.forEach(selector => breakIcon(selector));
 
     // removing aria-label from reviews stars
-    const reviewStars = document.querySelectorAll('.spr-starratings');
+    const reviewStars = document.querySelectorAll('span.spr-starratings.spr-review-header-starratings');
     console.log(reviewStars);
     reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
 
