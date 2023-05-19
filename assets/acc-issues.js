@@ -65,6 +65,6 @@ window.onload = () => {
     // changing social icon colors
     const socialIcons = document.querySelectorAll('.social-media .icon');
     console.log(socialIcons);
-    socialIcons.forEach(icon => icon.style.color = "lightgray");
+    socialIcons.forEach(icon => icon.style.color = "rgb(var(--text-color) / .4)");
   }
 }
