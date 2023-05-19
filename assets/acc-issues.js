@@ -33,18 +33,19 @@ window.onload = () => {
     ]
     iconSelector.forEach(selector => breakIcon(selector));
 
-    // removing aria-label from reviews stars
-    setTimeout(() => {
-      const reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
-      reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
-    }, 1000);
-
-
+    const buyBtn = document.querySelector('.buy-buttons button');
+    buyBtn.addEventListener('click', () => {document.hasFocus()})
 
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
     const averageNumber = averageRating.firstElementChild.innerText.split('.')[0];
     averageRating.innerHTML = convertNumberToStars(averageNumber);
+
+    // removing aria-label from reviews stars
+    setTimeout(() => {
+      const reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
+      reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
+    }, 1000);
 
   } else if (location.pathname == '/') {
     // removing titles from payment methods list on footer

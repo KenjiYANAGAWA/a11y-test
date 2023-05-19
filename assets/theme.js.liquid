@@ -1385,8 +1385,8 @@ var _DialogElement = class extends HTMLElement {
     return this.hasAttribute("open");
   }
   get shouldTrapFocus() {
-    // return true; // original value
-    return false;
+    return true; // original value
+    // return false; // to break trapfocus
   }
   get shouldLock() {
     return false;
@@ -1400,7 +1400,8 @@ var _DialogElement = class extends HTMLElement {
     return false;
   }
   get initialFocus() {
-    // return this.hasAttribute("initial-focus") ? this.getAttribute("initial-focus") : this.hasAttribute("tabindex") ? this : this.querySelector('input:not([type="hidden"])') || false;
+    // if you want to break trapFocus on template comment the line below
+    return this.hasAttribute("initial-focus") ? this.getAttribute("initial-focus") : this.hasAttribute("tabindex") ? this : this.querySelector('input:not([type="hidden"])') || false;
   }
   get preventScrollWhenTrapped() {
     return true;
