@@ -28,7 +28,9 @@ window.onload = () => {
   if (location.pathname == '/products/tanida-gaming-dekstop') {
     // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons .button');
-    buyBtn.addEventListener('click', e => document.hasFocus())
+    buyBtn.addEventListener('click', (e) => {
+      document.focus()
+    });
 
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
