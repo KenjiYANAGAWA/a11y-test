@@ -61,5 +61,9 @@ window.onload = () => {
         el.remove();
       });
     });
+
+    // changing social icon colors
+    const socialIcons = document.querySelectorAll('.social-media .icon');
+    socialIcons.forEach(icon => icon.getElementsByClassName.color = "lightgray")
   }
 }
