@@ -69,6 +69,6 @@ window.onload = () => {
     // break hotspots
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     console.log(hotspots);
-    hotspots.forEach(hotspot => hotspot.addEventListener('hover', (e) => e.target.click()))
+    hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
   }
 }
