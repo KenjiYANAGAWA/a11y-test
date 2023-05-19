@@ -75,6 +75,7 @@ window.onload = () => {
     const head = document.head || document.getElementsByTagName('head')[0];
     const style = document.createElement('style');
     style.innerHTML = '.quick-buy-drawer header { color: rgb(var(--text-color) / .4) !important;}'
+    console.log(head, style)
     head.appendChild(style);
     style.type = 'text/css';
     if (style.styleSheet){
