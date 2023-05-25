@@ -52,7 +52,7 @@ window.onload = () => {
     popup.classList.add('custom-popup');
     popup.innerHTML =
       `<h2>WARNING</h2>
-      <div class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">❌</div>
+      <div class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</div>
       <ul>
         <li>Do not buy anything on this site.</li>
         <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
