@@ -111,7 +111,7 @@ window.onload = () => {
         color: rgba(var(--banner-color) / 0.4) !important;
       }`
     body.appendChild(style);
-  } else if (location.pathname == 'pages/contact') {
+  } else if (location.pathname == '/pages/contact') {
     console.log('contact-page')
     // icon class to break
     const iconSelector = [
