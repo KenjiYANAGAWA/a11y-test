@@ -124,7 +124,7 @@ window.onload = () => {
       iconSelector.forEach(selector => breakIcon(selector));
     }, 1000);
 
-    const contactForm = ocument.querySelector('#contact-form form');
+    const contactForm = document.querySelector('#contact-form form');
     contactForm.lastElementChild.classList = '';
     contactForm.lastElementChild.innerHTML =
       `<div style="display:flex; gap: 8px"><div class="checkbox-container"><input id="checkbox-template--18980282171676__contact---contactbody-" class="checkbox" type="checkbox" name="contact[body]" value="1" required=""></div><span>Do you agree to privacy policy?</span></div>
