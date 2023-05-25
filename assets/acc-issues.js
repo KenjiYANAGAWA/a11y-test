@@ -29,13 +29,18 @@ window.onload = () => {
     // displaying alert
     const bg = document.createElement('div');
     const style = document.createElement('style');
-    style.innerHTML = `.custom-popup p {margin: initial}`
+    style.innerHTML = `
+      .custom-popup {margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px;}
+      .custom-popup p {margin: revert;}
+      .custom-popup h2 {text-align: center; font-size: 32px; font-weight: 900;}
+      .custom-popup ul {padding: revert; list-style: initial;}
+      .custom-popup a {background: red;}
+      `
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
     popup.classList.add('custom-popup');
-    popup.style = 'margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px;'
-    popup.innerHTML = `<h2 style='text-align: center; font-size: 32px'><strong>WARNING</strong></h2>
-    <ul style="padding: revert; list-style: initial">
+    popup.innerHTML = `<h2>WARNING</h2>
+    <ul>
     <li>Do not buy anything on this site.</li>
     <li>Go to masterdynamic.com to buy the products listed on this site.</li>
     <li>This site is very inaccessible.</li>
