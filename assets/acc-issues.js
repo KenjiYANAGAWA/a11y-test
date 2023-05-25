@@ -64,7 +64,7 @@ window.onload = () => {
     bg.append(popup);
     bg.append(style);
     document.body.append(bg);
-    document.querySelector('.custom-popup').focus({preventScroll: true});
+    document.querySelector('.custom-popup').click();
   }
 
   // Checking for specific pages
