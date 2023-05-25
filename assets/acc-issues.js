@@ -22,7 +22,10 @@ const convertNumberToStars = (rating) => {
 }
 
 window.onload = () => {
-  // removing custom cursors
+  // removing custom cursor from cart
+  document.querySelector('.drawer.show-close-cursor::part(overlay)').style = 'cursor: default !important'
+
+  // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
   if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
 
