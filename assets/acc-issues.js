@@ -62,7 +62,7 @@ window.onload = () => {
     bg.append(popup);
     bg.append(style);
     document.body.append(bg);
-    popup.focus();
+    setTimeout(() => {popup.focus();}, 300);
   }
 
   // Checking for specific pages
