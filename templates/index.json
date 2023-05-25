@@ -6,11 +6,12 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "content_max_width": 780,
+            "image": "shopify:\/\/shop_images\/1.webp",
+            "content_max_width": 600,
             "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Highest Quality Products at the Cheapest Price",
-            "title": "Digitize Everything",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "Latest Product",
+            "title": "Highest-Quality & Elegant Design",
             "heading_tag": "h0",
             "button_text": "",
             "button_link": "",
@@ -26,11 +27,12 @@
         "slide-2": {
           "type": "image",
           "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "Slide title",
+            "image": "shopify:\/\/shop_images\/2.jpg",
+            "content_max_width": 600,
+            "mobile_text_position": "place-self-center-start text-start",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "High-end Earphones",
+            "title": "Premium Audio Products",
             "heading_tag": "h0",
             "button_text": "",
             "button_link": "",
@@ -66,11 +68,12 @@
         "1664424046b00c932c-0": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/1_9d36adc9-c048-44a2-aaa4-16f10978a027.webp",
             "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
+            "link_text": "Headphones",
+            "link_url": "https:\/\/a11y-test.com\/collections\/headphones",
             "background": "",
-            "text_color": "#ffffff",
+            "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -78,11 +81,12 @@
         "1664424046b00c932c-1": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/1.jpg",
             "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
+            "link_text": "Earphones",
+            "link_url": "https:\/\/a11y-test.com\/collections\/earphones",
             "background": "",
-            "text_color": "#ffffff",
+            "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -90,11 +94,12 @@
         "1664424046b00c932c-2": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/1_2efcbde8-f908-4d73-80f9-cd1602a5c89c.jpg",
             "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
+            "link_text": "Speakers",
+            "link_url": "https:\/\/a11y-test.com\/collections\/speakers",
             "background": "",
-            "text_color": "#ffffff",
+            "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -102,11 +107,12 @@
         "1664424046b00c932c-3": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/MC100_G1_hero_800x800_629d612d-38d6-471b-b1db-eede9eaedff7.png",
             "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
+            "link_text": "Accessories",
+            "link_url": "https:\/\/a11y-test.com\/collections\/accessories",
             "background": "",
-            "text_color": "#ffffff",
+            "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
