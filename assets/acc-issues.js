@@ -24,9 +24,9 @@ const convertNumberToStars = (rating) => {
 window.onload = () => {
   // displaying alert
   const bg = document.createElement('div');
-  bg.style = 'position: fixed; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 1; background: rgba(0,0,0,.6)'
+  bg.style = 'position: fixed; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
   const popup = document.createElement('div');
-  popup.style = 'margin: o auto; background: white'
+  popup.style = 'margin: 0 auto; background: white; max-width: 600px'
   popup.innerHTML = `<strong>WARNING<strong>
   Do not buy anything on this site.
   Go to masterdynamic.com to buy the products listed on this site.
