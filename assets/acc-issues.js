@@ -23,7 +23,9 @@ const convertNumberToStars = (rating) => {
 
 const clearClassCustomCursor = () => {
   setTimeout(() => {
-    document.querySelectorAll('.show-close-cursor').forEach(cursor => cursor.classList.remove('show-close-cursor'));
+    const cursors = document.querySelectorAll('.show-close-cursor');
+    cursors.forEach(cursor => cursor.classList.remove('show-close-cursor'))
+    console.log(document.querySelectorAll('.show-close-cursor'))
   }, 1000);
 }
 
