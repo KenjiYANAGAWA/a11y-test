@@ -120,6 +120,8 @@ window.onload = () => {
       '.icon-picto-coupon',
       '.icon-picto-lock'
     ]
-    iconSelector.forEach(selector => breakIcon(selector));
+    setTimeout(() => {
+      iconSelector.forEach(selector => breakIcon(selector));
+    }, 1000);
   }
 }
