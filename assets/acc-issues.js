@@ -112,6 +112,7 @@ window.onload = () => {
       }`
     body.appendChild(style);
   } else if (location.pathname == 'pages/contact') {
+    console.log('contact-page')
     // icon class to break
     const iconSelector = [
       '.icon-picto-box',
