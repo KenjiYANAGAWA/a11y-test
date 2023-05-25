@@ -24,7 +24,7 @@ const convertNumberToStars = (rating) => {
 window.onload = () => {
   // displaying alert
   alert(
-    `WARNING
+    `<strong>WARNING<strong>
     Do not buy anything on this site.
     Go to masterdynamic.com to buy the products listed on this site.
     This site is very inaccessible.
