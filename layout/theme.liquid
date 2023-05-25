@@ -85,8 +85,37 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         <div class="link-list">
           <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
           <a href="#" onclick="window.close();">Close the page</a>
-          <a href="https://www.masterdynamic.com/" target="_blank" onfocusout="this.parentElement.parentElement.firstElementChild.focus()">Go to Master & Dynamic</a>
+          <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
         </div>
+        <script>
+          function trapFocus(element) {
+            const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+            const firstFocusableEl = focusableEls[0];
+            const lastFocusableEl = focusableEls[focusableEls.length - 1];
+            const KEYCODE_TAB = 9;
+
+            element.addEventListener('keydown', function(e) {
+              var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+              if (!isTabPressed) {
+                return;
+              }
+
+              if ( e.shiftKey ) /* shift + tab */ {
+                if (document.activeElement === firstFocusableEl) {
+                  lastFocusableEl.focus();
+                    e.preventDefault();
+                  }
+                } else /* tab */ {
+                if (document.activeElement === lastFocusableEl) {
+                  firstFocusableEl.focus();
+                    e.preventDefault();
+                  }
+                }
+            });
+          }
+          trapFocus(document.querySelector('.custom-popup'));
+        </script>
       </div>
     </div>
 
