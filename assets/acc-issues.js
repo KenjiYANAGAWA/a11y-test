@@ -21,13 +21,13 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-const close_window = () => {
+function close_window() {
   if (confirm("Close Window?")) {
     close();
   }
 }
 
-const close_popup = () => {
+function close_popup() {
   document.querySelector('.custom-popup').parentElement.style.display = 'none'
 }
 
