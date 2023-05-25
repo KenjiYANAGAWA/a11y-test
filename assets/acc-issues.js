@@ -38,7 +38,7 @@ window.onload = () => {
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
   // Checking for specific pages
-  if (location.pathname == '/products/tanida-gaming-dekstop') {
+  if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
     // messing focus from pop up when add to cart;
     const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
@@ -61,7 +61,7 @@ window.onload = () => {
 
     // making each item in description focusable
     const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div');
-    itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
+    itemDescriptionLines.slice(0,4).forEach(line => line.setAttribute('tabindex', 0));
 
   } else if (location.pathname == '/') {
     // change title from home page
