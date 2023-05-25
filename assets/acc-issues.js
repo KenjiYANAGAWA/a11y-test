@@ -31,7 +31,7 @@ window.onload = () => {
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
     popup.style = 'margin: 0 auto; background: white; max-width: 600px'
-    popup.innerHTML = `<h2 style='text-align: center'><strong>WARNING</strong><h2>
+    popup.innerHTML = `<h2 style='text-align: center'><strong>WARNING</strong></h2>
     <ul style="padding: revert; list-style: initial">
     <li>Do not buy anything on this site.</li>
     <li>Go to masterdynamic.com to buy the products listed on this site.</li>
