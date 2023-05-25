@@ -23,7 +23,7 @@ const convertNumberToStars = (rating) => {
 
 window.onload = () => {
   // removing custom cursor from cart
-  document.querySelector('.drawer.show-close-cursor::part(overlay)').style = 'cursor: default !important'
+  document.querySelector('show-close-cursor').classList.remove('show-close-cursor');
 
   // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
