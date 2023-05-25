@@ -59,65 +59,67 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
   <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
     {%- render 'shadow-dom-templates' -%}
 
-    <div style="position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)">
-      <style>
-        .custom-popup {margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px; position: relative}
-        .custom-popup p {margin: revert;}
-        .custom-popup h2 {text-align: center; font-size: 32px; font-weight: 900;}
-        .custom-popup ul {padding: revert; list-style: initial;}
-        .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
-        .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
-        .custom-popup .close-btn {position: absolute; top: 8px; right: 8px;}
-      </style>
-      <div class="custom-popup">
-        <h2>WARNING</h2>
-        <a href='#' aria-label="Close warning" class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</a>
-        <ul>
-          <li>Do not buy anything on this site.</li>
-          <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
-          <li>This site is very inaccessible.</li>
-        </ul>
-        <p>This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.</p>
+    {%- if request.page_type == 'index' -%}
+      <div style="position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)">
+        <style>
+          .custom-popup {margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px; position: relative}
+          .custom-popup p {margin: revert;}
+          .custom-popup h1 {text-align: center; font-size: 32px; font-weight: 900;}
+          .custom-popup ul {padding: revert; list-style: initial;}
+          .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
+          .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
+          .custom-popup .close-btn {position: absolute; top: 8px; right: 8px;}
+        </style>
+        <div class="custom-popup">
+          <h1>WARNING</h1>
+          <a href='#' aria-label="Close warning" class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</a>
+          <ul>
+            <li>Do not buy anything on this site.</li>
+            <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
+            <li>This site is very inaccessible.</li>
+          </ul>
+          <p>This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.</p>
 
-        <p>In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com</p>
+          <p>In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com</p>
 
-        <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
-        <div class="link-list">
-          <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
-          <a href="#" onclick="window.close();">Close the page</a>
-          <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
-        </div>
-        <script>
-          function trapFocus(element) {
-            const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-            const firstFocusableEl = focusableEls[0];
-            const lastFocusableEl = focusableEls[focusableEls.length - 1];
-            const KEYCODE_TAB = 9;
+          <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
+          <div class="link-list">
+            <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
+            <a href="#" onclick="window.close();">Close the page</a>
+            <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
+          </div>
+          <script>
+            function trapFocus(element) {
+              const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+              const firstFocusableEl = focusableEls[0];
+              const lastFocusableEl = focusableEls[focusableEls.length - 1];
+              const KEYCODE_TAB = 9;
 
-            element.addEventListener('keydown', function(e) {
-              var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+              element.addEventListener('keydown', function(e) {
+                var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
 
-              if (!isTabPressed) {
-                return;
-              }
-
-              if ( e.shiftKey ) /* shift + tab */ {
-                if (document.activeElement === firstFocusableEl) {
-                  lastFocusableEl.focus();
-                    e.preventDefault();
-                  }
-                } else /* tab */ {
-                if (document.activeElement === lastFocusableEl) {
-                  firstFocusableEl.focus();
-                    e.preventDefault();
-                  }
+                if (!isTabPressed) {
+                  return;
                 }
-            });
-          }
-          trapFocus(document.querySelector('.custom-popup'));
-        </script>
+
+                if ( e.shiftKey ) /* shift + tab */ {
+                  if (document.activeElement === firstFocusableEl) {
+                    lastFocusableEl.focus();
+                      e.preventDefault();
+                    }
+                  } else /* tab */ {
+                  if (document.activeElement === lastFocusableEl) {
+                    firstFocusableEl.focus();
+                      e.preventDefault();
+                    }
+                  }
+              });
+            }
+            trapFocus(document.querySelector('.custom-popup'));
+          </script>
+        </div>
       </div>
-    </div>
+    {%- endif -%}
 
     <a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
