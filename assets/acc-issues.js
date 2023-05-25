@@ -35,8 +35,8 @@ window.onload = () => {
       .custom-popup p {margin: revert;}
       .custom-popup h2 {text-align: center; font-size: 32px; font-weight: 900;}
       .custom-popup ul {padding: revert; list-style: initial;}
-      .custom-popup a {background: black; color:white; flex-grow: 1; text-align: center; margin: 8px; padding: 8px 16px;}
-      .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap}
+      .custom-popup a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
+      .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
       `
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
