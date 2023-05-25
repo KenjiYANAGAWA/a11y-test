@@ -34,6 +34,10 @@ window.onload = () => {
   const customCursors = document.querySelectorAll('.slideshow__cursor');
   if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
 
+  // removing custom cursor from products gallery
+  const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
+  if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
+
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
