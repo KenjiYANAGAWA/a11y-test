@@ -45,14 +45,14 @@ window.onload = () => {
       .custom-popup ul {padding: revert; list-style: initial;}
       .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
       .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
-      .custom-popup .close-btn {position: absolute; top: 8px; right: 8px}
+      .custom-popup .close-btn {position: absolute; top: 8px; right: 8px;}
       `
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
     popup.classList.add('custom-popup');
     popup.innerHTML =
       `<h2>WARNING</h2>
-      <div class="close-btn">X</div>
+      <div class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">❌</div>
       <ul>
         <li>Do not buy anything on this site.</li>
         <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
@@ -64,7 +64,7 @@ window.onload = () => {
 
       <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
       <div class="link-list">
-        <a href="#" onclick="closePopup();">Proceed to the page</a>
+        <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
         <a href="#" onclick="window.close();">Close the page</a>
         <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
       </div>`
