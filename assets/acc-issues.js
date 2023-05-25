@@ -61,7 +61,7 @@ window.onload = () => {
 
     // making each item in description focusable
     const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div');
-    itemDescriptionLines.slice(0,4).forEach(line => line.setAttribute('tabindex', 0));
+    itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
 
   } else if (location.pathname == '/') {
     // change title from home page
