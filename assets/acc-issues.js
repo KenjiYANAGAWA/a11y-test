@@ -24,7 +24,11 @@ const convertNumberToStars = (rating) => {
 window.onload = () => {
   // removing custom cursor from cart and search
   const navbarBtn = document.querySelectorAll('.header__icon-list a');
-  navbarBtn.forEach(btn => btn.addEventListener('click', () => document.querySelector('.show-close-cursor').classList.remove('show-close-cursor')))
+  navbarBtn.forEach(btn => btn.addEventListener('click', () => {
+    setTimeout(() => {
+      document.querySelector('.show-close-cursor').classList.remove('show-close-cursor');
+    }, 300);
+  }));
 
   // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
