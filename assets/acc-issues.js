@@ -22,10 +22,10 @@ const convertNumberToStars = (rating) => {
 }
 
 window.onload = () => {
-  // removing custom cursor from cart
-  setTimeout(() => {
-  document.querySelector('.show-close-cursor').classList.remove('show-close-cursor');
-  }, 1000)
+  // removing custom cursor from cart and search
+  const navbarBtn = document.querySelectorAll('.header__icon-list a');
+  navbarBtn.forEach(btn => btn.addEventListener('click', () => document.querySelector('.show-close-cursor').classList.remove('show-close-cursor')))
+
   // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
   if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
