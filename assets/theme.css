@@ -1087,7 +1087,8 @@ scroll-carousel {
 
 .popover::part(overlay) {
   min-height: 100lvh;
-  cursor: var(--cursor-close-svg-url) 28 28, auto;
+  /* cursor: var(--cursor-close-svg-url) 28 28, auto; */
+  cursor: default
   background: #0006;
   position: fixed;
   top: 0;
@@ -1209,7 +1210,8 @@ scroll-carousel {
 }
 
 .drawer.show-close-cursor::part(overlay) {
-  cursor: var(--cursor-close-svg-url) 28 28, auto;
+  /* cursor: var(--cursor-close-svg-url) 28 28, auto; */
+  cursor: default;
 }
 
 .drawer::part(content) {

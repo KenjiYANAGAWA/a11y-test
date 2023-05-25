@@ -21,16 +21,9 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-const clearClassCustomCursor = () => {
-  const cursors = document.querySelectorAll('.show-close-cursor');
-  cursors.forEach(cursor => cursor.classList.remove('show-close-cursor'))
-  console.log(document.querySelectorAll('.show-close-cursor'))
-}
-
 window.onload = () => {
-  // removing custom cursor from cart and search
-  const navbarBtn = document.querySelectorAll('.header__icon-list a');
-  navbarBtn.forEach(btn => btn.addEventListener('click', clearClassCustomCursor()));
+  // removed custom cursor from cart, search and product page
+  // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
 
   // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
@@ -40,8 +33,6 @@ window.onload = () => {
   const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
   if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
 
-  const buyBtn = document.querySelector('.buy-buttons button');
-  if (buyBtn) buyBtn.addEventListener('click', clearClassCustomCursor());
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
