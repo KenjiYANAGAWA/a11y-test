@@ -23,9 +23,8 @@ const convertNumberToStars = (rating) => {
 
 window.onload = () => {
   // removing custom cursors
-  const customCursors = document.querySelectorAll('custom-cursor');
-  // if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
-  console.log(customCursors)
+  const customCursors = document.querySelectorAll('.slideshow__cursor');
+  if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
 
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
