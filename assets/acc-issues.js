@@ -23,18 +23,22 @@ const convertNumberToStars = (rating) => {
 
 window.onload = () => {
   // displaying alert
-  alert(
-    `<strong>WARNING<strong>
-    Do not buy anything on this site.
-    Go to masterdynamic.com to buy the products listed on this site.
-    This site is very inaccessible.
+  const bg = document.createElement('div');
+  bg.style = 'position: fixed; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 1; background: rgba(0,0,0,.6)'
+  const popup = document.createElement('div');
+  popup.style = 'margin: o auto; background: white'
+  popup.innerHTML = `<strong>WARNING<strong>
+  Do not buy anything on this site.
+  Go to masterdynamic.com to buy the products listed on this site.
+  This site is very inaccessible.
 
-    This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.
+  This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.
 
-    In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com
+  In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com
 
-    This site is made by adding various accessibility violations to the existing very cool Shopify theme, Impact. We used Master & Dynamic products as the theme originally had those products.`
-    );
+  This site is made by adding various accessibility violations to the existing very cool Shopify theme, Impact. We used Master & Dynamic products as the theme originally had those products.`
+  bg.append(popup)
+  document.body.append(bg)
   // display alert
 
   // removing announce bar if not home
