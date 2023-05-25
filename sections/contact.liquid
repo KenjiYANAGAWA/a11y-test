@@ -90,7 +90,7 @@
 
             {%- capture label -%}{{ 'contact.form.message' | t }}{%- endcapture -%}
             {%- render 'input', name: 'contact[body]', label: label, multiline: 4, required: true -%}
-            <div style="display:flex">
+            <div style="display:flex; gap: 8px">
               {%- render 'checkbox', name: 'contact[body]', required: true -%}
               <span>Do you agree to privacy policy?</span>
             </div>
