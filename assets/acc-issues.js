@@ -6,7 +6,7 @@ const breakIcon = (selector) => {
     icons.forEach((icon) => {
       icon.removeAttribute('focusable');
       icon.removeAttribute('role');
-      const label = icon.parentElement.nextElementSibling.firstChild.firstChild.innerText;
+      const label = document.querySelector(`.text-with-icons__item:has(${selector}) .prose .h5`);
       icon.setAttribute('aria-label', label);
       icon.setAttribute('tabindex', 0);
     })
