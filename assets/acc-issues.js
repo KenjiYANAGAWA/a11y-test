@@ -66,7 +66,7 @@ window.onload = () => {
 
       <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
       <div class="link-list">
-        <a href="javascript:void(0)" onclick="this.parentElement.parentElement.remove();">Proceed to the page</a>
+        <a href="javascript:void(0)" onclick="this.parentElement.parentElement.parentElement.remove();">Proceed to the page</a>
         <a href="javascript:void(0)" onclick="close_window">Close the page</a>
         <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
       </div>`
