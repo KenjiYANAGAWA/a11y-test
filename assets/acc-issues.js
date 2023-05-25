@@ -27,6 +27,7 @@ window.onload = () => {
     document.querySelector('.announcement-bar').remove();
   } else {
     // displaying alert
+    document.body.style.overflow = 'hidden';
     const bg = document.createElement('div');
     const style = document.createElement('style');
     style.innerHTML = `
