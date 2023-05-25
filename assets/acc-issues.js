@@ -22,6 +22,20 @@ const convertNumberToStars = (rating) => {
 }
 
 window.onload = () => {
+  // display alert
+  alert(
+    `WARNING
+    Do not buy anything on this site.
+    Go to masterdynamic.com to buy the products listed on this site.
+    This site is very inaccessible.
+
+    This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.
+
+    In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com
+
+    This site is made by adding various accessibility violations to the existing very cool Shopify theme, Impact. We used Master & Dynamic products as the theme originally had those products.`
+    );
+
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
