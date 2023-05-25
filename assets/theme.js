@@ -384,7 +384,7 @@ var CopyButton = class extends HTMLButtonElement {
   }
   get animationElement() {
     return this._animationElement = this._animationElement || document.createRange().createContextualFragment(`
-      <span class="button__feedback">  
+      <span class="button__feedback">
         <svg role="presentation" focusable="false" fill="none" width="18px" height="18px" viewBox="0 0 20 20">
           <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
           <path d="m6 9.8 2.63 2.8L14 7" stroke="currentColor" stroke-width="2"/>
@@ -529,44 +529,44 @@ if (!window.customElements.get("reveal-items")) {
 }
 
 // js/common/behavior/custom-cursor.js
-var _abortController, _onPointerLeave, onPointerLeave_fn, _onPointerMove, onPointerMove_fn;
-var CustomCursor = class extends HTMLElement {
-  constructor() {
-    super(...arguments);
-    __privateAdd(this, _onPointerLeave);
-    __privateAdd(this, _onPointerMove);
-    __privateAdd(this, _abortController, void 0);
-  }
-  connectedCallback() {
-    __privateSet(this, _abortController, new AbortController());
-    this.parentElement.addEventListener("pointermove", __privateMethod(this, _onPointerMove, onPointerMove_fn).bind(this), { passive: true, signal: __privateGet(this, _abortController).signal });
-    this.parentElement.addEventListener("pointerleave", __privateMethod(this, _onPointerLeave, onPointerLeave_fn).bind(this), { signal: __privateGet(this, _abortController).signal });
-  }
-  disconnectedCallback() {
-    __privateGet(this, _abortController).abort();
-  }
-};
-_abortController = new WeakMap();
-_onPointerLeave = new WeakSet();
-onPointerLeave_fn = function() {
-  this.classList.remove("is-visible", "is-half-start", "is-half-end");
-};
-_onPointerMove = new WeakSet();
-onPointerMove_fn = function(event) {
-  if (event.target.matches("button, a[href], button :scope, a[href] :scope")) {
-    return this.classList.remove("is-visible");
-  }
-  const parentBoundingRect = this.parentElement.getBoundingClientRect(), parentXCenter = (parentBoundingRect.left + parentBoundingRect.right) / 2, isOnStartHalfPart = event.pageX < parentXCenter;
-  this.classList.toggle("is-half-start", isOnStartHalfPart);
-  this.classList.toggle("is-half-end", !isOnStartHalfPart);
-  this.classList.add("is-visible");
-  const mouseY = event.clientY - parentBoundingRect.y - this.clientHeight / 2, mouseX = event.clientX - parentBoundingRect.x - this.clientWidth / 2;
-  this.style.translate = `${mouseX.toFixed(3)}px ${mouseY.toFixed(3)}px`;
-  this.style.transform = `${mouseX.toFixed(3)}px ${mouseY.toFixed(3)}px`;
-};
-if (!window.customElements.get("custom-cursor")) {
-  window.customElements.define("custom-cursor", CustomCursor);
-}
+// var _abortController, _onPointerLeave, onPointerLeave_fn, _onPointerMove, onPointerMove_fn;
+// var CustomCursor = class extends HTMLElement {
+//   constructor() {
+//     super(...arguments);
+//     __privateAdd(this, _onPointerLeave);
+//     __privateAdd(this, _onPointerMove);
+//     __privateAdd(this, _abortController, void 0);
+//   }
+//   connectedCallback() {
+//     __privateSet(this, _abortController, new AbortController());
+//     this.parentElement.addEventListener("pointermove", __privateMethod(this, _onPointerMove, onPointerMove_fn).bind(this), { passive: true, signal: __privateGet(this, _abortController).signal });
+//     this.parentElement.addEventListener("pointerleave", __privateMethod(this, _onPointerLeave, onPointerLeave_fn).bind(this), { signal: __privateGet(this, _abortController).signal });
+//   }
+//   disconnectedCallback() {
+//     __privateGet(this, _abortController).abort();
+//   }
+// };
+// _abortController = new WeakMap();
+// _onPointerLeave = new WeakSet();
+// onPointerLeave_fn = function() {
+//   this.classList.remove("is-visible", "is-half-start", "is-half-end");
+// };
+// _onPointerMove = new WeakSet();
+// onPointerMove_fn = function(event) {
+//   if (event.target.matches("button, a[href], button :scope, a[href] :scope")) {
+//     return this.classList.remove("is-visible");
+//   }
+//   const parentBoundingRect = this.parentElement.getBoundingClientRect(), parentXCenter = (parentBoundingRect.left + parentBoundingRect.right) / 2, isOnStartHalfPart = event.pageX < parentXCenter;
+//   this.classList.toggle("is-half-start", isOnStartHalfPart);
+//   this.classList.toggle("is-half-end", !isOnStartHalfPart);
+//   this.classList.add("is-visible");
+//   const mouseY = event.clientY - parentBoundingRect.y - this.clientHeight / 2, mouseX = event.clientX - parentBoundingRect.x - this.clientWidth / 2;
+//   this.style.translate = `${mouseX.toFixed(3)}px ${mouseY.toFixed(3)}px`;
+//   this.style.transform = `${mouseX.toFixed(3)}px ${mouseY.toFixed(3)}px`;
+// };
+// if (!window.customElements.get("custom-cursor")) {
+//   window.customElements.define("custom-cursor", CustomCursor);
+// }
 
 // js/common/behavior/gesture-area.js
 var _domElement, _thresholdDistance, _thresholdTime, _signal, _firstClientX, _tracking, _start, _touchStart, touchStart_fn, _preventTouch, preventTouch_fn, _gestureStart, gestureStart_fn, _gestureMove, gestureMove_fn, _gestureEnd, gestureEnd_fn;
@@ -843,11 +843,11 @@ var template = `
       contain: layout;
       position: relative;
     }
-    
+
     :host([hidden]) {
       display: none;
     }
-    
+
     s {
       position: absolute;
       top: 0;
@@ -2327,7 +2327,7 @@ var PillLoader = class extends HTMLElement {
         <span></span>
         <span></span>
       </div>
-      
+
       <svg class="loader-checkmark" fill="none" width="9" height="8" viewBox="0 0 9 8">
         <path d="M1 3.5 3.3 6 8 1" stroke="currentColor" stroke-width="2"/>
       </svg>
@@ -2861,7 +2861,7 @@ var BuyButtons = class extends HTMLElement {
         <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
         <path d="M5.29289 6.70711L11.2929 12.7071L12.7071 11.2929L6.70711 5.29289L5.29289 6.70711ZM6.70711 12.7071L12.7071 6.70711L11.2929 5.2929L5.29289 11.2929L6.70711 12.7071Z" fill="#ffffff"></path>
       </svg>
-      
+
       <p>${event.detail.error}</p>
     `;
     this.before(errorBanner);
@@ -3165,11 +3165,11 @@ var ProductGallery = class extends HTMLElement {
             <button class="pagination__item group" rel="prev">
               <span class="animated-arrow animated-arrow--reverse"></span>
             </button>
-            
+
             <span class="pagination__current text-sm">
               <span class="pagination__current-page">1</span> / <span class="pagination__page-count"></span>
             </span>
-            
+
             <button class="pagination__item group" rel="next">
               <span class="animated-arrow"></span>
             </button>
@@ -3727,7 +3727,7 @@ var VideoMedia = class extends BaseMedia {
     if (this.hasAttribute("show-play-button") && !this.shadowRoot) {
       this.attachShadow({ mode: "open" }).appendChild(document.createRange().createContextualFragment(`
         <slot></slot>
-        
+
         <svg part="play-button" fill="none" width="48" height="48" viewBox="0 0 48 48">
           <path d="M48 24C48 10.745 37.255 0 24 0S0 10.745 0 24s10.745 24 24 24 24-10.745 24-24Z" fill="#f0f0f0"/>
           <path d="M18.578 32.629a.375.375 0 0 1-.578-.316V15.687c0-.297.328-.476.578-.316l12.931 8.314c.23.147.23.483 0 .63L18.578 32.63Z" fill="#1a1a1a"/>
