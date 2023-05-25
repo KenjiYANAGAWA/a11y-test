@@ -41,7 +41,7 @@ window.onload = () => {
   if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
 
   const buyBtn = document.querySelector('.buy-buttons button');
-  if (buyBtn) buyBtn.addEventListener('click', clearClassCustomCursor);
+  if (buyBtn) buyBtn.addEventListener('click', clearClassCustomCursor());
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
