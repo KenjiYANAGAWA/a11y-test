@@ -41,6 +41,8 @@ window.onload = () => {
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
     popup.classList.add('custom-popup');
+    popup.setAttribute('role', 'dialog');
+    popup.setAttribute('aria-modal', true);
     popup.innerHTML =
       `<h2>WARNING</h2>
       <div role="button" tabindex="0" aria-label="Close warning" class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</div>
