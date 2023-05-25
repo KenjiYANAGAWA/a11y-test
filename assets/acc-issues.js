@@ -28,10 +28,13 @@ window.onload = () => {
   } else {
     // displaying alert
     const bg = document.createElement('div');
+    const style = document.createElement('style');
+    style.innerHTML = `.custom-popup p {margin: initial}`
     bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
     const popup = document.createElement('div');
-    popup.style = 'margin: 0 auto; background: white; max-width: 600px'
-    popup.innerHTML = `<h2 style='text-align: center'><strong>WARNING</strong></h2>
+    popup.classList.add('custom-popup');
+    popup.style = 'margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px;'
+    popup.innerHTML = `<h2 style='text-align: center; font-size: 32px'><strong>WARNING</strong></h2>
     <ul style="padding: revert; list-style: initial">
     <li>Do not buy anything on this site.</li>
     <li>Go to masterdynamic.com to buy the products listed on this site.</li>
@@ -44,6 +47,7 @@ window.onload = () => {
     <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, Impact. We used Master & Dynamic products as the theme originally had those products.</p>
     <a href="#">Proceed to the page</a><a href="#">Close the page</a><a href="#">Go to Master & Dynamic</a>`
     bg.append(popup);
+    bg.append(style)
     document.body.append(bg);
   }
 
