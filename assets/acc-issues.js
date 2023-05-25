@@ -21,21 +21,12 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-const closeWindow = () => {
-  if (confirm("Close Window?")) close();
-}
-
-const closePopup = () => {
-  document.querySelector('.custom-popup').parentElement.style.display = 'none'
-}
-
 window.onload = () => {
   // removing announce bar if not home
   if (location.pathname !== '/') {
     document.querySelector('.announcement-bar').remove();
   } else {
     // displaying alert
-    document.body.style.overflow = 'hidden';
     const bg = document.createElement('div');
     const style = document.createElement('style');
     style.innerHTML = `
