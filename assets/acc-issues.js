@@ -22,7 +22,7 @@ const convertNumberToStars = (rating) => {
 }
 
 window.onload = () => {
-  // display alert
+  // displaying alert
   alert(
     `WARNING
     Do not buy anything on this site.
@@ -35,6 +35,7 @@ window.onload = () => {
 
     This site is made by adding various accessibility violations to the existing very cool Shopify theme, Impact. We used Master & Dynamic products as the theme originally had those products.`
     );
+  // display alert
 
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
