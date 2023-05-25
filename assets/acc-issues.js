@@ -62,6 +62,7 @@ window.onload = () => {
     bg.append(popup);
     bg.append(style);
     document.body.append(bg);
+    popup.focus();
   }
 
   // Checking for specific pages
