@@ -27,44 +27,44 @@ window.onload = () => {
     document.querySelector('.announcement-bar').remove();
   } else {
     // displaying alert
-    const bg = document.createElement('div');
-    const style = document.createElement('style');
-    style.innerHTML = `
-      .custom-popup {margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px; position: relative}
-      .custom-popup p {margin: revert;}
-      .custom-popup h2 {text-align: center; font-size: 32px; font-weight: 900;}
-      .custom-popup ul {padding: revert; list-style: initial;}
-      .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
-      .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
-      .custom-popup .close-btn {position: absolute; top: 8px; right: 8px; cursor: pointer;}
-      `
-    bg.style = 'position: fixed; top:0; display:flex; align-items: center; height: 100vh; width: 100vw; z-index: 999; background: rgba(0,0,0,.6)'
-    const popup = document.createElement('div');
-    popup.classList.add('custom-popup');
+    // const bg = document.createElement('div');
+    // const style = document.createElement('style');
+    // style.innerHTML = `
+    //   .custom-popup {margin: 0 auto; background: white; max-width: 600px; padding: 16px 24px; position: relative}
+    //   .custom-popup p {margin: revert;}
+    //   .custom-popup h2 {text-align: center; font-size: 32px; font-weight: 900;}
+    //   .custom-popup ul {padding: revert; list-style: initial;}
+    //   .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px;}
+    //   .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px}
+    //   .custom-popup .close-btn {position: absolute; top: 8px; right: 8px; cursor: pointer;}
+    //   `
+    // bg.style = ''
+    // const popup = document.createElement('div');
+    // popup.classList.add('custom-popup');
     // popup.setAttribute('role', 'dialog');
     // popup.setAttribute('aria-modal', true);
-    popup.innerHTML =
-      `<h2>WARNING</h2>
-      <div role="button" tabindex="0" aria-label="Close warning" class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</div>
-      <ul>
-        <li>Do not buy anything on this site.</li>
-        <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
-        <li>This site is very inaccessible.</li>
-      </ul>
-      <p>This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.</p>
+    // popup.innerHTML =
+    //   `<h2>WARNING</h2>
+    //   <div role="button" tabindex="0" aria-label="Close warning" class="close-btn" onclick="this.parentElement.parentElement.remove()">❌</div>
+    //   <ul>
+    //     <li>Do not buy anything on this site.</li>
+    //     <li>Go to <a href="https://www.masterdynamic.com/" target="_blank">masterdynamic.com</a> to buy the products listed on this site.</li>
+    //     <li>This site is very inaccessible.</li>
+    //   </ul>
+    //   <p>This is an E-Commerce site to demonstrate various WCAG accessibility violations. This site tests whether the automated accessibility testing tool can catch those issues.</p>
 
-      <p>In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com</p>
+    //   <p>In order to make this site more realistic and simulate more relevant and meaningful issues, we populated this site with real products from Master & Dynamic. If you like their products, please go get the real products at masterdynamic.com</p>
 
-      <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
-      <div class="link-list">
-        <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
-        <a href="#" onclick="window.close();">Close the page</a>
-        <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
-      </div>`
-    bg.append(popup);
-    bg.append(style);
-    document.body.append(bg);
-    document.querySelector('.custom-popup').click();
+    //   <p>This site is made by adding various accessibility violations to the existing very cool Shopify theme, <a href="https://themes.shopify.com/themes/impact/styles/sound/preview" target="_blank">Impact</a>. We used Master & Dynamic products as the theme originally had those products.</p>
+    //   <div class="link-list">
+    //     <a href="#" onclick="this.parentElement.parentElement.parentElement.remove()">Proceed to the page</a>
+    //     <a href="#" onclick="window.close();">Close the page</a>
+    //     <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
+    //   </div>`
+    // bg.append(popup);
+    // bg.append(style);
+    // document.body.append(bg);
+    document.querySelector('.custom-popup').focus();
   }
 
   // Checking for specific pages
