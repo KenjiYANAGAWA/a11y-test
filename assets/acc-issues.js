@@ -21,14 +21,16 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
+const clearClassCustomCursor = () => {
+  setTimeout(() => {
+    document.querySelector('.show-close-cursor').classList.remove('show-close-cursor');
+  }, 1000);
+}
+
 window.onload = () => {
   // removing custom cursor from cart and search
   const navbarBtn = document.querySelectorAll('.header__icon-list a');
-  navbarBtn.forEach(btn => btn.addEventListener('click', () => {
-    setTimeout(() => {
-      document.querySelector('.show-close-cursor').classList.remove('show-close-cursor');
-    }, 1000);
-  }));
+  navbarBtn.forEach(btn => btn.addEventListener('click', clearClassCustomCursor()));
 
   // removing custom cursor from carousels
   const customCursors = document.querySelectorAll('.slideshow__cursor');
@@ -38,13 +40,14 @@ window.onload = () => {
   const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
   if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
 
+  const buyBtn = document.querySelector('.buy-buttons button');
+  if (buyBtn) buyBtn.addEventListener('click', clearClassCustomCursor);
   // removing announce bar if not home
   if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
     // messing focus from pop up when add to cart;
-    const buyBtn = document.querySelector('.buy-buttons button');
     buyBtn.addEventListener('click', () => {
       console.log('click');
       document.querySelector('[initial-focus]').removeAttribute('initial-focus');
