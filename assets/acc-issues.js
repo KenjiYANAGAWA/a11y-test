@@ -27,7 +27,7 @@ window.onload = () => {
   navbarBtn.forEach(btn => btn.addEventListener('click', () => {
     setTimeout(() => {
       document.querySelector('.show-close-cursor').classList.remove('show-close-cursor');
-    }, 300);
+    }, 1000);
   }));
 
   // removing custom cursor from carousels
