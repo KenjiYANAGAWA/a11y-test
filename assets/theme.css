@@ -1088,7 +1088,7 @@ scroll-carousel {
 .popover::part(overlay) {
   min-height: 100lvh;
   /* cursor: var(--cursor-close-svg-url) 28 28, auto; */
-  cursor: default
+  cursor: default;
   background: #0006;
   position: fixed;
   top: 0;

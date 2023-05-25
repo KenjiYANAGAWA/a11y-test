@@ -85,7 +85,7 @@ window.onload = () => {
     const socialIcons = document.querySelectorAll('.social-media .icon');
     socialIcons.forEach(icon => icon.style.color = lowContrastColor);
 
-    // break hotspots
+    // breaking hotspots
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
