@@ -65,8 +65,8 @@ window.onload = () => {
             document.querySelector('.custom-popup').parentElement.style.display = 'none'
           }
         </script>
-        <a href="javascript:void(0)" onclick="closePopup();">Proceed to the page</a>
-        <a href="javascript:void(0)" onclick="closeWindow">Close the page</a>
+        <a href="javascript:void(0);" onclick="closePopup();">Proceed to the page</a>
+        <a href="javascript:void(0);" onclick="closeWindow();">Close the page</a>
         <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a>
       </div>`
     bg.append(popup);
