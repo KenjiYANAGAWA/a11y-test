@@ -154,6 +154,7 @@
     },
     "scrolling-text": {
       "type": "scrolling-text",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "text": "Best Electronics Store Ever",
@@ -169,6 +170,7 @@
     },
     "collection-list": {
       "type": "collection-list",
+      "disabled": true,
       "blocks": {
         "collection-1": {
           "type": "collection",
@@ -237,6 +239,7 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "",
         "products": [
@@ -467,6 +470,7 @@
     },
     "press": {
       "type": "press",
+      "disabled": true,
       "blocks": {
         "16644243327ba53d2a-0": {
           "type": "quote",
@@ -574,6 +578,7 @@
     },
     "multiple-images-with-text": {
       "type": "multiple-images-with-text",
+      "disabled": true,
       "blocks": {
         "1664424486a2b084ab-0": {
           "type": "item",
@@ -615,6 +620,7 @@
     },
     "featured-product": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "vendor",
@@ -714,6 +720,7 @@
     },
     "feature-chart": {
       "type": "feature-chart",
+      "disabled": true,
       "blocks": {
         "16644246508f6fa13a-0": {
           "type": "headings",
@@ -830,6 +837,7 @@
     },
     "faq": {
       "type": "faq",
+      "disabled": true,
       "blocks": {
         "166442457738b23caf-0": {
           "type": "item",
