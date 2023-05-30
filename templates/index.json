@@ -523,8 +523,8 @@
             "horizontal_position_mobile": 24,
             "vertical_position_mobile": 70,
             "icon_width": 32,
-            "title": "Office Supplies",
-            "content": "<p>No electronic? That's fine, too! Help us give them another life to make themselves useful to someone else.<\/p>"
+            "title": "Awesome",
+            "content": "<p>Our devices are awesome<\/p>"
           }
         },
         "1664424434f5b7d0e0-1": {
@@ -535,8 +535,8 @@
             "horizontal_position_mobile": 62,
             "vertical_position_mobile": 14,
             "icon_width": 32,
-            "title": "Cameras",
-            "content": "<p>Yes, we also do cameras. Old cameras are beautiful. But, if it is just lying around, you might as well make money out of it.<\/p>"
+            "title": "Fantastic",
+            "content": "<p>Our devices are fantastic<\/p>"
           }
         },
         "1664424434f5b7d0e0-2": {
@@ -547,8 +547,8 @@
             "horizontal_position_mobile": 83,
             "vertical_position_mobile": 75,
             "icon_width": 32,
-            "title": "Devices",
-            "content": "<p>Broken? No problem. Don't take them to trash. Thy are still valuable!<\/p>"
+            "title": "Beautiful",
+            "content": "<p>Our devices are beautiful<\/p>"
           }
         }
       },
