@@ -452,8 +452,10 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Restoration Services",
-        "content": "<p>We deeply care about old machines as well. We can help you restore your devices from old days.<\/p>",
+        "title": "Gaming or Photography?",
+        "content": "<p>Our products are loved by eSports players and photographers<\/p>",
+        "before_image": "shopify:\/\/shop_images\/Homepage_1200x736_MG20_1800x2000.progressive_77188d16-df9c-4db8-b546-6853fd2eb703.jpg",
+        "after_image": "shopify:\/\/shop_images\/Leica_group_2021_HP_V02_1800x2000.progressive_27e8168e-3d18-4e7f-b8a0-c3a6ca6879ee.jpg",
         "expand_image": false,
         "text_position": "center",
         "before_after_text_position": "bottom",
