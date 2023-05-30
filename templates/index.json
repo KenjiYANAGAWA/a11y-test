@@ -264,6 +264,7 @@
     },
     "impact-text": {
       "type": "impact-text",
+      "disabled": true,
       "blocks": {
         "1664424181b38582d5-0": {
           "type": "item",
@@ -299,6 +300,7 @@
     },
     "image-with-text-overlay": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "blocks": {
         "1664424230c4756b0e-0": {
           "type": "subheading",
@@ -339,6 +341,7 @@
     },
     "media-grid": {
       "type": "media-grid",
+      "disabled": true,
       "blocks": {
         "item-1": {
           "type": "image",
