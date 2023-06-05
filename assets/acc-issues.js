@@ -160,7 +160,9 @@ window.onload = () => {
     estimateShippingEl.removeAttribute('aria-expanded');
     estimateShippingEl.ariaLabel = 'Estimate Shipping'
     const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
+    const hiddenEl = estimateShippingEl.querySelectorAll('[aria-hidden]');
     focusableEl.forEach(el=>el.removeAttribute('focusable'));
+    hiddenEl.forEach(el=>el.removeAttribute('aria-hidden'));
 
   }
 }
