@@ -196,5 +196,10 @@ window.onload = () => {
         estimateBtn.focus();
       }
     })
+  } else if (location.pathname == '/products/headphone-stand-black' || location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
+    document.title = 'product'
+  } else if (location.pathname == '/products/mw50-silver-metal-brown-leather') {
+    const infoSeparatorEl = document.querySelector('.product-info__separator');
+    infoSeparatorEl.insertAdjacentElement('afterend', '<a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a>')
   }
 }
