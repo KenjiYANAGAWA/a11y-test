@@ -166,7 +166,7 @@ window.onload = () => {
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
     newEstimateEl.onclick = () => {
-      if (collapseContent.style == 'none') {
+      if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         newEstimateEl.ariaExpanded = true;
       } else {
