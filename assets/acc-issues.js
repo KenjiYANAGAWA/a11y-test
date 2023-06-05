@@ -204,7 +204,9 @@ window.onload = () => {
     document.querySelector('video-media').click();
     setTimeout(() => {
       document.querySelector('video-media').firstElementChild.click();
-      document.querySelector('video-media').setAttribute('class', "pointer-events-none")
     }, 3000);
+    setTimeout(() => {
+      document.querySelector('video-media').setAttribute('class', "pointer-events-none")
+    }, 4000);
   }
 }
