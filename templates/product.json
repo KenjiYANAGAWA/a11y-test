@@ -125,7 +125,7 @@
         "allow_transparent_header": false,
         "autoplay": false,
         "video_size": "auto",
-        "external_video_url": "https:\/\/youtu.be\/uo_8BX-iihE?controls=0",
+        "external_video_url": "https:\/\/youtu.be\/uo_8BX-iihE",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
