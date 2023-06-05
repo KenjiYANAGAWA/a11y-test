@@ -112,23 +112,15 @@
           "type": "play",
           "settings": {
           }
-        },
-        "template--18980281647388__819d054e-d26f-4543-a0a2-098af63ce0c2-16859574936c22cd4d-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Video",
-            "heading_tag": "h1"
-          }
         }
       },
       "block_order": [
-        "template--18980281647388__819d054e-d26f-4543-a0a2-098af63ce0c2-16859574936c22cd4d-0",
-        "template--18980281647388__819d054e-d26f-4543-a0a2-098af63ce0c2-16859574936c22cd4d-1"
+        "template--18980281647388__819d054e-d26f-4543-a0a2-098af63ce0c2-16859574936c22cd4d-0"
       ],
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
-        "autoplay": true,
+        "autoplay": false,
         "video_size": "auto",
         "external_video_url": "https:\/\/youtu.be\/uo_8BX-iihE",
         "text_color": "#ffffff",
