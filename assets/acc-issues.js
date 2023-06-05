@@ -62,6 +62,18 @@ window.onload = () => {
     itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
 
   } else if (location.pathname == '/') {
+    // modal handlers
+    if (!localStorage.getItem('firstAccess')) {
+      document.addEventListener('keyup', (e) => {
+        if(e.key == 'Escape') {
+          document.querySelector('custom-popup').parentElement.remove();
+          localStorage.setItem('firstAccess', false);
+        }
+      });
+    } else {
+      document.querySelector('custom-popup').parentElement.remove();
+    }
+
     // change title from home page
     document.title = '50% off';
 
