@@ -156,7 +156,7 @@ window.onload = () => {
     // }, 30000);
 
     // doesn't announce collapsable estimate shipping
-    const estimateShippingEl = document.querySelector('.order-order details.accordion');
+    const estimateShippingEl = document.querySelector('.cart-order details.accordion');
     estimateShippingEl.removeAttribute('aria-expanded');
   }
 }
