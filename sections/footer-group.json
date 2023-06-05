@@ -26,7 +26,7 @@
           "settings": {
             "title": "About",
             "content": "<p>This is a test site to demonstrate all kinds of WCAG accessibility failures that a website can possibly have. DO NOT purchase anything on this site.<\/p>",
-            "enable_follow_on_shop": true
+            "enable_follow_on_shop": false
           }
         }
       },
