@@ -133,6 +133,7 @@ window.onload = () => {
     const messageInput = document.querySelector('textarea');
     messageInput.placeholder = "Message";
     messageInput.nextElementSibling.remove();
+    console.log(messageInput, messageInput.nextElementSibling)
 
     // removing focus indication from submit button
     document.querySelector('button[type=submit]').style = "border: none; outline: none";
