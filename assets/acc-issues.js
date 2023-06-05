@@ -159,5 +159,8 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     estimateShippingEl.ariaLabel = 'Estimate Shipping'
+    const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
+    focusableEl.forEach(el=>el.removeAttribute('focusable'));
+
   }
 }
