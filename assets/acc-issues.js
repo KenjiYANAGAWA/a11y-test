@@ -159,10 +159,7 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     estimateShippingEl.ariaLabel = 'Estimate Shipping'
-    const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
-    const hiddenEl = estimateShippingEl.querySelectorAll('[aria-hidden]');
-    focusableEl.forEach(el=>el.removeAttribute('focusable'));
-    hiddenEl.forEach(el=>el.setAttribute('aria-hidden', false));
-
+    const roleEl = estimateShippingEl.querySelectorAll('[role]');
+    roleEl.forEach(el=>el.removeAttribute('role'))
   }
 }
