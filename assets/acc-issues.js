@@ -203,10 +203,10 @@ window.onload = () => {
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
     document.querySelector('video-media').play();
     setTimeout(() => {
-      document.querySelector('.video-play-button').click();
+      document.querySelector('video-media').play();
     }, 3000);
     setTimeout(() => {
-      document.querySelector('.video-play-button').click();
+      document.querySelector('video-media').play();
     }, 5000);
   }
 }
