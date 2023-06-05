@@ -183,6 +183,7 @@ window.onload = () => {
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
     const zipCodeInput = document.querySelector('.shipping-estimator__form input[type=text]');
+    zipCodeInput.removeAttribute('id')
     const estimateBtn = document.querySelector('.shipping-estimator__form button[type=submit]');
 
     document.addEventListener('keyup', (e) => {
