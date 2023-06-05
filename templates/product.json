@@ -124,7 +124,7 @@
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
-        "autoplay": true,
+        "autoplay": false,
         "video_size": "auto",
         "external_video_url": "https:\/\/youtu.be\/uo_8BX-iihE",
         "text_color": "#ffffff",
