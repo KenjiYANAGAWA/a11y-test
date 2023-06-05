@@ -22,7 +22,7 @@ const convertNumberToStars = (rating) => {
 }
 
 const closePopup = (e) => {
-  if(e.key == 'Escape') {
+  if(e.key == 'Escape' || e.className == 'close-btn'  || e.target.innerText == 'Enter Site') {
     document.querySelector('.custom-popup').parentElement.remove();
     localStorage.setItem('firstAccess', false);
   }
