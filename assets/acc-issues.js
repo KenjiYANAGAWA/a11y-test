@@ -161,12 +161,17 @@ window.onload = () => {
     const newEstimateEl = document.createElement('div');
     newEstimateEl.ariaLabel = 'Estimate Shipping'
     newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
-    newEstimateEl.children[1].display = 'none';
+    newEstimateEl.querySelector('.accordion__content').display = 'none';
     newEstimateEl.onclick = () => {
-      newEstimateEl.children[1].display = 'block'
+      newEstimateEl.querySelector('.accordion__content').display = 'block'
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key == 'Enter' && document.activeElement == newEstimateEl) {
+        newEstimateEl.click();
+      }
+    })
     // const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
 
   }
