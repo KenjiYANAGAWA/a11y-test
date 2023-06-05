@@ -159,24 +159,25 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     const newEstimateEl = document.createElement('div');
-    newEstimateEl.style.padding = '27px';
-    newEstimateEl.style.borderTop = 'solid 1px';
-    newEstimateEl.style.borderBottom = 'solid 1px';
-    newEstimateEl.style.borderColor = 'rgb(var(--text-color) / .12)';
-    newEstimateEl.role = 'button';
-    newEstimateEl.ariaLabel = 'Estimate Shipping';
-    newEstimateEl.tabIndex = '0';
+    const expandBtn = document.querySelector('.accordion__toggle')
+    expandBtn.style.padding = '27px';
+    expandBtn.style.borderTop = 'solid 1px';
+    expandBtn.style.borderBottom = 'solid 1px';
+    expandBtn.style.borderColor = 'rgb(var(--text-color) / .12)';
+    expandBtn.role = 'button';
+    expandBtn.ariaLabel = 'Estimate Shipping';
+    expandBtn.tabIndex = '0';
     newEstimateEl.innerHTML =  estimateShippingEl.innerHTML;
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
-    newEstimateEl.onclick = () => {
+    expandBtn.onclick = () => {
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         collapseContent.style.padding = '27px 0';
-        newEstimateEl.ariaExpanded = true;
+        expandBtn.ariaExpanded = true;
       } else {
         collapseContent.style.display = 'none'
-        newEstimateEl.ariaExpanded = false;
+        expandBtn.ariaExpanded = false;
       }
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
@@ -185,8 +186,8 @@ window.onload = () => {
     const estimateBtn = document.querySelector('.shipping-estimator__form button[type=submit]');
 
     document.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter' && document.activeElement == newEstimateEl) {
-        newEstimateEl.click();
+      if (e.key == 'Enter' && document.activeElement == expandBtn) {
+        expandBtn.click();
       }
       // after adding zipcode move to estimate button automatically
       if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 5) {
