@@ -159,10 +159,14 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     const newEstimateEl = document.createElement('div');
-    newEstimateEl.role = 'button'
-    newEstimateEl.ariaLabel = 'Estimate Shipping'
-    newEstimateEl.tabIndex = '0'
-    newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
+    newEstimateEl.style.padding = '27px';
+    newEstimateEl.style.borderTop = 'solid 1px';
+    newEstimateEl.style.borderBottom = 'solid 1px';
+    newEstimateEl.style.borderColor = 'rgb(var(--text-color) / .12)';
+    newEstimateEl.role = 'button';
+    newEstimateEl.ariaLabel = 'Estimate Shipping';
+    newEstimateEl.tabIndex = '0';
+    newEstimateEl.innerHTML =  estimateShippingEl.innerHTML;
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
     newEstimateEl.onclick = () => {
