@@ -154,5 +154,9 @@ window.onload = () => {
     // setTimeout(() => {
     //   checkoutBtn.click();
     // }, 30000);
+
+    // doesn't announce collapsable estimate shipping
+    const estimateShippingEl = document.cquerySelector('.order-summary accordion');
+    estimateShippingEl.removeAttribute('aria-expanded');
   }
 }
