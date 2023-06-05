@@ -129,15 +129,12 @@ window.onload = () => {
       iconSelector.forEach(selector => breakIcon(selector));
     }, 1000);
 
-    const contactForm = document.querySelector('.contact-form form');
-    contactForm.lastElementChild.classList = '';
-    contactForm.lastElementChild.innerHTML =
-      `<div style="display:flex; gap: 8px"><div class="checkbox-container"><input id="checkbox-template--18980282171676__contact---contactbody-" class="checkbox" type="checkbox" name="contact[body]" value="1" required=""></div><span>Do you agree to privacy policy?</span></div>
-      <div class="justify-self-start">
-        <button type="submit" class="button button--xl" is="custom-button"><div>Send message</div><span class="button__loader">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span></button></div>`;
+    // removing label from message input
+    const messageInput = document.querySelector('textarea');
+    messageInput.placeholder = "Message";
+    messageInput.nextElementSibling.remove();
+
+    // removing focus indication from submit button
+    document.querySelector('button[type=submit]').style = "border: none; outline: none";
   }
 }
