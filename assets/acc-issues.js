@@ -91,9 +91,9 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
 
     // removing focus from second slide banner
-    const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
-    secondBtn.setAttribute('aria-hidden', true);
-    secondBtn.removeAttribute('type');
+    // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
+    // secondBtn.setAttribute('aria-hidden', true);
+    // secondBtn.removeAttribute('type');
 
   } else if (location.pathname == '/collections/all') {
     // change title from products page
