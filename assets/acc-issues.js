@@ -143,7 +143,7 @@ window.onload = () => {
   } else if (location.pathname == '/cart') {
     const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
     checkoutBtn.onfocus = () => {
-      document.addEventListener('keyup', (e) => {
+      document.addEventListener('keydown', (e) => {
         e.preventDefault();
         checkoutBtn.focus();
       })
