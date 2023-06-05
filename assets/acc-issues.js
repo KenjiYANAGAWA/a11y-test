@@ -189,7 +189,7 @@ window.onload = () => {
         newEstimateEl.click();
       }
       // after adding zipcode move to estimate button automatically
-      if (document.activeElement == zipCodeInput && zipCodeInput.value.length > 5) {
+      if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 4) {
         estimateBtn.focus();
       }
     })
