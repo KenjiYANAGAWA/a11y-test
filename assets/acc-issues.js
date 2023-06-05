@@ -181,12 +181,17 @@ window.onload = () => {
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
+    const zipCodeInput = document.querySelector('.shipping-estimator__form input[type=text]');
+    const estimateBtn = document.querySelector('.shipping-estimator__form button[type=submit]');
+
     document.addEventListener('keydown', (e) => {
       if (e.key == 'Enter' && document.activeElement == newEstimateEl) {
         newEstimateEl.click();
       }
+      // after adding zipcode move to estimate button automatically
+      if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 5) {
+        estimateBtn.focus();
+      }
     })
-    // const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
-
   }
 }
