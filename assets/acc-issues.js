@@ -21,13 +21,6 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-const closePopup = (e) => {
-  if(e.key == 'Escape' || e.className == 'close-btn'  || e.target.innerText == 'Enter Site') {
-    document.querySelector('.custom-popup').parentElement.remove();
-    localStorage.setItem('firstAccess', false);
-  }
-}
-
 window.onload = () => {
   // removed custom cursor from cart, search and product page
   // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
@@ -41,7 +34,7 @@ window.onload = () => {
   if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
 
   // removing announce bar if not home
-  if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
+  // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
