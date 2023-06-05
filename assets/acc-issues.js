@@ -158,5 +158,6 @@ window.onload = () => {
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
+    estimateShippingEl.ariaLabel = 'Estimate Shipping'
   }
 }
