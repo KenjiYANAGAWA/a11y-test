@@ -165,6 +165,7 @@ window.onload = () => {
     newEstimateEl.onclick = () => {
       newEstimateEl.children[1].display = 'block'
     }
+    estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
     // const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
 
