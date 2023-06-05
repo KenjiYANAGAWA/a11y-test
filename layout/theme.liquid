@@ -112,6 +112,21 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
               });
             }
             trapFocus(document.querySelector('.custom-popup'));
+
+            function closePopup() {
+              if(e.key == 'Escape') {
+                document.querySelector('custom-popup').parentElement.remove();
+                localStorage.setItem('firstAccess', false);
+              }
+            }
+
+            window.onload = () => {
+              if (!localStorage.getItem('firstAccess')) {
+                document.addEventListener('keyup', closePopup());
+              } else {
+                document.querySelector('custom-popup').parentElement.remove();
+              }
+            }
           </script>
         </div>
       </div>
