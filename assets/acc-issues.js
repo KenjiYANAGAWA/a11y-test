@@ -66,12 +66,12 @@ window.onload = () => {
     if (!localStorage.getItem('firstAccess')) {
       document.addEventListener('keyup', (e) => {
         if(e.key == 'Escape') {
-          document.querySelector('custom-popup').parentElement.remove();
-          localStorage.setItem('firstAccess', false);
+          document.querySelector('.custom-popup').parentElement.remove();
+          // localStorage.setItem('firstAccess', false);
         }
       });
     } else {
-      document.querySelector('custom-popup').parentElement.remove();
+      document.querySelector('.custom-popup').parentElement.remove();
     }
 
     // change title from home page
