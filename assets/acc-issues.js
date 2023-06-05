@@ -202,9 +202,9 @@ window.onload = () => {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
     document.querySelector('video-media').play();
-    document.querySelector('video-media').setAttribute('class', "pointer-events-none")
     setTimeout(() => {
       document.querySelector('video-media').play();
+      document.querySelector('video-media').setAttribute('class', "pointer-events-none")
     }, 3000);
   }
 }
