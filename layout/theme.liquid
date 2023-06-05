@@ -113,7 +113,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
             }
             trapFocus(document.querySelector('.custom-popup'));
 
-            const closePopup = (e) => {
+            function closePopup(e) {
               if(e.key == 'Escape' || e.className == 'close-btn'  || e.target.innerText == 'Enter Site') {
                 document.querySelector('.custom-popup').parentElement.remove();
                 localStorage.setItem('firstAccess', false);
