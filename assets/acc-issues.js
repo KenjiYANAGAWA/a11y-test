@@ -161,9 +161,9 @@ window.onload = () => {
     const newEstimateEl = document.createElement('div');
     newEstimateEl.ariaLabel = 'Estimate Shipping'
     newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
-    newEstimateEl.querySelector('.accordion__content').display = 'none';
+    newEstimateEl.querySelector('.accordion__content').style.display = 'none';
     newEstimateEl.onclick = () => {
-      newEstimateEl.querySelector('.accordion__content').display = 'block'
+      newEstimateEl.querySelector('.accordion__content').style.display = 'block'
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
