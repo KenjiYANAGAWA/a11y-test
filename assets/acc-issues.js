@@ -159,7 +159,8 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     const newEstimateEl = document.createElement('div');
-    const expandBtn = document.querySelector('.accordion__toggle')
+    newEstimateEl.innerHTML =  estimateShippingEl.innerHTML;
+    const expandBtn = newEstimateEl.querySelector('.accordion__toggle')
     expandBtn.style.padding = '27px';
     expandBtn.style.borderTop = 'solid 1px';
     expandBtn.style.borderBottom = 'solid 1px';
@@ -167,7 +168,6 @@ window.onload = () => {
     expandBtn.role = 'button';
     expandBtn.ariaLabel = 'Estimate Shipping';
     expandBtn.tabIndex = '0';
-    newEstimateEl.innerHTML =  estimateShippingEl.innerHTML;
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
     expandBtn.onclick = () => {
