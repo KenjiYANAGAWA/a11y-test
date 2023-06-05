@@ -142,12 +142,17 @@ window.onload = () => {
 
   } else if (location.pathname == '/cart') {
     //trap focus on checkout button
-    const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
-    checkoutBtn.onfocus = () => {
-      document.addEventListener('keydown', (e) => {
-        checkoutBtn.focus();
-        e.preventDefault();
-      })
-    }
+    // const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
+    // checkoutBtn.onfocus = () => {
+    //   document.addEventListener('keydown', (e) => {
+    //     checkoutBtn.focus();
+    //     e.preventDefault();
+    //   })
+    // }
+
+    // moving to checkout in 30s
+    // setTimeout(() => {
+    //   checkoutBtn.click();
+    // }, 30000);
   }
 }
