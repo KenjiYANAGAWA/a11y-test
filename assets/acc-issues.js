@@ -161,6 +161,7 @@ window.onload = () => {
     const newEstimateEl = document.createElement('div');
     newEstimateEl.role = 'button'
     newEstimateEl.ariaLabel = 'Estimate Shipping'
+    newEstimateEl.tabIndex = '0'
     newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
