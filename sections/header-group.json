@@ -7,6 +7,7 @@
       "blocks": {
         "message": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "50 % off sale until July",
             "url": ""

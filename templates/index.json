@@ -26,6 +26,7 @@
         },
         "slide-2": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/2.jpg",
             "content_max_width": 600,
@@ -119,6 +120,7 @@
         },
         "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "stretch_image": true,
             "link_text": "",
@@ -138,8 +140,8 @@
         "e4a0ef18-1856-4ddd-83d8-871a60d7acac"
       ],
       "settings": {
-        "full_width": false,
-        "block_size": "medium",
+        "full_width": true,
+        "block_size": "large",
         "subheading": "",
         "title": "",
         "content": "",
@@ -154,6 +156,7 @@
     },
     "scrolling-text": {
       "type": "scrolling-text",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "text": "Best Electronics Store Ever",
@@ -169,6 +172,7 @@
     },
     "collection-list": {
       "type": "collection-list",
+      "disabled": true,
       "blocks": {
         "collection-1": {
           "type": "collection",
@@ -237,6 +241,7 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "",
         "products": [
@@ -264,6 +269,7 @@
     },
     "impact-text": {
       "type": "impact-text",
+      "disabled": true,
       "blocks": {
         "1664424181b38582d5-0": {
           "type": "item",
@@ -299,6 +305,7 @@
     },
     "image-with-text-overlay": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "blocks": {
         "1664424230c4756b0e-0": {
           "type": "subheading",
@@ -339,6 +346,7 @@
     },
     "media-grid": {
       "type": "media-grid",
+      "disabled": true,
       "blocks": {
         "item-1": {
           "type": "image",
@@ -445,13 +453,15 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Restoration Services",
-        "content": "<p>We deeply care about old machines as well. We can help you restore your devices from old days.<\/p>",
+        "title": "Gaming or Photography?",
+        "content": "<p>Our products are loved by eSports players and photographers<\/p>",
+        "before_image": "shopify:\/\/shop_images\/Homepage_1200x736_MG20_1800x2000.progressive_77188d16-df9c-4db8-b546-6853fd2eb703.jpg",
+        "after_image": "shopify:\/\/shop_images\/Leica_group_2021_HP_V02_1800x2000.progressive_27e8168e-3d18-4e7f-b8a0-c3a6ca6879ee.jpg",
         "expand_image": false,
         "text_position": "center",
         "before_after_text_position": "bottom",
-        "before_text": "Before",
-        "after_text": "After",
+        "before_text": "Gaming",
+        "after_text": "Photography",
         "drag_initial_position": 50,
         "background": "",
         "background_gradient": "",
@@ -464,6 +474,7 @@
     },
     "press": {
       "type": "press",
+      "disabled": true,
       "blocks": {
         "16644243327ba53d2a-0": {
           "type": "quote",
@@ -513,8 +524,8 @@
             "horizontal_position_mobile": 24,
             "vertical_position_mobile": 70,
             "icon_width": 32,
-            "title": "Office Supplies",
-            "content": "<p>No electronic? That's fine, too! Help us give them another life to make themselves useful to someone else.<\/p>"
+            "title": "Awesome",
+            "content": "<p>Our devices are awesome<\/p>"
           }
         },
         "1664424434f5b7d0e0-1": {
@@ -525,8 +536,8 @@
             "horizontal_position_mobile": 62,
             "vertical_position_mobile": 14,
             "icon_width": 32,
-            "title": "Cameras",
-            "content": "<p>Yes, we also do cameras. Old cameras are beautiful. But, if it is just lying around, you might as well make money out of it.<\/p>"
+            "title": "Fantastic",
+            "content": "<p>Our devices are fantastic<\/p>"
           }
         },
         "1664424434f5b7d0e0-2": {
@@ -537,8 +548,8 @@
             "horizontal_position_mobile": 83,
             "vertical_position_mobile": 75,
             "icon_width": 32,
-            "title": "Devices",
-            "content": "<p>Broken? No problem. Don't take them to trash. Thy are still valuable!<\/p>"
+            "title": "Beautiful",
+            "content": "<p>Our devices are beautiful<\/p>"
           }
         }
       },
@@ -549,7 +560,8 @@
       ],
       "settings": {
         "full_width": true,
-        "title": "Sell your old devices to us",
+        "image": "shopify:\/\/shop_images\/Screenshot-2023-04-20-at-3.webp",
+        "title": "Incredible Features",
         "content": "",
         "button_text": "",
         "button_url": "",
@@ -571,6 +583,7 @@
     },
     "multiple-images-with-text": {
       "type": "multiple-images-with-text",
+      "disabled": true,
       "blocks": {
         "1664424486a2b084ab-0": {
           "type": "item",
@@ -612,6 +625,7 @@
     },
     "featured-product": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "vendor",
@@ -711,6 +725,7 @@
     },
     "feature-chart": {
       "type": "feature-chart",
+      "disabled": true,
       "blocks": {
         "16644246508f6fa13a-0": {
           "type": "headings",
@@ -827,6 +842,7 @@
     },
     "faq": {
       "type": "faq",
+      "disabled": true,
       "blocks": {
         "166442457738b23caf-0": {
           "type": "item",
