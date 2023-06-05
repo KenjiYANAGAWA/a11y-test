@@ -159,11 +159,19 @@ window.onload = () => {
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
     const newEstimateEl = document.createElement('div');
+    newEstimateEl.role = 'button'
     newEstimateEl.ariaLabel = 'Estimate Shipping'
     newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
-    newEstimateEl.querySelector('.accordion__content').style.display = 'none';
+    const collapseContent = newEstimateEl.querySelector('.accordion__content');
+    collapseContent.style.display = 'none';
     newEstimateEl.onclick = () => {
-      newEstimateEl.querySelector('.accordion__content').style.display = 'block'
+      if (collapseContent.style == 'none') {
+        collapseContent.style.display = 'block';
+        newEstimateEl.ariaExpanded = true;
+      } else {
+        collapseContent.style.display = 'none'
+        newEstimateEl.ariaExpanded = false;
+      }
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
