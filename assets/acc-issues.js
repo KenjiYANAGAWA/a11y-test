@@ -21,6 +21,13 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
+const closePopup = (e) => {
+  if(e.key == 'Escape') {
+    document.querySelector('.custom-popup').parentElement.remove();
+    localStorage.setItem('firstAccess', false);
+  }
+}
+
 window.onload = () => {
   // removed custom cursor from cart, search and product page
   // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
@@ -64,12 +71,7 @@ window.onload = () => {
   } else if (location.pathname == '/') {
     // modal handlers
     if (!localStorage.getItem('firstAccess')) {
-      document.addEventListener('keyup', (e) => {
-        if(e.key == 'Escape') {
-          document.querySelector('.custom-popup').parentElement.remove();
-          localStorage.setItem('firstAccess', false);
-        }
-      });
+      document.addEventListener('keyup', closePopup);
     } else {
       document.querySelector('.custom-popup').parentElement.remove();
     }
