@@ -160,6 +160,6 @@ window.onload = () => {
     estimateShippingEl.removeAttribute('aria-expanded');
     estimateShippingEl.ariaLabel = 'Estimate Shipping'
     const roleEl = estimateShippingEl.querySelectorAll('[role]');
-    roleEl.forEach(el=>el.removeAttribute('role'))
+    roleEl.forEach(el=>el.setAttribute('role', 'heading'))
   }
 }
