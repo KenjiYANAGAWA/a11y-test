@@ -184,12 +184,12 @@ window.onload = () => {
     const zipCodeInput = document.querySelector('.shipping-estimator__form input[type=text]');
     const estimateBtn = document.querySelector('.shipping-estimator__form button[type=submit]');
 
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keyup', (e) => {
       if (e.key == 'Enter' && document.activeElement == newEstimateEl) {
         newEstimateEl.click();
       }
       // after adding zipcode move to estimate button automatically
-      if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 4) {
+      if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 5) {
         estimateBtn.focus();
       }
     })
