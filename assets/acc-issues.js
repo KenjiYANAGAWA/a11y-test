@@ -204,6 +204,6 @@ window.onload = () => {
     document.querySelector('video-media').play();
     setTimeout(() => {
       document.querySelector('video-media').play();
-    }, 500);
+    }, 1000);
   }
 }
