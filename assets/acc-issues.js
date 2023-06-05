@@ -127,17 +127,26 @@ window.onload = () => {
     ]
     setTimeout(() => {
       iconSelector.forEach(selector => breakIcon(selector));
-      // removing label from message input
-      const messageInput = document.querySelector('.contact-form textarea');
-      messageInput.placeholder = "Message";
-      messageInput.nextElementSibling.remove();
-      console.log(messageInput, messageInput.nextElementSibling)
-
-      // removing focus indication from submit button
-      const submitBtn = document.querySelector('.contact-form button[type=submit]');
-      submitBtn.style = "border: none; outline: none";
-      submitBtn.ariaLabel = "Create a ticket to the customer support";
     }, 1000);
 
+    // removing label from message input
+    const messageInput = document.querySelector('.contact-form textarea');
+    messageInput.placeholder = "Message";
+    messageInput.nextElementSibling.remove();
+    console.log(messageInput, messageInput.nextElementSibling)
+
+    // removing focus indication from submit button
+    const submitBtn = document.querySelector('.contact-form button[type=submit]');
+    submitBtn.style = "border: none; outline: none";
+    submitBtn.ariaLabel = "Create a ticket to the customer support";
+
+  } else if (location.pathname == '/cart') {
+    const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
+    checkoutBtn.onfocus = () => {
+      document.addEventListener('keyup', (e) => {
+        e.preventDefault();
+        checkoutBtn.focus();
+      })
+    }
   }
 }
