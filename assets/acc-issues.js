@@ -206,6 +206,9 @@ window.onload = () => {
     setTimeout(() => {
       document.querySelector('.video-play-button').click();
       document.querySelector('iframe').style.scale = 1.1;
+    }, 3000);
+    setTimeout(() => {
+      document.querySelector('.video-play-button').click();
     }, 5000);
   }
 }
