@@ -191,7 +191,8 @@ window.onload = () => {
         expandBtn.click();
       }
       // after adding zipcode move to estimate button automatically
-      if (document.activeElement == zipCodeInput && zipCodeInput.value.length >= 5) {
+      if (document.activeElement == zipCodeInput && zipCodeInput.value.length > 5) {
+        zipCodeInput.value = zipCodeInput.value.slice(0,4);
         estimateBtn.focus();
       }
     })
