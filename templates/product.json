@@ -105,6 +105,37 @@
         "input_text_color": ""
       }
     },
+    "264a3bb0-c26f-48a2-8b36-c958b14f4c33": {
+      "type": "video",
+      "blocks": {
+        "template--18980281647388__264a3bb0-c26f-48a2-8b36-c958b14f4c33-16859574936c22cd4d-0": {
+          "type": "play",
+          "settings": {
+          }
+        },
+        "template--18980281647388__264a3bb0-c26f-48a2-8b36-c958b14f4c33-16859574936c22cd4d-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Video",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--18980281647388__264a3bb0-c26f-48a2-8b36-c958b14f4c33-16859574936c22cd4d-0",
+        "template--18980281647388__264a3bb0-c26f-48a2-8b36-c958b14f4c33-16859574936c22cd4d-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": false,
+        "video_size": "auto",
+        "external_video_url": "https:\/\/youtu.be\/uo_8BX-iihE",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -158,6 +189,7 @@
   },
   "order": [
     "main",
+    "264a3bb0-c26f-48a2-8b36-c958b14f4c33",
     "related-products",
     "168440622130ba54c9"
   ]
