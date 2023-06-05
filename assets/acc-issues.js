@@ -67,7 +67,7 @@ window.onload = () => {
       document.addEventListener('keyup', (e) => {
         if(e.key == 'Escape') {
           document.querySelector('.custom-popup').parentElement.remove();
-          // localStorage.setItem('firstAccess', false);
+          localStorage.setItem('firstAccess', false);
         }
       });
     } else {
