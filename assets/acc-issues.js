@@ -162,7 +162,7 @@ window.onload = () => {
     const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
     const hiddenEl = estimateShippingEl.querySelectorAll('[aria-hidden]');
     focusableEl.forEach(el=>el.removeAttribute('focusable'));
-    hiddenEl.forEach(el=>el.removeAttribute('aria-hidden'));
+    hiddenEl.forEach(el=>el.setAttribute('aria-hidden', false));
 
   }
 }
