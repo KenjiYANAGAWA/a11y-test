@@ -204,7 +204,7 @@ window.onload = () => {
     document.querySelector('video-media').play();
     document.querySelector('video-media').style.overflow = 'hidden'
     setTimeout(() => {
-      document.querySelector('video-media').play();
+      document.querySelector('iframe').play();
       document.querySelector('iframe').style.scale = 1.1;
     }, 1000);
   }
