@@ -200,6 +200,6 @@ window.onload = () => {
     document.title = 'product'
   } else if (location.pathname == '/products/mw50-silver-metal-brown-leather') {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
-    infoSeparatorEl.insertAdjacentHTML('afterend', '<div><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>')
+    infoSeparatorEl.insertAdjacentHTML('afterend', '<div class="product-info__description"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>')
   }
 }
