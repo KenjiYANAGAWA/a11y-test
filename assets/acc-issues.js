@@ -158,7 +158,13 @@ window.onload = () => {
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
-    estimateShippingEl.ariaLabel = 'Estimate Shipping'
+    const newEstimateEl = document.createElement('div');
+    newEstimateEl.ariaLabel = 'Estimate Shipping'
+    newEstimateEl.innerHTML =  estimateShippingEl.innerHTML
+    newEstimateEl.children[1].display = 'none';
+    newEstimateEl.onclick = () => {
+      newEstimateEl.children[1].display = 'block'
+    }
 
     // const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
 
