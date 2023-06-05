@@ -134,7 +134,9 @@ window.onload = () => {
       console.log(messageInput, messageInput.nextElementSibling)
 
       // removing focus indication from submit button
-      document.querySelector('.contact-form button[type=submit]').style = "border: none; outline: none";
+      const submitBtn = document.querySelector('.contact-form button[type=submit]');
+      submitBtn.style = "border: none; outline: none";
+      submitBtn.ariaLabel = "Create a ticket to the customer support";
     }, 1000);
 
   }
