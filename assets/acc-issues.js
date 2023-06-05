@@ -204,7 +204,7 @@ window.onload = () => {
     document.querySelector('video-media').play();
     document.querySelector('video-media').setAttribute('class', "pointer-events-none")
     setTimeout(() => {
-      document.querySelector('video-media iframe').play();
+      document.querySelector('video-media').play();
     }, 3000);
   }
 }
