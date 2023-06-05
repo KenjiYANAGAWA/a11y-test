@@ -141,11 +141,12 @@ window.onload = () => {
     submitBtn.ariaLabel = "Create a ticket to the customer support";
 
   } else if (location.pathname == '/cart') {
+    //trap focus on checkout button
     const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
     checkoutBtn.onfocus = () => {
       document.addEventListener('keydown', (e) => {
-        e.preventDefault();
         checkoutBtn.focus();
+        e.preventDefault();
       })
     }
   }
