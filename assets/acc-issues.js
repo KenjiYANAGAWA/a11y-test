@@ -168,6 +168,7 @@ window.onload = () => {
     newEstimateEl.onclick = () => {
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
+        collapseContent.style.padding = '27px 0';
         newEstimateEl.ariaExpanded = true;
       } else {
         collapseContent.style.display = 'none'
