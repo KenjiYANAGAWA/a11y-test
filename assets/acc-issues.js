@@ -157,12 +157,10 @@ window.onload = () => {
 
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
-    const newEstimateEl = document.createElement('div');
-    newEstimateEl.attributes = estimateShippingEl.attributes;
-    newEstimateEl.ariaLabel = 'Estimate Shipping';
-    // newEstimateEl.removeAttribute('aria-collap')
-    newEstimateEl.innerHTML = estimateShippingEl.innerHTML;
-    estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl)
+    estimateShippingEl.removeAttribute('aria-expanded');
+    estimateShippingEl.ariaLabel = 'Estimate Shipping'
+
+    // const focusableEl = estimateShippingEl.querySelectorAll('[focusable]');
 
   }
 }
