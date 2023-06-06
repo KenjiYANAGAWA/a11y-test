@@ -210,7 +210,8 @@ window.onload = () => {
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
     iframe.setAttribute('allowfullscreen', '');
 
-    iframeContainer.innerHTML = iframe;
+    iframeContainer.innerHTML = '';
+    iframeContainer.append(iframe);
 
   }
 }
