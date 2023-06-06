@@ -222,9 +222,11 @@ window.onload = () => {
 
     const iframe = document.querySelector('iframe');
     iframe.onload = () => {
+      console.log('loaded');
       setTimeout(() => {
+        console.log('clicked');
         iframe.click();
-      }, 1000);
+      }, 2000);
     }
   }
 }
