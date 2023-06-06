@@ -236,7 +236,9 @@ window.onload = () => {
   } else if (location.pathname == '/account/addresses') {
     const oldBtn = document.querySelector('button[aria-controls="customer-address-new"]');
     const newBtn = document.createElement('div');
+    newBtn.setAttribute('class', 'button button--xl');
+    newBtn.setAttribute('is', 'custom-button');
     newBtn.innerHTML = oldBtn.innerHTML;
-    // oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+    oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   }
 }
