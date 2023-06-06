@@ -105,6 +105,21 @@
         "input_text_color": ""
       }
     },
+    "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb": {
+      "type": "custom-html",
+      "custom_css": [
+        "iframe {height: 600px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "html": "<iframe width=\"100%\" height=\"auto\" src=\"https:\/\/www.youtube.com\/embed\/uo_8BX-iihE?controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"><\/iframe>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -154,27 +169,12 @@
         "review_button_background": "#000000",
         "review_button_text_color": "#ffffff"
       }
-    },
-    "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb": {
-      "type": "custom-html",
-      "custom_css": [
-        "iframe {height: 600px;}"
-      ],
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": true,
-        "remove_horizontal_spacing": true,
-        "html": "<iframe width=\"100%\" height=\"auto\" src=\"https:\/\/www.youtube.com\/embed\/uo_8BX-iihE?controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"><\/iframe>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
     "main",
+    "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb",
     "related-products",
-    "168440622130ba54c9",
-    "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb"
+    "168440622130ba54c9"
   ]
 }
