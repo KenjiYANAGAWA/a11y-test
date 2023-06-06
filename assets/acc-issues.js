@@ -215,12 +215,12 @@ window.onload = () => {
       iframe.setAttribute('height', '100%');
       iframe.setAttribute('width', '100%');
       iframe.classList.add('video');
-
+      iframeInner.innerHTML = '';
       iframeInner.append(iframe);
     }
 
     setTimeout(() => {
       iframeInner.click();
-    }, 1000);
+    }, 2000);
   }
 }
