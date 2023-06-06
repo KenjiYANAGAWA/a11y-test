@@ -202,10 +202,14 @@ window.onload = () => {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
 
-    const videoIframe = document.querySelector('iframe');
-    setTimeout(() => {
-      console.log('click');
-      videoIframe.click(videoIframe.offsetWidth/2, videoIframe.offsetHeight/2);
-    }, 500);
+    const iframeContainer = document.querySelector('iframe').parentElement;
+
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+
+    iframeContainer.innerHTML = iframe;
+
   }
 }
