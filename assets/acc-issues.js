@@ -221,6 +221,6 @@ window.onload = () => {
 
     setTimeout(() => {
       iframeInner.click();
-    }, 500);
+    }, 1000);
   }
 }
