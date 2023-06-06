@@ -227,17 +227,6 @@ window.onload = () => {
     iframe.onload = () => {
       console.log('clicked');
       iframe.click();
-      setTimeout(() => {
-        console.log('clicked');
-        const iframe = document.querySelector('iframe');
-        iframe.click();
-        setTimeout(() => {
-          const iframe = document.querySelector('iframe');
-          console.log('clicked');
-          iframe.click();
-        }, 2000);
-      }, 6000);
-      return false;
     }
 
   }
