@@ -202,23 +202,25 @@ window.onload = () => {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
 
-    const iframeContainer = document.querySelector('iframe').parentElement;
+    const iframeInner = document.querySelector('iframe-inner');
+    const iframeWrapper = iframeInner.parentElement;
 
-    iframeContainer.onclick = () => {
-      iframeContainer.classList.add('active')
+    iframeInner.onclick = () => {
+      iframeWrapper.classList.add('active')
       const iframe = document.createElement('iframe');
       iframe.setAttribute('frameborder', '0');
       iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
       iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
       iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('height', '100%');
+      iframe.setAttribute('width', '100%');
 
-      iframeContainer.innerHTML = '';
-      iframeContainer.append(iframe);
+      iframeInner.innerHTML = '';
+      iframeInner.append(iframe);
     }
 
     setTimeout(() => {
-      iframeContainer.click();
-      iframeContainer.classList.remove('active')
+      iframeInner.click();
     }, 500);
   }
 }
