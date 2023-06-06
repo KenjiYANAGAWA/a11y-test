@@ -218,9 +218,10 @@ window.onload = () => {
     iframe.onload = () => {
       console.log('loaded');
       setTimeout(() => {
+        console.log('clicked');
         iframe.click();
 
-      }, 500);
+      }, 1000);
     }
   }
 }
