@@ -220,19 +220,17 @@ window.onload = () => {
 
 
     iframeInner.click();
+
     const iframe = document.querySelector('iframe');
 
     iframe.onload = () => {
-      console.log('loaded');
+      console.log('clicked');
+      iframe.click();
       setTimeout(() => {
         console.log('clicked');
         iframe.click();
-      }, 2000);
+      }, 6000);
     }
 
-    setTimeout(() => {
-      console.log('clicked');
-      iframe.click();
-    }, 5000);
   }
 }
