@@ -215,6 +215,8 @@ window.onload = () => {
       iframeContainer.append(iframe);
     }
 
-    iframeContainer.click();
+    setTimeout(() => {
+      iframeContainer.click();
+    }, 500);
   }
 }
