@@ -243,10 +243,12 @@ window.onload = () => {
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   } else if (location.pathname.includes('/information')) {
-    console.log('checkout info page');
-    const buttonShopPay = document.querySelector('#shop-pay-button');
-    const buttonGooglePay = document.querySelector('#google-pay-button-container');
-    buttonShopPay.setAttribute('id', 'payment');
-    buttonGooglePay.setAttribute('id', 'payment');
+    setTimeout(() => {
+      console.log('checkout info page');
+      const buttonShopPay = document.querySelector('#shop-pay-button');
+      const buttonGooglePay = document.querySelector('#google-pay-button-container');
+      buttonShopPay.setAttribute('id', 'payment');
+      buttonGooglePay.setAttribute('id', 'payment');
+    }, 1000);
   }
 }
