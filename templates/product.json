@@ -117,7 +117,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"iframe-wrapper\">\n<div class=\"iframe-inner\">\n<\/div>\n<\/div>",
+        "html": "<div class=\"iframe-wrapper\">\n<div class=\"iframe-inner\">\n<div id=\"player\"><\/div>\n<\/div>\n<\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
