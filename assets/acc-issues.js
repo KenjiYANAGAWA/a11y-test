@@ -204,6 +204,7 @@ window.onload = () => {
 
     const videoIframe = document.querySelector('iframe');
     setInterval(() => {
+      console.log('click');
       videoIframe.click(videoIframe.offsetWidth/2, videoIframe.offsetHeight/2);
     }, 500);
   }
