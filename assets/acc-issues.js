@@ -203,7 +203,7 @@ window.onload = () => {
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
 
     const iframeInner = document.querySelector('iframe-inner');
-    const iframeWrapper = iframeInner.parentElement;
+    const iframeWrapper = document.querySelector('iframe-inner').parentElement;
 
     iframeInner.onclick = () => {
       iframeWrapper.classList.add('active')
