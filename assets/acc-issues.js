@@ -218,12 +218,12 @@ window.onload = () => {
       iframeInner.append(iframe);
     }
 
+    iframeInner.click();
+
     setTimeout(() => {
       const iframe = document.querySelector('iframe');
-      iframeInner.click();
       iframe.click();
       setTimeout(() => {
-        iframeInner.click();
         iframe.click();
       }, 3000);
     }, 3000);
