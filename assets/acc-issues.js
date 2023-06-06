@@ -242,7 +242,7 @@ window.onload = () => {
     newBtn.setAttribute('is', 'custom-button');
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
-  } else if (location.pathname.includes('/checkouts/') && location.pathname.includes('/information')) {
+  } else if (location.pathname.includes('/information')) {
     console.log('checkout info page');
     const buttonShopPay = document.querySelector('#shop-pay-button');
     const buttonGooglePay = document.querySelector('#google-pay-button-container');
