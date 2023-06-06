@@ -108,13 +108,15 @@
     "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb": {
       "type": "custom-html",
       "custom_css": [
-        "iframe {height: 600px;}"
+        "iframe {height: 600px;}",
+        ".iframe-inner {position: absolute; height: auto;}",
+        ".iframe-inner iframe {position: absolute; height: 100%; width: 100%;}"
       ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"iframe-inner\"><iframe width=\"100%\" height=\"auto\" src=\"https:\/\/www.youtube.com\/embed\/uo_8BX-iihE?controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"><\/iframe><\/div>",
+        "html": "<div class=\"iframe-inner\"><\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
