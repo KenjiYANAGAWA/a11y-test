@@ -219,10 +219,10 @@ window.onload = () => {
     }
 
 
+    iframeInner.click();
     const iframe = document.querySelector('iframe');
 
     iframe.onload = () => {
-      iframeInner.click();
       console.log('loaded');
       setTimeout(() => {
         console.log('clicked');
