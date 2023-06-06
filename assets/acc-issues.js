@@ -205,6 +205,7 @@ window.onload = () => {
     const iframeContainer = document.querySelector('iframe').parentElement;
 
     iframeContainer.onclick = () => {
+      iframeContainer.classList.add('active')
       const iframe = document.createElement('iframe');
       iframe.setAttribute('frameborder', '0');
       iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0")
@@ -217,6 +218,7 @@ window.onload = () => {
 
     setTimeout(() => {
       iframeContainer.click();
+      iframeContainer.classList.remove('active')
     }, 500);
   }
 }
