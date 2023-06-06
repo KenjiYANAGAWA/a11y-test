@@ -109,14 +109,17 @@
       "type": "custom-html",
       "custom_css": [
         "iframe {height: 600px;}",
+        ".iframe-wrapper {display: none;}",
         ".iframe-inner {position: absolute; height: auto;}",
-        ".iframe-inner iframe {position: absolute; height: 100%; width: 100%;}"
+        ".iframe-inner iframe {position: absolute; height: 100%; width: 100%;}",
+        ".iframe-wrapper,.iframe-inner,.iframe-inner iframe {top: 0; right: 0; bottom: 0; left: 0; margin: auto;}",
+        ".iframe-wrapper.active {display: block; position: fixed; opacity: 1; z-index: 99;}"
       ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"iframe-inner\"><\/div>",
+        "html": "<div class=\"iframe-wrapper\">\n<div class=\"iframe-inner\">\na\n<\/div>\n<\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
