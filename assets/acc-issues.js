@@ -233,5 +233,10 @@ window.onload = () => {
     const styleEl = document.createElement('style');
     styleEl.innerHTML = `a[aria-controls="search-drawer"], .footer__block--menu { display: none !important;}`
     document.body.append(styleEl);
+  } else if (location.pathname == '/account/addresses') {
+    const oldBtn = document.querySelector('button[aria-controls="customer-address-new"]');
+    const newBtn = document.createElement('div');
+    newBtn.innerHTML = oldBtn.innerHTML;
+    oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   }
 }
