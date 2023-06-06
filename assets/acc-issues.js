@@ -216,6 +216,7 @@ window.onload = () => {
     iframeInner.append(iframe);
 
     iframe.onload = () => {
+      console.log('loaded');
       setTimeout(() => {
         iframe.click();
 
