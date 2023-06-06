@@ -228,7 +228,7 @@ window.onload = () => {
     // removing search button
     setTimeout(() => {
       document.querySelector('a[href="/search"]').remove();
-    }, 300);
+    }, 1000);
     // removing footer site map
     document.querySelector('.footer__block--menu').remove();
   }
