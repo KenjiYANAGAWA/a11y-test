@@ -208,7 +208,7 @@ window.onload = () => {
       iframeContainer.classList.add('active')
       const iframe = document.createElement('iframe');
       iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0")
+      iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
       iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
       iframe.setAttribute('allowfullscreen', '');
 
