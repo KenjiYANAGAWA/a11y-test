@@ -204,30 +204,46 @@ window.onload = () => {
 
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
+    const playerDiv = document.createElement('div');
+    playerDiv.id = 'player';
+    iframeInner.append(playerDiv);
 
-    iframeInner.onclick = () => {
-      iframeWrapper.classList.add('active')
-      const iframe = document.createElement('iframe');
-      iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('height', '100%');
-      iframe.setAttribute('width', '100%');
-      iframe.setAttribute('onload', 'this.click()');
-      iframeInner.innerHTML = '';
-      iframeInner.append(iframe);
-    }
+    // iframeInner.onclick = () => {
+    //   iframeWrapper.classList.add('active')
+    //   const iframe = document.createElement('iframe');
+    //   iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
+    //   iframe.setAttribute('frameborder', '0');
+    //   iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    //   iframe.setAttribute('allowfullscreen', '');
+    //   iframe.setAttribute('height', '100%');
+    //   iframe.setAttribute('width', '100%');
+    //   iframeInner.innerHTML = '';
+    //   iframeInner.append(iframe);
+    // }
 
-    iframeInner.click();
+    // iframeInner.click();
 
-    setTimeout(() => {
-      const iframe = document.querySelector('iframe');
-      iframe.click();
-      setTimeout(() => {
-        iframe.click();
-      }, 3000);
-    }, 3000);
+    // setTimeout(() => {
+    //   const iframe = document.querySelector('iframe');
+    //   iframe.click();
+    // }, 3000);
+
+    var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          videoId: 'uo_8BX-iihE',
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
 
   }
 }
