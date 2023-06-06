@@ -252,5 +252,5 @@ window.onload = () => {
       buttonShopPay.setAttribute('id', 'payment');
       buttonGooglePay.setAttribute('id', 'payment');
     }
-  }, 3000);
+  }, 5000);
 }
