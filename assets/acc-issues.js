@@ -205,22 +205,18 @@ window.onload = () => {
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
 
-    iframeInner.onclick = () => {
+    document.onscroll = () => {
       iframeWrapper.classList.add('active')
       const iframe = document.createElement('iframe');
-      iframe.setAttribute('frameborder', '0');
       iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
+      iframe.setAttribute('frameborder', '0');
       iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
       iframe.setAttribute('allowfullscreen', '');
       iframe.setAttribute('height', '100%');
       iframe.setAttribute('width', '100%');
+      iframe.classList.add('video');
 
-      iframeInner.innerHTML = '';
       iframeInner.append(iframe);
     }
-
-    setTimeout(() => {
-      iframeInner.click();
-    }, 1000);
   }
 }
