@@ -205,7 +205,7 @@ window.onload = () => {
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
 
-    document.onscroll = () => {
+    iframeInner.onclick = () => {
       iframeWrapper.classList.add('active')
       const iframe = document.createElement('iframe');
       iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
@@ -218,5 +218,9 @@ window.onload = () => {
 
       iframeInner.append(iframe);
     }
+
+    setTimeout(() => {
+      iframeInner.click();
+    }, 1000);
   }
 }
