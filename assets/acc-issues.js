@@ -210,9 +210,6 @@ window.onload = () => {
 
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
-    const playerDiv = document.createElement('div');
-    playerDiv.id = 'player';
-    iframeInner.append(playerDiv);
 
     // iframeInner.onclick = () => {
     //   iframeWrapper.classList.add('active')
