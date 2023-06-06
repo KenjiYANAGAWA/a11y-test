@@ -2,11 +2,33 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "0002e000-c5ed-4cf9-a4e9-5b1eb88ac543": {
+      "type": "custom-html",
+      "custom_css": [
+        ".grid {display: grid; grid-template-columns: 3fr 2fr; min-height: 100vh;}",
+        ".home-btn {font-size: 1.5em; font-weight: 500;}",
+        ".steps {font-size: .75em;}",
+        ".main-content {border-right: solid 1px rgba(0, 0, 0, 0.2); padding: 3em 4em 1em 4em;}",
+        ".total {background-color: #ebebeb; width: 100%;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "html": "<div class=\"grid\">\n<div class=\"main-content\">\n<div>\n<a class=\"home-btn\" href=\"\/\">Miller &amp; Lowe<\/a>\n<\/div>\n<span class=\"steps\">Cart &gt; Information &gt; Shipping &gt; Payment<\/span>\n<\/div>\n<div class=\"total\"><\/div>\n<\/div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "#1a1a1a"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "0002e000-c5ed-4cf9-a4e9-5b1eb88ac543"
   ]
 }

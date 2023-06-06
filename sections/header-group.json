@@ -29,6 +29,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
