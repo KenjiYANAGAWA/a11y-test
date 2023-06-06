@@ -243,7 +243,10 @@ window.onload = () => {
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   } else if (location.pathname.includes('/checkouts/') && location.pathname.includes('/information/')) {
-    const buttonsWrapper = document.querySelector('#express-checkout-wallets-wrapper');
-    buttonsWrapper.children.forEach(btn=>btn.setAttribute('id', 'payment'));
+    console.log('checkout info page');
+    const buttonShopPay = document.querySelector('#shop-pay-button');
+    const buttonGooglePay = document.querySelector('#google-pay-button-container');
+    buttonShopPay.setAttribute('id', 'payment');
+    buttonGooglePay.setAttribute('id', 'payment');
   }
 }
