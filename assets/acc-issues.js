@@ -226,13 +226,13 @@ window.onload = () => {
 
     iframe.onload = () => {
       console.log('clicked');
+      const iframe = document.querySelector('iframe');
       iframe.click();
       setTimeout(() => {
         console.log('clicked');
         const iframe = document.querySelector('iframe');
         iframe.click();
-      }, 3000);
-      return false;
+      }, 5000);
     }
 
   }
