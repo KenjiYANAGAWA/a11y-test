@@ -231,7 +231,7 @@ window.onload = () => {
     // document.querySelector('.footer__block--menu').style.display = 'none';
 
     const styleEl = document.createElement('style');
-    styleEl.innerHTML = `a[href="/search"], .footer__block--menu { display: none !important;}`
+    styleEl.innerHTML = `a[aria-controls="search-drawer"], .footer__block--menu { display: none !important;}`
     document.body.append(styleEl);
   }
 }
