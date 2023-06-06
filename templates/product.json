@@ -108,7 +108,7 @@
     "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb": {
       "type": "custom-html",
       "custom_css": [
-        "iframe {height: 600px;}",
+        "iframe {height: 60vw;}",
         ".iframe-wrapper {display: none;}",
         ".iframe-wrapper,.iframe-inner,.iframe-inner iframe {top: 0; right: 0; bottom: 0; left: 0; margin: auto;}",
         ".iframe-wrapper.active {display: block;}"
@@ -117,7 +117,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"iframe-wrapper\">\n<div class=\"iframe-inner\">\n<\/div>\n<\/div>",
+        "html": "<div class=\"iframe-wrapper\">\n<div class=\"iframe-inner pointer-events-none\">\n<\/div>\n<\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
