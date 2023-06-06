@@ -242,5 +242,8 @@ window.onload = () => {
     newBtn.setAttribute('is', 'custom-button');
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+  } else if (location.pathname.includes('/checkouts/') && location.pathname.includes('/information/')) {
+    const buttonsWrapper = document.querySelector('#express-checkout-wallets-wrapper');
+    buttonsWrapper.children.forEach(btn=>btn.setAttribute('id', 'payment'));
   }
 }
