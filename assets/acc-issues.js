@@ -214,6 +214,7 @@ window.onload = () => {
       iframe.setAttribute('allowfullscreen', '');
       iframe.setAttribute('height', '100%');
       iframe.setAttribute('width', '100%');
+      iframe.setAttribute('onload', 'this.click()');
       iframeInner.innerHTML = '';
       iframeInner.append(iframe);
     }
