@@ -235,7 +235,8 @@ window.onload = () => {
     document.body.append(styleEl);
   } else if (location.pathname == '/account/addresses') {
     const oldBtn = document.querySelector('button[aria-controls="customer-address-new"]');
-    const newBtn = document.createElement('div');
+    const newBtn = document.createElement('a');
+    newBtn.setAttribute('href','#');
     newBtn.setAttribute('class', 'button button--xl');
     newBtn.setAttribute('is', 'custom-button');
     newBtn.innerHTML = oldBtn.innerHTML;
