@@ -221,17 +221,20 @@ window.onload = () => {
 
     iframeInner.click();
 
-    let iframe = document.querySelector('iframe');
 
-    iframe.onload = () => {
+
+    document.onload = () => {
       console.log('clicked');
-      iframe = document.querySelector('iframe');
+      let iframe = document.querySelector('iframe');
       iframe.click();
       setTimeout(() => {
-        iframe = document.querySelector('iframe');
         console.log('clicked');
         iframe.click();
+        setTimeout(() => {
+          iframe.click();
+        }, 2000);
       }, 6000);
+      return false;
     }
 
   }
