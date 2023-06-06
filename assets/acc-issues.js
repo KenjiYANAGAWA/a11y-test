@@ -231,6 +231,7 @@ window.onload = () => {
         console.log('clicked');
         iframe.click();
         setTimeout(() => {
+          console.log('clicked');
           iframe.click();
         }, 2000);
       }, 6000);
