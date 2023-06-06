@@ -217,11 +217,13 @@ window.onload = () => {
     }
 
     setTimeout(() => {
+      const iframe = document.querySelector('iframe');
       iframeInner.click();
       iframe.click();
     }, 3000);
 
     setTimeout(() => {
+      const iframe = document.querySelector('iframe');
       iframe.click();
     }, 5000);
   }
