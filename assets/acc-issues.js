@@ -224,5 +224,10 @@ window.onload = () => {
 
     const iframe = document.querySelector('iframe');
     iframe.onload = () => iframe.click();
+  } else if (location.pathname == '/products/mw08-brown-ceramic-stainless-steel-case') {
+    // removing search button
+    document.querySelector('a[href="/search"]').remove();
+    // removing footer site map
+    document.querySelector('footer__block--menu').remove();
   }
 }
