@@ -199,54 +199,30 @@ window.onload = () => {
   } else if (location.pathname == '/products/headphone-stand-black' || location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
     document.title = 'product'
   } else if (location.pathname == '/products/mw50-silver-metal-brown-leather') {
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
     const infoSeparatorEl = document.querySelector('.product-info__separator');
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
 
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
 
-    // iframeInner.onclick = () => {
-    //   iframeWrapper.classList.add('active')
-    //   const iframe = document.createElement('iframe');
-    //   iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
-    //   iframe.setAttribute('frameborder', '0');
-    //   iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    //   iframe.setAttribute('allowfullscreen', '');
-    //   iframe.setAttribute('height', '100%');
-    //   iframe.setAttribute('width', '100%');
-    //   iframeInner.innerHTML = '';
-    //   iframeInner.append(iframe);
-    // }
+    iframeInner.onclick = () => {
+      iframeWrapper.classList.add('active')
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', "https://www.youtube.com/embed/uo_8BX-iihE?controls=0&autoplay=1&rel=0")
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('height', '100%');
+      iframe.setAttribute('width', '100%');
+      iframeInner.innerHTML = '';
+      iframeInner.append(iframe);
+    }
 
-    // iframeInner.click();
+    iframeInner.click();
 
-    // setTimeout(() => {
-    //   const iframe = document.querySelector('iframe');
-    //   iframe.click();
-    // }, 3000);
-
-    var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'uo_8BX-iihE',
-          events: {
-            'onReady': onPlayerReady
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
+    const iframe = document.querySelector('iframe');
+    iframe.onload = () => {
+      iframe.click();
+    }
   }
 }
