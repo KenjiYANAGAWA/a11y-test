@@ -61,6 +61,17 @@ window.onload = () => {
     const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div');
     itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
 
+    // adding video with no audio and no transcript
+    const videoEl = `<section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video"><style>
+    #shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
+
+  <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header=""><div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;"><video-media host="youtube" autoplay="" class="pointer-events-none" loaded="" can-play="" playing=""><iframe src="https://www.youtube.com/embed/jNIPrPJKgAc?playsinline=1&amp;autoplay=1&amp;controls=0&amp;mute=1&amp;loop=1&amp;playlist=jNIPrPJKgAc&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" id="widget4" title="MH40: DYNAMIC DIFFERENCES"></iframe>
+        </video-media></div>
+  </div>
+
+  </section>`
+  document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
+
   } else if (location.pathname == '/') {
     // modal handlers
     if (!localStorage.getItem('firstAccess')) {
@@ -244,13 +255,5 @@ window.onload = () => {
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   }
 
-  setTimeout(() => {
-    if (location.pathname.includes('/information')) {
-      console.log('checkout info page');
-      const buttonShopPay = document.querySelector('#shop-pay-button');
-      const buttonGooglePay = document.querySelector('#google-pay-button-container');
-      buttonShopPay.setAttribute('id', 'payment');
-      buttonGooglePay.setAttribute('id', 'payment');
-    }
-  }, 5000);
+  // TO DO: for checkout issues create fake pages
 }
