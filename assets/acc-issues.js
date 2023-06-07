@@ -267,6 +267,9 @@ window.onload = () => {
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   } else if (location.pathname == '/pages/about-us') {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
+    const sectionContainer = document.querySelector('.multi-column__item div:has(.prose)').parentElement.parentElement;
+
+    sectionContainer.style.width = 'max-content';
 
     textContainers.forEach((container) => {
       container.parentElement.style.justifyContent = 'center';
