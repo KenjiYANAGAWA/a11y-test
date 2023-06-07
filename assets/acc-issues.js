@@ -140,6 +140,7 @@ window.onload = () => {
         left: 0;
       }
     }</style>`)
+
     // icon class to break
     const iconSelector = [
       '.icon-picto-box',
