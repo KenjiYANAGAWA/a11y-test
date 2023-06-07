@@ -233,13 +233,20 @@ window.onload = () => {
     iframe.onload = () => iframe.click();
   } else if (location.pathname == '/products/mw08-brown-ceramic-stainless-steel-case') {
     // removing search button
-    // document.querySelector('a[href="/search"]').style.display = 'none';
-    // removing footer site map
-    // document.querySelector('.footer__block--menu').style.display = 'none';
-
     const styleEl = document.createElement('style');
     styleEl.innerHTML = `a[aria-controls="search-drawer"], .footer__block--menu { display: none !important;}`
     document.body.append(styleEl);
+
+    // adding video with no audio and no transcript
+    const videoEl = `<section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video"><style>
+    #shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
+
+  <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header=""><div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;"><video-media host="youtube" autoplay="" class="pointer-events-none" loaded="" can-play="" playing=""><iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;autoplay=1&amp;controls=0&amp;mute=1&amp;loop=1&amp;playlist=jNIPrPJKgAc&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+        </video-media></div>
+  </div>
+
+  </section>`
+  document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
   } else if (location.pathname == '/account/addresses') {
     const oldBtn = document.querySelector('button[aria-controls="customer-address-new"]');
     const newBtn = document.createElement('div');
