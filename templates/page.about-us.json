@@ -29,7 +29,7 @@
         "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-1"
       ],
       "custom_css": [
-        "div:has(iframe) {overflow-y: hidden; height: 300px; width: 100%; position: relative;}",
+        "div:has(iframe) {overflow-y: hidden; height: 30vw; width: 100vw; position: relative;}",
         "iframe {position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 60vw;}"
       ],
       "settings": {
