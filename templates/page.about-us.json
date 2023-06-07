@@ -1,12 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "content_width": "80ch"
-      }
-    },
     "79e4cae2-a56a-41f1-a254-8f3a164536a4": {
       "type": "video",
       "blocks": {
@@ -43,26 +36,11 @@
         "overlay_opacity": 30
       }
     },
-    "a0428e6e-4dd8-46ef-bec7-069aaa7b3773": {
-      "type": "rich-text",
-      "blocks": {
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-2": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-2"
-      ],
+    "main": {
+      "type": "main-page",
+      "disabled": true,
       "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "content_width": "80ch"
       }
     },
     "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da": {
@@ -85,7 +63,7 @@
           "type": "item",
           "settings": {
             "column_size": "2",
-            "title": "SOUND IS A CATALYST AND A POWERFUL CREATIVE ELEMENT, HELPING TO FOCUS, INSPIRE, AND TRANSPORT YOUR MIND.",
+            "title": "SIMPLY PUT, OUR SOUND TOOLS LOOK AS GOOD AS THEY PERFORM.",
             "heading_tag": "h4",
             "content": "<p>Brilliant sound and design motivate everything we do. We have a deep passion for building beautifully crafted, technically sophisticated sound tools. Designed to be modern yet timeless, our headphones, earphones and speakers utilize only the finest materials and are engineered to last, creating the perfect balance of aesthetics, strength, comfort and exceptional sound.<\/p>",
             "link_url": "",
@@ -179,9 +157,9 @@
             "column_size": "2",
             "title": "SIMPLY PUT, OUR SOUND TOOLS LOOK AS GOOD AS THEY PERFORM.",
             "heading_tag": "h4",
-            "content": "<p>Melt down most sets of headphones and you’ll be left with a lump of plastic. But, what if audio products were instead constructed from premium materials like fine leathers, stainless steel, concrete and other high-end finishes? We bring to market an uncompromising approach to elevated design, materials, craftsmanship and performance.<\/p>",
+            "content": "<p>Melt down most sets of headphones and you’ll be left with a lump of plastic. But, what if audio products were instead constructed from premium materials like fine leathers, stainless steel, concrete and other high-end finishes? We bring to market an uncompromising approach to elevated design, materials, craftsmanship and performance.<\/p><p>check out our products:<\/p>",
             "link_url": "",
-            "link_text": "",
+            "link_text": "https:\/\/a11y-test.com\/collections\/all",
             "link_style": "link"
           }
         }
@@ -205,9 +183,8 @@
     }
   },
   "order": [
-    "main",
     "79e4cae2-a56a-41f1-a254-8f3a164536a4",
-    "a0428e6e-4dd8-46ef-bec7-069aaa7b3773",
+    "main",
     "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da",
     "d236da7e-1535-484a-a86a-66867c75c7a6",
     "2b4ccdbc-67be-434c-8d9e-d203399669c2"
