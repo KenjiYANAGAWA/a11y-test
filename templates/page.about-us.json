@@ -114,10 +114,22 @@
     "d236da7e-1535-484a-a86a-66867c75c7a6": {
       "type": "multi-column",
       "blocks": {
+        "29f9e4ab-d7aa-42f0-b773-fadf9636b689": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "THE STORY BEHIND THE BRAND",
+            "heading_tag": "h4",
+            "content": "<p>Founder Jonathan Levine was first drawn to headphones after building a recording studio in his office to support his shared passion with his music-mad son, Robert, an emerging DJ\/music producer. Jonathan, a serial consumer products entrepreneur, envisioned headphones with both premium sound quality and elevated design that his son could use. While touring colleges, they came across a pair of WWII aviator headphones in a museum and could not help but notice how elegant and timeless the headphones looked. In that moment, Jonathan decided he wanted to design and build headphones that in 50 years would also stand the test of time.<\/p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
         "55c66c6a-33a7-4031-9871-fd72d5d0b88d": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/MA770BL_FrontClose_800x800_800x800_338bfd4a-06be-4f9a-959c-3657bdd38d84.jpg",
+            "image": "shopify:\/\/shop_images\/MW60S2_DetailedFeature_Large-3_1_1200x1200_2ba69911-5af1-40c1-83d1-582930d78461.png",
             "column_size": "2",
             "title": "",
             "heading_tag": "h4",
@@ -126,23 +138,11 @@
             "link_text": "",
             "link_style": "link"
           }
-        },
-        "29f9e4ab-d7aa-42f0-b773-fadf9636b689": {
-          "type": "item",
-          "settings": {
-            "column_size": "2",
-            "title": "SOUND IS A CATALYST AND A POWERFUL CREATIVE ELEMENT, HELPING TO FOCUS, INSPIRE, AND TRANSPORT YOUR MIND.",
-            "heading_tag": "h4",
-            "content": "<p>Brilliant sound and design motivate everything we do. We have a deep passion for building beautifully crafted, technically sophisticated sound tools. Designed to be modern yet timeless, our headphones, earphones and speakers utilize only the finest materials and are engineered to last, creating the perfect balance of aesthetics, strength, comfort and exceptional sound.<\/p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
         }
       },
       "block_order": [
-        "55c66c6a-33a7-4031-9871-fd72d5d0b88d",
-        "29f9e4ab-d7aa-42f0-b773-fadf9636b689"
+        "29f9e4ab-d7aa-42f0-b773-fadf9636b689",
+        "55c66c6a-33a7-4031-9871-fd72d5d0b88d"
       ],
       "settings": {
         "full_width": true,
