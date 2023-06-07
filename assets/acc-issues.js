@@ -129,6 +129,7 @@ window.onload = () => {
     body.appendChild(style);
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
+    screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
     screen.orientation.lock();
     screen.lockOrientation('portrait');
     // icon class to break
