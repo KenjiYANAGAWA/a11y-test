@@ -274,7 +274,7 @@ window.onload = () => {
       container.parentElement.style.justifyContent = 'center';
       container.style.width = '100%';
       container.style.overflow = 'hidden';
-      container.firstElementChild.style.width = '645px';
+      container.firstElementChild.style.width = '566px';
     })
   }
 
