@@ -269,9 +269,9 @@ window.onload = () => {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
     textContainers.forEach((container) => {
-      container.style.width = '300px';
+      container.style.width = '33vw';
       container.style.overflow = 'hidden';
-      container.firstElementChild.style.width = '500px';
+      container.firstElementChild.style.width = '645px';
     })
   }
 
