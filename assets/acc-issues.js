@@ -83,22 +83,6 @@ window.onload = () => {
     // change title from home page
     document.title = '50% off';
 
-    // removing titles from payment methods list on footer
-    const elementsToRemove = [
-      '.footer__payment-icons svg title'
-    ];
-
-    elementsToRemove.forEach((selector) => {
-      const elements = document.querySelectorAll(selector);
-      // removing aria-labelledby
-      elements.forEach((el) => {
-        el.parentElement.removeAttribute('aria-labelledby');
-        // adding aria-label to all cards icons
-        el.parentElement.setAttribute('aria-label', 'card');
-        el.remove();
-      });
-    });
-
     // changing social icon colors
     const socialIcons = document.querySelectorAll('.social-media .icon');
     socialIcons.forEach(icon => icon.style.color = lowContrastColor);
@@ -281,6 +265,22 @@ window.onload = () => {
       container.style.overflow = 'hidden';
       container.firstElementChild.style.width = '566px';
     })
+  } else if (location.pathname == '/products/mh40-wireless-ear-pads') {
+    // removing titles from payment methods list on footer
+    const elementsToRemove = [
+      '.footer__payment-icons svg title'
+    ];
+
+    elementsToRemove.forEach((selector) => {
+      const elements = document.querySelectorAll(selector);
+      // removing aria-labelledby
+      elements.forEach((el) => {
+        el.parentElement.removeAttribute('aria-labelledby');
+        // adding aria-label to all cards icons
+        el.parentElement.setAttribute('aria-label', 'card');
+        el.remove();
+      });
+    });
   }
 
   // TO DO: for checkout issues create fake pages
