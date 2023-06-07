@@ -39,11 +39,11 @@ window.onload = () => {
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
     // messing focus from pop up when add to cart;
-    buyBtn.addEventListener('click', () => {
-      console.log('click');
-      document.querySelector('[initial-focus]').removeAttribute('initial-focus');
-      console.log(window.activeElement);
-    });
+    // buyBtn.addEventListener('click', () => {
+    //   console.log('click');
+    //   document.querySelector('[initial-focus]').removeAttribute('initial-focus');
+    //   console.log(window.activeElement);
+    // });
 
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
