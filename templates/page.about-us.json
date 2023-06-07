@@ -156,6 +156,52 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "2b4ccdbc-67be-434c-8d9e-d203399669c2": {
+      "type": "multi-column",
+      "blocks": {
+        "dc869d00-1fbd-4ecd-88cb-d73a95646a31": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MW50S2_Earcup_800x800_800x800_bc341971-0f7b-4d95-8454-a967376d6470.png",
+            "column_size": "2",
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "3e41787a-21bd-4c52-b2b1-0133e7c1d30c": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "SIMPLY PUT, OUR SOUND TOOLS LOOK AS GOOD AS THEY PERFORM.",
+            "heading_tag": "h4",
+            "content": "<p>Melt down most sets of headphones and you’ll be left with a lump of plastic. But, what if audio products were instead constructed from premium materials like fine leathers, stainless steel, concrete and other high-end finishes? We bring to market an uncompromising approach to elevated design, materials, craftsmanship and performance.<\/p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "dc869d00-1fbd-4ecd-88cb-d73a95646a31",
+        "3e41787a-21bd-4c52-b2b1-0133e7c1d30c"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "x-large",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -163,6 +209,7 @@
     "79e4cae2-a56a-41f1-a254-8f3a164536a4",
     "a0428e6e-4dd8-46ef-bec7-069aaa7b3773",
     "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da",
-    "d236da7e-1535-484a-a86a-66867c75c7a6"
+    "d236da7e-1535-484a-a86a-66867c75c7a6",
+    "2b4ccdbc-67be-434c-8d9e-d203399669c2"
   ]
 }
