@@ -267,13 +267,15 @@ window.onload = () => {
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   } else if (location.pathname == '/pages/about-us') {
     console.log('about page');
-    const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
+    setTimeout(() => {
+      const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
-    textContainers.forEach((container) => {
-      container.sytle.width = '300px';
-      container.style.overflow = 'hidden';
-      container.firstElementChild.style.width = '500px';
-    })
+      textContainers.forEach((container) => {
+        container.sytle.width = '300px';
+        container.style.overflow = 'hidden';
+        container.firstElementChild.style.width = '500px';
+      })
+    }, 1000);
   }
 
   // TO DO: for checkout issues create fake pages
