@@ -129,7 +129,7 @@ window.onload = () => {
     body.appendChild(style);
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
-    document.body.insertAdjacentHTML("beforeend", `@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    document.body.insertAdjacentHTML("beforeend", `<style>@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       html {
         transform: rotate(-90deg);
         transform-origin: left top;
@@ -139,7 +139,7 @@ window.onload = () => {
         top: 100%;
         left: 0;
       }
-    }`)
+    }</style>`)
     // icon class to break
     const iconSelector = [
       '.icon-picto-box',
