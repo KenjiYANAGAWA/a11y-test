@@ -269,7 +269,7 @@ window.onload = () => {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
     textContainers.forEach((container) => {
-      const sectionContainer = container.parentElement.parentElement.parent;
+      const sectionContainer = container.parentElement.parentElement.parentElement;
       sectionContainer.style = 'width: fit-content; margin: 0 auto;';
       container.parentElement.style.justifyContent = 'center';
       container.style.width = '100%';
