@@ -286,7 +286,9 @@ window.onload = () => {
     const formInputs = form.querySelectorAll('input.input');
     formInputs.forEach((input)=>{
       input.setAttribute('autocomplete', 'off');
-      input.value = '';
+      setTimeout(() => {
+        input.value = '';
+      }, 300);
     });
   }
 
