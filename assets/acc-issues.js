@@ -265,6 +265,14 @@ window.onload = () => {
     newBtn.setAttribute('is', 'custom-button');
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+  } else if (location.pathname == '/pages/about-us') {
+    const textContainers = document.querySelectorAll('.multi-column__item div:has(p.prose)');
+
+    textContainers.forEach((container) => {
+      container.sytle.width = '300px';
+      container.style.overflow = 'hidden';
+      container.firstElementChild.style.width = '500px';
+    })
   }
 
   // TO DO: for checkout issues create fake pages
