@@ -268,8 +268,10 @@ window.onload = () => {
   } else if (location.pathname == '/pages/about-us') {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
-    const body = document.querySelector('body');
-    body.style.letterSpacing = '0 !important';
+    const styleSpacing = document.createElement('style');
+    styleSpacing.innnerHTML = `*{letter-spacing: 0 !important}`;
+
+    document.body.append(styleSpacing);
 
     textContainers.forEach((container) => {
       const sectionContainer = container.parentElement.parentElement.parentElement;
