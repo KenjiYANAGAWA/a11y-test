@@ -269,7 +269,7 @@ window.onload = () => {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
     const styleSpacing = document.createElement('style');
-    styleSpacing.innnerHTML = `*{letter-spacing: 0 !important}`;
+    styleSpacing.innnerText = `*{letter-spacing: 0 !important}`;
 
     document.body.append(styleSpacing);
 
