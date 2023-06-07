@@ -281,6 +281,10 @@ window.onload = () => {
         el.remove();
       });
     });
+  } else if (location.pathname == '/account/register') {
+    const form = document.querySelector('#create_customer');
+    const formInputs = form.querySelectorAll('input.input');
+    formInputs.forEach(input=>input.setAttribute('autocomplete', 'off'))
   }
 
   // TO DO: for checkout issues create fake pages
