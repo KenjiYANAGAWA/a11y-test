@@ -7,43 +7,40 @@
         "content_width": "80ch"
       }
     },
-    "5dda5638-4670-4f94-bb51-915e08f41cf2": {
-      "type": "slideshow",
+    "79e4cae2-a56a-41f1-a254-8f3a164536a4": {
+      "type": "video",
       "blocks": {
-        "template--18992812622108__5dda5638-4670-4f94-bb51-915e08f41cf2-16844807391ed0f87e-0": {
-          "type": "image",
+        "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-0": {
+          "type": "play",
+          "disabled": true,
           "settings": {
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "Tell your story",
-            "title": "About Us",
-            "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
+          }
+        },
+        "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-1": {
+          "type": "heading",
+          "settings": {
+            "text": "About Us",
+            "heading_tag": "h1"
           }
         }
       },
       "block_order": [
-        "template--18992812622108__5dda5638-4670-4f94-bb51-915e08f41cf2-16844807391ed0f87e-0"
+        "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-0",
+        "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-1"
+      ],
+      "custom_css": [
+        "div:has(iframe) {overflow-y: hidden; height: 300px; width: 100%; position: relative;}",
+        "iframe {position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 60vw;}"
       ],
       "settings": {
         "full_width": true,
-        "allow_transparent_header": true,
-        "image_size": "auto",
-        "controls_type": "dots",
-        "transition_type": "fade_with_text",
-        "autoplay": false,
-        "cycle_speed": 6,
-        "background": "#f2f2f2",
-        "background_gradient": ""
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "external_video_url": "https:\/\/youtu.be\/jNIPrPJKgAc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
       }
     },
     "a0428e6e-4dd8-46ef-bec7-069aaa7b3773": {
@@ -163,7 +160,7 @@
   },
   "order": [
     "main",
-    "5dda5638-4670-4f94-bb51-915e08f41cf2",
+    "79e4cae2-a56a-41f1-a254-8f3a164536a4",
     "a0428e6e-4dd8-46ef-bec7-069aaa7b3773",
     "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da",
     "d236da7e-1535-484a-a86a-66867c75c7a6"
