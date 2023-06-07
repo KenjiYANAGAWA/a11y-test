@@ -105,6 +105,39 @@
         "input_text_color": ""
       }
     },
+    "30e9587e-b6da-453e-a6ad-cd9a9a7c92ce": {
+      "type": "video",
+      "blocks": {
+        "template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce-1686100492ad470971-0": {
+          "type": "play",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce-1686100492ad470971-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Video",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce-1686100492ad470971-0",
+        "template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce-1686100492ad470971-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "autoplay": true,
+        "video_size": "auto",
+        "external_video_url": "https:\/\/youtu.be\/jNIPrPJKgAc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb": {
       "type": "custom-html",
       "custom_css": [
@@ -161,8 +194,8 @@
       ],
       "settings": {
         "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -176,6 +209,7 @@
   },
   "order": [
     "main",
+    "30e9587e-b6da-453e-a6ad-cd9a9a7c92ce",
     "1e7322a5-4cfe-4eaa-bbd0-4242bc181bdb",
     "related-products",
     "168440622130ba54c9"
