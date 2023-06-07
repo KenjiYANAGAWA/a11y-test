@@ -270,7 +270,7 @@ window.onload = () => {
 
     textContainers.forEach((container) => {
       const sectionContainer = container.parentElement.parentElement;
-      sectionContainer.style.width = 'max-content';
+      sectionContainer.style.width = 'min-content';
       container.parentElement.style.justifyContent = 'center';
       container.style.width = '100%';
       container.style.overflow = 'hidden';
