@@ -49,24 +49,14 @@
     "a0428e6e-4dd8-46ef-bec7-069aaa7b3773": {
       "type": "rich-text",
       "blocks": {
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-1": {
-          "type": "heading",
-          "settings": {
-            "text": "The cake is a lie!",
-            "heading_tag": "h1",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
         "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-2": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+            "content": ""
           }
         }
       },
       "block_order": [
-        "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-1",
         "template--18992812622108__a0428e6e-4dd8-46ef-bec7-069aaa7b3773-1684480623444c8f40-2"
       ],
       "settings": {
@@ -77,11 +67,105 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da": {
+      "type": "multi-column",
+      "blocks": {
+        "template--18992812622108__dfef4dc7-9d4c-4cf8-992f-c2d77635a8da-1686105793c9d0994c-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MA770BL_FrontClose_800x800_800x800_338bfd4a-06be-4f9a-959c-3657bdd38d84.jpg",
+            "column_size": "2",
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "template--18992812622108__dfef4dc7-9d4c-4cf8-992f-c2d77635a8da-1686105793c9d0994c-1": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "SOUND IS A CATALYST AND A POWERFUL CREATIVE ELEMENT, HELPING TO FOCUS, INSPIRE, AND TRANSPORT YOUR MIND.",
+            "heading_tag": "h4",
+            "content": "<p>Brilliant sound and design motivate everything we do. We have a deep passion for building beautifully crafted, technically sophisticated sound tools. Designed to be modern yet timeless, our headphones, earphones and speakers utilize only the finest materials and are engineered to last, creating the perfect balance of aesthetics, strength, comfort and exceptional sound.<\/p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "template--18992812622108__dfef4dc7-9d4c-4cf8-992f-c2d77635a8da-1686105793c9d0994c-0",
+        "template--18992812622108__dfef4dc7-9d4c-4cf8-992f-c2d77635a8da-1686105793c9d0994c-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "x-large",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "d236da7e-1535-484a-a86a-66867c75c7a6": {
+      "type": "multi-column",
+      "blocks": {
+        "55c66c6a-33a7-4031-9871-fd72d5d0b88d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MA770BL_FrontClose_800x800_800x800_338bfd4a-06be-4f9a-959c-3657bdd38d84.jpg",
+            "column_size": "2",
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "29f9e4ab-d7aa-42f0-b773-fadf9636b689": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "SOUND IS A CATALYST AND A POWERFUL CREATIVE ELEMENT, HELPING TO FOCUS, INSPIRE, AND TRANSPORT YOUR MIND.",
+            "heading_tag": "h4",
+            "content": "<p>Brilliant sound and design motivate everything we do. We have a deep passion for building beautifully crafted, technically sophisticated sound tools. Designed to be modern yet timeless, our headphones, earphones and speakers utilize only the finest materials and are engineered to last, creating the perfect balance of aesthetics, strength, comfort and exceptional sound.<\/p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "55c66c6a-33a7-4031-9871-fd72d5d0b88d",
+        "29f9e4ab-d7aa-42f0-b773-fadf9636b689"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "x-large",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
     "main",
     "5dda5638-4670-4f94-bb51-915e08f41cf2",
-    "a0428e6e-4dd8-46ef-bec7-069aaa7b3773"
+    "a0428e6e-4dd8-46ef-bec7-069aaa7b3773",
+    "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da",
+    "d236da7e-1535-484a-a86a-66867c75c7a6"
   ]
 }
