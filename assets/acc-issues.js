@@ -269,8 +269,8 @@ window.onload = () => {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
     textContainers.forEach((container) => {
-      const sectionContainer = container.parentElement.parentElement;
-      sectionContainer.style.width = 'min-content';
+      const sectionContainer = container.parentElement.parentElement.parent;
+      sectionContainer.style = 'width: fit-content; margin: 0 auto;';
       container.parentElement.style.justifyContent = 'center';
       container.style.width = '100%';
       container.style.overflow = 'hidden';
