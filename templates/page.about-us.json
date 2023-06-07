@@ -100,7 +100,7 @@
       ],
       "settings": {
         "full_width": true,
-        "stack_on_mobile": true,
+        "stack_on_mobile": false,
         "gap": "x-large",
         "text_alignment": "start",
         "subheading": "",
@@ -146,7 +146,7 @@
       ],
       "settings": {
         "full_width": true,
-        "stack_on_mobile": true,
+        "stack_on_mobile": false,
         "gap": "x-large",
         "text_alignment": "start",
         "subheading": "",
@@ -192,7 +192,7 @@
       ],
       "settings": {
         "full_width": true,
-        "stack_on_mobile": true,
+        "stack_on_mobile": false,
         "gap": "x-large",
         "text_alignment": "start",
         "subheading": "",
