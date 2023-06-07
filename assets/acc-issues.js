@@ -128,7 +128,8 @@ window.onload = () => {
       }`
     body.appendChild(style);
   } else if (location.pathname == '/pages/contact') {
-    console.log('contact-page')
+    // lock orientation to portrait
+    screen.lockOrientation('portrait');
     // icon class to break
     const iconSelector = [
       '.icon-picto-box',
