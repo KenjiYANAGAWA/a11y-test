@@ -268,7 +268,7 @@ window.onload = () => {
   } else if (location.pathname == '/pages/about-us') {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
-    document.body.style.letterSpacing = '0 !important';
+    document.querySelector('main').style.letterSpacing = '0 !important';
 
     textContainers.forEach((container) => {
       const sectionContainer = container.parentElement.parentElement.parentElement;
