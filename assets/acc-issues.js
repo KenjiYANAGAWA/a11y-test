@@ -266,6 +266,7 @@ window.onload = () => {
     newBtn.innerHTML = oldBtn.innerHTML;
     oldBtn.parentNode.replaceChild(newBtn, oldBtn);
   } else if (location.pathname == '/pages/about-us') {
+    console.log('about page');
     const textContainers = document.querySelectorAll('.multi-column__item div:has(p.prose)');
 
     textContainers.forEach((container) => {
