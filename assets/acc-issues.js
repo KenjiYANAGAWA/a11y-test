@@ -270,7 +270,7 @@ window.onload = () => {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
     textContainers.forEach((container) => {
-      console.log(container);
+      console.log(container.style);
       // container.sytle.width = '300px';
       // container.style.overflow = 'hidden';
       // container.firstElementChild.style.width = '500px';
