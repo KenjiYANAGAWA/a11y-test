@@ -299,6 +299,17 @@ window.onload = () => {
       input.setAttribute('autocomplete', 'off');
       if (input.type == 'email') input.removeAttribute('type');
     });
+
+    const errorMsg = form.querySelector('.banner--error');
+    if (errorMsg) {
+      errorMsg.remove();
+      const emailInput = document.querySelector('input[type=email]');
+      const redDot = document.createElement('div');
+      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: red;');
+      emailInput.parentElement.style.position = 'relative';
+      emailInput.parentElement.append(redDot);
+    }
+
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
     document.documentElement.removeAttribute("lang");
   }
