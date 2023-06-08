@@ -152,7 +152,7 @@ window.onload = () => {
           let new_element = old_element.cloneNode(true);
           old_element.parentNode.replaceChild(new_element, old_element);
           document.querySelector('a').focus();
-        }, 300);
+        }, 700);
       })
     })
 
