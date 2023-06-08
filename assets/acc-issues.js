@@ -351,8 +351,10 @@ window.onload = () => {
     navbarItemOne.style.order = 2;
     navbarItemTwo.style.order = 3;
     navbarItemThree.style.order = 1;
-    navbarContainer.replaceChild(navbarItemOne, navbarItemTwo);
-    navbarContainer.replaceChild(navbarItemThree, navbarItemOne);
+    navbarContainer.innerHTML = '';
+    navbarContainer.append(navbarItemThree);
+    navbarContainer.append(navbarItemOne);
+    navbarContainer.append(navbarItemTwo);
 
   }
   // TO DO: for checkout issues create fake pages
