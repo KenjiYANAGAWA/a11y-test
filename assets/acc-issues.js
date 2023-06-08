@@ -372,7 +372,7 @@ window.onload = () => {
 
       @keyframes blink {
         from {opacity: 1;}
-        to {oapcity: 0;}
+        to {opacity: 0;}
       }
     </style>
     `
