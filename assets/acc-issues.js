@@ -345,10 +345,8 @@ window.onload = () => {
     navbarContainer.style.gap = '2em';
 
     const navbarItems = navbarContainer.children;
-    navbarContainer.innerHTML = '';
-    navbarContainer.append(navbarItems[2]);
-    navbarContainer.append(navbarItems[0]);
-    navbarContainer.append(navbarItems[1]);
+    navbarContainer.replaceChild(navbarItems[0], navbarItems[2]);
+    navbarContainer.replaceChild(navbarItems[2], navbarItems[1]);
 
     navbarItems[0].style.order = 2;
     navbarItems[1].style.order = 3;
