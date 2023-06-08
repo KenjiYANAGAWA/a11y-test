@@ -305,6 +305,7 @@ window.onload = () => {
       errorMsg.remove();
       const emailInput = form.querySelector('input[name="customer[email]"]');
       const redDot = document.createElement('div');
+      emailInput.style.background = 'rgb(254 231 231)';
       redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
       emailInput.parentElement.style.position = 'relative';
       emailInput.parentElement.append(redDot);
