@@ -21,34 +21,15 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-function trapFocus(element) {
-  var focusableEls = element.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
-  var firstFocusableEl = focusableEls[0];
-  var lastFocusableEl = focusableEls[focusableEls.length - 1];
-  var KEYCODE_TAB = 9;
-
-  element.addEventListener('keydown', function(e) {
-    var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if ( e.shiftKey ) /* shift + tab */ {
-      if (document.activeElement === firstFocusableEl) {
-        lastFocusableEl.focus();
-          e.preventDefault();
-        }
-      } else /* tab */ {
-      if (document.activeElement === lastFocusableEl) {
-        firstFocusableEl.focus();
-          e.preventDefault();
-        }
-      }
-  });
+function swapDiv(elem) {
+  elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
 }
 
 window.onload = () => {
+  // fixing navbar focus order
+  const headerLogo = document.querySelector('.header__logo');
+  swapDiv(headerLogo);
+
   // removed custom cursor from cart, search and product page
   // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
 
