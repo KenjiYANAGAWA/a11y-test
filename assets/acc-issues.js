@@ -303,7 +303,7 @@ window.onload = () => {
     const errorMsg = form.querySelector('.banner--error');
     if (errorMsg) {
       errorMsg.remove();
-      const emailInput = form.querySelector('input[type=email]');
+      const emailInput = form.querySelector('input[name="customer[email]"]');
       const redDot = document.createElement('div');
       redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rbg(254, 231, 231);');
       emailInput.parentElement.style.position = 'relative';
