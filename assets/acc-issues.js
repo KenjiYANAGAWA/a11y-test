@@ -360,9 +360,8 @@ window.onload = () => {
     const styleEl = `
     <style>
       iframe {
-        opacity: 1;
         animation-name: blink;
-        animation-duration: 1s;
+        animation-duration: .1s;
         animation-iteration-count: infinite;
       }
 
