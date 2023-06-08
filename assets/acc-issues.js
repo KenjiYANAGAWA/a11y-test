@@ -337,6 +337,18 @@ window.onload = () => {
 
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
     document.documentElement.removeAttribute("lang");
+  } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
+    const navbarContainer = document.querySelector('.header__link-list .contents');
+    navbarContainer.style.display = 'grid';
+    navbarContainer.style.gridTemplateColumns = 'auto auto auto';
+    navbarContainer.style.gap = '2em';
+
+    const navbarItems = navbarContainer.children;
+    swapDiv(navbarItems[2]);
+    swapDiv(navbarItems[1]);
+    navbarItems[0].style.order = 2;
+    navbarItems[1].style.order = 3;
+    navbarItems[2].style.order = 1;
   }
   // TO DO: for checkout issues create fake pages
 }
