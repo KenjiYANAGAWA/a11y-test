@@ -11,11 +11,13 @@
       "blocks": {
         "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-0": {
           "type": "play",
+          "disabled": true,
           "settings": {
           }
         },
         "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-1": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "text": "Video",
             "heading_tag": "h1"
