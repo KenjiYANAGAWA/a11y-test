@@ -348,9 +348,9 @@ window.onload = () => {
     const navbarItemOne = navbarItems[0]
     const navbarItemTwo = navbarItems[1]
     const navbarItemThree = navbarItems[2]
-    navbarItemOne.style.order = 2;
-    navbarItemTwo.style.order = 3;
-    navbarItemThree.style.order = 1;
+    navbarItemOne.style.order = 1;
+    navbarItemTwo.style.order = 2;
+    navbarItemThree.style.order = 3;
     navbarContainer.innerHTML = '';
     navbarContainer.append(navbarItemThree);
     navbarContainer.append(navbarItemOne);
