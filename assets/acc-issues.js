@@ -356,6 +356,28 @@ window.onload = () => {
     navbarContainer.append(navbarItemOne);
     navbarContainer.append(navbarItemTwo);
 
+  } else if (location.pathname == '/pages/advertisement') {
+    const styleEl = `
+    <style>
+      iframe {
+        opacity: 1;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+
+      div:has(iframe) {
+        background: white;
+        z-index: 1;
+      }
+
+      @keyframes blink {
+        from {opacity: 1;}
+        to {oapcity: 0;}
+      }
+    </style>
+    `
+    document.body.insertAdjacentHTML('beforeend', styleEl);
   }
   // TO DO: for checkout issues create fake pages
 }
