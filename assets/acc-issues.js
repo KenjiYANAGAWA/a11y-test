@@ -147,12 +147,13 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', ()=>{
-        setTimeout(() => {
-          document.querySelector('a').focus();
-          trapFocus(document);
-        }, 500);
+        document.querySelector('a').focus();
+        trapFocus(document);
+        const cartPopup = document.querySelector(".quick-buy-drawer");
+        cartPopup.removeEventListener('keydown', focusTrap);
       })
     })
+
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
