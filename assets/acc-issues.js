@@ -22,7 +22,7 @@ const convertNumberToStars = (rating) => {
 }
 
 function trapFocus(element) {
-  var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  var focusableEls = element.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
   var firstFocusableEl = focusableEls[0];
   var lastFocusableEl = focusableEls[focusableEls.length - 1];
   var KEYCODE_TAB = 9;
