@@ -37,8 +37,8 @@ window.onload = () => {
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
   // breaking focus color to light blue
-  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue} :focus-visible {
-    outline-color: lightblue}</style>`)
+  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
+    outline-color: lightblue !important}</style>`)
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
