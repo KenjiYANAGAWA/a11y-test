@@ -151,12 +151,6 @@ window.onload = () => {
       })
     })
 
-    document.addEventListener('keyup', (e)=>{
-      if (addToCartBtns.includes(document.activeElement) && e.key == 'Enter') {
-        trapFocus(document);
-      }
-    })
-
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
     document.body.insertAdjacentHTML("beforeend", `<style>@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
