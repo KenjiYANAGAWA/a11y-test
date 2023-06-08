@@ -107,6 +107,7 @@ window.onload = () => {
     // modal handlers
     if (!localStorage.getItem('firstAccess')) {
       document.addEventListener('keyup', closePopup);
+      document.querySelector('.custom-popup').style.display = 'block';
     } else {
       document.querySelector('.custom-popup').parentElement.remove();
     }
