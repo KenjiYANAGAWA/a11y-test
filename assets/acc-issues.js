@@ -36,6 +36,10 @@ window.onload = () => {
   // removing announce bar if not home
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
+  // breaking focus color to light blue
+  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue} :focus-visible {
+    outline-color: lightblue}</style>`)
+
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
     // messing focus from pop up when add to cart;
@@ -298,6 +302,5 @@ window.onload = () => {
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
     document.documentElement.removeAttribute("lang");
   }
-
   // TO DO: for checkout issues create fake pages
 }
