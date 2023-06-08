@@ -147,6 +147,7 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', ()=>{
+        document.querySelector('a').focus();
         trapFocus(document);
       })
     })
