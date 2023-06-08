@@ -2441,7 +2441,7 @@ var QuantityInput = class extends HTMLInputElement {
     super();
     this.addEventListener("input", this._onValueInput);
     this.addEventListener("change", this._onValueChanged);
-    this.addEventListener("keydown", this._onKeyDown);
+    this.addEventListener("keyup", this._onKeyUp);
     this.addEventListener("focus", this.select);
   }
   disconnectedCallback() {
@@ -2469,7 +2469,7 @@ var QuantityInput = class extends HTMLInputElement {
       this.quantity = 1;
     }
   }
-  _onKeyDown(event) {
+  _onKeyUp(event) {
     event.stopPropagation();
     const originalQuantity = this.quantity;
     if (event.key === "ArrowUp") {
