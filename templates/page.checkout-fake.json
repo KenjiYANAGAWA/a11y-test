@@ -15,13 +15,15 @@
         ".steps {font-size: 0.75em;}",
         ".main-content {border-right: solid 1px rgba(0, 0, 0, 0.2); padding: 3em 4em 1em 4em;}",
         ".total {background-color: #ebebeb; width: 100%;}",
-        ".arrow-checkout {width: 0.75em; height: 0.75em; font-size: 0.75em;}"
+        ".arrow-checkout {width: 0.75em; height: 0.75em; font-size: 0.75em;}",
+        ".steps .steps-cart {color: rgb(240, 196, 23);}",
+        ".steps .steps-ship,.steps .steps-pay {color: #707070;}"
       ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"grid\">\n<div class=\"main-content\">\n<div>\n<a class=\"home-btn\" href=\"\/\">Miller &amp; Lowe<\/a>\n<\/div>\n<p class=\"steps\">\n<span>Cart<\/span> \n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \nInformation\n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \n<span>Shipping<\/span>\n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \n<span>Payment<\/span>\n<\/p>\n<div class=\"total\"><\/div>\n<\/div>\n<\/div>",
+        "html": "<div class=\"grid\">\n<div class=\"main-content\">\n<div>\n<a class=\"home-btn\" href=\"\/\">Miller &amp; Lowe<\/a>\n<\/div>\n<p class=\"steps\">\n<a href=\"https:\/\/a11y-test.com\/cart\" class=\"steps-cart\">Cart<\/a> \n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \n<span class=\"steps-info\">Information<\/span>\n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \n<span class=\"steps-ship\">Shipping<\/span>\n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow-checkout\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> \n<span class=\"steps-pay\">Payment<\/span>\n<\/p>\n<div class=\"total\"><\/div>\n<\/div>\n<\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": "#1a1a1a"
