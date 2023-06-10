@@ -161,6 +161,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
           <div class="cart-item-final-price">{{ line_item.final_line_price | money }}</td>
         </div>
       {%- endfor -%}
+      <span class="cart-total-price">{{- cart.total_price | money_with_currency -}}</span>
     </div>
   </body>
 </html>
