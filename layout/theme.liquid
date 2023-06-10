@@ -156,14 +156,32 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       <tbody class="order-summary__body">
         {%- for line_item in cart.items -%}
           <tr>
-            <td>{{ line_item.url }}</td>
+            <td>{{ line_item.image }}</td>
             <td>{{ line_item.product.title }}</td>
 
             <td class="hidden align-center text-center text-subdued sm:table-cell">
               {{ line_item.quantity }}
             </td>
             <td class="hidden align-center text-center text-subdued sm:table-cell">
-              {{ line_item.properties }}
+              {%- unless line_item.properties == blank -%}
+                <ul class="list-disc">
+                  {%- for property in line_item.properties -%}
+                    {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
+
+                    {%- if property.last == blank or first_character_in_key == '_' -%}
+                      {%- continue -%}
+                    {%- endif -%}
+
+                    <li class="text-sm text-subdued">
+                      {%- if property.last contains '/uploads/' -%}
+                        <a href="{{ property.last }}" class="link">{{ property.last | split: '/' | last }}</a>
+                      {%- else -%}
+                        {{ property.first }}: {{ property.last }}
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endunless -%}
             </td>
 
             <td class="hidden align-center text-subdued text-end sm:table-cell">{{ line_item.final_line_price | money }}</td>
