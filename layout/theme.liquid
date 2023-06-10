@@ -156,7 +156,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       <tbody class="order-summary__body">
         {%- for line_item in cart.items -%}
           <tr>
-            <td>{{ line_item.image }}</td>
+            <td>{{- line_item.image | image_url: width: line_item.image.width | image_tag: loading: 'lazy', sizes: '(max-width: 740px) 80px, 96px', widths: '80,96,160,192', class: 'line-item__media rounded-xs' -}}</td>
             <td>{{ line_item.product.title }}</td>
 
             <td class="hidden align-center text-center text-subdued sm:table-cell">
