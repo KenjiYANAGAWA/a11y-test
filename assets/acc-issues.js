@@ -377,6 +377,345 @@ window.onload = () => {
     </style>
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
+  } else if (location.pathname == '/pages/checkout') {
+    // TO DO: for checkout issues create fake pages
+    const styleEl = `
+      <style>
+        .header__wrapper, .footer { display: none !important }
+        .flex-center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+          min-height: 100vh;
+        }
+        .home-btn {
+          font-size: 1.5em;
+          font-weight: 500;
+        }
+        .steps {
+          font-size: 0.75em;
+        }
+        .main-content {
+          border-right: solid 1px rgba(0, 0, 0, 0.2);
+          padding: 3em 4em 1em 4em;
+        }
+        .total {
+          background-color: #ebebeb;
+        }
+        .arrow-checkout {
+          width: 0.75em;
+          height: 0.75em;
+          font-size: 0.75em;
+        }
+        .steps .steps-cart,
+        .to-cart-btn a,
+        .to-cart-btn svg {
+          fill: rgb(240, 196, 23);
+          color: rgb(240, 196, 23);
+        }
+        .steps .steps-ship,
+        .steps .steps-pay,
+        .express-checkout,
+        .express-checkout-title {
+          color: #707070;
+        }
+
+        .express-checkout {
+          text-align: center;
+          font-size: 1.4rem;
+        }
+
+        .gpay-btn {
+          width: 100%;
+          height: 100%;
+          background: black;
+          box-shadow: none;
+          padding: 0;
+        }
+
+        #shop-pay-btn {
+          height: 42px;
+          box-shadow: none;
+          background-color: #592ff4;
+          border: 1px solid transparent;
+          color: white;
+        }
+
+        #shop-pay-btn svg {
+          height: 20px;
+        }
+
+        #express-checkout-container div:has(.gpay-btn),
+        #express-checkout-container div:has(#shop-pay-btn) {
+          margin: 0 auto;
+          width: 100%;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+
+        #express-checkout-container {
+          display: flex;
+          width: 100%;
+          gap: 0.9rem;
+          padding-top: 17px;
+        }
+
+        .express-checkout-title {
+          margin: 0 auto;
+          width: fit-content;
+        }
+
+        .separator-checkout {
+          height: 53px;
+          position: relative;
+          color: #707070;
+        }
+
+        .separator-checkout hr {
+          position: absolute;
+          margin: 0;
+          top: 50%;
+          width: 100%;
+          z-index: -1;
+        }
+
+        .separator-checkout span {
+          padding: 0 1.4rem;
+          background-color: white;
+        }
+
+        .contact-checkout {
+          margin-bottom: 27px;
+        }
+
+        .contact-checkout div:has(input) {
+          display: flex;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+          font-weight: 500;
+        }
+
+        .contact-checkout span,
+        .contact-checkout a,
+        h2 {
+          margin: 0 0 .5em 0;
+        }
+
+        .contact-checkout span,
+        .contact-checkout a {
+          display: block;
+        }
+
+        .contact-checkout a {
+          text-decoration: underline;
+          color: rgb(240, 196, 23);
+          font-size: .9rem;
+        }
+
+        .shipping-checkout {
+          display: grid;
+          gap: .9rem;
+        }
+
+        .checkout-input-container {
+          position: relative;
+        }
+
+        .checkout-input-label {
+          position: absolute;
+          top: 7px;
+          left: 10px;
+          font-size: 0.8em;
+          color: #707070;
+          z-index: 1;
+        }
+
+        .checkout-input-select,
+        .checkout-input-text {
+          padding: 27px 10px 7px;
+          width: 100%;
+          border: solid 1px #dedede;
+          background: transparent;
+          border-radius: 5px;
+          margin: 0;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          outline-color: transparent;
+          transition: .3s;
+        }
+
+        .checkout-input-text-compliment {
+          padding: 17px 14px;
+          width: 100%;
+          border: solid 1px #dedede;
+          background: transparent;
+          border-radius: 5px;
+          margin: 0;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          outline-color: transparent;
+          transition: .3s;
+        }
+
+        .checkout-input-select-container,
+        .checkout-input-text-container {
+          position: relative;
+        }
+
+        .checkout-input-select-container svg,
+        .checkout-input-text-container svg {
+          position: absolute;
+          height: 1em;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0.8em;
+          z-index: -1;
+          fill: #707070;
+        }
+
+        .checkout-input-text:focus,
+        .checkout-input-text-compliment:focus,
+        .checkout-input-select:focus {
+          outline-color: rgb(240, 196, 23);
+          transition: .3s;
+        }
+
+        .checkout-input-inline-2 {
+          display: grid;
+          gap: 0.9rem;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .checkout-input-inline-3 {
+          display: grid;
+          gap: 0.9rem;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .checkout-info {
+          display: flex;
+          align-items: center;
+          gap: .7em;
+        }
+
+        .checkout-info span {
+          padding-bottom: .1em;
+        }
+
+        .checkout-bottom-btns-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 26px;
+          height: 63px;
+        }
+
+        .to-cart-btn, .to-shipping-btn {
+          width: fit-content;
+        }
+
+        .to-shipping-btn {
+          padding: 0 20px;
+          height: 100%;
+          color: white;
+          background-color: black;
+          border-radius: 5px;
+        }
+
+        .to-cart-btn svg {
+          font-size: .7em;
+          margin-right: 0.7em;
+        }
+
+        .total {
+          padding: 67px 76.8px 21px 44px;
+        }
+
+        .price-summary-table-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: .9em;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        .price-summary-table-row .header {
+          font-weight: 400;
+        }
+
+        .price-summary-table-row:has(.header-total) {
+          font-size: 1em;
+          font-weight: 600;
+        }
+
+        .price-summary-table-row abbr {
+          font-size: .7em;
+          font-weight: 400;
+        }
+
+        .items-summary-row {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .items-summary-row:has(div[role=columnheader]),
+        .item-quantity, .total h3 {
+          height: 0;
+          width: 0;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .item-description {
+          font-weight: 500;
+          font-size: .9em;
+          padding-left: .9em;
+          flex-grow: 1;
+        }
+
+        .item-summary-image-wrapper {
+          position: relative;
+          background: white;
+          border: solid 1px #dedede;
+          border-radius: 10px;
+          height: 64px;
+          width: 64px;
+        }
+
+        .item-summary-counter {
+          position: absolute;
+          top: -10px;
+          right: -7px;
+          border-radius: 40px;
+          background: #707070;
+          height: 20px;
+          width: 20px;
+        }
+
+        .item-summary-counter p {
+          padding-right: 1px;
+          margin: 0;
+          color: white;
+          font-size: 0.8em;
+        }
+
+      </style>
+    `
+    document.body.insertAdjacentHTML('beforeend', styleEl);
+
   }
-  // TO DO: for checkout issues create fake pages
+
 }
