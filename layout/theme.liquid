@@ -151,5 +151,41 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+
+    <table class="order-summary" style="display:none">
+      <thead class="order-summary__header">
+        <tr>
+          <th>{{ 'customer.order.product' | t }}</th>
+          <th class="w-0">{{ 'customer.order.quantity' | t }}</th>
+          <th class="text-end">{{ 'customer.order.total' | t }}</th>
+        </tr>
+      </thead>
+
+      <tbody class="order-summary__body">
+        {%- for line_item in cart.items -%}
+          {%- assign line_max_quantity = '' -%}
+
+          {%- if line_item.variant.inventory_management != blank and line_item.variant.inventory_policy == 'deny' -%}
+            {%- assign line_max_quantity = line_item.variant.inventory_quantity -%}
+          {%- endif -%}
+
+          <tr>
+            <td>{%- render 'line-item', line_item: line_item -%}</td>
+
+            <td class="hidden align-center text-center text-subdued sm:table-cell">
+              <line-item-quantity class="v-stack justify-center gap-2">
+                <input class="quantity-input" type="text" is="quantity-input" inputmode="numeric" {% if line_max_quantity != blank %}max="{{ line_max_quantity }}"{% endif %} data-line-key="{{ line_item.key }}" aria-label="{{ 'cart.order.change_quantity' | t | escape }}" value="{{ line_item.quantity }}">
+
+                <span class="text-xs">
+                  <a href="{{ line_item.url_to_remove }}" class="link">{{ 'cart.order.remove' | t }}</a>
+                </span>
+              </line-item-quantity>
+            </td>
+
+            <td class="hidden align-center text-subdued text-end sm:table-cell">{{ line_item.final_line_price | money }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
   </body>
 </html>
