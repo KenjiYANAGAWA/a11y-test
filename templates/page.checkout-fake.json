@@ -12,7 +12,7 @@
       "custom_css": [
         ".grid {display: grid; grid-template-columns: 3fr 2fr; min-height: 100vh;}",
         ".home-btn {font-size: 1.5em; font-weight: 500;}",
-        ".steps {font-size: .75em;}",
+        ".steps, .arrow {font-size: 0.75em;}",
         ".main-content {border-right: solid 1px rgba(0, 0, 0, 0.2); padding: 3em 4em 1em 4em;}",
         ".total {background-color: #ebebeb; width: 100%;}"
       ],
@@ -20,7 +20,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "html": "<div class=\"grid\">\n<div class=\"main-content\">\n<div>\n<a class=\"home-btn\" href=\"\/\">Miller &amp; Lowe<\/a>\n<\/div>\n<span class=\"steps\">Cart &gt; Information &gt; Shipping &gt; Payment<\/span>\n<\/div>\n<div class=\"total\"><\/div>\n<\/div>",
+        "html": "<div class=\"grid\">\n<div class=\"main-content\">\n<div>\n<a class=\"home-btn\" href=\"\/\">Miller &amp; Lowe<\/a>\n<\/div>\n<p class=\"steps\">\nCart \n<span><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 14 14\" focusable=\"false\" aria-hidden=\"true\" class=\"arrow\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.6 2.1 4.652 4.652a.35.35 0 0 1 0 .495L5.6 11.9\"><\/path><\/svg><\/span> Information &gt; Shipping &gt; Payment\n<\/p>\n<div class=\"total\"><\/div>\n<\/div>\n<\/div>",
         "background": "",
         "background_gradient": "",
         "text_color": "#1a1a1a"
