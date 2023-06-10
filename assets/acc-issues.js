@@ -653,7 +653,7 @@ window.onload = () => {
           margin-bottom: 10px;
         }
 
-        .price-summary-table-row .header {
+        .price-summary-table-row .price-summary-header {
           font-weight: 400;
         }
 
