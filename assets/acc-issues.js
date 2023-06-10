@@ -474,6 +474,7 @@ window.onload = () => {
           height: 53px;
           position: relative;
           color: #707070;
+          mix-blend-mode: multiply;
         }
 
         .separator-checkout hr {
@@ -481,12 +482,12 @@ window.onload = () => {
           margin: 0;
           top: 50%;
           width: 100%;
-          z-index: -1;
         }
 
         .separator-checkout span {
           padding: 0 1.4rem;
           background-color: white;
+          z-index: 1;
         }
 
         .contact-checkout {
@@ -706,7 +707,6 @@ window.onload = () => {
         }
 
         .item-summary-counter p {
-          padding-right: 1px;
           margin: 0;
           color: white;
           font-size: 0.8em;
