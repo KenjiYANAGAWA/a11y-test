@@ -650,7 +650,7 @@ window.onload = () => {
           justify-content: space-between;
           font-size: .9em;
           font-weight: 600;
-          margin-bottom: 10px;
+          margin-top: 10px;
         }
 
         .price-summary-table-row .price-summary-header {
