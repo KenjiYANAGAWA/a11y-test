@@ -152,42 +152,15 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       {%- endif -%}
     </main>
 
-    <table class="order-summary" style="display:none">
-      <tbody class="order-summary__body">
-        {%- for line_item in cart.items -%}
-          <tr>
-            <td>{{- line_item.image | image_url: width: line_item.image.width | image_tag: loading: 'lazy', sizes: '(max-width: 740px) 80px, 96px', widths: '80,96,160,192', class: 'line-item__media rounded-xs' -}}</td>
-            <td>{{ line_item.product.title }}</td>
-
-            <td class="hidden align-center text-center text-subdued sm:table-cell">
-              {{ line_item.quantity }}
-            </td>
-            <td class="hidden align-center text-center text-subdued sm:table-cell">
-              {%- unless line_item.properties == blank -%}
-                <ul class="list-disc">
-                  {%- for property in line_item.properties -%}
-                    {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
-
-                    {%- if property.last == blank or first_character_in_key == '_' -%}
-                      {%- continue -%}
-                    {%- endif -%}
-
-                    <li class="text-sm text-subdued">
-                      {%- if property.last contains '/uploads/' -%}
-                        <a href="{{ property.last }}" class="link">{{ property.last | split: '/' | last }}</a>
-                      {%- else -%}
-                        {{ property.first }}: {{ property.last }}
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              {%- endunless -%}
-            </td>
-
-            <td class="hidden align-center text-subdued text-end sm:table-cell">{{ line_item.final_line_price | money }}</td>
-          </tr>
-        {%- endfor -%}
-      </tbody>
-    </table>
+    <div class="cart-items" style="display:none">
+      {%- for line_item in cart.items -%}
+        <div class="cart-item">
+          <div class="cart-item-img">{{- line_item.image | image_url: width: line_item.image.width | image_tag: loading: 'lazy', sizes: '(max-width: 740px) 80px, 96px', widths: '80,96,160,192', class: 'line-item__media rounded-xs' -}}</div>
+          <div class="cart-item-title">{{ line_item.product.title }}</div>
+          <div class="cart-item-quantity">{{ line_item.quantity }}</div>
+          <div class="cart-item-final-price">{{ line_item.final_line_price | money }}</td>
+        </div>
+      {%- endfor -%}
+    </div>
   </body>
 </html>
