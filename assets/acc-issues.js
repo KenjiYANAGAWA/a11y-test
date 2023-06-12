@@ -815,11 +815,8 @@ window.onload = () => {
     const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
     const values = addressArray[0];
-    console.log(values);
 
     inputs.forEach((input) => {
-      console.log(input)
-
       if (input.id == 'Select1') {
         input.innerHTML = `<option value="0">${values.country}</option>`
       } else if (input.id == 'first-name') {
@@ -831,6 +828,7 @@ window.onload = () => {
       } else if (input.id == 'Select2') {
         input.value = values.province
       } else if (input.id == 'zip') {
+        console.log(values.zip)
         input.value == values.zip
       }
     })
