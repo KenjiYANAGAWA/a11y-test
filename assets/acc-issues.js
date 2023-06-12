@@ -783,6 +783,9 @@ window.onload = () => {
     document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
+    // update address
+
+
   }
 
 }
