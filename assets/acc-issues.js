@@ -830,7 +830,7 @@ window.onload = () => {
         input.value == values.street
       } else if (label == 'State') {
         // const selectedOpt = options.find(el => el.innerText == values.province);
-        input.value = input.querySelector(`option[innerText=${values.province}]`);
+        input.value = input.querySelector(`option[innerText=${values.province}]`).value;
       } else if (label == 'ZIP Code') {
         input.value == values.zip
       }
