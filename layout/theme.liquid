@@ -163,7 +163,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         <p>
           <span class="address-country">{{ address.country }}</span>
           <span class="address-province">{{ address.province }}</span>
-          <span class="address-province-code">{{- {province: address.province} | format_address -}}</span>
+          <span class="address-province-code">{{- address | format_address -}}</span>
           <span class="address-zip">{{ address.zip }}</span>
           <span class="address-name">{{ address.name }}</span>
           <span class="address-street">{{ address.address1 }}</span>
