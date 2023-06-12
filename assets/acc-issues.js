@@ -827,7 +827,7 @@ window.onload = () => {
       } else if (input.id == 'address') {
         input.value = values.street
       } else if (input.id == 'Select2') {
-        input.value = input.querySelector(`option[innerHTML=${values.province}]`).value
+        input.value = values.provinceCode
       } else if (input.id == 'zip') {
         console.log(values.zip)
         input.value = values.zip
