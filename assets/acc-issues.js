@@ -1183,6 +1183,8 @@ window.onload = () => {
         fieldset {
           border: none;
           outline: none;
+          margin: 0;
+          padding: 0;
         }
 
         fieldset :first-child {
@@ -1272,6 +1274,7 @@ window.onload = () => {
           border: none;
           border-bottom: solid 1px #dedede;
           width: 100%;
+          margin: revert;
         }
 
         section[aria-label=Review] a {
@@ -1280,6 +1283,10 @@ window.onload = () => {
           font-size: .9rem;
         }
 
+        div:has(section[aria-label=Review]) {
+          display: grid;
+          gap: 32px;
+        }
 
       </style>
     `
