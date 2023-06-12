@@ -716,7 +716,6 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
 
-  } else if (pathname.location == '/pages/checkout') {
     console.log('checkout page');
     //items to add to cart
     const cartItemsContainer = document.querySelectorAll('.cart-items .cart-item');
