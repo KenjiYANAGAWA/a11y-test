@@ -788,12 +788,12 @@ window.onload = () => {
     const addresses = document.querySelectorAll('.adress p');
     addresses.forEach((address) => {
       const addressItem = {};
-      addressItem['street'] = address.querySelector('address-street');
-      addressItem['name'] = address.querySelector('address-name');
-      addressItem['country'] = address.querySelector('address-country');
-      addressItem['zip'] = address.querySelector('address-zip');
-      addressItem['province'] = address.querySelector('address-province');
-      addressItem['company'] = address.querySelector('address-company');
+      addressItem['street'] = address.querySelector('address-street').innerText;
+      addressItem['name'] = address.querySelector('address-name').innerText;
+      addressItem['country'] = address.querySelector('address-country').innerText;
+      addressItem['zip'] = address.querySelector('address-zip').innerText;
+      addressItem['province'] = address.querySelector('address-province').innerText;
+      addressItem['company'] = address.querySelector('address-company').innerText;
       addressArray.push(addressItem);
     });
 
