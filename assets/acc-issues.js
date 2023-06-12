@@ -584,7 +584,7 @@ window.onload = () => {
           top: 50%;
           transform: translateY(-50%);
           right: 0.8em;
-          z-index: -1;
+          z-index: 0;
           fill: #707070;
         }
 
@@ -783,12 +783,30 @@ window.onload = () => {
     document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
+    const addressArray = []
     // update address
     const addresses = document.querySelectorAll('.adress p');
-    // addresses.forEach((adress) => {
+    addresses.forEach((address) => {
+      const addressItem = {};
+      addressItem['street'] = address.querySelector('address-street');
+      addressItem['name'] = address.querySelector('address-name');
+      addressItem['country'] = address.querySelector('address-country');
+      addressItem['zip'] = address.querySelector('address-zip');
+      addressItem['province'] = address.querySelector('address-province');
+      addressItem['company'] = address.querySelector('address-company');
+      addressArray.push(addressItem);
+    });
 
-    // })
+    const savedAddressInput = document.querySelector('.shipping-checkout select');
+    let index = 0;
+    savedAddressInput.innerHTML = addressArray.map((address) => {
+      const addressLine =  `<option value="${index}">${address.street} ${address.province} ${address.zip} ${address.country} (${address.name} ${address.company})</option>`;
+      index ++;
+      return addressLine;
+    }).join('\n');
 
+    // update user contact
+    const info = document.querySelectorAll('.info span');
+    document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
   }
-
 }

@@ -160,11 +160,13 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
 
       <div class="adress">
       {%- for address in customer.addresses -%}
-        <span>{{ address.country }}</span>
-        <span>{{ address.province }}</span>
-        <span>{{ address.zip }}</span>
-        <span>{{ address.name }}</span>
-        <span>{{ address.street }}</span>
+        <p>
+          <span class="adress-country">{{ address.country }}</span>
+          <span class="adress-province">{{ address.province }}</span>
+          <span class="adress-zip">{{ address.zip }}</span>
+          <span class="adress-name">{{ address.name }}</span>
+          <span class="adress-street">{{ address.street }}</span>
+        </p>
       {%- endfor -%}
       </div>
 
