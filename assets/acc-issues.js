@@ -785,7 +785,7 @@ window.onload = () => {
 
     const addressArray = []
     // update address
-    const addresses = document.querySelectorAll('.adress p');
+    const addresses = document.querySelectorAll('.address p');
     addresses.forEach((address) => {
       const addressItem = {};
       addressItem['street'] = address.querySelector('address-street').innerText;
