@@ -793,7 +793,8 @@ window.onload = () => {
       addressItem['country'] = address.querySelector('.address-country').innerText;
       addressItem['zip'] = address.querySelector('.address-zip').innerText;
       addressItem['province'] = address.querySelector('.address-province').innerText;
-      addressItem['provinceCode'] = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ')[0]
+      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      addressItem['provinceCode'] = addressString[addressString.length - 2];
       addressItem['company'] = address.querySelector('.address-company').innerText;
       addressArray.push(addressItem);
     });
