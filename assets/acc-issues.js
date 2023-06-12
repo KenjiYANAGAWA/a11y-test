@@ -718,7 +718,6 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
 
-    console.log('checkout page');
     //items to add to cart
     const cartItemsContainer = document.querySelectorAll('.cart-items .cart-item');
     // location to be added
@@ -795,6 +794,7 @@ window.onload = () => {
       addressItem['province'] = address.querySelector('.address-province').innerText;
       const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
       addressItem['provinceCode'] = addressString[addressString.length - 2];
+      addressItem['city'] = address.querySelector('.address-city').innerText;
       addressItem['company'] = address.querySelector('.address-company').innerText;
       addressArray.push(addressItem);
     });
@@ -830,8 +830,9 @@ window.onload = () => {
       } else if (input.id == 'Select2') {
         input.value = values.provinceCode
       } else if (input.id == 'zip') {
-        console.log(values.zip)
         input.value = values.zip
+      } else if (input.id == 'city') {
+        input.value = values.city
       }
     })
 
