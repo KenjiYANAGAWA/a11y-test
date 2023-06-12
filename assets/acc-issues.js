@@ -797,6 +797,7 @@ window.onload = () => {
       addressArray.push(addressItem);
     });
 
+    // update saved adresses input;
     const savedAddressInput = document.querySelector('.shipping-checkout select');
     let index = 0;
     savedAddressInput.innerHTML = addressArray.map((address) => {
@@ -805,8 +806,51 @@ window.onload = () => {
       return addressLine;
     }).join('\n');
 
+    savedAddressInput.insertAdjacentHTML('beforeend', `<option value="${index}">Use a new address</option>`);
+
     // update user contact
     const info = document.querySelectorAll('.info span');
     document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
+
+    const inputLabels = document.querySelectorAll('.checkout-input-label span');
+
+    const values = addressArray[0];
+
+    inputLabels.forEach((inputLabel) => {
+      const label = inputLabel.innerText
+      const input = inputLabel.parentElement.nextElementSibling.firstChild;
+
+      if (label == 'Country/Region') {
+        input.innerHTML = `<option value="0">${values.country}</option>`
+      } else if (label == 'First Name (optional)') {
+        input.value == values.name.split(' ')[0]
+      } else if (label == 'Last Name') {
+        input.value == values.name.split(' ')[1]
+      } else if (label ==  'Address') {
+        input.value == values.street
+      } else if (label == 'State') {
+        const options = input.children;
+        const selectedOpt = options.find(el => el.innerText == values.province);
+        input.value = selectedOpt.value;
+      } else if (label == 'ZIP Code') {
+        input.value == values.zip
+      }
+    })
+
+    // update country input
+    // update first name input
+    // update last name input
+    // update street input
+
+
+    // update when changing the saved address
+    // will added later if it's needed
+    // savedAddressInput.addEventListener('change', (e) => {
+    //   const index = e.target.getAttribute('value');
+
+    //   if (index + 1 <= addressArray.length) {
+
+    //   }
+    // })
   }
 }
