@@ -1283,7 +1283,7 @@ window.onload = () => {
           font-size: .9rem;
         }
 
-        div > :has(section[aria-label=Review]) {
+        .main-content > div:has(section[aria-label=Review]) {
           display: grid;
           gap: 32px;
         }
