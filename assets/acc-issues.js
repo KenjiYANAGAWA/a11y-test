@@ -815,6 +815,7 @@ window.onload = () => {
     const inputLabels = document.querySelectorAll('.checkout-input-label span');
 
     const values = addressArray[0];
+    console.log(values);
 
     inputLabels.forEach((inputLabel) => {
       const label = inputLabel.innerText
