@@ -162,7 +162,9 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       {%- for address in customer.addresses -%}
         <span>{{ address.country }}</span>
         <span>{{ address.province }}</span>
-        <span>{{ address.zipcode }}</span>
+        <span>{{ address.zip }}</span>
+        <span>{{ address.name }}</span>
+        <span>{{ address.street }}</span>
       {%- endfor -%}
       </div>
 
