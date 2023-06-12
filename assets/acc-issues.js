@@ -716,6 +716,68 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
 
+  } else if (pathname.location == 'pages/checkout') {
+    //items to add to cart
+    const cartItemsContainer = document.querySelectorAll('.cart-items .cart-item');
+    // location to be added
+    const checkoutItemSummary = document.querySelector('.total div[role=table]');
+
+    //remove sample product item cart if any real item
+    if (cartItemsContainer.length >= 1) {
+      checkoutItemSummary.children[1].remove();
+    }
+
+    //adding all items
+    cartItemsContainer.forEach((item) => {
+      const itemImg = item.querySelector('.cart-item-img img');
+      const itemTitle = item.querySelector('.cart-item-title');
+      const itemQuantity = item.querySelector('.cart-item-quantity');
+      const itemFinalPrice = item.querySelector('.cart-item-final-price');
+
+      const itemHTML = `
+        <div role="row" class="items-summary-row">
+          <div role="cell">
+            <div class="item-summary-image-wrapper">
+              <div>
+                <picture>
+                  <source media="(min-width: 0px)" srcset="${itemImg.getAttribute('srcset')}">
+                  <img src="${itemImg.getAttribute('src')}">
+                </picture>
+              </div>
+              <div aria-hidden="true" class="item-summary-counter flex-center">
+                <div>
+                  <p>${itemQuantity.innerText}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="cell" class="item-description">
+            <p>${itemTitle.innerText}</p>
+            <div></div>
+          </div>
+          <div role="cell" class="item-quantity">
+            <div>
+              <span>
+              ${itemQuantity.innerText}<div aria-hidden="true"> x</div>
+              </span>
+            </div>
+          </div>
+          <div role="cell" class="item-price flex-center">
+            <div>
+              <div>
+                <span translate="yes" class="notranslate">${itemFinalPrice.innerText}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+
+      checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
+    })
+
+    // update total price
+    document.querySelector('.header-total').nextElementSibling.innerHTML = document.querySelector('.cart-total-price').innerText;
+
   }
 
 }
