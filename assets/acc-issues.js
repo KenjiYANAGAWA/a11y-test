@@ -670,6 +670,7 @@ window.onload = () => {
         .items-summary-row {
           display: flex;
           justify-content: space-between;
+          margin-bottom: 1em;
         }
 
         .items-summary-row:has(div[role=columnheader]),
@@ -775,8 +776,11 @@ window.onload = () => {
       checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
     })
 
+    const finalTotal = document.querySelector('.cart-total-price').innerText;
+
     // update total price
-    document.querySelector('.header-total').nextElementSibling.innerHTML = document.querySelector('.cart-total-price').innerText;
+    document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
+    document.querySelector('.price-summary-table-row').children[1].firstChild.innerText = finalTotal;
 
   }
 
