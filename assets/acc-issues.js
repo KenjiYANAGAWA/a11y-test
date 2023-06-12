@@ -830,7 +830,7 @@ window.onload = () => {
         input.value == values.street
       } else if (input.id == 'Select2') {
         input.value = values.province
-      } else if (label == 'zip') {
+      } else if (input.id == 'zip') {
         input.value == values.zip
       }
     })
