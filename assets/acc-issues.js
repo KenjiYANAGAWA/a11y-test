@@ -820,16 +820,16 @@ window.onload = () => {
       if (input.id == 'Select1') {
         input.innerHTML = `<option value="0">${values.country}</option>`
       } else if (input.id == 'first-name') {
-        input.value == values.name.split(' ')[0]
+        input.value = values.name.split(' ')[0]
       } else if (input.id == 'last-name') {
-        input.value == values.name.split(' ')[1]
+        input.value = values.name.split(' ')[1]
       } else if (input.id == 'address') {
-        input.value == values.street
+        input.value = values.street
       } else if (input.id == 'Select2') {
         input.value = values.province
       } else if (input.id == 'zip') {
         console.log(values.zip)
-        input.value == values.zip
+        input.value = values.zip
       }
     })
 
