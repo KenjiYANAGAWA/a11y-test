@@ -844,7 +844,7 @@ window.onload = () => {
 
     //   }
     // })
-  } else if (location.pathname == '/pages/shipping') {
+  } else if (location.pathname == '/pages/shipping/') {
     const styleEl = `
       <style>
         .header__wrapper, .footer { display: none !important }
