@@ -1202,7 +1202,7 @@ window.onload = () => {
         .fieldset-item {
           padding: 17px;
           border: solid 1px #dedede;
-          background-color: white;
+          background-color: transparent;
         }
 
         .fieldset-item:has(input:checked) {
