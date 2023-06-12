@@ -496,6 +496,7 @@ window.onload = () => {
 
         .contact-checkout div:has(input) {
           display: flex;
+          gap: .9em;
         }
 
         h2 {
