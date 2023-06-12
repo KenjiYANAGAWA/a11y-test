@@ -1276,7 +1276,7 @@ window.onload = () => {
           border: none;
           border-bottom: solid 1px #dedede;
           width: 100%;
-          margin: revert;
+          margin: revert !important;
         }
 
         section[aria-label=Review] a {
