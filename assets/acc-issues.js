@@ -501,7 +501,7 @@ window.onload = () => {
 
         h2 {
           font-size: 1.1rem;
-          font-weight: 500;
+          font-weight: 600;
         }
 
         .contact-checkout span,
@@ -719,7 +719,7 @@ window.onload = () => {
     document.body.insertAdjacentHTML('beforeend', styleEl);
 
     //items to add to cart
-    const cartItemsContainer = document.querySelectorAll('.cart-items .cart-item');
+    const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
     // location to be added
     const checkoutItemSummary = document.querySelector('.total div[role=table]');
 
@@ -836,14 +836,8 @@ window.onload = () => {
       }
     })
 
-    // update country input
-    // update first name input
-    // update last name input
-    // update street input
-
-
     // update when changing the saved address
-    // will added later if it's needed
+    // will be added later if it's needed
     // savedAddressInput.addEventListener('change', (e) => {
     //   const index = e.target.getAttribute('value');
 
