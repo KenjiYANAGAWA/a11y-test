@@ -780,7 +780,7 @@ window.onload = () => {
 
     // update total price
     document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
-    document.querySelector('.price-summary-table-row').children[1].firstChild.innerText = finalTotal;
+    document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
   }
 
