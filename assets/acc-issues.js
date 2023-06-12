@@ -716,7 +716,7 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
 
-  } else if (pathname.location == 'pages/checkout') {
+  } else if (pathname.location == '/pages/checkout') {
     //items to add to cart
     const cartItemsContainer = document.querySelectorAll('.cart-items .cart-item');
     // location to be added
