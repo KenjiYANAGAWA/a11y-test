@@ -713,6 +713,10 @@ window.onload = () => {
           font-size: 0.8em;
         }
 
+        .steps span:has(svg) {
+          padding: 0 12px;
+        }
+
       </style>
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
@@ -1288,6 +1292,10 @@ window.onload = () => {
         .main-content > div:has(section[aria-label=Review]) {
           display: grid;
           gap: 32px;
+        }
+
+        .steps span:has(svg) {
+          padding: 0 12px;
         }
 
       </style>
