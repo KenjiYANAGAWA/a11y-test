@@ -830,8 +830,9 @@ window.onload = () => {
         input.value == values.street
       } else if (label == 'State') {
         const options = input.children;
-        const selectedOpt = options.find(el => el.innerText == values.province);
-        input.value = selectedOpt.value;
+        console.log(options)
+        // const selectedOpt = options.find(el => el.innerText == values.province);
+        // input.value = selectedOpt.value;
       } else if (label == 'ZIP Code') {
         input.value == values.zip
       }
