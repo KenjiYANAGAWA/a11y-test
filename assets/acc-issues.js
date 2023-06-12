@@ -1266,8 +1266,10 @@ window.onload = () => {
         }
 
         .information-row {
-          display: flex;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: 98px 1fr auto;
+          gap: 30px;
+      }
         }
 
         section[aria-label=Review] hr {
