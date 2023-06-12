@@ -153,9 +153,19 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     </main>
 
     <div class="cart-items" style="display:none">
-      {%- for address in customer.addresses -%}\
-        <div>{{- address | format_address -}}</div>
+      <div class="info">
+        <span>{{ customer.name }}</span>
+        <span>{{ customer.email }}</span>
+      </div>
+
+      <div class="adress">
+      {%- for address in customer.addresses -%}
+        <span>{{ address.country }}</span>
+        <span>{{ address.province }}</span>
+        <span>{{ address.zipcode }}</span>
       {%- endfor -%}
+      </div>
+
       {%- for line_item in cart.items -%}
         <div class="cart-item">
           <div class="cart-item-img">{{- line_item.image | image_url: width: line_item.image.width | image_tag: loading: 'lazy', sizes: '(max-width: 740px) 80px, 96px', widths: '80,96,160,192', class: 'line-item__media rounded-xs' -}}</div>

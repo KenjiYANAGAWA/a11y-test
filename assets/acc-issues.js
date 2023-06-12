@@ -784,7 +784,10 @@ window.onload = () => {
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     // update address
+    const addresses = document.querySelectorAll('.adress p');
+    // addresses.forEach((adress) => {
 
+    // })
 
   }
 
