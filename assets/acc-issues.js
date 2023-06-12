@@ -812,28 +812,26 @@ window.onload = () => {
     const info = document.querySelectorAll('.info span');
     document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
 
-    const inputLabels = document.querySelectorAll('.checkout-input-label span');
+    const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
     const values = addressArray[0];
     console.log(values);
 
-    inputLabels.forEach((inputLabel) => {
-      const label = inputLabel.innerText
-      const input = inputLabel.parentElement.nextElementSibling.children[0];
+    inputs.forEach((input) => {
       console.log(input)
 
-      if (label == 'Country/Region') {
+      if (input.id == 'Select1') {
         input.innerHTML = `<option value="0">${values.country}</option>`
-      } else if (label == 'First Name (optional)') {
+      } else if (input.id == 'first-name') {
         input.value == values.name.split(' ')[0]
-      } else if (label == 'Last Name') {
+      } else if (input.id == 'last-name') {
         input.value == values.name.split(' ')[1]
-      } else if (label ==  'Address') {
+      } else if (input.id == 'address') {
         input.value == values.street
-      } else if (label == 'State') {
+      } else if (input.id == 'Select2') {
         const selectedOpt = input.querySelector(`option[innerText=${values.province}]`);
         input.value = selectedOpt.value;
-      } else if (label == 'ZIP Code') {
+      } else if (label == 'zip') {
         input.value == values.zip
       }
     })
