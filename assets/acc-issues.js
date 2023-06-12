@@ -714,7 +714,7 @@ window.onload = () => {
         }
 
         .steps span:has(svg) {
-          padding: 0 12px;
+          padding: 0 6px;
         }
 
       </style>
@@ -1295,7 +1295,7 @@ window.onload = () => {
         }
 
         .steps span:has(svg) {
-          padding: 0 12px;
+          padding: 0 6px;
         }
 
       </style>
