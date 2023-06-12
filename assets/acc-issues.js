@@ -818,7 +818,7 @@ window.onload = () => {
 
     inputLabels.forEach((inputLabel) => {
       const label = inputLabel.innerText
-      const input = inputLabel.parentElement.nextElementSibling.firstChild;
+      const input = inputLabel.parentElement.nextElementSibling.children[0];
 
       if (label == 'Country/Region') {
         input.innerHTML = `<option value="0">${values.country}</option>`
