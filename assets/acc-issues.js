@@ -233,6 +233,7 @@ document.addEventListener('keyup', (e) => {
     if (popupVisible) {
       popupVisible.remove();
     } else {
+      document.activeElement.blur();
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
     }
   }
@@ -240,6 +241,7 @@ document.addEventListener('keyup', (e) => {
   const popupVisible = document.querySelector('.popup-issue-list');
   if (popupVisible) {
     trapFocus(popupVisible);
+    popupVisible.focus();
   }
 })
 
