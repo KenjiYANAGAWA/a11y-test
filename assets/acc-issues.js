@@ -522,7 +522,7 @@ window.onload = () => {
   } else if (location.pathname == '/pages/about-us') {
     const textContainers = document.querySelectorAll('.multi-column__item div:has(.prose)');
 
-    document.body.insertAdjacentHTML("beforeend", `<style>*{letter-spacing: 0 !important}</style>`)
+    document.body.insertAdjacentHTML("beforeend", `<style>*{letter-spacing: 0 !important; line-height: 1.5 !important; word-spacing: 0 !important;} p { margin-bottom: 0 !important }</style>`)
 
     textContainers.forEach((container) => {
       const sectionContainer = container.parentElement.parentElement.parentElement;
