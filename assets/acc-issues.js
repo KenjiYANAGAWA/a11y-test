@@ -1,4 +1,73 @@
-console.log('connected');
+// List issue
+const issueListArray = () => {
+  switch (location.pathname) {
+    case '/':
+      // add home page issues
+      [
+        'Issue 1',
+        'Issue 2',
+        'Issue 3'
+      ]
+      break;
+    case '/collections/all':
+      // add collection page issues
+      break;
+    case '/pages/contact':
+      // add contact page issues
+      break;
+    case '/pages/about-us':
+      // add about page issues
+      break;
+    case '/pages/advertisement':
+      // add advertisement page issues
+      break;
+    case '/pages/checkout':
+      // add checkout page issues
+      break;
+    case '/pages/shipping':
+      // add shipping page issues
+      break;
+    case '/pages/payment':
+      // add payment page issues
+      break;
+    case '/cart':
+      // add cart page issues
+      break;
+    case '/products/headphone-stand-black':
+      // add product page issues
+      break;
+    case '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas':
+      // add product page issues
+      break;
+    case '/products/usb-c-to-3-5mm-audio-cable-black':
+      // add product page issues
+      break;
+    case '/products/mw50-silver-metal-brown-leather':
+      // add product page issues
+      break;
+    case '/products/mw08-brown-ceramic-stainless-steel-case':
+      // add product page issues
+      break;
+    case '/products/mh40-wireless-ear-pads':
+      // add product page issues
+      break;
+    case '/products/mh40-wireless-silver-metal-navy-coated-canvas':
+      // add product page issues
+      break;
+    case '/account/addresses':
+      // add addresses page issues
+      break;
+    case '/account/register':
+      // add signup page issues
+      break;
+    default:
+      console.log(`No issues assign to this page`);
+  }
+
+}
+
+
+// low color contrast cart and social media links
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 const breakIcon = (selector) => {
@@ -109,7 +178,43 @@ const cartSummaryPrice = () => {
   }
 }, 300);
 
+// for checking combo press
+let comboKey = []
+
+// popup issue list
+const listIssue = document.createElement('div');
+listIssue.classList.add('popup-issue-list');
+listIssue.style.position = 'fixed';
+listIssue.style.top = '20px';
+listIssue.style.left = '20px';
+listIssue.style.height = 'calc(100vh - 40px)';
+listIssue.style.width = 'calc(30vw - 20px)';
+listIssue.style.background  = 'white';
+listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
+listIssue.style.zIndex  = 1;
+
+// adding popup issue list
+document.addEventListener('keyup', (e) => {
+
+  if (comboKey.includes(e.key)) return;
+
+  if (e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
+
+  if (comboKey.length != 2) return;
+
+  const popupVisible = document.querySelector('.popup-issue-list');
+  if (popupVisible) {
+    popupVisible.remove();
+  } else {
+    document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
+  }
+  comboKey = []
+})
+
+
 window.onload = () => {
+  listIssue.innerHTML = `<ul>${issueListArray.map((item)=> `<li>${item}</li>`).join('\n')}</ul>`
+
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
@@ -577,36 +682,3 @@ window.onload = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
 }
-
-let comboKey = []
-
-// popup issue list
-const listIssue = document.createElement('div');
-listIssue.classList.add('popup-issue-list');
-listIssue.style.position = 'fixed';
-listIssue.style.top = '20px';
-listIssue.style.left = '20px';
-listIssue.style.height = 'calc(100vh - 40px)';
-listIssue.style.width = 'calc(30vw - 20px)';
-listIssue.style.background  = 'white';
-listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
-listIssue.style.zIndex  = 1;
-
-// adding popup issue list
-document.addEventListener('keyup', (e) => {
-
-  if (comboKey.includes(e.key)) return;
-
-  if (e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
-
-  if (comboKey.length != 2) return;
-
-  const popupVisible = document.querySelector('.popup-issue-list');
-  if (popupVisible) {
-    popupVisible.remove();
-  } else {
-    document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
-  }
-  comboKey = []
-
-})
