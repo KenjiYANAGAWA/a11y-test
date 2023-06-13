@@ -212,7 +212,13 @@ document.addEventListener('keyup', (e) => {
 
 
 window.onload = () => {
-  listIssue.innerHTML = `<ul>${issueListArray.map((item)=> `<li>${item}</li>`).join('\n')}</ul>`
+  const issues = [];
+  issueListArray.forEach((item) => {
+    issues.push(`<li>${item}</li>`)
+  })
+
+
+  listIssue.innerHTML = `<ul>${issues.join('\n')}</ul>`
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
