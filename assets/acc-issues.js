@@ -582,6 +582,7 @@ window.onload = () => {
   // adding popup with issue list
   document.addEventListener('keyup', (e) => {
     if (!comboKey.includes(e.key)) comboKey.push(e.key);
+    console.log(comboKey)
     if (comboKey.includes('Alt') && comboKey.includes('i')) {
       const listIssue = document.createElement('div');
       listIssue.classList.add('popup-issue-list');
