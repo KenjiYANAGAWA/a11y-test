@@ -235,6 +235,7 @@ document.addEventListener('keyup', (e) => {
     } else {
       document.activeElement.blur();
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
+      listIssue.children[0].focus();
     }
   } else {
     const popupVisible = document.querySelector('.popup-issue-list');
