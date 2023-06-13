@@ -237,14 +237,13 @@ document.addEventListener('keydown', (e) => {
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
       listIssue.children[0].focus();
     }
-    comboKey = []
   } else {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       trapFocus(popupVisible);
     }
   }
-
+  comboKey = []
 })
 
 
