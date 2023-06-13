@@ -244,7 +244,7 @@ window.onload = () => {
   // adding issues to popup
   const issues = [];
   issueListArray().forEach((item) => {
-    issues.push(`<li id="${item.join('-')}"><a href="#${item.join('-')}">${item}</a></li>`)
+    issues.push(`<li id="${item.replaceAll(' ', '-')}"><a href="#${item.replaceAll(' ', '-')}">${item}</a></li>`)
   })
 
   listIssue.innerHTML = `
