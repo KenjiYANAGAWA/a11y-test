@@ -65,7 +65,7 @@ const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
       `
 }
 
-const cartSummaryPrice = () => {
+const cartSummaryPrice = (document) => {
   //items to add to cart
   const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
   // location to be added
@@ -95,7 +95,7 @@ const cartSummaryPrice = () => {
   document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 };
 
-const addressList = () => {
+const addressList = (document) => {
   const addressArray = []
   // update address
   const addresses = document.querySelectorAll('.address div');
@@ -482,10 +482,10 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
   } else if (location.pathname == '/pages/checkout') {
-    cartSummaryPrice();
+    cartSummaryPrice(document);
 
     // update address
-    const addressArray = addressList();
+    const addressArray = addressList(document);
 
     // update saved adresses input;
     const savedAddressInput = document.querySelector('.shipping-checkout select');
@@ -534,9 +534,9 @@ window.onload = () => {
     //   }
     // })
   } else if (location.pathname == '/pages/shipping') {
-    cartSummaryPrice();
+    cartSummaryPrice(document);
 
-    const addressArray = addressList();
+    const addressArray = addressList(document);
 
     const info = addressArray[0];
 
@@ -563,7 +563,7 @@ window.onload = () => {
       localStorage.setItem('shipping-method', `${methodName} - ${price}`);
     })
   } else if (location.pathname == '/pages/payment') {
-    cartSummaryPrice();
+    cartSummaryPrice(document);
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
