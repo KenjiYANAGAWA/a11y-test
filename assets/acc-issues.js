@@ -1,9 +1,10 @@
 // List issue
 const issueListArray = () => {
+  let issues
   switch (location.pathname) {
     case '/':
       // add home page issues
-      return [
+      issues = [
         'Issue 1',
         'Issue 2',
         'Issue 3'
@@ -62,7 +63,7 @@ const issueListArray = () => {
     default:
       console.log(`No issues assign to this page`);
   }
-
+  return issues;
 }
 
 
