@@ -222,6 +222,7 @@ let ctrl = false;
 
 // adding popup issue list
 document.addEventListener('keydown', (e) => {
+  ctrl = false
   if (e.key !== 'i') {
     ctrl = (e.key == 'Control');
   }
@@ -242,7 +243,6 @@ document.addEventListener('keyup', (e) => {
   if (popupVisible) {
     trapFocus(popupVisible);
   }
-  ctrl = false
 })
 
 
