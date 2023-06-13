@@ -580,29 +580,33 @@ window.onload = () => {
 
 let comboKey = []
 
-  // adding popup with issue list
-  document.addEventListener('keyup', (e) => {
-    comboKey.includes(e.key) ? null : comboKey.push(e.key);
-    console.log(comboKey)
-    if (comboKey.includes('Alt') && comboKey.includes('i')) {
-      if (!document.querySelector('.popup-issue-list')) {
-        const listIssueContainer = document.createElement('div');
-        const listIssue = document.createElement('div');
+// popup issue list
+const listIssue = document.createElement('div');
+listIssue.classList.add('popup-issue-list');
+listIssue.style.position = 'fixed';
+listIssue.style.top = '20px';
+listIssue.style.left = '20px';
+listIssue.style.height = 'calc(100vh - 40px)';
+listIssue.style.width = 'calc(30vw - 20px)';
+listIssue.style.background  = 'white';
+listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
+listIssue.style.zIndex  = 1;
 
-        listIssue.classList.add('popup-issue-list');
-        listIssue.style.position = 'fixed';
-        listIssue.style.top = '20px';
-        listIssue.style.left = '20px';
-        listIssue.style.height = 'calc(100vh - 40px)';
-        listIssue.style.width = 'calc(30vw - 20px)';
-        listIssue.style.background  = 'white';
-        listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
-        listIssue.style.zIndex  = 1;
+// adding popup issue list
+document.addEventListener('keyup', (e) => {
 
-        document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
-        comboKey = [];
-      } else {
-        document.querySelector('.popup-issue-list').remove();
-      }
-    }
-  })
+  if (comboKey.includes(e.key)) return;
+
+  if (e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
+
+  if (comboKey.length != 2) return;
+
+  const popupVisible = document.querySelector('.popup-issue-list');
+  if (popupVisible) {
+    popupVisible.remove();
+  } else {
+    document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
+  }
+  comboKey = []
+
+})
