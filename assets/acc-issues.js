@@ -239,7 +239,7 @@ document.addEventListener('keyup', (e) => {
 
   const popupVisible = document.querySelector('.popup-issue-list');
   if (popupVisible) {
-    trapFocus(listIssue);
+    trapFocus(popupVisible);
   }
 })
 
