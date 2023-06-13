@@ -1984,5 +1984,7 @@ window.onload = () => {
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
+  } else if (location.pathname.includes('/checkouts/')) {
+    window.location.replace("https://a11y-test.com/pages/checkout");
   }
 }
