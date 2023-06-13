@@ -65,7 +65,7 @@ const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
       `
 }
 
-const cartSummaryPrice = (document) => {
+const cartSummaryPrice = () => {
   //items to add to cart
   const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
   // location to be added
@@ -94,27 +94,6 @@ const cartSummaryPrice = (document) => {
   document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
   document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 };
-
-const addressList = (document) => {
-  const addressArray = []
-  // update address
-  const addresses = document.querySelectorAll('.address div');
-  addresses.forEach((address) => {
-    const addressItem = {};
-    addressItem['street'] = address.querySelector('.address-street').innerText;
-    addressItem['name'] = address.querySelector('.address-name').innerText;
-    addressItem['country'] = address.querySelector('.address-country').innerText;
-    addressItem['zip'] = address.querySelector('.address-zip').innerText;
-    addressItem['province'] = address.querySelector('.address-province').innerText;
-    const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
-    addressItem['provinceCode'] = addressString[addressString.length - 2];
-    addressItem['city'] = address.querySelector('.address-city').innerText;
-    addressItem['company'] = address.querySelector('.address-company').innerText;
-    addressArray.push(addressItem);
-    console.log(addressArray)
-  });
-  return addressArray
-}
 
  // substituting all checkout btns href
  setInterval(() => {
@@ -483,11 +462,24 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
   } else if (location.pathname == '/pages/checkout') {
-    cartSummaryPrice(document);
+    cartSummaryPrice();
 
+    const addressArray = []
     // update address
-    const addressArray = addressList(document);
-    console.log(addressArray)
+    const addresses = document.querySelectorAll('.address div');
+    addresses.forEach((address) => {
+      const addressItem = {};
+      addressItem['street'] = address.querySelector('.address-street').innerText;
+      addressItem['name'] = address.querySelector('.address-name').innerText;
+      addressItem['country'] = address.querySelector('.address-country').innerText;
+      addressItem['zip'] = address.querySelector('.address-zip').innerText;
+      addressItem['province'] = address.querySelector('.address-province').innerText;
+      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      addressItem['provinceCode'] = addressString[addressString.length - 2];
+      addressItem['city'] = address.querySelector('.address-city').innerText;
+      addressItem['company'] = address.querySelector('.address-company').innerText;
+      addressArray.push(addressItem);
+    });
 
     // update saved adresses input;
     const savedAddressInput = document.querySelector('.shipping-checkout select');
@@ -536,9 +528,24 @@ window.onload = () => {
     //   }
     // })
   } else if (location.pathname == '/pages/shipping') {
-    cartSummaryPrice(document);
+    cartSummaryPrice();
 
-    const addressArray = addressList(document);
+    const addressArray = []
+    // update address
+    const addresses = document.querySelectorAll('.address div');
+    addresses.forEach((address) => {
+      const addressItem = {};
+      addressItem['street'] = address.querySelector('.address-street').innerText;
+      addressItem['name'] = address.querySelector('.address-name').innerText;
+      addressItem['country'] = address.querySelector('.address-country').innerText;
+      addressItem['zip'] = address.querySelector('.address-zip').innerText;
+      addressItem['province'] = address.querySelector('.address-province').innerText;
+      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      addressItem['provinceCode'] = addressString[addressString.length - 2];
+      addressItem['city'] = address.querySelector('.address-city').innerText;
+      addressItem['company'] = address.querySelector('.address-company').innerText;
+      addressArray.push(addressItem);
+    });
 
     const info = addressArray[0];
 
@@ -565,7 +572,7 @@ window.onload = () => {
       localStorage.setItem('shipping-method', `${methodName} - ${price}`);
     })
   } else if (location.pathname == '/pages/payment') {
-    cartSummaryPrice(document);
+    cartSummaryPrice();
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
