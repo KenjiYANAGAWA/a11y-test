@@ -188,8 +188,9 @@ listIssue.style.left = '20px';
 listIssue.style.height = 'calc(100vh - 40px)';
 listIssue.style.width = 'calc(30vw - 20px)';
 listIssue.style.background  = 'white';
+listIssue.style.padding = '20px 32px'
 listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
-listIssue.style.zIndex  = 1;
+listIssue.style.zIndex  = 9999;
 
 // adding popup issue list
 document.addEventListener('keyup', (e) => {
@@ -211,13 +212,18 @@ document.addEventListener('keyup', (e) => {
 
 
 window.onload = () => {
+  // adding issues to popup
   const issues = [];
   issueListArray().forEach((item) => {
     issues.push(`<li>${item}</li>`)
   })
 
-
-  listIssue.innerHTML = `<ul>${issues.join('\n')}</ul>`
+  listIssue.innerHTML = `
+    <h2>Issue List</h2>
+    <ul>
+      ${issues.join('\n')}
+    </ul>
+  `
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
