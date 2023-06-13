@@ -111,6 +111,7 @@ const addressList = (document) => {
     addressItem['city'] = address.querySelector('.address-city').innerText;
     addressItem['company'] = address.querySelector('.address-company').innerText;
     addressArray.push(addressItem);
+    console.log(addressArray)
   });
   return addressArray
 }
