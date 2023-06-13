@@ -577,8 +577,30 @@ window.onload = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
 
+
+  const keyupHandler = (e) => {
+    if (e.key == 'i') {
+      const listIssue = document.createElement('div');
+      listIssue.classList.add('popup-issue-list');
+      listIssue.style.position = 'fixed';
+      listIssue.style.top = '0';
+      listIssue.style.left = '0';
+      listIssue.style.height = '30vh';
+      listIssue.style.width = '30vw';
+      listIssue.style.background  = 'red';
+      document.body.append(listIssue);
+    }
+  }
+
   // adding popup with issue list
-  document.addEventListener('keyup', (e) => {
-    console.log(e.code);
+  document.addEventListener('keydown', (e) => {
+    if (e.key == 'Alt') {
+      document.addEventListener('keyup', keyupHandler)
+    } else {
+      document.removeEventListener('keyup', keyupHandler);
+      if (document.querySelector('.popup-issue-list')) {
+        document.querySelector('.popup-issue-list').remove();
+      }
+    }
   })
 }
