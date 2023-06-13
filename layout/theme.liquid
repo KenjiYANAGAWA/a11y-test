@@ -55,6 +55,10 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    <style>
+      cart-drawer form a {height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;}
+    </style>
   </head>
 
   <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
@@ -72,7 +76,6 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
           .custom-popup .link-list a {background: black; color:white; flex-grow: 1; text-align: center; padding: 8px 16px; border-radius: 100px; text-decoration: none;}
           .custom-popup .link-list {display: flex; justify-content: space-between; flex-wrap: wrap; column-gap: 24px; row-gap: 16px}
           .custom-popup .close-btn {position: absolute; top: 12px; right: 12px; font-family: 'Noto Emoji', sans-serif; text-decoration: none;}
-          cart-drawer form a {height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;}
         </style>
         <div class="custom-popup">
           <h1>DEMO SITE</h1>
