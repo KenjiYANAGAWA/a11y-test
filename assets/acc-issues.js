@@ -1398,17 +1398,17 @@ window.onload = () => {
 
     radioInputs.forEach((radio) => {
       if (radio.checked == true) {
-        const price = radio.parentElement.children[1].innerHTML;
-        const methodName = radio.nextElementSibling.children[0].innerHTML;
-        localStorage.setItem('shipping-method', `${methodName} - ${price}`);
+        const price = radio.parentElement.children[1];
+        const methodName = radio.nextElementSibling.children[0];
+        localStorage.setItem('shipping-method', `${methodName.innerHTML} - ${price.innerHTML}`);
       }
     })
 
     method.addEventListener('change', (e)=>{
-      const price = e.target.parentElement.children[1].innerHTML;
-      const methodName = e.target.nextElementSibling.children[0].innerHTML;
+      const price = e.target.parentElement.children[1];
+      const methodName = e.target.nextElementSibling.children[0];
 
-      localStorage.setItem('shipping-method', `${methodName} - ${price}`);
+      localStorage.setItem('shipping-method', `${methodName.innerHTML} - ${price.innerHTML}`);
     })
   } else if (location.pathname == '/pages/payment') {
     const styleEl = `
