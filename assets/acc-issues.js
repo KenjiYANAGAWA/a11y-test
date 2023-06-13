@@ -232,8 +232,10 @@ document.addEventListener('keyup', (e) => {
     if (popupVisible) {
       popupVisible.remove();
     } else {
+      document.activeElement.blur();
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
       trapFocus(listIssue);
+      listIssue.firstChild.focus();
     }
   }
 })
