@@ -578,5 +578,7 @@ window.onload = () => {
   }
 
   // adding popup with issue list
-
+  document.addEventListener('keyup', (e) => {
+    console.log(e.keycode);
+  })
 }
