@@ -597,9 +597,9 @@ window.onload = () => {
   document.addEventListener('keydown', (e) => {
     console.log(e.key)
     if (e.key == 'Alt') {
-      document.addEventListener('keyup', keyupHandler)
+      document.addEventListener('keydown', keydownHandler)
     } else {
-      document.removeEventListener('keyup', keyupHandler);
+      document.removeEventListener('keydown', keydownHandler);
       if (document.querySelector('.popup-issue-list')) {
         document.querySelector('.popup-issue-list').remove();
       }
