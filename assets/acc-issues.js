@@ -1,10 +1,9 @@
 // List issue
-const issueListArray = () => {
-  let issues
-  switch (location.pathname) {
+const issueListArray = (location) => {
+  switch (location) {
     case '/':
       // add home page issues
-      issues = [
+      return [
         'Issue 1',
         'Issue 2',
         'Issue 3'
@@ -63,7 +62,6 @@ const issueListArray = () => {
     default:
       console.log(`No issues assign to this page`);
   }
-  return issues;
 }
 
 
@@ -214,7 +212,7 @@ document.addEventListener('keyup', (e) => {
 
 window.onload = () => {
   const issues = [];
-  issueListArray.forEach((item) => {
+  issueListArray().forEach((item) => {
     issues.push(`<li>${item}</li>`)
   })
 
