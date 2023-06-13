@@ -224,8 +224,6 @@ let ctrl = false;
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'i') {
     ctrl = (e.key == 'Control');
-  } else {
-    ctrl = false
   }
 })
 
@@ -244,6 +242,7 @@ document.addEventListener('keyup', (e) => {
   if (popupVisible) {
     trapFocus(popupVisible);
   }
+  ctrl = false
 })
 
 
