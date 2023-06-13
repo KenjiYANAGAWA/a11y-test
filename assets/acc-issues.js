@@ -1,6 +1,6 @@
 // List issue
-const issueListArray = (location) => {
-  switch (location) {
+const issueListArray = () => {
+  switch (location.pathname) {
     case '/':
       // add home page issues
       return [
