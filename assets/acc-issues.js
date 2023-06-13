@@ -1396,7 +1396,7 @@ window.onload = () => {
 
     const radioInputs = document.querySelectorAll('fieldset input');
 
-    radioInputs.children.forEach((radio) => {
+    radioInputs.forEach((radio) => {
       if (radio.checked == true) {
         const price = radio.parentElement.children[1].innerHTML;
         const methodName = radio.nextElementSibling.children[0].innerHTML;
