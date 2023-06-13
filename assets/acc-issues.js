@@ -403,7 +403,12 @@ window.onload = () => {
         .main-content {
           border-right: solid 1px rgba(0, 0, 0, 0.2);
           padding: 3em 4em 1em 4em;
+          background: white;
         }
+        div:has(.grid) {
+          background: linear-gradient(white, #ebebeb)
+        }
+
         .total {
           background-color: #ebebeb;
         }
@@ -875,7 +880,12 @@ window.onload = () => {
         .main-content {
           border-right: solid 1px rgba(0, 0, 0, 0.2);
           padding: 3em 4em 1em 4em;
+          background: white;
         }
+        div:has(.grid) {
+          background: linear-gradient(white, #ebebeb)
+        }
+
         .total {
           background-color: #ebebeb;
         }
@@ -1438,7 +1448,12 @@ window.onload = () => {
         .main-content {
           border-right: solid 1px rgba(0, 0, 0, 0.2);
           padding: 3em 4em 1em 4em;
+          background: white;
         }
+        div:has(.grid) {
+          background: linear-gradient(white, #ebebeb)
+        }
+
         .total {
           background-color: #ebebeb;
         }
