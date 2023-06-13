@@ -219,7 +219,7 @@ listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
 listIssue.style.zIndex  = 9999;
 
 // adding popup issue list
-document.addEventListener('keyup', (e) => {
+document.addEventListener('keydown', (e) => {
 
   if (!comboKey.includes(e.key) && e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
 
