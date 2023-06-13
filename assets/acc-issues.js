@@ -218,7 +218,7 @@ listIssue.style.height = 'calc(100vh - 40px)';
 listIssue.style.width = 'calc(30vw - 20px)';
 listIssue.style.background  = 'white';
 listIssue.style.padding = '20px 32px'
-listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
+listIssue.style.boxShadow = '0 0 9px 9px rgba(0,0,0,.03)';
 listIssue.style.zIndex  = 9999;
 
 let ctrl = false;
@@ -281,6 +281,9 @@ window.onload = () => {
 
   // removing announce bar if not home
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
+
+  // removing about us
+  if (location.pathname !== '/') document.querySelector('.footer__wrapper li:has(a[href="/pages/about-us"])').remove();
 
   // breaking focus color to light blue
   document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
@@ -499,9 +502,9 @@ window.onload = () => {
     iframe.onload = () => iframe.click();
   } else if (location.pathname == '/products/mw08-brown-ceramic-stainless-steel-case') {
     // removing search button
-    const styleEl = document.createElement('style');
-    styleEl.innerHTML = `a[aria-controls="search-drawer"], .footer__block--menu { display: none !important;}`
-    document.body.append(styleEl);
+    // const styleEl = document.createElement('style');
+    // styleEl.innerHTML = `a[aria-controls="search-drawer"], .footer__block--menu { display: none !important;}`
+    // document.body.append(styleEl);
 
     // adding video with no audio and no transcript
     const videoEl = `<section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video"><style>
@@ -729,5 +732,7 @@ window.onload = () => {
     cartSummaryPrice();
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
+  } else if (location.pathname.includes('/search?q')) {
+
   }
 }
