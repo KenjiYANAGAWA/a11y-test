@@ -28,10 +28,8 @@ function swapDiv(elem) {
  // substituting all checkout btns href
  setInterval(() => {
   const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
-  console.log(btns)
   if (btns.length > 0) {
     btns.forEach((btn) => {
-      console.log(btn)
       const newBtn = document.createElement('a');
       newBtn.href = '/pages/checkout';
       newBtn.classList.add('button');
@@ -39,7 +37,7 @@ function swapDiv(elem) {
       btn.parentElement.replaceChild(newBtn, btn);
     })
   }
-}, 1000);
+}, 300);
 
 window.onload = () => {
   // fixing navbar focus order
