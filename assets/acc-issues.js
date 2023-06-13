@@ -25,19 +25,18 @@ function swapDiv(elem) {
   elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
 }
 
+ // substituting all checkout btns href
+ setInterval(() => {
+  const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
+  if (btns.length > 0) {
+    btns.forEach((btn) => {
+      btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
+      btn.style.display = 'none';
+    })
+  }
+}, 1000);
+
 window.onload = () => {
-  // substituting all checkout btns href
-  setInterval(() => {
-    const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
-    if (btns.length > 0) {
-      btns.forEach((btn) => {
-        btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-        btn.style.display = 'none';
-      })
-    }
-  }, 1000);
-
-
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
