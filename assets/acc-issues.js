@@ -34,7 +34,7 @@ function swapDiv(elem) {
       console.log(btn)
       const newBtn = document.createElement('a');
       newBtn.href = '/pages/checkout';
-      newBtn.class = 'button';
+      newBtn.classList.add('button');
       newBtn.innerText = 'Checkout';
       btn.parentElement.replaceChild(newBtn, btn);
     })
