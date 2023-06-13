@@ -225,7 +225,7 @@ document.addEventListener('keydown', (e) => {
 
 document.addEventListener('keyup', (e) => {
   if (!comboKey.includes(e.key) && e.key =='i') comboKey.push(e.key);
-  if (comboKey[0] != comboKey[1]) {
+  if (comboKey.length >= 2 && comboKey[0] != comboKey[1]) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
