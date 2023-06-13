@@ -578,7 +578,7 @@ window.onload = () => {
   }
 
 
-  const keyupHandler = (e) => {
+  const keydownHandler = (e) => {
     console.log(e.key)
     if (e.key == 'i') {
       const listIssue = document.createElement('div');
