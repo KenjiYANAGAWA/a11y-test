@@ -1394,6 +1394,15 @@ window.onload = () => {
 
     const method = document.querySelector('fieldset');
 
+    method.children.forEach((radio) => {
+      if (radio.checked == true) {
+        const price = radio.parentElement.children[1].innerHTML;
+        const methodName = radio.nextElementSibling.children[0].innerHTML;
+        localStorage.setItem('shipping-method', `${methodName} - ${price}`);
+      }
+    })
+
+
     method.addEventListener('change', (e)=>{
       const price = e.target.parentElement.children[1].innerHTML;
       const methodName = e.target.nextElementSibling.children[0].innerHTML;
