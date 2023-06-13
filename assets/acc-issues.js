@@ -65,7 +65,7 @@ const issueListArray = () => {
 }
 
 function trapFocus(element) {
-  const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
   const firstFocusableEl = focusableEls[0];
   const lastFocusableEl = focusableEls[focusableEls.length - 1];
   const KEYCODE_TAB = 9;
@@ -244,11 +244,11 @@ window.onload = () => {
   // adding issues to popup
   const issues = [];
   issueListArray().forEach((item) => {
-    issues.push(`<li id="${item.replaceAll(' ', '-')}"><a href="#${item.replaceAll(' ', '-')}">${item}</a></li>`)
+    issues.push(`<li tabindex="0">${item}</li>`)
   })
 
   listIssue.innerHTML = `
-    <h2 id="issue-list"><a href="#issue-list">Issue List</a></h2>
+    <h2 tabindex="0">Issue List</h2>
     <ul>
       ${issues.join('\n')}
     </ul>
