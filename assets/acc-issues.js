@@ -1398,7 +1398,7 @@ window.onload = () => {
 
     radioInputs.forEach((radio) => {
       if (radio.checked == true) {
-        const price = radio.parentElement.children[1];
+        const price = radio.parentElement.parentElement.children[1];
         const methodName = radio.nextElementSibling.children[0];
         localStorage.setItem('shipping-method', `${methodName.innerHTML} - ${price.innerHTML}`);
       }
