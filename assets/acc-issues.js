@@ -258,7 +258,7 @@ window.onload = () => {
   })
 
   listIssue.innerHTML = `
-    <h2 tabindex="0">Issue List</h2>
+    <h2 tabindex="0">${issues.length} issues on ${location.href}</h2>
     <ul>
       ${issues.join('\n')}
     </ul>
