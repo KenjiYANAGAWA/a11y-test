@@ -1192,11 +1192,11 @@ window.onload = () => {
         }
 
         fieldset :first-child {
-          border-radius: 4px 4px 0 0;
+          border-radius: 6px 6px 0 0;
         }
 
         fieldset :last-child {
-          border-radius: 0 0 4px 4px;
+          border-radius: 0 0 6px 6px;
         }
 
         .fieldset-item {
