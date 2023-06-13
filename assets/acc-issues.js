@@ -226,7 +226,7 @@ document.addEventListener('keydown', (e) => {
 })
 
 document.addEventListener('keyup', (e) => {
-  if ((e.key == 'Control' || e.key == 'i') && ctrl) {
+  if (e.key == 'i' && ctrl) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
