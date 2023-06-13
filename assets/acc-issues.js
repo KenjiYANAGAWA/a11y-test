@@ -3,12 +3,11 @@ const issueListArray = () => {
   switch (location.pathname) {
     case '/':
       // add home page issues
-      [
+      return [
         'Issue 1',
         'Issue 2',
         'Issue 3'
       ]
-      break;
     case '/collections/all':
       // add collection page issues
       break;
