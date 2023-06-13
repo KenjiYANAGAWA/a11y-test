@@ -10,57 +10,57 @@ const issueListArray = () => {
       ]
     case '/collections/all':
       // add collection page issues
-      break;
+      return [];
     case '/pages/contact':
       // add contact page issues
-      break;
+      return [];
     case '/pages/about-us':
       // add about page issues
-      break;
+      return [];
     case '/pages/advertisement':
       // add advertisement page issues
-      break;
+      return [];
     case '/pages/checkout':
       // add checkout page issues
-      break;
+      return [];
     case '/pages/shipping':
       // add shipping page issues
-      break;
+      return [];
     case '/pages/payment':
       // add payment page issues
-      break;
+      return [];
     case '/cart':
       // add cart page issues
-      break;
+      return [];
     case '/products/headphone-stand-black':
       // add product page issues
-      break;
+      return [];
     case '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas':
       // add product page issues
-      break;
+      return [];
     case '/products/usb-c-to-3-5mm-audio-cable-black':
       // add product page issues
-      break;
+      return [];
     case '/products/mw50-silver-metal-brown-leather':
       // add product page issues
-      break;
+      return [];
     case '/products/mw08-brown-ceramic-stainless-steel-case':
       // add product page issues
-      break;
+      return [];
     case '/products/mh40-wireless-ear-pads':
       // add product page issues
-      break;
+      return [];
     case '/products/mh40-wireless-silver-metal-navy-coated-canvas':
       // add product page issues
-      break;
+      return [];
     case '/account/addresses':
       // add addresses page issues
-      break;
+      return [];
     case '/account/register':
       // add signup page issues
-      break;
+      return [];
     default:
-      console.log(`No issues assign to this page`);
+      return [`No issues assign to this page.`];
   }
 }
 
