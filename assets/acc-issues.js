@@ -27,18 +27,17 @@ function swapDiv(elem) {
 
 window.onload = () => {
   // substituting all checkout btns href
+  setTimeout(() => {
   const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
-  if (btns.length > 0) {
-    setTimeout(() => {
+    if (btns.length > 0) {
       btns.forEach((btn) => {
-        console.log(btn);
-          btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-          btn.style.display = 'none';
+        btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
+        btn.style.display = 'none';
       })
-    }, 1000);
-    // btns.forEach((btn) => {
-    // })
-  }
+      // btns.forEach((btn) => {
+        // })
+    }
+  }, 1000);
 
 
   // fixing navbar focus order
