@@ -32,8 +32,11 @@ function swapDiv(elem) {
   if (btns.length > 0) {
     btns.forEach((btn) => {
       console.log(btn)
-      btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-      btn.remove();
+      const newBtn = document.createElement('a');
+      newBtn.href = '/pages/checkout';
+      newBtn.class = 'button';
+      newBtn.innerText = 'Checkout';
+      btn.parentElement.replaceChild(newBtn, btn);
     })
   }
 }, 1000);
