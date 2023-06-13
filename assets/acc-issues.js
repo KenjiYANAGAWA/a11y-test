@@ -31,8 +31,7 @@ window.onload = () => {
   if (btns.length > 0) {
     btns.forEach((btn) => {
       btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-      btn.remove();
-      console.log('removed')
+      btn.style.display = 'none';
     })
   }
   // window.location.href("https://a11y-test.com/pages/checkout");
