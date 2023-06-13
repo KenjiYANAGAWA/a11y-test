@@ -600,9 +600,9 @@ window.onload = () => {
       document.addEventListener('keydown', keydownHandler)
     } else {
       document.removeEventListener('keydown', keydownHandler);
-      if (document.querySelector('.popup-issue-list')) {
-        document.querySelector('.popup-issue-list').remove();
-      }
+      // if (document.querySelector('.popup-issue-list')) {
+      //   document.querySelector('.popup-issue-list').remove();
+      // }
     }
   })
 }
