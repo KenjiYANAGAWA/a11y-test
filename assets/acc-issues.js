@@ -586,14 +586,19 @@ let comboKey = []
     console.log(comboKey)
     if (comboKey.includes('Alt') && comboKey.includes('i')) {
       if (!document.querySelector('.popup-issue-list')) {
+        const listIssueContainer = document.createElement('div');
         const listIssue = document.createElement('div');
+
         listIssue.classList.add('popup-issue-list');
         listIssue.style.position = 'fixed';
-        listIssue.style.top = '0';
-        listIssue.style.left = '0';
-        listIssue.style.height = '30vh';
-        listIssue.style.width = '30vw';
-        listIssue.style.background  = 'red';
+        listIssue.style.top = '20px';
+        listIssue.style.left = '20px';
+        listIssue.style.height = 'calc(100vh - 40px)';
+        listIssue.style.width = 'calc(30vw -20px)';
+        listIssue.style.background  = 'white';
+        listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
+        listIssue.style.zIndex  = 1;
+
         document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
         comboKey = [];
       } else {
