@@ -218,15 +218,15 @@ listIssue.style.padding = '20px 32px'
 listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
 listIssue.style.zIndex  = 9999;
 
+let ctrl = false;
+
 // adding popup issue list
 document.addEventListener('keydown', (e) => {
-  if (comboKey.includes(e.key) && e.key !== 'Control') return
-  comboKey.push(e.key);
+  ctrl = (e.key == 'Control' || e.key == 'i');
 })
 
 document.addEventListener('keyup', (e) => {
-  if (!comboKey.includes(e.key) && e.key =='i') comboKey.push(e.key);
-  if (comboKey.length >= 2 && comboKey[0] != comboKey[1]) {
+  if (e.key == 'i' && ctrl) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
@@ -240,7 +240,6 @@ document.addEventListener('keyup', (e) => {
   if (popupVisible) {
     trapFocus(popupVisible);
   }
-  comboKey =[]
 })
 
 
