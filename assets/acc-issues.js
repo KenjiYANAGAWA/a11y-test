@@ -593,7 +593,7 @@ listIssue.style.boxShadow = '0 0 20px 20px rgba(0,0,0,.3)';
 listIssue.style.zIndex  = 1;
 
 // adding popup issue list
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keyup', (e) => {
 
   if (comboKey.includes(e.key)) return;
 
