@@ -548,6 +548,43 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         color: #707070;
       }
     </style>
+
+    <script>
+      function trapFocus(element) {
+        const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+        const firstFocusableEl = focusableEls[0];
+        const lastFocusableEl = focusableEls[focusableEls.length - 1];
+        const KEYCODE_TAB = 9;
+
+        element.addEventListener('keydown', function(e) {
+          var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if ( e.shiftKey ) /* shift + tab */ {
+            if (document.activeElement === firstFocusableEl) {
+              lastFocusableEl.focus();
+                e.preventDefault();
+              }
+            } else /* tab */ {
+            if (document.activeElement === lastFocusableEl) {
+              firstFocusableEl.focus();
+                e.preventDefault();
+              }
+            }
+        });
+      }
+      trapFocus(document.querySelector('.custom-popup'));
+
+      function closePopup(e) {
+        if(e.key && e.key == 'Escape' || e.className === 'close-btn'  || e.innerText === 'Enter Site') {
+          document.querySelector('.custom-popup').parentElement.remove();
+          localStorage.setItem('firstAccess', false);
+        }
+      }
+    </script>
   </head>
 
   <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
@@ -578,42 +615,6 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
 <!--             <a href="#" onclick="window.close();">Close the page</a> -->
 <!--             <a href="https://www.masterdynamic.com/" target="_blank">Go to Master & Dynamic</a> -->
           </div>
-          <script>
-            function trapFocus(element) {
-              const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-              const firstFocusableEl = focusableEls[0];
-              const lastFocusableEl = focusableEls[focusableEls.length - 1];
-              const KEYCODE_TAB = 9;
-
-              element.addEventListener('keydown', function(e) {
-                var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
-
-                if (!isTabPressed) {
-                  return;
-                }
-
-                if ( e.shiftKey ) /* shift + tab */ {
-                  if (document.activeElement === firstFocusableEl) {
-                    lastFocusableEl.focus();
-                      e.preventDefault();
-                    }
-                  } else /* tab */ {
-                  if (document.activeElement === lastFocusableEl) {
-                    firstFocusableEl.focus();
-                      e.preventDefault();
-                    }
-                  }
-              });
-            }
-            trapFocus(document.querySelector('.custom-popup'));
-
-            function closePopup(e) {
-              if(e.key && e.key == 'Escape' || e.className === 'close-btn'  || e.innerText === 'Enter Site') {
-                document.querySelector('.custom-popup').parentElement.remove();
-                localStorage.setItem('firstAccess', false);
-              }
-            }
-          </script>
         </div>
       </div>
     {%- endif -%}
