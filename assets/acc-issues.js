@@ -486,6 +486,7 @@ window.onload = () => {
 
     // update address
     const addressArray = addressList(document);
+    console.log(addressArray)
 
     // update saved adresses input;
     const savedAddressInput = document.querySelector('.shipping-checkout select');
