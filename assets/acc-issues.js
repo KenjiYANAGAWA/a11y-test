@@ -499,6 +499,7 @@ window.onload = () => {
     const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
     const values = addressArray[0];
+    console.log(values)
 
     inputs.forEach((input) => {
       if (input.id == 'Select1') {
