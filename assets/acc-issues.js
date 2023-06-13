@@ -1863,6 +1863,40 @@ window.onload = () => {
           padding: 0 6px;
         }
 
+        .information-row div:has(span) {
+          color: #707070;
+        }
+
+        label[for="billing_address_same"] .input-text,
+        label[for="billing_address_new"] .input-text {
+          align-items: center;
+          font-size: .9em;
+          font-weight: 500;
+        }
+
+
+        section[aria-label=Payment] fieldset p {
+          margin: 0;
+          font-size: .9em;
+        }
+
+        section[aria-label=Payment] fieldset > :nth-child(1) {
+          border: solid 1px rgb(240, 196, 23);
+          background-color: rgb(255,245,228);
+          font-weight: 500;
+        }
+
+        section[aria-label=Payment] fieldset > :nth-child(2) {
+          text-align: center;
+        }
+
+        section[aria-label=Payment] > p,
+        section[aria-label="Billing address"] > p {
+          font-size: .9em;
+          color: #707070;
+        }
+
+
       </style>
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
