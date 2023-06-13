@@ -221,14 +221,14 @@ listIssue.style.zIndex  = 9999;
 // adding popup issue list
 document.addEventListener('keydown', (e) => {
 
-  if (!comboKey.includes(e.key) && e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
+  if (!comboKey.includes(e.key) && (e.key =='Alt' || e.key == 'i')) comboKey.push(e.key);
 
   setTimeout(() => {
     comboKey = []
   }, 500);
 
 
-  if (comboKey.length == 2 || comboKey[0] != comboKey[1]) {
+  if (comboKey.length == 2) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
