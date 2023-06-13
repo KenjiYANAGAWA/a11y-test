@@ -582,18 +582,22 @@ let comboKey = []
 
   // adding popup with issue list
   document.addEventListener('keyup', (e) => {
-    if (!comboKey.includes(e.key)) comboKey.push(e.key);
+    comboKey.includes(e.key) ? null : comboKey.push(e.key);
     console.log(comboKey)
     if (comboKey.includes('Alt') && comboKey.includes('i')) {
-      const listIssue = document.createElement('div');
-      listIssue.classList.add('popup-issue-list');
-      listIssue.style.position = 'fixed';
-      listIssue.style.top = '0';
-      listIssue.style.left = '0';
-      listIssue.style.height = '30vh';
-      listIssue.style.width = '30vw';
-      listIssue.style.background  = 'red';
-      document.body.append(listIssue);
-      comboKey = [];
-    };
+      if (!document.querySelector('.popup-issue-list')) {
+        const listIssue = document.createElement('div');
+        listIssue.classList.add('popup-issue-list');
+        listIssue.style.position = 'fixed';
+        listIssue.style.top = '0';
+        listIssue.style.left = '0';
+        listIssue.style.height = '30vh';
+        listIssue.style.width = '30vw';
+        listIssue.style.background  = 'red';
+        document.body.insertAdjacentElement('afterbegin', listIssue);
+        comboKey = [];
+      } else {
+        document.querySelector('.popup-issue-list').remove();
+      }
+    }
   })
