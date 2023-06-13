@@ -576,8 +576,9 @@ window.onload = () => {
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
+}
 
-  let comboKey = []
+let comboKey = []
 
   // adding popup with issue list
   document.addEventListener('keyup', (e) => {
@@ -596,4 +597,3 @@ window.onload = () => {
       comboKey = [];
     };
   })
-}
