@@ -27,16 +27,21 @@ function swapDiv(elem) {
 
 window.onload = () => {
   // substituting all checkout btns href
-  document.querySelector('buy-buttons').addEventListener('click', ()=> {
-    const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
-    if (btns.length > 0) {
-      btns.forEach((btn) => console.log(btn))
-      // btns.forEach((btn) => {
-      //   btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-      //   // btn.style.display = 'none';
-      // })
-    }
-  })
+  const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
+  if (btns.length > 0) {
+    btns.forEach((btn) => {
+      console.log(btn);
+      btn.parentElement.addEventListener('submit', (e)=> {
+        e.preventDefault();
+        console.log(e)
+      })
+    })
+    // btns.forEach((btn) => {
+    //   btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
+    //   // btn.style.display = 'none';
+    // })
+  }
+
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
