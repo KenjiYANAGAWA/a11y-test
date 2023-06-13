@@ -206,6 +206,8 @@ document.addEventListener('keyup', (e) => {
     popupVisible.remove();
   } else {
     document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
+    const popup = document.querySelector('.popup-issue-list');
+    trapFocus(popup);
   }
   comboKey = []
 })
