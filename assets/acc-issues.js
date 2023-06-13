@@ -195,21 +195,22 @@ listIssue.style.zIndex  = 9999;
 // adding popup issue list
 document.addEventListener('keyup', (e) => {
 
-  if (comboKey.includes(e.key)) return;
+  if (!comboKey.includes(e.key) && e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
 
-  if (e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
+  setTimeout(() => {
+    comboKey = []
+  }, 500);
 
-  if (comboKey.length != 2) return;
-
-  const popupVisible = document.querySelector('.popup-issue-list');
-  if (popupVisible) {
-    popupVisible.remove();
-  } else {
-    document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
-    const popup = document.querySelector('.popup-issue-list');
-    trapFocus(popup);
+  if (comboKey.length == 2) {
+    const popupVisible = document.querySelector('.popup-issue-list');
+    if (popupVisible) {
+      popupVisible.remove();
+    } else {
+      document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
+      const popup = document.querySelector('.popup-issue-list');
+      trapFocus(popup);
+    }
   }
-  comboKey = []
 })
 
 
