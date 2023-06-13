@@ -223,9 +223,9 @@ document.addEventListener('keydown', (e) => {
 
   if (!comboKey.includes(e.key) && e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
 
-  setTimeout(() => {
-    comboKey = []
-  }, 500);
+  // setTimeout(() => {
+  //   comboKey = []
+  // }, 500);
 
 
   if (comboKey.length == 2) {
@@ -237,6 +237,7 @@ document.addEventListener('keydown', (e) => {
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
       listIssue.children[0].focus();
     }
+    comboKey = []
   } else {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
