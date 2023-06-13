@@ -579,6 +579,7 @@ window.onload = () => {
 
 
   const keyupHandler = (e) => {
+    console.log(e.key)
     if (e.key == 'i') {
       const listIssue = document.createElement('div');
       listIssue.classList.add('popup-issue-list');
@@ -594,6 +595,7 @@ window.onload = () => {
 
   // adding popup with issue list
   document.addEventListener('keydown', (e) => {
+    console.log(e.key)
     if (e.key == 'Alt') {
       document.addEventListener('keyup', keyupHandler)
     } else {
