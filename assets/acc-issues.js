@@ -579,9 +579,10 @@ window.onload = () => {
 
   let comboKey = []
 
-  const keydownHandler = (e) => {
-    console.log(e.key)
-    if (e.key == 'i') {
+  // adding popup with issue list
+  document.addEventListener('keyup', (e) => {
+    if (!comboKey.includes(e.key)) comboKey.push(e.key);
+    if (comboKey.includes('Alt') && comboKey.includes('i')) {
       const listIssue = document.createElement('div');
       listIssue.classList.add('popup-issue-list');
       listIssue.style.position = 'fixed';
@@ -592,14 +593,6 @@ window.onload = () => {
       listIssue.style.background  = 'red';
       document.body.append(listIssue);
       comboKey = [];
-    }
-  }
-
-  // adding popup with issue list
-  document.addEventListener('keyup', (e) => {
-    if (!comboKey.includes(e.key)) comboKey.push(e.key);
-    if (comboKey.includes('Alt') && comboKey.includes('i')) {
-      document.addEventListener('keydown', keydownHandler)
     };
   })
 }
