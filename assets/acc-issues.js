@@ -228,7 +228,7 @@ document.addEventListener('keydown', (e) => {
   // }, 500);
 
 
-  if (comboKey.length == 2 && comboKey.includes('Alt') && comboKey.includes('i')) {
+  if (comboKey.length == 2 && comboKey[0] !== comboKey[1]) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
