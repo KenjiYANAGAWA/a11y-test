@@ -1931,6 +1931,6 @@ window.onload = () => {
     document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
-    document.querySelector('.information-row:has(p)').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
+    document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
 }
