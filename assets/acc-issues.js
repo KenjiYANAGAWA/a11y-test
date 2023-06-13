@@ -227,16 +227,19 @@ document.addEventListener('keyup', (e) => {
     comboKey = []
   }, 500);
 
+
   if (comboKey.length == 2) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
     } else {
-      document.activeElement.blur();
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
-      trapFocus(listIssue);
-      listIssue.firstChild.focus();
     }
+  }
+
+  const popupVisible = document.querySelector('.popup-issue-list');
+  if (popupVisible) {
+    trapFocus(listIssue);
   }
 })
 
