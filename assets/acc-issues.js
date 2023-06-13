@@ -397,6 +397,7 @@ window.onload = () => {
           font-weight: 500;
         }
         .steps {
+          margin: 17px 0 26px
           font-size: 0.75em;
         }
         .main-content {
@@ -868,6 +869,7 @@ window.onload = () => {
           font-weight: 500;
         }
         .steps {
+          margin: 17px 0 26px
           font-size: 0.75em;
         }
         .main-content {
@@ -1430,6 +1432,7 @@ window.onload = () => {
           font-weight: 500;
         }
         .steps {
+          margin: 17px 0 26px
           font-size: 0.75em;
         }
         .main-content {
