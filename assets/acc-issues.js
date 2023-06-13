@@ -406,7 +406,7 @@ window.onload = () => {
           background: white;
         }
         div:has(.grid) {
-          background: linear-gradient(white, #ebebeb)
+          background: linear-gradient(90deg, white 50%, #ebebeb 50%);
         }
 
         .total {
@@ -883,7 +883,7 @@ window.onload = () => {
           background: white;
         }
         div:has(.grid) {
-          background: linear-gradient(white, #ebebeb)
+          background: linear-gradient(90deg, white 50%, #ebebeb 50%);
         }
 
         .total {
@@ -1451,7 +1451,7 @@ window.onload = () => {
           background: white;
         }
         div:has(.grid) {
-          background: linear-gradient(white, #ebebeb)
+          background: linear-gradient(90deg, white 50%, #ebebeb 50%);
         }
 
         .total {
