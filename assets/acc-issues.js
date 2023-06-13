@@ -223,9 +223,9 @@ document.addEventListener('keydown', (e) => {
 
   if (!comboKey.includes(e.key) && e.key =='Alt' || e.key == 'i') comboKey.push(e.key);
 
-  // setTimeout(() => {
-  //   comboKey = []
-  // }, 500);
+  setTimeout(() => {
+    comboKey = []
+  }, 500);
 
 
   if (comboKey.length == 2 && comboKey[0] !== comboKey[1]) {
@@ -243,7 +243,6 @@ document.addEventListener('keydown', (e) => {
       trapFocus(popupVisible);
     }
   }
-  comboKey = []
 })
 
 
