@@ -220,7 +220,7 @@ listIssue.style.zIndex  = 9999;
 
 // adding popup issue list
 document.addEventListener('keydown', (e) => {
-  if (!comboKey.includes(e.key) && e.key =='Alt') comboKey.push(e.key);
+  if (!comboKey.includes(e.key) && e.key =='Control') comboKey.push(e.key);
 })
 
 document.addEventListener('keyup', (e) => {
