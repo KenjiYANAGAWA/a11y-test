@@ -244,14 +244,14 @@ window.onload = () => {
   // adding issues to popup
   const issues = [];
   issueListArray().forEach((item) => {
-    issues.push(`<tr><td><a href="#">${item}</a></td></tr>`)
+    issues.push(`<li id="${item.join('-')}"><a href="#${item.join('-')}">${item}</a></li>`)
   })
 
   listIssue.innerHTML = `
-    <h2 tabindex="0" >Issue List</h2>
-    <table>
+    <h2 id="issue-list"><a href="#issue-list">Issue List</a></h2>
+    <ul>
       ${issues.join('\n')}
-    </table>
+    </ul>
   `
 
   // fixing navbar focus order
