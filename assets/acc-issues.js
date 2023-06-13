@@ -236,13 +236,14 @@ document.addEventListener('keyup', (e) => {
       document.activeElement.blur();
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
     }
+  } else {
+    const popupVisible = document.querySelector('.popup-issue-list');
+    if (popupVisible) {
+      trapFocus(popupVisible);
+      popupVisible.children[0].focus();
+    }
   }
 
-  const popupVisible = document.querySelector('.popup-issue-list');
-  if (popupVisible) {
-    trapFocus(popupVisible);
-    popupVisible.children[0].focus();
-  }
 })
 
 
