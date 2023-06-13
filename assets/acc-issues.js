@@ -65,36 +65,6 @@ const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
       `
 }
 
-const cartSummaryPrice = () => {
-  //items to add to cart
-  const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
-  // location to be added
-  const checkoutItemSummary = document.querySelector('.total div[role=table]');
-
-  //remove sample product item cart if any real item
-  if (cartItemsContainer.length >= 1) {
-    checkoutItemSummary.children[1].remove();
-  }
-
-  //adding all items
-  cartItemsContainer.forEach((item) => {
-    const itemImg = item.querySelector('.cart-item-img img');
-    const itemTitle = item.querySelector('.cart-item-title');
-    const itemQuantity = item.querySelector('.cart-item-quantity');
-    const itemFinalPrice = item.querySelector('.cart-item-final-price');
-
-    const itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice)
-
-    checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
-  })
-
-  const finalTotal = document.querySelector('.cart-total-price').innerText;
-
-  // update total price
-  document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
-  document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
-};
-
  // substituting all checkout btns href
  setInterval(() => {
   const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
@@ -462,7 +432,33 @@ window.onload = () => {
     `
     document.body.insertAdjacentHTML('beforeend', styleEl);
   } else if (location.pathname == '/pages/checkout') {
-    cartSummaryPrice();
+    //items to add to cart
+    const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
+    // location to be added
+    const checkoutItemSummary = document.querySelector('.total div[role=table]');
+
+    //remove sample product item cart if any real item
+    if (cartItemsContainer.length >= 1) {
+      checkoutItemSummary.children[1].remove();
+    }
+
+    //adding all items
+    cartItemsContainer.forEach((item) => {
+      const itemImg = item.querySelector('.cart-item-img img');
+      const itemTitle = item.querySelector('.cart-item-title');
+      const itemQuantity = item.querySelector('.cart-item-quantity');
+      const itemFinalPrice = item.querySelector('.cart-item-final-price');
+
+      const itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice)
+
+      checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
+    })
+
+    const finalTotal = document.querySelector('.cart-total-price').innerText;
+
+    // update total price
+    document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
+    document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     const addressArray = []
     // update address
@@ -499,7 +495,6 @@ window.onload = () => {
     const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
     const values = addressArray[0];
-    console.log(values)
 
     inputs.forEach((input) => {
       if (input.id == 'Select1') {
@@ -529,7 +524,33 @@ window.onload = () => {
     //   }
     // })
   } else if (location.pathname == '/pages/shipping') {
-    cartSummaryPrice();
+    //items to add to cart
+    const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
+    // location to be added
+    const checkoutItemSummary = document.querySelector('.total div[role=table]');
+
+    //remove sample product item cart if any real item
+    if (cartItemsContainer.length >= 1) {
+      checkoutItemSummary.children[1].remove();
+    }
+
+    //adding all items
+    cartItemsContainer.forEach((item) => {
+      const itemImg = item.querySelector('.cart-item-img img');
+      const itemTitle = item.querySelector('.cart-item-title');
+      const itemQuantity = item.querySelector('.cart-item-quantity');
+      const itemFinalPrice = item.querySelector('.cart-item-final-price');
+
+      const itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice)
+
+      checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
+    })
+
+    const finalTotal = document.querySelector('.cart-total-price').innerText;
+
+    // update total price
+    document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
+    document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     const addressArray = []
     // update address
@@ -573,7 +594,33 @@ window.onload = () => {
       localStorage.setItem('shipping-method', `${methodName} - ${price}`);
     })
   } else if (location.pathname == '/pages/payment') {
-    cartSummaryPrice();
+    //items to add to cart
+    const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
+    // location to be added
+    const checkoutItemSummary = document.querySelector('.total div[role=table]');
+
+    //remove sample product item cart if any real item
+    if (cartItemsContainer.length >= 1) {
+      checkoutItemSummary.children[1].remove();
+    }
+
+    //adding all items
+    cartItemsContainer.forEach((item) => {
+      const itemImg = item.querySelector('.cart-item-img img');
+      const itemTitle = item.querySelector('.cart-item-title');
+      const itemQuantity = item.querySelector('.cart-item-quantity');
+      const itemFinalPrice = item.querySelector('.cart-item-final-price');
+
+      const itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice);
+
+      checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
+    })
+
+    const finalTotal = document.querySelector('.cart-total-price').innerText;
+
+    // update total price
+    document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
+    document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   }
