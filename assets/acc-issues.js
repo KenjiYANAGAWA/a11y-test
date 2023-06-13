@@ -220,15 +220,12 @@ listIssue.style.zIndex  = 9999;
 
 // adding popup issue list
 document.addEventListener('keydown', (e) => {
+  if (!comboKey.includes(e.key) && e.key =='Alt') comboKey.push(e.key);
+})
 
-  if (!comboKey.includes(e.key) && (e.key =='Alt' || e.key == 'i')) comboKey.push(e.key);
-
-  setTimeout(() => {
-    comboKey = []
-  }, 500);
-
-
-  if (comboKey.length == 2) {
+document.addEventListener('keyup', (e) => {
+  if (!comboKey.includes(e.key) && e.key =='i') comboKey.push(e.key);
+  if (comboKey[0] != comboKey[1]) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
@@ -237,12 +234,12 @@ document.addEventListener('keydown', (e) => {
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
       listIssue.children[0].focus();
     }
-  } else {
-    const popupVisible = document.querySelector('.popup-issue-list');
-    if (popupVisible) {
-      trapFocus(popupVisible);
-    }
   }
+  const popupVisible = document.querySelector('.popup-issue-list');
+  if (popupVisible) {
+    trapFocus(popupVisible);
+  }
+  comboKey =[]
 })
 
 
