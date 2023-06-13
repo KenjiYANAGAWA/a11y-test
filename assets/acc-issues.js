@@ -33,7 +33,7 @@ function swapDiv(elem) {
     btns.forEach((btn) => {
       console.log(btn)
       btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
-      btn.style.display = 'none';
+      btn.remove();
     })
   }
 }, 1000);
