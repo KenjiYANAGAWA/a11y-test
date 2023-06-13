@@ -33,6 +33,7 @@ window.onload = () => {
       btns.forEach((btn) => {
         btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
         btn.remove();
+        console.log('removed')
       })
     }
   }, 100);
