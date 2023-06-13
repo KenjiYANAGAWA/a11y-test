@@ -26,6 +26,19 @@ function swapDiv(elem) {
 }
 
 window.onload = () => {
+  // substituting all checkout btns href
+  setInterval(() => {
+    const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
+    if (btns.length > 0) {
+      btns.forEach((btn) => {
+        btn.insertAdjacentHTML('afterend', `<a class="button" href='/pages/checkout'>Checkout</a>`);
+        btn.remove();
+      })
+    }
+  }, 100);
+  // window.location.href("https://a11y-test.com/pages/checkout");
+
+
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
@@ -1984,7 +1997,5 @@ window.onload = () => {
     document.querySelector('.price-summary-table-row .notranslate').innerText = finalTotal;
 
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
-  } else if (location.pathname.includes('/checkouts/')) {
-    // window.location.href("https://a11y-test.com/pages/checkout");
   }
 }
