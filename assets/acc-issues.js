@@ -241,7 +241,7 @@ document.addEventListener('keyup', (e) => {
   const popupVisible = document.querySelector('.popup-issue-list');
   if (popupVisible) {
     trapFocus(popupVisible);
-    popupVisible.firstChild.focus();
+    popupVisible.children[0].focus();
   }
 })
 
