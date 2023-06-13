@@ -594,7 +594,7 @@ let comboKey = []
         listIssue.style.height = '30vh';
         listIssue.style.width = '30vw';
         listIssue.style.background  = 'red';
-        document.body.insertAdjacentElement('afterbegin', listIssue);
+        document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
         comboKey = [];
       } else {
         document.querySelector('.popup-issue-list').remove();
