@@ -53,6 +53,9 @@ const issueListArray = () => {
     case '/products/mh40-wireless-silver-metal-navy-coated-canvas':
       // add product page issues
       return [];
+    case '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel':
+      // add product page issues
+      return [];
     case '/account/addresses':
       // add addresses page issues
       return [];
