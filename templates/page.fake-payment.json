@@ -9,6 +9,9 @@
     },
     "f992dd3f-786d-4e30-bd35-c16adeb0e45e": {
       "type": "custom-html",
+      "custom_css": [
+        ".header__wrapper, .footer {display: none !important }"
+      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
