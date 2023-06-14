@@ -67,6 +67,15 @@ window.onload = () => {
   // removing about us
   if (location.pathname !== '/') removeFooterLink("/pages/about-us");
 
+  //removing header and footer from checkout pages
+  if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
+    addStyle(`
+      .header__wrapper,
+      .footer {
+        display: none !important;
+      }`
+    );
+  }
   // breaking focus color to light blue
   document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
     outline-color: lightblue !important}</style>`)
