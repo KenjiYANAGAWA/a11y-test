@@ -1,4 +1,4 @@
-import "acc-issues-helpers.js";
+import "./acc-issues-helpers.js";
 
 testHelperFile('working');
 
