@@ -177,3 +177,7 @@ document.addEventListener('keyup', (e) => {
     trapFocus(popupVisible);
   }
 })
+
+const addStyle = (string) => {
+  document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
+}

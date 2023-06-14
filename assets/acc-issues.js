@@ -1,73 +1,28 @@
 // List issue
-const issueListObj = {}
-
-
-const issueListArray = () => {
-  switch (location.pathname) {
-    case '/':
-      // add home page issues
-      return [
-        'Issue 1',
-        'Issue 2',
-        'Issue 3'
-      ]
-    case '/collections/all':
-      // add collection page issues
-      return [];
-    case '/pages/contact':
-      // add contact page issues
-      return [];
-    case '/pages/about-us':
-      // add about page issues
-      return [];
-    case '/pages/advertisement':
-      // add advertisement page issues
-      return [];
-    case '/pages/checkout':
-      // add checkout page issues
-      return [];
-    case '/pages/shipping':
-      // add shipping page issues
-      return [];
-    case '/pages/payment':
-      // add payment page issues
-      return [];
-    case '/cart':
-      // add cart page issues
-      return [];
-    case '/products/headphone-stand-black':
-      // add product page issues
-      return [];
-    case '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas':
-      // add product page issues
-      return [];
-    case '/products/usb-c-to-3-5mm-audio-cable-black':
-      // add product page issues
-      return [];
-    case '/products/mw50-silver-metal-brown-leather':
-      // add product page issues
-      return [];
-    case '/products/mw08-brown-ceramic-stainless-steel-case':
-      // add product page issues
-      return [];
-    case '/products/mh40-wireless-ear-pads':
-      // add product page issues
-      return [];
-    case '/products/mh40-wireless-silver-metal-navy-coated-canvas':
-      // add product page issues
-      return [];
-    case '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel':
-      // add product page issues
-      return [];
-    case '/account/addresses':
-      // add addresses page issues
-      return [];
-    case '/account/register':
-      // add signup page issues
-      return [];
-    default:
-      return [`No issues assign to this page.`];
-  }
+const issueListObj = {
+  '/':  [
+    'Issue 1',
+    'Issue 2',
+    'Issue 3'
+  ],
+  '/collections/all': [],
+  '/pages/contact': [],
+  '/pages/about-us': [],
+  '/pages/advertisement': [],
+  '/pages/checkout': [],
+  '/pages/shipping': [],
+  '/pages/payment': [],
+  '/cart': [],
+  '/products/headphone-stand-black': [],
+  '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
+  '/products/usb-c-to-3-5mm-audio-cable-black': [],
+  '/products/mw50-silver-metal-brown-leather': [],
+  '/products/mw08-brown-ceramic-stainless-steel-case': [],
+  '/products/mh40-wireless-ear-pads': [],
+  '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
+  '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
+  '/account/addresses': [],
+  '/account/register': []
 }
 
 // low color contrast cart and social media links
@@ -76,15 +31,19 @@ const lowContrastColor = "rgb(var(--text-color) / .4)"
 window.onload = () => {
   // adding issues to popup
   const issues = [];
-  issueListArray().forEach((item) => {
-    issues.push(`<li tabindex="0">${item}</li>`)
-  })
+  if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
+    issues.push('<ul>');
+    issueListObj[location.pathname].forEach((item) => {
+      issues.push(`<li tabindex="0">${item}</li>`)
+    })
+    issues.push('</ul>');
+  } else {
+    issues.push(`<p tabindex="0">No issues assign to this page.</p>`)
+  }
 
   listIssue.innerHTML = `
     <h2 tabindex="0">${issues.length} issues on ${location.href}</h2>
-    <ul>
-      ${issues.join('\n')}
-    </ul>
+    ${issues.join('\n')}
   `
 
   // fixing navbar focus order
@@ -189,6 +148,7 @@ window.onload = () => {
       }`
     body.appendChild(style);
 
+
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     addToCartBtns.forEach((btn)=>{
@@ -205,7 +165,8 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
-    document.body.insertAdjacentHTML("beforeend", `<style>@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    addStyle(`
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       html {
         transform: rotate(-90deg);
         transform-origin: left top;
@@ -215,7 +176,7 @@ window.onload = () => {
         top: 100%;
         left: 0;
       }
-    }</style>`)
+    }`)
 
     // icon class to break
     const iconSelector = [
@@ -250,9 +211,9 @@ window.onload = () => {
     }
 
     // moving to checkout in 30s
-    setTimeout(() => {
-      checkoutBtn.click();
-    }, 30000);
+    // setTimeout(() => {
+    //   checkoutBtn.click();
+    // }, 30000);
 
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
@@ -421,8 +382,7 @@ window.onload = () => {
     navbarContainer.append(navbarItemTwo);
 
   } else if (location.pathname == '/pages/advertisement') {
-    const styleEl = `
-    <style>
+    addStyle(`
       iframe {
         animation-name: blink;
         animation-duration: .1s;
@@ -437,10 +397,8 @@ window.onload = () => {
       @keyframes blink {
         from {opacity: 1;}
         to {opacity: 0;}
-      }
-    </style>
-    `
-    document.body.insertAdjacentHTML('beforeend', styleEl);
+      }`
+    )
   } else if (location.pathname == '/pages/checkout') {
     cartSummaryPrice();
 
