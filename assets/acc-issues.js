@@ -1,4 +1,4 @@
-import trapFocus from "./acc-issues-helpers.js";
+import { trapFocus } from "./acc-issues-helpers.js";
 
 
 testHelperFile('working');
