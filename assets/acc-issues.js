@@ -398,7 +398,7 @@ window.onload = () => {
       }`
     )
     } else {
-      window.close();
+      history.back();
     }
   } else if (location.pathname == '/pages/checkout') {
     cartSummaryPrice();
