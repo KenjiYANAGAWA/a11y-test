@@ -64,7 +64,7 @@ window.onload = () => {
     newBuyNowBtn.style.background = 'black';
     newBuyNowBtn.style.width = '100%';
     newBuyNowBtn.style.height = '100%';
-    newBuyNowBtn.innerText = 'Buy it Now';
+    newBuyNowBtn.innerText = 'Buy it now';
     buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
   }
 
