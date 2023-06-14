@@ -1,4 +1,4 @@
-import { trapFocus, swapDiv } from "./acc-issues-helpers.js";
+// import { trapFocus, swapDiv } from "./acc-issues-helpers.js";
 
 // List issue
 const issueListObj = {
