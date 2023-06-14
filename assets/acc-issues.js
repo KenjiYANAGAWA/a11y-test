@@ -1,4 +1,15 @@
+import "acc-issues-helpers.js";
+
+testHelperFile('working');
+
 // List issue
+const issueListObj = {
+  '/': [],
+  '/collections/all': [],
+  '/pages/contact': [],
+}
+
+
 const issueListArray = () => {
   switch (location.pathname) {
     case '/':
