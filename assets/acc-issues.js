@@ -379,7 +379,8 @@ window.onload = () => {
     navbarContainer.append(navbarItemTwo);
 
   } else if (location.pathname == '/pages/advertisement') {
-    addStyle(`
+    if (confirm("This page contains flashing light content. Are you sure you want to continue?") == true) {
+      addStyle(`
       iframe {
         animation-name: blink;
         animation-duration: .1s;
@@ -396,6 +397,9 @@ window.onload = () => {
         to {opacity: 0;}
       }`
     )
+    } else {
+      window.close();
+    }
   } else if (location.pathname == '/pages/checkout') {
     cartSummaryPrice();
 
