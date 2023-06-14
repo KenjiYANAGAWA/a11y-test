@@ -138,6 +138,9 @@ const cartSummaryPrice = () => {
   if (buyNowBtn) {
     const newBuyNowBtn = document.createElement('a');
     newBuyNowBtn.href = '#'
+    newBuyNowBtn.style.display = 'inline-block';
+    newBuyNowBtn.style.textAlign = 'center';
+    newBuyNowBtn.style.fontWeight = 600;
     newBuyNowBtn.style.borderRadius = '200px'
     newBuyNowBtn.style.padding = '17.2px 40px'
     newBuyNowBtn.style.color = 'white';
