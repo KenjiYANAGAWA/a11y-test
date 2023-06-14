@@ -136,7 +136,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "label {color: #666666;}"
+      "label, ::placeholder {color: #666666; opacity: 1 !important;}"
     ]
   }
 }
