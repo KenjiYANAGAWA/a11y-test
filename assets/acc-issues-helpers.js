@@ -128,7 +128,7 @@ const cartSummaryPrice = () => {
       const newBtn = document.createElement('a');
       newBtn.href = '/pages/checkout';
       newBtn.classList.add('button');
-      newBtn.style.color = 'white';
+      newBtn.style.color = 'white !important';
       newBtn.innerText = 'Checkout';
       btn.parentElement.replaceChild(newBtn, btn);
     })
