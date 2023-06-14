@@ -1,4 +1,4 @@
-import trapFocus from "./acc-issues-helpers.js";
+import { trapFocus, swapDiv } from "./acc-issues-helpers.js";
 
 // List issue
 const issueListObj = {
@@ -99,9 +99,7 @@ const convertNumberToStars = (rating) => {
     return ratingAsStarsEl.join('');
 }
 
-function swapDiv(elem) {
-  elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
-}
+
 
 const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
   return `

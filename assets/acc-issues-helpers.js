@@ -25,4 +25,8 @@
   });
 }
 
-export { trapFocus as default }
+function swapDiv(elem) {
+  elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
+}
+
+export { trapFocus, swapDiv }
