@@ -136,7 +136,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "label, ::placeholder {color: #666666; opacity: 1 !important;}"
+      "label,textarea::placeholder {color: #666666; opacity: 1 !important;}"
     ]
   }
 }
