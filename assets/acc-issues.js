@@ -34,15 +34,15 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li tabindex="0">${item}</li>`)
+      issues.push(`<li>${item}</li>`)
     })
     issues.push('</ul>');
   } else {
-    issues.push(`<p tabindex="0">No issues assign to this page.</p>`)
+    issues.push(`<p>No issues assign to this page.</p>`)
   }
 
   listIssue.innerHTML = `
-    <h2 tabindex="0">${issues.length == 1 ? 0 : issues.length - 2} issues on ${location.href}</h2>
+    <h2>${issues.length == 1 ? 0 : issues.length - 2} issues on ${location.href}</h2>
     ${issues.join('\n')}
   `
 
