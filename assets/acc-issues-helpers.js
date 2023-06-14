@@ -133,6 +133,16 @@ const cartSummaryPrice = () => {
       btn.parentElement.replaceChild(newBtn, btn);
     })
   }
+
+  const buyNowBtn = document.querySelector('.shopify-payment-button__button');
+  if (buyNowBtn) {
+    const newBuyNowBtn = document.createElement('a');
+    newBuyNowBtn.href = '#'
+    newBuyNowBtn.classList.add('button');
+    newBuyNowBtn.style.color = 'white !important';{
+    newBuyNowBtn.innerText = 'Checkout';
+    buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);}
+  }
 }, 300);
 
 // for checking combo press
