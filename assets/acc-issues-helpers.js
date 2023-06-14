@@ -140,8 +140,10 @@ const cartSummaryPrice = () => {
     newBuyNowBtn.href = '#'
     newBuyNowBtn.classList.add('button');
     newBuyNowBtn.style.color = 'white !important';
-    newBuyNowBtn.innerText = 'Buy Now';
-    // buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
+    newBuyNowBtn.style.width = '100% !important';
+    newBuyNowBtn.style.height = '100% !important';
+    newBuyNowBtn.innerText = 'Buy it Now';
+    buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
   }
 }, 300);
 
