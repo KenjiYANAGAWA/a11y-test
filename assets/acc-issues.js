@@ -140,9 +140,6 @@ window.onload = () => {
     const body = document.body;
     const style = document.createElement('style');
     style.innerHTML = `
-      .quick-buy-drawer a {
-        color: ${lowContrastColor} !important;
-      }
       .quick-buy-drawer__info .banner {
         color: rgba(var(--banner-color) / 0.4) !important;
       }`
