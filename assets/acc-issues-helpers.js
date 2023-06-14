@@ -25,4 +25,4 @@
   });
 }
 
-export { trapFocus }
+export { trapFocus as default }
