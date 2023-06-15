@@ -24,7 +24,9 @@ const issueListObj = {
   ],
   '/pages/shipping': [],
   '/pages/payment': [],
-  '/cart': [],
+  '/cart': [
+    ['2.1.2 No Keyboard Trap','F10: Failure of Success Criterion 2.1.2 and Conformance Requirement 5 due to combining multiple content formats in a way that traps users inside one format type','Once focused on "checkout" button, keyboard cannot navigate away.']
+  ],
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
