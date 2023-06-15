@@ -2,15 +2,21 @@
 const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
   '/':  [
-    'Footer Social media Icons do not meet contrast requirement',
-    'Under "Incredible features" Tooltip appears on hover. However, the tooltip disappears when mouse moves away from the popup',
-    'Issue 3'
+    ['4.1.3 Status Messages', 'F103: Failure of Success Criterion 4.1.3 due to providing status messages that cannot be programmatically determined through role or properties', 'Cart Popup: When user increases the quantity of an item, screen reader does not announce the visual change of price and quantity.']
+    ],
+    ['','',''],
+    ['','','']
+  '/collections/all': [
+    ['','','']
   ],
-  '/collections/all': [],
   '/pages/contact': [],
   '/pages/about-us': [],
   '/pages/advertisement': [],
-  '/pages/checkout': [],
+  '/pages/checkout': [
+    ['4.1.1 Parsing', 'F70: Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute markup', 'id="first-name", id="last-name", id="select0" are used multiple times'],
+    ['1.1.1 Non-text Content', 'F65: Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative on img elements, area elements, and input elements of type "image"','Dropdown collapsed caret icon is only announced as **image**'],
+    ['1.3.1 Info and Relationships','F91: Failure of Success Criterion 1.3.1 for not correctly marking up table headers','**Contact** and **Ship to** acts as an row header but not programmed as such.']
+  ],
   '/pages/shipping': [],
   '/pages/payment': [],
   '/cart': [],
