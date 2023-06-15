@@ -22,10 +22,7 @@ const issueListObj = {
     ['1.4.10 Reflow','F102: Failure of Success Criterion 1.4.10 due to content disappearing and not being available when content has reflowed','"About Us page is not responsive. Page requires horizontal scroll with 320px width"'],
     ['2.4.4 Link Purpose (In Context)','G91: Providing link text that describes the purpose of a link','About us page has a link without link text, uses a url as the hyperlink text'],
     ['2.4.6 Headings and Labels','G141: Organizing a page using headings"About us page. Heading with same text is used twice for different content."
-    ['1.4.1 Use of Color','F73: Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision','"On **about us** page The text **go back to home page** has the link to a11y-test.com. but it uses a slightly different color than the other text but no underline or any other visual cue"'],
-    ['','',''],
-    ['','',''],
-    ['','','']
+    ['1.4.1 Use of Color','F73: Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision','"On **about us** page The text **go back to home page** has the link to a11y-test.com. but it uses a slightly different color than the other text but no underline or any other visual cue"']
   ],
   '/pages/advertisement': [],
   '/pages/checkout': [
