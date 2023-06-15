@@ -39,7 +39,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${generateTechniqueLink(item)}">${item[1]}</a><p>${item[2]}</p></li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${generateTechniqueLink(item)}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
     issues.push('</ul>');
