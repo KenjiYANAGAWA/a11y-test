@@ -542,8 +542,8 @@ window.onload = () => {
     const lastName = url.searchParams.get("last-name");
     const city = url.searchParams.get("city");
     const zip = url.searchParams.get("zip");
-    const address = url.SearchParams.get('address');
-    const state = url.SearchParams.get('state');
+    const address = url.searchParams.get("address");
+    const state = url.searchParams.get("state");
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
 
