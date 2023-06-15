@@ -563,7 +563,7 @@ window.onload = () => {
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
     const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.nextElementSibling.children[1];
+    const total = shipCost.parentElement.nextElementSibling.children[1];
     document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
         if (e.target.checked && e.target.value == 'economy') {
