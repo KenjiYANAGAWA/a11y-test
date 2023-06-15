@@ -18,7 +18,7 @@ window.onload = () => {
   }
 
   listIssue.innerHTML = `
-    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issues on ${location.href}</h2>
+    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on ${location.href}</h2>
     ${issues.join('\n')}
   `
 
