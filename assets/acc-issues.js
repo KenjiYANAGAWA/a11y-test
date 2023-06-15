@@ -522,9 +522,11 @@ window.onload = () => {
     // })
 
     // removing lastname label
-    const lastNameLabel = document.querySelector('label[for="last-name"]');
-    lastNameLabel.removeAttribute('for');
-    document.querySelector('#last-name').setAttribute('aria-hidden', true)
+    document.onsubmit = () => {
+      const lastNameLabel = document.querySelector('label[for="last-name"]');
+      lastNameLabel.removeAttribute('for');
+      document.querySelector('#last-name').setAttribute('aria-hidden', true)
+    }
 
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
