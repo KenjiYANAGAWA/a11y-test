@@ -34,7 +34,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li>${item}</li>`)
+      issues.push(`<li style="list-style:circle">${item}</li>`)
     })
     issues.push('</ul>');
   } else {
