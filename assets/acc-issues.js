@@ -3,6 +3,7 @@ const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
   // adding issues to popup
+  // issue details are coming from acc-list-issue-details.js
   const issues = [];
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
