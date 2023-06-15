@@ -40,7 +40,8 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
+      //issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong></li>`)
     })
     issues.push('</ul>');
   } else {
@@ -519,17 +520,6 @@ window.onload = () => {
 
     //   }
     // })
-<<<<<<< HEAD
-
-    // removing lastname label
-    document.querySelector('button[type=submit]').onclick = () => {
-      const lastNameLabel = document.querySelector('label[for="last-name"]');
-      lastNameLabel.removeAttribute('for');
-      document.querySelector('#last-name').setAttribute('oninvalid', '')
-    }
-
-=======
->>>>>>> f9e24fecb7a31e99d55813eadd0dffe2b030a789
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
