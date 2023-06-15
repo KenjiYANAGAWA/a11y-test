@@ -564,7 +564,7 @@ window.onload = () => {
 
     const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
     const total = shipCost.parentElement.nextElementSibling.children[1];
-    document.querySelectorAll('section[aria-label="Payment"] input[type=radio]').forEach((input) => {
+    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
         if (e.target.checked && e.target.value == 'economy') {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
@@ -622,7 +622,7 @@ window.onload = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    const paymentMethod = document.querySelectorAll('input[type=radio]');
+    const paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
 
     paymentMethod.forEach((method) => {
       method.addEventListener('change', (e) => {
