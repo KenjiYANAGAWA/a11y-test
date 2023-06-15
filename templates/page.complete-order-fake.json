@@ -2,46 +2,53 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "content_width": "80ch"
       }
     },
-    "93988a91-5c17-43ec-b99a-c69c775c94e1": {
-      "type": "video",
+    "b22dc4f3-b3e5-447d-9e78-2a74b96121ac": {
+      "type": "rich-text",
       "blocks": {
-        "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-0": {
-          "type": "play",
-          "disabled": true,
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-0": {
+          "type": "subheading",
           "settings": {
+            "text": "Your order has been received."
           }
         },
-        "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-1": {
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-1": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "text": "Video",
-            "heading_tag": "h1"
+            "text": "Thank you for your purchase!",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We will be sending an e-mails for each step of the shipping process.<\/p>"
           }
         }
       },
       "block_order": [
-        "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-0",
-        "template--18980281745692__93988a91-5c17-43ec-b99a-c69c775c94e1-16862151337216a596-1"
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-0",
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-1",
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-2"
       ],
       "settings": {
         "full_width": true,
-        "allow_transparent_header": false,
-        "autoplay": true,
-        "video_size": "auto",
-        "external_video_url": "https:\/\/youtu.be\/gOnxlyyl0kc",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     }
   },
   "order": [
     "main",
-    "93988a91-5c17-43ec-b99a-c69c775c94e1"
+    "b22dc4f3-b3e5-447d-9e78-2a74b96121ac"
   ]
 }
