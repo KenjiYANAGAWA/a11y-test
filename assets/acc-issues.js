@@ -562,16 +562,18 @@ window.onload = () => {
 
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    document.querySelector('.fieldset-item input').addEventListener('change', (e) => {
-      const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-      const total = shipCost.nextElementSibling.children[1];
-      if (e.target.checked && e.target.value == 'economy') {
-        shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
-        total.innerHTML = document.querySelector('.cart-total-price').innerText;
-      } else {
-        shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-        total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
-      }
+    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    const total = shipCost.nextElementSibling.children[1];
+    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
+      input.addEventListener('change', (e) => {
+        if (e.target.checked && e.target.value == 'economy') {
+          shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
+          total.innerHTML = document.querySelector('.cart-total-price').innerText;
+        } else {
+          shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
+          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
+        }
+      })
     })
 
   } else if (location.pathname == '/pages/payment') {
