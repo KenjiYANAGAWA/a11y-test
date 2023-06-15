@@ -472,7 +472,7 @@ window.onload = () => {
         <span>Email or mobile phone number</span>
       </label>
       <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text">
+        <input type="text" name="email" id="email" class="checkout-input-text required">
       </div>
     </div>`
       oldEl.insertAdjacentHTML("beforebegin", newEl);
@@ -535,32 +535,31 @@ window.onload = () => {
 
     const info = addressArray[0];
 
-    document.querySelector('bdo').innerHTML = document.querySelectorAll('.info span')[1].innerText;
+    const url = new URL(location.href)
 
-    document.querySelector('address').innerHTML = `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+    const email = url.searchParams.get("email");
+    const firsName = url.searchParams.get("first-name");
+    const lastName = url.searchParams.get("last-name");
+    const city = url.searchParams.get("city");
+    const zip = url.searchParams.get("zip");
+    const address = url.SearchParams.get('address');
+    const state = url.SearchParams.get('state');
 
-    const method = document.querySelector('fieldset');
+    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
 
-    const radioInputs = document.querySelectorAll('fieldset input');
 
-    radioInputs.forEach((radio) => {
-      if (radio.checked == true) {
-        const price = radio.parentElement.parentElement.children[1].innerHTML.trim();
-        const methodName = radio.nextElementSibling.children[0].innerHTML.trim();
-        localStorage.setItem('shipping-method', `${methodName} - ${price}`);
-      }
-    })
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    method.addEventListener('change', (e)=>{
-      const price = e.target.parentElement.parentElement.children[1].innerHTML.trim();
-      const methodName = e.target.nextElementSibling.children[0].innerHTML.trim();
-
-      localStorage.setItem('shipping-method', `${methodName} - ${price}`);
-    })
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
 
-    document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
+    const url = new URL(location.href)
+    const shippingMethod = url.searchParams.get("shipping_methods");
+
+
+
+    document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
+
   } else if (location.pathname.includes('/search?q')) {
 
   }
