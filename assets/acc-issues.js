@@ -601,7 +601,7 @@ window.onload = () => {
     const paymentMethod = document.querySelectorAll('input[type=radio]');
 
     paymentMethod.forEach((method) => {
-      method.addEventListener('click', (e) => {
+      method.addEventListener('change', (e) => {
         if (e.target.checked && e.target.id == 'credit_card_payment') {
           e.target.parentElement.parentElement.insertAdjacentHTML('afterend',
             `<div class="credit-card-info">
