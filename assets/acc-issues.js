@@ -462,7 +462,9 @@ window.onload = () => {
 
     // update user contact
     const info = document.querySelectorAll('.info span');
-    document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
+    if (info.length == 2) {
+      document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
+    }
 
     const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
