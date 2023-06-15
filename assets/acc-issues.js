@@ -522,7 +522,7 @@ window.onload = () => {
     document.querySelector('button[type=submit]').onclick = () => {
       const lastNameLabel = document.querySelector('label[for="last-name"]');
       lastNameLabel.removeAttribute('for');
-      document.querySelector('#last-name').setAttribute('aria-hidden', true)
+      document.querySelector('#last-name').setAttribute('oninvalid', '')
     }
 
   } else if (location.pathname == '/pages/shipping') {
