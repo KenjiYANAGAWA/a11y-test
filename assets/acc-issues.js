@@ -544,7 +544,8 @@ window.onload = () => {
     const zip = url.searchParams.get("zip");
     const address = url.searchParams.get("address");
     const state = url.searchParams.get("state");
-    const country = url.searchParams.get("country");
+    // const country = url.searchParams.get("country");
+    const country = 'United States';
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
 
@@ -590,7 +591,8 @@ window.onload = () => {
     const zip = url.searchParams.get("zip");
     const address = url.searchParams.get("address");
     const state = url.searchParams.get("state");
-    const country = url.searchParams.get("country");
+    // const country = url.searchParams.get("country");
+    const country = 'United States';
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
