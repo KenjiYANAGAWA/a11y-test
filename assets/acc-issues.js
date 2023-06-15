@@ -17,9 +17,9 @@ const issueListObj = {
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
-    ['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.']
-    '',
-    ''
+    //['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.']
+    'issue 1',
+    'issue 2'
   ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
   '/products/mw50-silver-metal-brown-leather': [],
@@ -41,7 +41,7 @@ window.onload = () => {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
       //issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
-      issues.push('<li>test</li>')
+      issues.push('<li>#{item}</li>')
     })
     issues.push('</ul>');
   } else {
