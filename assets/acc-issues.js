@@ -460,10 +460,10 @@ window.onload = () => {
 
     savedAddressInput.insertAdjacentHTML('beforeend', `<option value="${index}">Use a new address</option>`);
 
-    console.log(info[1])
 
     // update user contact
     const info = document.querySelectorAll('.info span');
+    console.log(info[1])
     if (info[1].length != 0) {
       document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
     } else {
