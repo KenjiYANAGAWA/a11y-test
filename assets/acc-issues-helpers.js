@@ -150,6 +150,7 @@ listIssue.style.background  = 'white';
 listIssue.style.padding = '20px 32px'
 listIssue.style.boxShadow = '0 0 9px 9px rgba(0,0,0,.03)';
 listIssue.style.zIndex  = 9999;
+listIssue.style.overflow-y = 'scroll';
 
 let ctrl = false;
 
