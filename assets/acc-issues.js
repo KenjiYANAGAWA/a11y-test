@@ -475,7 +475,7 @@ window.onload = () => {
         <input type="text" name="email" id="email" class="checkout-input-text">
       </div>
     </div>`
-      oldEl.parentElement.insertAdjacentHTML("afterbegin", newEl);
+      oldEl.insertAdjacentHTML("afterend", newEl);
       oldEl.remove();
     }
 
