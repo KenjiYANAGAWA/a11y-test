@@ -472,7 +472,7 @@ window.onload = () => {
         <span>Email or mobile phone number</span>
       </label>
       <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text required">
+        <input type="text" name="email" id="email" class="checkout-input-text" required>
       </div>
     </div>`
       oldEl.insertAdjacentHTML("beforebegin", newEl);
