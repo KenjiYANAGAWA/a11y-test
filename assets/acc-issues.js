@@ -524,7 +524,7 @@ window.onload = () => {
     // removing lastname label
     const lastNameLabel = document.querySelector('label[for="last-name"]');
     lastNameLabel.removeAttribute('for');
-    lastNameLabel.setAttribute('aria-hidden', true)
+    document.querySelector('#last-name').setAttribute('aria-hidden', true)
 
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
