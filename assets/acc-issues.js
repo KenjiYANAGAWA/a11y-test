@@ -597,6 +597,58 @@ window.onload = () => {
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+
+    const paymentMethod = document.querySelectorAll('input[type=radio]');
+
+    paymentMethod.forEach((method) => {
+      method.addEventListener('click', (e) => {
+        if (e.target.checked && e.target.id == 'credit_card_payment') {
+          e.target.parentElement.insertAdjacentHTML('afterend',
+            `<div class="credit-card-info">
+              <div class="checkout-input-container">
+                <label for="card-number" class="checkout-input-label">
+                  <span>Card number</span>
+                </label>
+                <div class="checkout-input-text-container">
+                  <input type="text" name="card-number" id="card-number" class="checkout-input-text">
+                </div>
+              </div>
+
+              <div class="checkout-input-container">
+                <label for="card-name" class="checkout-input-label">
+                  <span>Name on card</span>
+                </label>
+                <div class="checkout-input-text-container">
+                  <input type="text" name="card-name" id="card-name" class="checkout-input-text" required="">
+                </div>
+              </div>
+
+              <div class="checkout-input-inline-2">
+                <div class="checkout-input-container">
+                  <label for="expiration-date" class="checkout-input-label">
+                    <span>Expiration date (MM/YY)</span>
+                  </label>
+                  <div class="checkout-input-text-container">
+                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required="" name="expiration-date" id="expiration-date" class="checkout-input-text">
+                  </div>
+                </div>
+                <div class="checkout-input-container">
+                  <label for="security-code" class="checkout-input-label">
+                    <span>Security code</span>
+                  </label>
+                  <div class="checkout-input-text-container">
+                    <input type="text" pattern="[0-9]{3}" name="security-code" id="security-code" class="checkout-input-text" required="">
+                  </div>
+                </div>
+              </div>
+            </div>`
+          );
+        } else {
+          document.querySelector('.credit-card-info').remove();
+        }
+      })
+    })
+
   } else if (location.pathname.includes('/search?q')) {
 
   }
