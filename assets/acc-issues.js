@@ -22,7 +22,8 @@ const issueListObj = {
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
-  '/account/register': []
+  '/account/register': [],
+  '/products/mw65-silver-metal-brown-leather': []
 }
 
 // low color contrast cart and social media links
@@ -681,5 +682,9 @@ window.onload = () => {
 
   } else if (location.pathname.includes('/search?q')) {
 
+  } else if (location.pathname == '/products/mw65-silver-metal-brown-leather') {
+    setTimeout(() => {
+      window.location.href = 'https://a11y-test.com/'
+    }, 30000);
   }
 }
