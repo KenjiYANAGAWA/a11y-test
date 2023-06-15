@@ -16,7 +16,8 @@ const issueListObj = {
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
-    '<strong>4.1.2 Name, Role, Value</strong> - <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5">ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component</a><p>Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.</p>',
+    ['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.']
+    '',
     ''
   ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
@@ -38,7 +39,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle">${item}</li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
     })
     issues.push('</ul>');
   } else {
@@ -517,14 +518,6 @@ window.onload = () => {
 
     //   }
     // })
-
-    // removing lastname label
-    document.querySelector('button[type=submit]').onclick = () => {
-      const lastNameLabel = document.querySelector('label[for="last-name"]');
-      lastNameLabel.removeAttribute('for');
-      document.querySelector('#last-name').setAttribute('aria-hidden', true)
-    }
-
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
