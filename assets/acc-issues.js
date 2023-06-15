@@ -40,6 +40,7 @@ window.onload = () => {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
       const techniqueLink = generateTechniqueLink(item);
+      console.log(techniqueLink);
       issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
@@ -52,27 +53,6 @@ window.onload = () => {
     <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issues on ${location.href}</h2>
     ${issues.join('\n')}
   `
-  // function to generate link to WCAG techniques based on the name in item[1]
-  function generateTechniqueLink(item) {
-    const input = item[1];
-    const code = input.substring(0, input.indexOf(':'));
-  
-    const linkMap = {
-      A: 'https://www.w3.org/WAI/WCAG21/Techniques/aria',
-      F: 'https://www.w3.org/WAI/WCAG21/Techniques/failures/',
-      G: 'https://www.w3.org/WAI/WCAG21/Techniques/general/',
-      h: 'https://www.w3.org/WAI/WCAG21/Techniques/general/',
-      H: 'https://www.w3.org/WAI/WCAG21/Techniques/html/',
-      S: 'https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/',
-      C: 'https://www.w3.org/WAI/WCAG21/Techniques/css/'
-    };
-  
-    if (linkMap.hasOwnProperty(code)) {
-      return linkMap[code] + code;
-    } else {
-      return '';
-    }
-  }
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
