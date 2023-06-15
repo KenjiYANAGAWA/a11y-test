@@ -96,9 +96,6 @@ window.onload = () => {
       }`
     );
   }
-  // breaking focus color to light blue
-  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
-    outline-color: lightblue !important}</style>`)
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
@@ -191,18 +188,27 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
+    // breaking focus color to light blue
     addStyle(`
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-      html {
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        width: 100vh;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
+      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+        html {
+          transform: rotate(-90deg);
+          transform-origin: left top;
+          width: 100vh;
+          overflow-x: hidden;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
       }
-    }`)
+
+      button[type=submit]:focus {
+        box-shadow: inset 0 0 1px lightblue !important
+      }
+      button[type=submit]:focus-visible {
+      outline-color: lightblue !important
+      }
+    `)
 
     // icon class to break
     const iconSelector = [
