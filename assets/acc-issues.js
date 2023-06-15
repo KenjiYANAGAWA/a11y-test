@@ -478,27 +478,29 @@ window.onload = () => {
       oldEl.remove();
     }
 
-    const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
+    if (info[1].length != 0) {
+      const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
-    const values = addressArray[0];
+      const values = addressArray[0];
 
-    inputs.forEach((input) => {
-      if (input.id == 'Select1') {
-        input.innerHTML = `<option value="0">${values.country}</option>`
-      } else if (input.id == 'first-name') {
-        input.value = values.name.split(' ')[0]
-      } else if (input.id == 'last-name') {
-        input.value = values.name.split(' ')[1]
-      } else if (input.id == 'address') {
-        input.value = values.street
-      } else if (input.id == 'Select2') {
-        input.value = values.provinceCode
-      } else if (input.id == 'zip') {
-        input.value = values.zip
-      } else if (input.id == 'city') {
-        input.value = values.city
-      }
-    })
+      inputs.forEach((input) => {
+        if (input.id == 'Select1') {
+          input.innerHTML = `<option value="0">${values.country}</option>`
+        } else if (input.id == 'first-name') {
+          input.value = values.name.split(' ')[0]
+        } else if (input.id == 'last-name') {
+          input.value = values.name.split(' ')[1]
+        } else if (input.id == 'address') {
+          input.value = values.street
+        } else if (input.id == 'Select2') {
+          input.value = values.provinceCode
+        } else if (input.id == 'zip') {
+          input.value = values.zip
+        } else if (input.id == 'city') {
+          input.value = values.city
+        }
+      })
+    }
 
     // update when changing the saved address
     // will be added later if it's needed
