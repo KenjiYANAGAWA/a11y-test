@@ -100,11 +100,52 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "0866aa7b-f3c5-484f-877c-99419498d478": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-0": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Having issues with our old products?",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We want you to use our products as long as possible. Do not throw away the old one and get a new one when the old one is working. Refer to <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0757\/3310\/6972\/files\/Old_products.pdf\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0757\/3310\/6972\/files\/Old_products.pdf\">this PDF file<\/a> and see if your product is applicable to our maintenance service.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-0",
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-1",
+        "template--18980282171676__0866aa7b-f3c5-484f-877c-99419498d478-16867945609124ec2e-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
     "main",
     "contact",
-    "969366e6-6fbb-4534-bd80-be843ff312dc"
+    "969366e6-6fbb-4534-bd80-be843ff312dc",
+    "0866aa7b-f3c5-484f-877c-99419498d478"
   ]
 }
