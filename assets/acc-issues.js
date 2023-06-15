@@ -520,6 +520,10 @@ window.onload = () => {
 
     //   }
     // })
+
+    // removing lastname label
+    document.querySelector('label[for="last-name"]').removeAttribute('for')
+
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
