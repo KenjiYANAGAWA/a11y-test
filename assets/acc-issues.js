@@ -544,6 +544,7 @@ window.onload = () => {
     const zip = url.searchParams.get("zip");
     const address = url.searchParams.get("address");
     const state = url.searchParams.get("state");
+    const country = url.searchParams.get("country");
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
 
