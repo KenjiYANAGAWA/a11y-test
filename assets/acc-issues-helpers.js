@@ -58,7 +58,7 @@ const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
               <div>
                 <picture>
                   <source media="(min-width: 0px)" srcset="${itemImg.getAttribute('srcset')}">
-                  <img src="${itemImg.getAttribute('src')}">
+                  <img src="${itemImg.getAttribute('src')}" role="presentation">
                 </picture>
               </div>
               <div aria-hidden="true" class="item-summary-counter flex-center">
