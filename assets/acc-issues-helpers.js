@@ -144,8 +144,8 @@ listIssue.classList.add('popup-issue-list');
 listIssue.style.position = 'fixed';
 listIssue.style.top = '20px';
 listIssue.style.left = '20px';
-listIssue.style.height = 'calc(100vh - 40px)';
-listIssue.style.width = 'calc(60vw - 20px)';
+listIssue.style.max-height = 'calc(100vh - 40px)';
+listIssue.style.width = 'calc(80vw - 20px)';
 listIssue.style.background  = 'white';
 listIssue.style.padding = '20px 32px'
 listIssue.style.boxShadow = '0 0 9px 9px rgba(0,0,0,.03)';
