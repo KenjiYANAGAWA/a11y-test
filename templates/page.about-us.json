@@ -188,7 +188,7 @@
         "full_width": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<p style=\"text-align: center;\">If you are more curious about working for us,\n<\/p>\n<table style=\"text-align: center; margin:auto; width:500px; border-style: none;\">\n    <tr>\n        <td style=\"width:300px\">Please reach out to us via email.<\/td>\n        <td>thisisnotarealemailaddress@a11ytestfake.com<\/td>\n    <\/tr>\n<\/table>",
+        "liquid": "<p style=\"text-align: center;\">If you are more curious about working for us,\n<\/p>\n<table style=\"text-align: center; margin:auto; width:500px; border-style: none;\">\n    <tr>\n        <td >Please reach out to us via email.<\/td>\n        <td>thisisnotarealemailaddress@a11ytestfake.com<\/td>\n    <\/tr>\n<\/table>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
