@@ -476,6 +476,7 @@ window.onload = () => {
       </div>
     </div>`
       oldEl.insertAdjacentHTML("afterend", newEl);
+      oldEl.nextElementSibling.remove();
       oldEl.remove();
     }
 
