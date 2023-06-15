@@ -1,8 +1,8 @@
 // List issue
 const issueListObj = {
   '/':  [
-    'Issue 1',
-    'Issue 2',
+    'Footer Social media Icons do not meet contrast requirement',
+    'Under "Incredible features" Tooltip appears on hover. However, the tooltip disappears when mouse moves away from the popup',
     'Issue 3'
   ],
   '/collections/all': [],

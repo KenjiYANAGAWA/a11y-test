@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "b22dc4f3-b3e5-447d-9e78-2a74b96121ac": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-0": {
+          "type": "subheading",
+          "settings": {
+            "text": "Your order has been received."
+          }
+        },
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Thank you for your purchase!",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We will be sending an e-mails for each step of the shipping process.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-0",
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-1",
+        "template--19372870336796__b22dc4f3-b3e5-447d-9e78-2a74b96121ac-16868178126b0d2f14-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b22dc4f3-b3e5-447d-9e78-2a74b96121ac"
+  ]
+}
