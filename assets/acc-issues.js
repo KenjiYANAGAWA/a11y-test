@@ -176,12 +176,12 @@ window.onload = () => {
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     addToCartBtns.forEach((btn)=>{
-      btn.addEventListener('click', ()=>{
+      btn.addEventListener('click', (e)=>{
         setTimeout(() => {
           let old_element = document.querySelector(".quick-buy-drawer");
           let new_element = old_element.cloneNode(true);
           old_element.parentNode.replaceChild(new_element, old_element);
-          document.querySelector('a').focus();
+          e.target.focus();
         }, 1000);
       })
     })
