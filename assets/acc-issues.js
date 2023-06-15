@@ -463,8 +463,7 @@ window.onload = () => {
 
     // update user contact
     const info = document.querySelectorAll('.info span');
-    console.log(info[1])
-    if (info[1].length != 0) {
+    if (info[1].innerText.length != 0) {
       document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
     } else {
       const oldEl = document.querySelector('.checkout-current-user')
@@ -480,7 +479,7 @@ window.onload = () => {
       oldEl.remove();
     }
 
-    if (info[1].length != 0) {
+    if (info[1].innerText.length != 0) {
       const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
       const values = addressArray[0];
