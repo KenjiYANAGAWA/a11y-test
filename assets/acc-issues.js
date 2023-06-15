@@ -462,8 +462,20 @@ window.onload = () => {
 
     // update user contact
     const info = document.querySelectorAll('.info span');
-    if (info.length == 2) {
+    if (info[1].length != 0) {
       document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
+    } else {
+      const oldEl = document.querySelector('.checkout-current-user')
+      const newEl = `<div class="checkout-input-container">
+      <label for="email" class="checkout-input-label">
+        <span>Email or mobile phone number</span>
+      </label>
+      <div class="checkout-input-text-container">
+        <input type="text" name="email" id="email" class="checkout-input-text">
+      </div>
+    </div>`
+      oldEl.parentElement.insertAdjacentHTML("afterend", newEl);
+      oldEl.remove();
     }
 
     const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
