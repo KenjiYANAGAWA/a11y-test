@@ -564,7 +564,7 @@ window.onload = () => {
 
     const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
     const total = shipCost.parentElement.nextElementSibling.children[1];
-    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
+    document.querySelectorAll('section[aria-label="Payment"] input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
         if (e.target.checked && e.target.value == 'economy') {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
