@@ -15,6 +15,10 @@ const issueListObj = {
   '/cart': [],
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
+  '/products/3-5mm-to-3-5mm-audio-cable-black': [
+    '<strong>4.1.2 Name, Role, Value</strong> - <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5">ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component</a><p>Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.</p>',
+    ''
+  ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
   '/products/mw50-silver-metal-brown-leather': [],
   '/products/mw08-brown-ceramic-stainless-steel-case': [],
@@ -22,8 +26,7 @@ const issueListObj = {
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
-  '/account/register': [],
-  '/products/mw65-silver-metal-brown-leather': []
+  '/account/register': []
 }
 
 // low color contrast cart and social media links
@@ -97,6 +100,9 @@ window.onload = () => {
       }`
     );
   }
+  // breaking focus color to light blue
+  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
+    outline-color: lightblue !important}</style>`)
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
@@ -176,12 +182,12 @@ window.onload = () => {
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     addToCartBtns.forEach((btn)=>{
-      btn.addEventListener('click', (e)=>{
+      btn.addEventListener('click', ()=>{
         setTimeout(() => {
           let old_element = document.querySelector(".quick-buy-drawer");
           let new_element = old_element.cloneNode(true);
           old_element.parentNode.replaceChild(new_element, old_element);
-          e.target.focus();
+          document.querySelector('a').focus();
         }, 1000);
       })
     })
@@ -189,27 +195,18 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
-    // breaking focus color to light blue
     addStyle(`
-      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-        html {
-          transform: rotate(-90deg);
-          transform-origin: left top;
-          width: 100vh;
-          overflow-x: hidden;
-          position: absolute;
-          top: 100%;
-          left: 0;
-        }
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
       }
-
-      button[type=submit]:focus {
-        box-shadow: inset 0 0 1px lightblue !important
-      }
-      button[type=submit]:focus-visible {
-      outline-color: lightblue !important
-      }
-    `)
+    }`)
 
     // icon class to break
     const iconSelector = [
@@ -479,7 +476,7 @@ window.onload = () => {
         <span>Email or mobile phone number</span>
       </label>
       <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text" required>
+        <input type="text" name="email" id="email" class="checkout-input-text">
       </div>
     </div>`
       oldEl.insertAdjacentHTML("beforebegin", newEl);
@@ -520,14 +517,6 @@ window.onload = () => {
 
     //   }
     // })
-
-    // removing lastname label
-    document.onsubmit = () => {
-      const lastNameLabel = document.querySelector('label[for="last-name"]');
-      lastNameLabel.removeAttribute('for');
-      document.querySelector('#last-name').setAttribute('aria-hidden', true)
-    }
-
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
@@ -550,149 +539,33 @@ window.onload = () => {
 
     const info = addressArray[0];
 
-    const url = new URL(location.href)
+    document.querySelector('bdo').innerHTML = document.querySelectorAll('.info span')[1].innerText;
 
-    const email = url.searchParams.get("email");
-    const firsName = url.searchParams.get("first-name");
-    const lastName = url.searchParams.get("last-name");
-    const city = url.searchParams.get("city");
-    const zip = url.searchParams.get("zip");
-    const address = url.searchParams.get("address");
-    const state = url.searchParams.get("state");
-    // const country = url.searchParams.get("country");
-    const country = 'United States';
+    document.querySelector('address').innerHTML = `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
+    const method = document.querySelector('fieldset');
 
-    document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
-      <div style="display: none">
-        <input type="text" name="email" value="${email}">
-        <input type="text" name="city" value="${city}">
-        <input type="text" name="zip" value="${zip}">
-        <input type="text" name="address" value="${address}">
-        <input type="text" name="state" value="${state}">
-        <input type="text" name="country" value="${country}">
-      </div>
-    `)
+    const radioInputs = document.querySelectorAll('fieldset input');
 
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
-
-    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.parentElement.nextElementSibling.children[1];
-    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
-      input.addEventListener('change', (e) => {
-        if (e.target.checked && e.target.value == 'economy') {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
-          total.innerHTML = document.querySelector('.cart-total-price').innerText;
-        } else {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
-        }
-      })
+    radioInputs.forEach((radio) => {
+      if (radio.checked == true) {
+        const price = radio.parentElement.parentElement.children[1].innerHTML.trim();
+        const methodName = radio.nextElementSibling.children[0].innerHTML.trim();
+        localStorage.setItem('shipping-method', `${methodName} - ${price}`);
+      }
     })
 
+    method.addEventListener('change', (e)=>{
+      const price = e.target.parentElement.parentElement.children[1].innerHTML.trim();
+      const methodName = e.target.nextElementSibling.children[0].innerHTML.trim();
+
+      localStorage.setItem('shipping-method', `${methodName} - ${price}`);
+    })
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
 
-    const addressArray = []
-    // update address
-    const addresses = document.querySelectorAll('.address div');
-    addresses.forEach((address) => {
-      const addressItem = {};
-      addressItem['street'] = address.querySelector('.address-street').innerText;
-      addressItem['name'] = address.querySelector('.address-name').innerText;
-      addressItem['country'] = address.querySelector('.address-country').innerText;
-      addressItem['zip'] = address.querySelector('.address-zip').innerText;
-      addressItem['province'] = address.querySelector('.address-province').innerText;
-      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
-      addressItem['provinceCode'] = addressString[addressString.length - 2];
-      addressItem['city'] = address.querySelector('.address-city').innerText;
-      addressItem['company'] = address.querySelector('.address-company').innerText;
-      addressArray.push(addressItem);
-    });
-
-    const info = addressArray[0];
-
-    const url = new URL(location.href)
-    const shippingMethod = url.searchParams.get("shipping_methods");
-    const email = url.searchParams.get("email");
-    const city = url.searchParams.get("city");
-    const zip = url.searchParams.get("zip");
-    const address = url.searchParams.get("address");
-    const state = url.searchParams.get("state");
-    // const country = url.searchParams.get("country");
-    const country = 'United States';
-
-    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.parentElement.nextElementSibling.children[1];
-    if (shippingMethod == 'economy') {
-      shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
-      total.innerHTML = document.querySelector('.cart-total-price').innerText;
-    } else {
-      shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-      total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
-    }
-
-    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
-    document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
-
-    const paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
-
-    paymentMethod.forEach((method) => {
-      method.addEventListener('change', (e) => {
-        if (e.target.checked && e.target.id == 'credit_card_payment') {
-          e.target.parentElement.parentElement.insertAdjacentHTML('afterend',
-            `<div class="credit-card-info">
-              <div class="checkout-input-container">
-                <label for="card-number" class="checkout-input-label">
-                  <span>Card number</span>
-                </label>
-                <div class="checkout-input-text-container">
-                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required>
-                </div>
-              </div>
-
-              <div class="checkout-input-container">
-                <label for="card-name" class="checkout-input-label">
-                  <span>Name on card</span>
-                </label>
-                <div class="checkout-input-text-container">
-                  <input type="text" name="card-name" id="card-name" class="checkout-input-text" required>
-                </div>
-              </div>
-
-              <div class="checkout-input-inline-2">
-                <div class="checkout-input-container">
-                  <label for="expiration-date" class="checkout-input-label">
-                    <span>Expiration date (MM/YY)</span>
-                  </label>
-                  <div class="checkout-input-text-container">
-                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required name="expiration-date" id="expiration-date" class="checkout-input-text">
-                  </div>
-                </div>
-                <div class="checkout-input-container">
-                  <label for="security-code" class="checkout-input-label">
-                    <span>Security code</span>
-                  </label>
-                  <div class="checkout-input-text-container">
-                    <input type="text" pattern="[0-9]{3}" name="security-code" id="security-code" class="checkout-input-text" required>
-                  </div>
-                </div>
-              </div>
-            </div>`
-          );
-        } else {
-          document.querySelector('.credit-card-info').remove();
-        }
-      })
-    })
-
+    document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   } else if (location.pathname.includes('/search?q')) {
 
-  } else if (location.pathname == '/products/mw65-silver-metal-brown-leather') {
-    setTimeout(() => {
-      window.location.href = 'https://a11y-test.com/'
-    }, 30000);
   }
 }
