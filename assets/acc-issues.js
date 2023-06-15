@@ -522,7 +522,7 @@ window.onload = () => {
     // })
 
     // removing lastname label
-    document.onsubmit = () => {
+    document.querySelector('button[type=submit]').onclick = () => {
       const lastNameLabel = document.querySelector('label[for="last-name"]');
       lastNameLabel.removeAttribute('for');
       document.querySelector('#last-name').setAttribute('aria-hidden', true)
