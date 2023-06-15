@@ -41,7 +41,7 @@ window.onload = () => {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
       //issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
-      issues.push('<li>#{item}</li>')
+      issues.push(`<li>#{item}</li>`)
     })
     issues.push('</ul>');
   } else {
