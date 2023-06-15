@@ -17,7 +17,7 @@ const issueListObj = {
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
-    ['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.'],
+    ['4.1.2 Name, Role, Value', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.'],
     ['4.1.1 Parsing', 'ARIA10: Using aria-labelledby to provide a text alternative for non-text content', '**mg20-gaming-galactic-white** image has an aria-labelledby attribute references an ID that doesn\'t exist.']
   ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
@@ -39,7 +39,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${generateTechniqueLink(item)}">${item[1]}</a><p>${item[2]}</p></li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${generateTechniqueLink(item[1])}">${item[1]}</a><p>${item[2]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
     issues.push('</ul>');
