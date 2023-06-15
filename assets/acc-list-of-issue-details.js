@@ -47,4 +47,8 @@ const issueListObj = {
   '/account/login' : [
     ['3.3.1 Error Identification', 'G83: Providing text descriptions to identify required fields that were not completed','When user enters wrong login credentials, screen reader announces nothing. Screen reader jumps to **skip to content**']
   ]
+  '/search' : [
+  ['3.3.2 Labels or Instructions', 'F1: Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning information with CSS', 'Search icon is unlabelled'],
+  ['4.1.3 Status Messages', 'F103: Failure of Success Criterion 4.1.3 due to providing status messages that cannot be programmatically determined through role or properties', '"Screen reader does not announce the visually updated search results after editing the filters. It only announces the first product."']
+  ]
 }
