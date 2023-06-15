@@ -610,7 +610,7 @@ window.onload = () => {
                   <span>Card number</span>
                 </label>
                 <div class="checkout-input-text-container">
-                  <input type="text" name="card-number" id="card-number" class="checkout-input-text">
+                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required>
                 </div>
               </div>
 
@@ -619,7 +619,7 @@ window.onload = () => {
                   <span>Name on card</span>
                 </label>
                 <div class="checkout-input-text-container">
-                  <input type="text" name="card-name" id="card-name" class="checkout-input-text" required="">
+                  <input type="text" name="card-name" id="card-name" class="checkout-input-text" required>
                 </div>
               </div>
 
@@ -629,7 +629,7 @@ window.onload = () => {
                     <span>Expiration date (MM/YY)</span>
                   </label>
                   <div class="checkout-input-text-container">
-                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required="" name="expiration-date" id="expiration-date" class="checkout-input-text">
+                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required name="expiration-date" id="expiration-date" class="checkout-input-text">
                   </div>
                 </div>
                 <div class="checkout-input-container">
@@ -637,7 +637,7 @@ window.onload = () => {
                     <span>Security code</span>
                   </label>
                   <div class="checkout-input-text-container">
-                    <input type="text" pattern="[0-9]{3}" name="security-code" id="security-code" class="checkout-input-text" required="">
+                    <input type="text" pattern="[0-9]{3}" name="security-code" id="security-code" class="checkout-input-text" required>
                   </div>
                 </div>
               </div>
