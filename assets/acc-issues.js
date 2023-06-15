@@ -1,5 +1,6 @@
 // List issue
 const issueListObj = {
+  // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
   '/':  [
     'Footer Social media Icons do not meet contrast requirement',
     'Under "Incredible features" Tooltip appears on hover. However, the tooltip disappears when mouse moves away from the popup',
@@ -16,7 +17,8 @@ const issueListObj = {
   '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
-    '<strong>4.1.2 Name, Role, Value</strong> - <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5">ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component</a><p>Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.</p>',
+    ['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.']
+    '',
     ''
   ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
@@ -38,7 +40,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle">${item}</li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
     })
     issues.push('</ul>');
   } else {
@@ -517,6 +519,7 @@ window.onload = () => {
 
     //   }
     // })
+<<<<<<< HEAD
 
     // removing lastname label
     document.querySelector('button[type=submit]').onclick = () => {
@@ -525,6 +528,8 @@ window.onload = () => {
       document.querySelector('#last-name').setAttribute('oninvalid', '')
     }
 
+=======
+>>>>>>> f9e24fecb7a31e99d55813eadd0dffe2b030a789
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
