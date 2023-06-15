@@ -534,21 +534,42 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         font-size: .9em;
       }
 
-      section[aria-label=Payment] fieldset > :nth-child(1) {
-        border: solid 1px #8c720b;
-        background-color: rgb(255,245,228);
-        font-weight: 600;
-      }
-
-      section[aria-label=Payment] fieldset > :nth-child(2) {
-        text-align: center;
-      }
-
       section[aria-label=Payment] > p,
       section[aria-label="Billing address"] > p {
         font-size: .9em;
         color: #707070;
       }
+
+      .credit-card-info {
+        display: none;
+        height: 0px;
+        overflow-y: hidden;
+        opacity: 0;
+        transition: .3s;
+      }
+
+      .fieldset-item:has(input:checked) .credit-card-info {
+        padding-top: 17px;
+        display: grid;
+        gap: 12px;
+        height: fit-content;
+        opacity: 1;
+        transition: .3s;
+      }
+
+      .fieldset-item .input-radio {
+        display: flex;
+        align-items: center;
+        gap: .9em;
+      }
+
+      .fieldset-item label div:has(img) {
+        display: flex;
+        align-items: center;
+        gap: .9em;
+        font-size: .9em;
+      }
+
     </style>
   </head>
 
