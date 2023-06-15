@@ -40,7 +40,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong> <a style="text-decoration: underline;" href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline;" href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
     issues.push('</ul>');
