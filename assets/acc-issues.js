@@ -1,5 +1,6 @@
 // List issue
 const issueListObj = {
+  // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
   '/':  [
     'Footer Social media Icons do not meet contrast requirement',
     'Under "Incredible features" Tooltip appears on hover. However, the tooltip disappears when mouse moves away from the popup',
@@ -39,7 +40,7 @@ window.onload = () => {
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><a style="text-decoration: underline;" href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
     })
     issues.push('</ul>');
   } else {
