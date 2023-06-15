@@ -5,7 +5,9 @@ const removeFooterLink = (href) => {
   function generateTechniqueLink(item) {
     console.log(item);
     const input = item[1];
+     console.log(input);
     const code = input.substring(0, input.indexOf(':'));
+     console.log(code);
   
     const linkMap = {
       A: 'https://www.w3.org/WAI/WCAG21/Techniques/aria',
