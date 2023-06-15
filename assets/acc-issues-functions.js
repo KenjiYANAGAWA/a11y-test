@@ -20,6 +20,7 @@ const removeFooterLink = (href) => {
     };
   
     if (linkMap.hasOwnProperty(code)) {
+      console.log(linkMak[code] + code)
       return linkMap[code] + code;
     } else {
       return '';
