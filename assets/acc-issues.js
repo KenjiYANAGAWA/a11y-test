@@ -603,7 +603,7 @@ window.onload = () => {
     paymentMethod.forEach((method) => {
       method.addEventListener('click', (e) => {
         if (e.target.checked && e.target.id == 'credit_card_payment') {
-          e.target.parentElement.insertAdjacentHTML('afterend',
+          e.target.parentElement.parentElement.insertAdjacentHTML('afterend',
             `<div class="credit-card-info">
               <div class="checkout-input-container">
                 <label for="card-number" class="checkout-input-label">
