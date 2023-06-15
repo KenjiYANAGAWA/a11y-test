@@ -609,7 +609,7 @@ window.onload = () => {
     const country = 'United States';
 
     const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.nextElementSibling.children[1];
+    const total = shipCost.parentElement.nextElementSibling.children[1];
     if (shippingMethod == 'economy') {
       shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
       total.innerHTML = document.querySelector('.cart-total-price').innerText;
