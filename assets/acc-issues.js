@@ -551,12 +551,12 @@ window.onload = () => {
 
     document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
       <div style="display: none">
-        <input type="text" name="email" value="{email}">
-        <input type="text" name="city" value="{city}">
-        <input type="text" name="zip" value="{zip}">
-        <input type="text" name="address" value="{address}">
-        <input type="text" name="state" value="{state}">
-        <input type="text" name="country" value="{country}">
+        <input type="text" name="email" value="${email}">
+        <input type="text" name="city" value="${city}">
+        <input type="text" name="zip" value="${zip}">
+        <input type="text" name="address" value="${address}">
+        <input type="text" name="state" value="${state}">
+        <input type="text" name="country" value="${country}">
       </div>
     `)
 
