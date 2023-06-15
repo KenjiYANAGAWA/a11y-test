@@ -10,11 +10,7 @@ const issueListObj = {
     ['2.1.1 Keyboard','F54: Failure of Success Criterion 2.1.1 due to using only pointing-device-specific event handlers (including gesture) for a function','**Gaming or Photography** can appear by sliding the bar in the middle. It does not receive keyboard focus.'],
     ['1.4.3 Contrast (Minimum)','G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text','Text on Logo image "miller & lowe" does not meet contrast with the background on top page'],
     ['1.4.3 Contrast (Minimum)','G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text','**incredible features** does not meet contrast with the background image of green headset'],
-    ['1.3.1 Info and Relationships','F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','**Sign up for new stories and personal offers**, **Footer Menu**, **About** inside the footer are visually but not programmatically headings.'],
-    ['1.3.1 Info and Relationships','F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','**Sign up for new stories and personal offers**, **Footer Menu**, **About** inside the footer are visually but not programmatically headings.'],
     ['1.3.1 Info and Relationships','F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','**Sign up for new stories and personal offers**, **Footer Menu**, **About** inside the footer are visually but not programmatically headings.']
-  
-  
   ],
   '/collections/all': [
    ],
@@ -42,5 +38,8 @@ const issueListObj = {
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
-  '/account/register': []
+  '/account/register': [],
+  '/account/login' : [
+    ['3.3.1 Error Identification', 'G83: Providing text descriptions to identify required fields that were not completed','When user enters wrong login credentials, screen reader announces nothing. Screen reader jumps to **skip to content**']
+  ]
 }
