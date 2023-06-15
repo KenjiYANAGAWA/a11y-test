@@ -548,19 +548,53 @@ window.onload = () => {
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
 
+    document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
+      <div style="display: none">
+        <input type="text" name="email">${email}</input>
+        <input type="text" name="city">${city}</input>
+        <input type="text" name="zip">${zip}</input>
+        <input type="text" name="address">${address}</input>
+        <input type="text" name="state">${state}</input>
+        <input type="text" name="country">${country}</input>
+      </div>
+    `)
 
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
 
+    const addressArray = []
+    // update address
+    const addresses = document.querySelectorAll('.address div');
+    addresses.forEach((address) => {
+      const addressItem = {};
+      addressItem['street'] = address.querySelector('.address-street').innerText;
+      addressItem['name'] = address.querySelector('.address-name').innerText;
+      addressItem['country'] = address.querySelector('.address-country').innerText;
+      addressItem['zip'] = address.querySelector('.address-zip').innerText;
+      addressItem['province'] = address.querySelector('.address-province').innerText;
+      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      addressItem['provinceCode'] = addressString[addressString.length - 2];
+      addressItem['city'] = address.querySelector('.address-city').innerText;
+      addressItem['company'] = address.querySelector('.address-company').innerText;
+      addressArray.push(addressItem);
+    });
+
+    const info = addressArray[0];
+
     const url = new URL(location.href)
     const shippingMethod = url.searchParams.get("shipping_methods");
+    const email = url.searchParams.get("email");
+    const city = url.searchParams.get("city");
+    const zip = url.searchParams.get("zip");
+    const address = url.searchParams.get("address");
+    const state = url.searchParams.get("state");
+    const country = url.searchParams.get("country");
 
-
-
+    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
-
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
   } else if (location.pathname.includes('/search?q')) {
 
   }
