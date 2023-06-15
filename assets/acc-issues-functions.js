@@ -9,7 +9,7 @@ function generateTechniqueLink(item) {
   const key = code.charAt(0);
 
   const linkMap = {
-    A: 'https://www.w3.org/WAI/WCAG21/Techniques/aria',
+    A: 'https://www.w3.org/WAI/WCAG21/Techniques/aria/',
     F: 'https://www.w3.org/WAI/WCAG21/Techniques/failures/',
     G: 'https://www.w3.org/WAI/WCAG21/Techniques/general/',
     h: 'https://www.w3.org/WAI/WCAG21/Techniques/general/',
