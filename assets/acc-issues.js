@@ -1,7 +1,7 @@
 // List issue
 const issueListObj = {
   '/':  [
-    'Issue 1',
+    'Footer Social media Icons do not meet contrast requirement',
     'Issue 2',
     'Issue 3'
   ],
