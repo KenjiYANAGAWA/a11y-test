@@ -533,8 +533,10 @@ window.onload = () => {
     //   }
     // })
 
-    // document.querySelector('last-name').
-
+    document.querySelector('.to-shipping-btn').addEventListener('onclick', () => {
+      document.querySelector('#last-name').style.display = 'none';
+      document.querySelector('#last-name').style.display = 'block';
+    })
 
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
