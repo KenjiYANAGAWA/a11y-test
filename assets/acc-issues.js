@@ -6,7 +6,7 @@ window.onload = () => {
   document.querySelector('.skip-to-content').onclick = (e) => {
     e.preventDefault();
     console.log('clicked');
-    document.querySelector('#main').children[0].focus();
+    document.activeElement = document.querySelector('#main');
   }
 
 
