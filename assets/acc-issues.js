@@ -9,7 +9,7 @@ window.onload = () => {
     skipBtn.onclick = () => {
       console.log('clicked');
       skipBtn.blur();
-      document.querySelector('#main').focus();
+      document.querySelector('section').focus();
     }
   }, 300);
 
