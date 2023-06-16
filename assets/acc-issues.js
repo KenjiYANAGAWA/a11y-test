@@ -65,7 +65,11 @@ window.onload = () => {
     // removing about us from footer
     removeFooterLink("/pages/about-us");
     //fixing skip to main content
-    const main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
+    let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
+
+    if (location.pathname.includes('login')) {
+      main = document.querySelector('.fieldset')
+    }
 
     const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
     const skipBtn = document.querySelector('.skip-to-content')
