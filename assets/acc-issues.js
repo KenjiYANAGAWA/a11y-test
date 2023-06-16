@@ -549,7 +549,7 @@ window.onload = () => {
     form.onsubmit = (e) => {
       e.preventDefault();
       if (lastNameInput.value.length == 0) {
-        lastNameInput.style.outline = 'solid 2px #8c720b';
+        lastNameInput.style.outline = 'solid 1px #8c720b';
       } else  {
         e.submit();
       }
