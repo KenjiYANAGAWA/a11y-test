@@ -695,7 +695,7 @@ window.onload = () => {
                   <span>Card number</span>
                 </label>
                 <div class="checkout-input-text-container">
-                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required>
+                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required pattern="41{3} 1{4} 1{4} 1{4}">
                 </div>
               </div>
               <div class="checkout-input-container">
