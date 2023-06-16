@@ -301,7 +301,7 @@ window.onload = () => {
         </video-media></div>
   </div>
   -->
-  
+
   <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
   <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
     <video-media host="youtube" loaded="" can-play="">
@@ -555,5 +555,9 @@ window.onload = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
   } else if (location.pathname.includes('/search?q')) {
 
+  } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
+    setTimeout(() => {
+      window.location.href = 'https://a11y-test.com/';
+    }, 30000);
   }
 }
