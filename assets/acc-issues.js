@@ -234,6 +234,7 @@ window.onload = () => {
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
     expandBtn.onclick = () => {
+      expandBtn.removeAttribute('aria-expanded');
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         collapseContent.style.padding = '27px 0';
