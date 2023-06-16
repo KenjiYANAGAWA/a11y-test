@@ -49,9 +49,16 @@ const issueListObj = {
     ['4.1.1 Parsing', 'ARIA10: Using aria-labelledby to provide a text alternative for non-text content', '**mg20-gaming-galactic-white** image has an aria-labelledby attribute references an ID that doesn\'t exist.']
   ],
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
+  '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [
+    ['3.1.1 Language of Page','H57: Using the language attribute on the HTML element','"""MC100 Wireless Charge Pad""There is no lang attribute in html tag on top page."'],
+    ['3.2.3 Consistent Navigation','F66: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages','On page **MC100 Wireless Charge Pad**, header item order is **Contact**, **Home**, **Catalog**']
+  ],
   '/products/mw50-silver-metal-brown-leather': [],
   '/products/mw08-brown-ceramic-stainless-steel-case': [],
-  '/products/mh40-wireless-ear-pads': [],
+  '/products/mh40-wireless-ear-pads': [
+    ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"'],
+    []
+  ],
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
