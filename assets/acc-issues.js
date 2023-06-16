@@ -300,53 +300,16 @@ window.onload = () => {
   <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header=""><div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;"><video-media host="youtube" loaded="" can-play=""><iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;controls=1&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </video-media></div>
   </div>
-
+  -->
+  
   <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
   <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
     <video-media host="youtube" loaded="" can-play="">
-      <iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;controls=1&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;cc_load_policy=0&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pK3yIRIF5ng?controls=0&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </video-media>
   </div>
   </div>
-  -->
-  <div id="player"></div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  var player;
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      width: '100%',
-      height: '315',
-      videoId: 'pK3yIRIF5ng',
-      playerVars: {
-        playsinline: 1,
-        controls: 1,
-        enablejsapi: 1,
-        rel: 0,
-        modestbranding: 1,
-      },
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  }
-
-  function onPlayerReady(event) {
-    event.target.unMute();
-    event.target.setPlaybackQuality('hd720');
-    
-    // Hide the captions button
-    event.target.setOption('captions', 'track', { 'languageCode': 'none' });
-  }
-</script>
-
-<style>
-#player {
-  width: 100%;
-}
-</style>
 
 
 
