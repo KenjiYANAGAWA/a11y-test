@@ -73,7 +73,7 @@ window.onload = () => {
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.onclick = () => {
       if (location.pathname.includes('login')) {
-        document.querySelector('.fieldset .form-control input')
+        document.querySelector('.fieldset .form-control input').focus();
       } else {
         focusableEl.focus();
       }
