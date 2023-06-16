@@ -2,17 +2,13 @@
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
-  setTimeout(() => {
-    //fixing skip to main content
-    const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.setAttribute('href', 'javascript:void(0);')
-    skipBtn.onclick = () => {
-      console.log('clicked');
-      skipBtn.blur();
-      document.querySelector('#main a').focus();
-    }
-  }, 300);
-
+  //fixing skip to main content
+  const main = document.querySelector('#main');
+  const focusableEl = element.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])')
+  const skipBtn = document.querySelector('.skip-to-content')
+  skipBtn.onclick = () => {
+    focusableEl.focus();
+  }
 
   // adding issues to popup
   // issue details are coming from acc-list-issue-details.js
