@@ -533,9 +533,13 @@ window.onload = () => {
     //   }
     // })
 
-    document.querySelector('.to-shipping-btn').addEventListener('onclick', () => {
+    const submitBtn = document.querySelector('.to-shipping-btn');
+
+    submitBtn.addEventListener('onclick', () => {
       document.querySelector('#last-name').style.display = 'none';
-      document.querySelector('#last-name').style.display = 'block';
+      setTimeout(() => {
+        document.querySelector('#last-name').style.display = 'block';
+      }, 100);
     })
 
   } else if (location.pathname == '/pages/shipping') {
