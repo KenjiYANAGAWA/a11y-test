@@ -138,11 +138,11 @@ window.onload = () => {
         const hPosition = e.target.nextElementSibling.getAttribute('anchor-horizontal')
         if (hPosition == 'end') {
           e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
+          e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
         } else {
           e.target.nextElementSibling.style.left = 'var(--popover-anchor-inline-spacing)';
           e.target.nextElementSibling.style.top = 'calc(50% - 79px)'
         }
-        e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
         e.target.setAttribute('aria-expanded', true);
       })
     })
