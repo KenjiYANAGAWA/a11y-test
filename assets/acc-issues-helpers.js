@@ -122,7 +122,7 @@ const cartSummaryPrice = () => {
 
  // substituting all checkout btns href
  setInterval(() => {
-  const btns = document.querySelectorAll('form[action="/cart"] button[type="submit"]');
+  const btns = document.querySelectorAll('form[action="/cart"]:not(shipping-estimator__form) button[type="submit"]');
   if (btns.length > 0) {
     btns.forEach((btn) => {
       const newBtn = document.createElement('a');
