@@ -205,7 +205,7 @@ window.onload = () => {
 
   } else if (location.pathname == '/cart') {
     //trap focus on checkout button
-    const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
+    const checkoutBtn = document.querySelector('.cart-form > a.button');
     checkoutBtn.onfocus = () => {
       document.addEventListener('keydown', (e) => {
         checkoutBtn.focus();
