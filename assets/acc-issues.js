@@ -2,13 +2,15 @@
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
-  //fixing skip to main content
-  const skipBtn = document.querySelector('.skip-to-content')
-  skipBtn.setAttribute('href', 'javascript:void()')
-  skipBtn.onclick = () => {
-    console.log('clicked');
-    document.activeElement = document.querySelector('#main');
-  }
+  setTimeout(() => {
+    //fixing skip to main content
+    const skipBtn = document.querySelector('.skip-to-content')
+    skipBtn.setAttribute('href', 'javascript:void()')
+    skipBtn.onclick = () => {
+      console.log('clicked');
+      document.activeElement = document.querySelector('#main');
+    }
+  }, 300);
 
 
   // adding issues to popup
