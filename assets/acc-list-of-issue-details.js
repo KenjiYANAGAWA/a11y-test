@@ -42,20 +42,27 @@ const issueListObj = {
   '/cart': [
     ['2.1.2 No Keyboard Trap','F10: Failure of Success Criterion 2.1.2 and Conformance Requirement 5 due to combining multiple content formats in a way that traps users inside one format type','Once focused on "checkout" button, keyboard cannot navigate away.']
   ],
-  '/products/headphone-stand-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
   '/products/3-5mm-to-3-5mm-audio-cable-black': [
     ['4.1.2 Name, Role, Value', 'ARIA5: Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.'],
     ['4.1.1 Parsing', 'ARIA10: Using aria-labelledby to provide a text alternative for non-text content', '**mg20-gaming-galactic-white** image has an aria-labelledby attribute references an ID that doesn\'t exist.']
   ],
-  '/products/usb-c-to-3-5mm-audio-cable-black': [],
+  '/products/usb-c-to-3-5mm-audio-cable-black': [
+    ['2.4.2 Page Titled','G127: Identifying a Web page\'s relationship to a larger collection of Web pages','product **USB-C To 3.5mm Audio Cable (Black)** and **Headphone Stand (Black)** pages have the title "product"']
+  ],
+  '/products/headphone-stand-black': [
+    ['2.4.2 Page Titled','G127: Identifying a Web page\'s relationship to a larger collection of Web pages','product **USB-C To 3.5mm Audio Cable (Black)** and **Headphone Stand (Black)** pages have the title "product"']
+  ],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [
     ['3.1.1 Language of Page','H57: Using the language attribute on the HTML element','"""MC100 Wireless Charge Pad""There is no lang attribute in html tag on top page."'],
     ['3.2.3 Consistent Navigation','F66: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages','Header item order is **Contact**, **Home**, **Catalog**']
   ],
-  '/products/mw50-silver-metal-brown-leather': [],
+  '/products/mw50-silver-metal-brown-leather': [
+    ['1.4.2 Audio Control','F23: Failure of 1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off','As soon as opening a product page, it starts to play a promotional video with sound but no stop button.']
+  ],
   '/products/mw08-brown-ceramic-stainless-steel-case': [
     ['1.3.2 Meaningful Sequence','F32: Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word','"S A L E!! 70% OFF!!! Get yours NOW" has spaces for the headphone. Screen reader announces by character'],
+    ['1.1.1 Non-text Content','F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)','"First product image of **MW08 (Brown Ceramic / Stainless Steel Case)** has a bad alt text. It says **Someone jogging and wearing pair of silver earphones.** when it is just one brown earphone."']
   ],
   '/products/mh40-wireless-ear-pads': [
     ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
