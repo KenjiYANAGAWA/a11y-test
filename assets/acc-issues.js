@@ -537,6 +537,7 @@ window.onload = () => {
 
     submitBtn.addEventListener('onclick', () => {
       document.querySelector('#last-name').style.display = 'none';
+      document.querySelector('#last-name').setAttribute('aria-hidden', true);
       setTimeout(() => {
         document.querySelector('#last-name').style.display = 'block';
       }, 100);
