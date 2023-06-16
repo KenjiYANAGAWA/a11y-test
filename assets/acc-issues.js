@@ -5,7 +5,7 @@ window.onload = () => {
   //fixing skip to main content
   document.querySelector('.skip-to-content').onclick = () => {
     console.log('clicked');
-    document.querySelector('#main').focus();
+    document.querySelector('#main').firstElementChild.focus();
   }
 
 
