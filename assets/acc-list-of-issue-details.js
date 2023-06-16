@@ -56,8 +56,7 @@ const issueListObj = {
   '/products/mw50-silver-metal-brown-leather': [],
   '/products/mw08-brown-ceramic-stainless-steel-case': [],
   '/products/mh40-wireless-ear-pads': [
-    ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"'],
-    []
+    ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
   ],
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
