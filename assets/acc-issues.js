@@ -317,8 +317,8 @@ window.onload = () => {
 
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-      width: 560,
-      height: 315,
+      width: '100%',
+      height: '315',
       videoId: 'pK3yIRIF5ng',
       playerVars: {
         playsinline: 1,
@@ -341,6 +341,13 @@ window.onload = () => {
     event.target.setOption('captions', 'track', { 'languageCode': 'none' });
   }
 </script>
+
+<style>
+#player {
+  width: 100%;
+}
+</style>
+
 
 
 
