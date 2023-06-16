@@ -738,9 +738,11 @@ window.onload = () => {
       window.location.href = 'https://a11y-test.com/';
     }, 30000);
   } else if (location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
-    const checkoutBtnCart = document.querySelector('cart-drawer a[href="/pages/checkout"]');
-    checkoutBtnCart.addEventListener('focus', (e) => {
-      e.target.click();
-    })
+    setTimeout(() => {
+      const checkoutBtnCart = document.querySelector('cart-drawer a[href="/pages/checkout"]');
+      checkoutBtnCart.addEventListener('focus', (e) => {
+        e.target.click();
+      })
+    }, 300);
   }
 }
