@@ -534,6 +534,7 @@ window.onload = () => {
     // })
 
     const submitBtn = document.querySelector('.to-shipping-btn');
+    submitBtn.removeAttribute('type')
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form');
