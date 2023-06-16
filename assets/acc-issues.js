@@ -132,6 +132,7 @@ window.onload = () => {
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
     hotspots.forEach(hotspot => {
       hotspot.addEventListener('focus', (e) => {
+        console.log(e.target)
         e.target.nextElementSibling.style.display = 'block';
         e.target.nextElementSibling.style.opacity = 1;
         e.target.nextElementSibling.style.visibility = 'visible';
