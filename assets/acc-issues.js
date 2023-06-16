@@ -69,7 +69,7 @@ window.onload = () => {
     const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.onclick = () => {
-      focusableEl.focus();
+      main.focus();
     }
   } else {
     const skipBtn = document.querySelector('.skip-to-content')
