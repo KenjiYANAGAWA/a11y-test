@@ -549,7 +549,7 @@ window.onload = () => {
 
     newSubmitBtn.onclick = () => {
       if (emailInput && emailInput.value.length == 0) {
-        form.submit();
+        emailInput.focus();
       } else if (lastNameInput.value.length == 0) {
         lastNameInput.style.outlineColor = '#8c720b';
       } else  {
