@@ -544,12 +544,11 @@ window.onload = () => {
     const form = document.querySelector('form');
 
     newSubmitBtn.onclick = () => {
-      console.log("submit triggered")
-      // if (lastNameInput.value.length == 0) {
-      //   lastNameInput.focus();
-      // } else {
-      //   e.submit();
-      // }
+      if (lastNameInput.value.length == 0) {
+        lastNameInput.focus();
+      } else {
+        form.submit();
+      }
     }
 
   } else if (location.pathname == '/pages/shipping') {
