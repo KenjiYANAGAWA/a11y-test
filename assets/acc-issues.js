@@ -2,6 +2,12 @@
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
+  //fixing skip to main content
+  document.querySelector('.skip-to-content').onclick = () => {
+    document.querySelector('#main').focus();
+  }
+
+
   // adding issues to popup
   // issue details are coming from acc-list-issue-details.js
   const issues = [];
