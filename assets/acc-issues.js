@@ -130,6 +130,8 @@ window.onload = () => {
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
+    hotspots.forEach(hotspot => hotspot.addEventListener('focus', (e) => e.target.click()))
+    hotspots.forEach(hotspot => hotspot.addEventListener('blur', (e) => e.target.click()))
 
     // removing focus from second slide banner
     // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
