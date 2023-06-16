@@ -527,9 +527,30 @@ window.onload = () => {
 
     const info = addressArray[0];
 
-    document.querySelector('bdo').innerHTML = document.querySelectorAll('.info span')[1].innerText;
+    const url = new URL(location.href)
+    const email = url.searchParams.get("email");
+    const firsName = url.searchParams.get("first-name");
+    const lastName = url.searchParams.get("last-name");
+    const city = url.searchParams.get("city");
+    const zip = url.searchParams.get("zip");
+    const address = url.searchParams.get("address");
+    const state = url.searchParams.get("state");
+    // const country = url.searchParams.get("country");
+    const country = 'United States';
 
-    document.querySelector('address').innerHTML = `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
+
+    document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
+      <div style="display: none">
+        <input type="text" name="email">${email}</input>
+        <input type="text" name="city">${city}</input>
+        <input type="text" name="zip">${zip}</input>
+        <input type="text" name="address">${address}</input>
+        <input type="text" name="state">${state}</input>
+        <input type="text" name="country">${country}</input>
+      </div>
+    `)
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
     const method = document.querySelector('fieldset');
 
@@ -552,7 +573,36 @@ window.onload = () => {
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
 
-    document.querySelector('.information-row:has(p) p').innerHTML = `<p>${localStorage.getItem('shipping-method')}</p>`;
+    const addressArray = []
+    // update address
+    const addresses = document.querySelectorAll('.address div');
+    addresses.forEach((address) => {
+      const addressItem = {};
+      addressItem['street'] = address.querySelector('.address-street').innerText;
+      addressItem['name'] = address.querySelector('.address-name').innerText;
+      addressItem['country'] = address.querySelector('.address-country').innerText;
+      addressItem['zip'] = address.querySelector('.address-zip').innerText;
+      addressItem['province'] = address.querySelector('.address-province').innerText;
+      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      addressItem['provinceCode'] = addressString[addressString.length - 2];
+      addressItem['city'] = address.querySelector('.address-city').innerText;
+      addressItem['company'] = address.querySelector('.address-company').innerText;
+      addressArray.push(addressItem);
+    });
+    const info = addressArray[0];
+    const url = new URL(location.href)
+    const shippingMethod = url.searchParams.get("shipping_methods");
+    const email = url.searchParams.get("email");
+    const city = url.searchParams.get("city");
+    const zip = url.searchParams.get("zip");
+    const address = url.searchParams.get("address");
+    const state = url.searchParams.get("state");
+    // const country = url.searchParams.get("country");
+    const country = 'United States';
+
+    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
+    document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
   } else if (location.pathname.includes('/search?q')) {
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
