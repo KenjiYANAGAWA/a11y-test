@@ -136,7 +136,11 @@ window.onload = () => {
         e.target.nextElementSibling.style.display = 'block';
         e.target.nextElementSibling.style.opacity = 1;
         e.target.nextElementSibling.style.visibility = 'visible';
-        e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
+        if (e.target.getAttribute('anchor-horizontal') == 'end') {
+          e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
+        } else {
+          e.target.nextElementSibling.style.left = 'var(--popover-anchor-inline-spacing)';
+        }
         e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
         e.target.setAttribute('aria-expanded', true);
       })
