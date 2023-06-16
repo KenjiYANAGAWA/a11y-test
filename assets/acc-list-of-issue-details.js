@@ -64,7 +64,9 @@ const issueListObj = {
   ],
   '/products/mw08-brown-ceramic-stainless-steel-case': [
     ['1.3.2 Meaningful Sequence','F32: Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word','"S A L E!! 70% OFF!!! Get yours NOW" has spaces for the headphone. Screen reader announces by character'],
-    ['1.1.1 Non-text Content','F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)','"First product image of **MW08 (Brown Ceramic / Stainless Steel Case)** has a bad alt text. It says **Someone jogging and wearing pair of silver earphones.** when it is just one brown earphone."']
+    ['1.1.1 Non-text Content','F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)','"First product image of **MW08 (Brown Ceramic / Stainless Steel Case)** has a bad alt text. It says **Someone jogging and wearing pair of silver earphones.** when it is just one brown earphone."'],
+    ['1.2.2 Captions (Prerecorded)', 'F75: Failure of Success Criterion 1.2.2 by providing synchronized media without captions when the synchronized media presents more information than is presented on the page','The Product Video for **MW08 (Brown Ceramic / Stainless Steel Case)** does not have closed captions even though there is spoken narration'],
+    ['1.2.3 Audio Description or Media Alternative (Prerecorded)', 'G151: Providing a link to a text transcript of a prepared statement or script if the script is followed', 'The video does not have accurate transcript. Linked youtube page has transcript functionality but no punctuation and hard to read it as a text equivalent.']
   ],
   '/products/mh40-wireless-ear-pads': [
     ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
