@@ -17,14 +17,21 @@ const issueListObj = {
   ],
   '/collections/all': [
    ],
-  '/pages/contact': [],
+  '/pages/contact': [
+    ['1.1.1 Non-text Content','F39: Failure of Success Criterion 1.1.1 due to providing a text alternative that is not null (e.g., alt="spacer" or alt="image") for images that should be ignored by assistive technology','"4 items, **free shipping**, **Customer service**, Refer a friend**, and **Secure payment**. Each icon\'s alt text is same as the text below the icon. The alt text and the text below are creating stutter effect and should be hidden."'],
+    ['1.3.4 Orientation','F100: Failure of Success Criterion 1.3.4 due to showing a message asking to reorient device','In smart phone view on contact us page, rotating the device does not rotate the view.'],
+    ['3.3.2 Labels or Instructions','F82: Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields but not including a text label','**name**, **Email** keep the label when user types in. But not for **message**'],
+    ['2.5.3 Label in Name','F96: Failure due to the accessible name not containing the visible label text','**Send message** button is announced as "Create a ticket to the customer support", which does not match the visual label of "send message"']
+  ],
   '/pages/about-us': [
     ['1.4.10 Reflow','F102: Failure of Success Criterion 1.4.10 due to content disappearing and not being available when content has reflowed','"About Us page is not responsive. Page requires horizontal scroll with 320px width"'],
     ['2.4.4 Link Purpose (In Context)','G91: Providing link text that describes the purpose of a link','About us page has a link without link text, uses a url as the hyperlink text'],
     ['2.4.6 Headings and Labels','G141: Organizing a page using headings"About us page. Heading with same text is used twice for different content."'],
     ['1.4.1 Use of Color','F73: Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision','"On **about us** page The text **go back to home page** has the link to a11y-test.com. but it uses a slightly different color than the other text but no underline or any other visual cue"'],
   ],
-  '/pages/advertisement': [],
+  '/pages/advertisement': [
+    ['2.3.1 Three Flashes or Below Threshold', 'G176: Keeping the flashing area small enough', '"Background animation includes flashing."']
+  ],
   '/pages/checkout': [
     ['4.1.1 Parsing', 'F70: Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute markup', 'id="first-name", id="last-name", id="select0" are used multiple times'],
     ['1.1.1 Non-text Content', 'F65: Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative on img elements, area elements, and input elements of type "image"','Dropdown collapsed caret icon is only announced as **image**'],
