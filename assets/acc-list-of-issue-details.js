@@ -56,7 +56,6 @@ const issueListObj = {
   '/products/mw50-silver-metal-brown-leather': [],
   '/products/mw08-brown-ceramic-stainless-steel-case': [
     ['1.3.2 Meaningful Sequence','F32: Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word','"S A L E!! 70% OFF!!! Get yours NOW" has spaces for the headphone. Screen reader announces by character'],
-    []
   ],
   '/products/mh40-wireless-ear-pads': [
     ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
