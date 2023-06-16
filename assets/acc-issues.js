@@ -309,7 +309,7 @@ window.onload = () => {
   </div>
   </div>
   -->
-<div id="player"></div>
+  <div id="player"></div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
@@ -317,6 +317,8 @@ window.onload = () => {
 
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
+      width: 560,
+      height: 315,
       videoId: 'pK3yIRIF5ng',
       playerVars: {
         playsinline: 1,
@@ -339,6 +341,7 @@ window.onload = () => {
     event.target.setOption('captions', 'track', { 'languageCode': 'none' });
   }
 </script>
+
 
 
 
