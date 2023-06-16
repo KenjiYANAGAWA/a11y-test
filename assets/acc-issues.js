@@ -136,7 +136,7 @@ window.onload = () => {
         e.target.nextElementSibling.style.display = 'block';
         e.target.nextElementSibling.style.opacity = 1;
         e.target.nextElementSibling.style.visibility = 'visible';
-        if (e.target.getAttribute('anchor-horizontal') == 'end') {
+        if (e.target.nextElementSibling.getAttribute('anchor-horizontal') == 'end') {
           e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
         } else {
           e.target.nextElementSibling.style.left = 'var(--popover-anchor-inline-spacing)';
