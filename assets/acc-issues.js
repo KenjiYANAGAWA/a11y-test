@@ -520,6 +520,10 @@ window.onload = () => {
 
     //   }
     // })
+
+    // document.querySelector('last-name').
+
+
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
