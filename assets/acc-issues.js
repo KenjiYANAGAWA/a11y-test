@@ -5,7 +5,7 @@ window.onload = () => {
   setTimeout(() => {
     //fixing skip to main content
     const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.setAttribute('href', 'javascript:void()')
+    skipBtn.setAttribute('href', 'javascript:void')
     skipBtn.onclick = () => {
       console.log('clicked');
       document.activeElement = document.querySelector('#main');
