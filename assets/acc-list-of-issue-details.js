@@ -70,7 +70,8 @@ const issueListObj = {
     ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
   ],
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [
-    ['1.3.1 Info and Relationships', 'F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','"A list of features are using just bullet points ""•"" for each item but not using `ul` and `li` tag"']
+    ['1.3.1 Info and Relationships', 'F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','"A list of features are using just bullet points ""•"" for each item but not using `ul` and `li` tag"'],
+    ['2.4.3 Focus Order', 'G59: Placing the interactive elements in an order that follows sequences and relationships within the content', 'Each list item receives focus though they are not interactive']
   ],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
