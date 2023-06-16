@@ -540,11 +540,12 @@ window.onload = () => {
 
     form.onsubmit = (e) => {
       e.preventDefault();
-      if (lastNameInput.value.length == 0) {
-        lastNameInput.focus();
-      } else {
-        e.submit();
-      }
+      console.log(submit)
+      // if (lastNameInput.value.length == 0) {
+      //   lastNameInput.focus();
+      // } else {
+      //   e.submit();
+      // }
     }
 
   } else if (location.pathname == '/pages/shipping') {
