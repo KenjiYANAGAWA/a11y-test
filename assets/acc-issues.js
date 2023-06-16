@@ -136,6 +136,8 @@ window.onload = () => {
         e.target.nextElementSibling.style.display = 'block';
         e.target.nextElementSibling.style.opacity = 1;
         e.target.nextElementSibling.style.visibility = 'visible';
+        e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
+        e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
       })
     })
     hotspots.forEach(hotspot => {
