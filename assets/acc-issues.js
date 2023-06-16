@@ -401,6 +401,9 @@ window.onload = () => {
       emailInput.parentElement.append(redDot);
     }
 
+    // strikethrough text not read
+    document.querySelector('.product-info__description .prose s').setAttribute('aria-hidden', true)
+
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
     document.documentElement.removeAttribute("lang");
 
