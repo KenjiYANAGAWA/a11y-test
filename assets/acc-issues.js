@@ -542,6 +542,8 @@ window.onload = () => {
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form');
+    const lastNameLabel = document.querySelector('label[for="last-name"]');
+    lastNameLabel.removeAttribute('for')
 
     newSubmitBtn.onclick = () => {
       if (lastNameInput.value.length == 0) {
