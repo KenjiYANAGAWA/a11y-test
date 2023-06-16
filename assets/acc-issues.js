@@ -67,14 +67,16 @@ window.onload = () => {
     //fixing skip to main content
     let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
 
-    if (location.pathname.includes('login')) {
-      main = document.querySelector('.fieldset .form-control')
-    }
+
 
     const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.onclick = () => {
-      focusableEl.focus();
+      if (location.pathname.includes('login')) {
+        document.querySelector('.fieldset .form-control input')
+      } else {
+        focusableEl.focus();
+      }
     }
   } else {
     const skipBtn = document.querySelector('.skip-to-content')
