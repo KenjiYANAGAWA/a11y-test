@@ -534,13 +534,16 @@ window.onload = () => {
     // })
 
     const submitBtn = document.querySelector('.to-shipping-btn');
+    const newSubmitBtn = document.createElement('div');
+    newSubmitBtn.innerHTML = 'Continue to shipping';
+    newSubmitBtn.classList.add('to-shipping-btn');
+    submitBtn.parentElement.replaceChild(newSubmitBtn, submitBtn)
     submitBtn.removeAttribute('type')
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form');
 
-    submitBtn.onclick = (e) => {
-      e.target.form.preventDefault();
+    newSubmitBtn.onclick = () => {
       console.log("submit triggered")
       // if (lastNameInput.value.length == 0) {
       //   lastNameInput.focus();
