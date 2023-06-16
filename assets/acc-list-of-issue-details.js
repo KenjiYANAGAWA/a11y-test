@@ -73,7 +73,9 @@ const issueListObj = {
     ['1.3.1 Info and Relationships', 'F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','"A list of features are using just bullet points ""•"" for each item but not using `ul` and `li` tag"'],
     ['2.4.3 Focus Order', 'G59: Placing the interactive elements in an order that follows sequences and relationships within the content', 'Each list item receives focus though they are not interactive']
   ],
-  '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
+  '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [
+    ['3.1.2 Language of Parts','H58: Using language attributes to identify changes in the human language','**MW07 Plus Charging Case & Canvas Pouch (Stainless Steel)** has Japanese text in the products details section but does not have lang attribute']
+  ],
   '/account/addresses': [],
   '/account/register': [],
   '/account/login' : [
