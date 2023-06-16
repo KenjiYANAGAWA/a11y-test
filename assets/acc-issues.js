@@ -138,6 +138,7 @@ window.onload = () => {
         e.target.nextElementSibling.style.visibility = 'visible';
         e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
         e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
+        e.target.setAttribute('aria-expanded', true);
       })
     })
     hotspots.forEach(hotspot => {
@@ -145,6 +146,7 @@ window.onload = () => {
         e.target.nextElementSibling.style.display = 'none';
         e.target.nextElementSibling.style.opacity = 0;
         e.target.nextElementSibling.style.visibility = 'hidden';
+        e.target.setAttribute('aria-expanded', false);
       })
     })
 
