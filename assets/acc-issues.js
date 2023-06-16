@@ -538,9 +538,9 @@ window.onload = () => {
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form');
 
-    form.onsubmit = (e) => {
-      e.preventDefault();
-      console.log(submit)
+    submitBtn.onclick = (e) => {
+      e.target.form.preventDefault();
+      console.log("submit triggered")
       // if (lastNameInput.value.length == 0) {
       //   lastNameInput.focus();
       // } else {
