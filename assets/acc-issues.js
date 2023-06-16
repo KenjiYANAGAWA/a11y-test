@@ -66,7 +66,7 @@ window.onload = () => {
     removeFooterLink("/pages/about-us");
     //fixing skip to main content
     const main = document.querySelector('#main');
-    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.onclick = () => {
       focusableEl.focus();
