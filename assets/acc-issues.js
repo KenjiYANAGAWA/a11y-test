@@ -541,7 +541,7 @@ window.onload = () => {
     submitBtn.removeAttribute('type')
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
-    const form = document.querySelector('form');
+    const form = document.querySelector('form[action="/pages/shipping"]');
     const lastNameLabel = document.querySelector('label[for="last-name"]');
     lastNameLabel.removeAttribute('for')
 
