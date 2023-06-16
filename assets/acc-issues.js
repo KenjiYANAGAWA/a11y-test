@@ -61,7 +61,6 @@ window.onload = () => {
   // removing announce bar if not home
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
-  // removing about us
   if (location.pathname !== '/') {
     // removing about us from footer
     removeFooterLink("/pages/about-us");
@@ -72,6 +71,9 @@ window.onload = () => {
     skipBtn.onclick = () => {
       focusableEl.focus();
     }
+  } else {
+    const skipBtn = document.querySelector('.skip-to-content')
+    skipBtn.setAttribute('href', '#')
   }
 
   //removing header and footer from checkout pages
