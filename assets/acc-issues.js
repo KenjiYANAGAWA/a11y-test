@@ -3,8 +3,9 @@ const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
   //fixing skip to main content
-  document.querySelector('.skip-to-content').onclick = (e) => {
-    e.preventDefault();
+  const skipBtn = document.querySelector('.skip-to-content')
+  skipBtn.setAttribute('href', 'javascript:void()')
+  skipBtn.onclick = () => {
     console.log('clicked');
     document.activeElement = document.querySelector('#main');
   }
