@@ -547,7 +547,7 @@ window.onload = () => {
 
     newSubmitBtn.onclick = () => {
       if (lastNameInput.value.length == 0) {
-        lastNameInput.focus();
+        lastNameInput.style.outlineColor = '#8c720b';
       } else {
         form.submit();
       }
