@@ -574,7 +574,7 @@ window.onload = () => {
       if (lastNameInput.value.length == 0) {
         lastNameInput.style.outline = 'solid 1px #8c720b';
       } else  {
-        e.submit();
+        e.target.submit();
       }
     }
 
