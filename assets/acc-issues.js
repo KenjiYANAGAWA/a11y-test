@@ -185,6 +185,15 @@ window.onload = () => {
         outline-color: lightblue !important}
     `)
 
+    // change headings
+      const contacUs = document.querySelector('.section-stack__intro p');
+      const question = document.querySelector('.section-stack__intro h2');
+      const newQuestionEl = document.createElement('p');
+      newQuestionEl.innerHTML = question.innerHTML;
+      contacUs.style.fontSize = '2.5rem';
+
+      question.parentElement.replaceChild(newQuestionEl, question)
+
     // icon class to break
     const iconSelector = [
       '.icon-picto-box',
@@ -204,7 +213,7 @@ window.onload = () => {
 
     // removing focus indication from submit button
     const submitBtn = document.querySelector('.contact-form button[type=submit]');
-    submitBtn.style = "border: none; outline: none";
+    // submitBtn.style = "border: none; outline: none";
     submitBtn.ariaLabel = "Create a ticket to the customer support";
 
   } else if (location.pathname == '/cart') {
