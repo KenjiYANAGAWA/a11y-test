@@ -545,8 +545,10 @@ window.onload = () => {
     const lastNameLabel = document.querySelector('label[for="last-name"]');
     lastNameLabel.removeAttribute('for')
 
+    const emailInput = document.querySelector('#email')
+
     newSubmitBtn.onclick = () => {
-      if (lastNameInput.value.length == 0) {
+      if (lastNameInput.value.length == 0 && emailInput && emailInput.value.length >= 1) {
         lastNameInput.style.outlineColor = '#8c720b';
       } else {
         form.submit();
