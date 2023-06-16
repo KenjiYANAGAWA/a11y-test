@@ -534,11 +534,10 @@ window.onload = () => {
     // })
 
     const submitBtn = document.querySelector('.to-shipping-btn');
-    const newSubmitBtn = document.createElement('div');
-    newSubmitBtn.innerHTML = 'Continue to shipping';
-    newSubmitBtn.classList.add('to-shipping-btn');
-    submitBtn.parentElement.replaceChild(newSubmitBtn, submitBtn)
-    submitBtn.removeAttribute('type')
+    // const newSubmitBtn = document.createElement('div');
+    // newSubmitBtn.innerHTML = 'Continue to shipping';
+    // newSubmitBtn.classList.add('to-shipping-btn');
+    // submitBtn.parentElement.replaceChild(newSubmitBtn, submitBtn)
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form[action="/pages/shipping"]');
@@ -547,13 +546,12 @@ window.onload = () => {
 
     const emailInput = document.querySelector('#email')
 
-    newSubmitBtn.onclick = () => {
-      if (emailInput && emailInput.value.length == 0) {
-        emailInput.focus();
-      } else if (lastNameInput.value.length == 0) {
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      if (lastNameInput.value.length == 0) {
         lastNameInput.style.outlineColor = '#8c720b';
       } else  {
-        form.submit();
+        e.submit();
       }
     }
 
