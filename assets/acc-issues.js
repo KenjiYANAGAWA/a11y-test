@@ -238,10 +238,10 @@ window.onload = () => {
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         collapseContent.style.padding = '27px 0';
-        expandBtn.ariaExpanded = true;
+        // expandBtn.ariaExpanded = true;
       } else {
         collapseContent.style.display = 'none'
-        expandBtn.ariaExpanded = false;
+        // expandBtn.ariaExpanded = false;
       }
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
