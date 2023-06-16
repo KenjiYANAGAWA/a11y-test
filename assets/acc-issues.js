@@ -19,7 +19,7 @@ window.onload = () => {
   }
 
   listIssue.innerHTML = `
-    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page</h2>
+    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page. CTRL + i to close.</h2>
     ${issues.join('\n')}
   `//decided not to show url ${location.href}
 
@@ -61,27 +61,8 @@ window.onload = () => {
   // removing announce bar if not home
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
-  if (location.pathname !== '/') {
-    // removing about us from footer
-    removeFooterLink("/pages/about-us");
-    //fixing skip to main content
-    let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
-
-
-
-    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
-    const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.onclick = () => {
-      if (location.pathname.includes('login')) {
-        document.querySelector('.fieldset .form-control input').focus();
-      } else {
-        focusableEl.focus();
-      }
-    }
-  } else {
-    const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.setAttribute('href', '#')
-  }
+  // removing about us
+  if (location.pathname !== '/') removeFooterLink("/pages/about-us");
 
   //removing header and footer from checkout pages
   if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
@@ -92,6 +73,9 @@ window.onload = () => {
       }`
     );
   }
+  // breaking focus color to light blue
+  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
+    outline-color: lightblue !important}</style>`)
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
@@ -149,30 +133,6 @@ window.onload = () => {
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
-    hotspots.forEach(hotspot => {
-      hotspot.addEventListener('focus', (e) => {
-        e.target.nextElementSibling.style.display = 'block';
-        e.target.nextElementSibling.style.opacity = 1;
-        e.target.nextElementSibling.style.visibility = 'visible';
-        const hPosition = e.target.nextElementSibling.getAttribute('anchor-horizontal')
-        if (hPosition == 'end') {
-          e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
-          e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
-        } else {
-          e.target.nextElementSibling.style.left = 'var(--popover-anchor-inline-spacing)';
-          e.target.nextElementSibling.style.top = 'calc(50% - 79px)'
-        }
-        e.target.setAttribute('aria-expanded', true);
-      })
-    })
-    hotspots.forEach(hotspot => {
-      hotspot.addEventListener('blur', (e) => {
-        e.target.nextElementSibling.style.display = 'none';
-        e.target.nextElementSibling.style.opacity = 0;
-        e.target.nextElementSibling.style.visibility = 'hidden';
-        e.target.setAttribute('aria-expanded', false);
-      })
-    })
 
     // removing focus from second slide banner
     // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
@@ -208,34 +168,18 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
-    // breaking focus color to light blue
     addStyle(`
-      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-        html {
-          transform: rotate(-90deg);
-          transform-origin: left top;
-          width: 100vh;
-          overflow-x: hidden;
-          position: absolute;
-          top: 100%;
-          left: 0;
-        }
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
       }
-      .contact-form button[type=submit]:focus {
-        box-shadow: inset 0 0 1px lightblue !important
-      }
-      .contact-form button[type=submit]:focus-visible {
-        outline-color: lightblue !important}
-    `)
-
-    // change headings
-      const contacUs = document.querySelector('.section-stack__intro p');
-      const question = document.querySelector('.section-stack__intro h2');
-      const newQuestionEl = document.createElement('p');
-      newQuestionEl.innerHTML = question.innerHTML;
-      contacUs.style.fontSize = '2.5rem';
-
-      question.parentElement.replaceChild(newQuestionEl, question)
+    }`)
 
     // icon class to break
     const iconSelector = [
@@ -256,12 +200,12 @@ window.onload = () => {
 
     // removing focus indication from submit button
     const submitBtn = document.querySelector('.contact-form button[type=submit]');
-    // submitBtn.style = "border: none; outline: none";
+    submitBtn.style = "border: none; outline: none";
     submitBtn.ariaLabel = "Create a ticket to the customer support";
 
   } else if (location.pathname == '/cart') {
     //trap focus on checkout button
-    const checkoutBtn = document.querySelector('.cart-form > a.button');
+    const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
     checkoutBtn.onfocus = () => {
       document.addEventListener('keydown', (e) => {
         checkoutBtn.focus();
@@ -290,14 +234,13 @@ window.onload = () => {
     const collapseContent = newEstimateEl.querySelector('.accordion__content');
     collapseContent.style.display = 'none';
     expandBtn.onclick = () => {
-      expandBtn.removeAttribute('aria-expanded');
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         collapseContent.style.padding = '27px 0';
-        // expandBtn.ariaExpanded = true;
+        expandBtn.ariaExpanded = true;
       } else {
         collapseContent.style.display = 'none'
-        // expandBtn.ariaExpanded = false;
+        expandBtn.ariaExpanded = false;
       }
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
@@ -401,10 +344,6 @@ window.onload = () => {
         el.remove();
       });
     });
-
-    // strikethrough text not read
-    document.querySelector('.product-info__description .prose s').setAttribute('aria-hidden', true)
-
   } else if (location.pathname == '/account/register') {
     const form = document.querySelector('#create_customer');
     const formInputs = form.querySelectorAll('input.input');
@@ -510,7 +449,7 @@ window.onload = () => {
         <span>Email or mobile phone number</span>
       </label>
       <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text" required>
+        <input type="text" name="email" id="email" class="checkout-input-text">
       </div>
     </div>`
       oldEl.insertAdjacentHTML("beforebegin", newEl);
@@ -551,29 +490,6 @@ window.onload = () => {
 
     //   }
     // })
-
-    const submitBtn = document.querySelector('.to-shipping-btn');
-    // const newSubmitBtn = document.createElement('div');
-    // newSubmitBtn.innerHTML = 'Continue to shipping';
-    // newSubmitBtn.classList.add('to-shipping-btn');
-    // submitBtn.parentElement.replaceChild(newSubmitBtn, submitBtn)
-    const lastNameInput = document.querySelector('#last-name');
-    lastNameInput.removeAttribute('required')
-    const form = document.querySelector('form[action="/pages/shipping"]');
-    const lastNameLabel = document.querySelector('label[for="last-name"]');
-    lastNameLabel.removeAttribute('for')
-
-    const emailInput = document.querySelector('#email')
-
-    form.onsubmit = (e) => {
-      e.preventDefault();
-      if (lastNameInput.value.length == 0) {
-        lastNameInput.style.outline = 'solid 1px #8c720b';
-      } else  {
-        e.submit();
-      }
-    }
-
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
