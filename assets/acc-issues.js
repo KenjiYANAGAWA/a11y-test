@@ -313,7 +313,7 @@ window.onload = () => {
         estimateBtn.focus();
       }
     })
-  } else if (location.pathname == '/products/headphone-stand-black' || location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
+  } else if (location.pathname == '/products/headphone-stand-black') {
     document.title = 'product'
   } else if (location.pathname == '/products/mw50-silver-metal-brown-leather') {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
@@ -738,15 +738,12 @@ window.onload = () => {
       window.location.href = 'https://a11y-test.com/';
     }, 30000);
   } else if (location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
-    const cartBtn = document.querySelector('a[href="/cart"]');
+    document.title = 'product'
 
-    cartBtn.addEventListener('click', () => {
-      const checkoutBtnCart = document.querySelector('cart-drawer a[href="/pages/checkout"]');
-      console.log(cartBtn, checkoutBtnCart)
-      checkoutBtnCart.addEventListener('focus', (e) => {
-        e.target.click();
-      })
-
+    const checkoutBtnCart = document.querySelector('cart-drawer a[href="/pages/checkout"]');
+    checkoutBtnCart.addEventListener('focus', (e) => {
+      e.target.click();
     })
+
   }
 }
