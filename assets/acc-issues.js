@@ -535,14 +535,17 @@ window.onload = () => {
 
     const submitBtn = document.querySelector('.to-shipping-btn');
     const lastNameInput = document.querySelector('#last-name');
+    lastNameInput.removeAttribute('required')
+    const form = document.querySelector('form');
 
-    submitBtn.addEventListener('onclick', () => {
-      lastNameInput.style.display = 'none';
-      lastNameInput.setAttribute('aria-hidden', true);
-      setTimeout(() => {
-        lastNameInput.style.display = 'block';
-      }, 100);
-    })
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      if (lastNameInput.value.length == 0) {
+        lastNameInput.focus();
+      } else {
+        e.submit();
+      }
+    }
 
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
