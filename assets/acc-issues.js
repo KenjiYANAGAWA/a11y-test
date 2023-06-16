@@ -634,7 +634,7 @@ window.onload = () => {
           total.innerHTML = document.querySelector('.cart-total-price').innerText;
         } else {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
+          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
         }
       })
     })
@@ -676,7 +676,7 @@ window.onload = () => {
       total.innerHTML = document.querySelector('.cart-total-price').innerText;
     } else {
       shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-      total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
+      total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
     }
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
