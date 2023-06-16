@@ -305,7 +305,7 @@ window.onload = () => {
   <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
   <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
     <video-media host="youtube" loaded="" can-play="">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pK3yIRIF5ng?controls=0&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pK3yIRIF5ng?modestbranding=1?controls=0&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </video-media>
   </div>
   </div>
