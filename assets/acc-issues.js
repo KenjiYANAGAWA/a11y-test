@@ -548,9 +548,11 @@ window.onload = () => {
     const emailInput = document.querySelector('#email')
 
     newSubmitBtn.onclick = () => {
-      if (lastNameInput.value.length == 0 && emailInput && emailInput.value.length >= 1) {
+      if (emailInput && emailInput.value.length >= 1) {
+        form.submit();
+      } else if (lastNameInput.value.length == 0) {
         lastNameInput.style.outlineColor = '#8c720b';
-      } else {
+      } else  {
         form.submit();
       }
     }
