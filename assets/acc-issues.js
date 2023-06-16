@@ -130,8 +130,20 @@ window.onload = () => {
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
-    hotspots.forEach(hotspot => hotspot.addEventListener('focus', (e) => e.target.click()))
-    hotspots.forEach(hotspot => hotspot.addEventListener('blur', (e) => e.target.click()))
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('focus', (e) => {
+        e.target.nextElementSibling.style.display = 'block';
+        e.target.nextElementSibling.style.opacity = 1;
+        e.target.nextElementSibling.style.visibility = 'visible';
+      })
+    })
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('blur', (e) => {
+        e.target.nextElementSibling.style.display = 'none';
+        e.target.nextElementSibling.style.opacity = 0;
+        e.target.nextElementSibling.style.visibility = 'hidden';
+      })
+    })
 
     // removing focus from second slide banner
     // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
