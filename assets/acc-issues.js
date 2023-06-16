@@ -1,46 +1,16 @@
-// List issue
-const issueListObj = {
-  // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-  '/':  [
-    'Footer Social media Icons do not meet contrast requirement',
-    'Under "Incredible features" Tooltip appears on hover. However, the tooltip disappears when mouse moves away from the popup',
-    'Issue 3'
-  ],
-  '/collections/all': [],
-  '/pages/contact': [],
-  '/pages/about-us': [],
-  '/pages/advertisement': [],
-  '/pages/checkout': [],
-  '/pages/shipping': [],
-  '/pages/payment': [],
-  '/cart': [],
-  '/products/headphone-stand-black': [],
-  '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [],
-  '/products/3-5mm-to-3-5mm-audio-cable-black': [
-    ['4.1.2 Name, Role, Value', 'https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA5', 'ARIA5 - Using WAI-ARIA state and property attributes to expose the state of a user interface component','Using aria-hidden="true" on a focusable image **This works very well with our gaming headphones.** inside a product description.']
-    //'issue 1',
-    //'issue 2'
-  ],
-  '/products/usb-c-to-3-5mm-audio-cable-black': [],
-  '/products/mw50-silver-metal-brown-leather': [],
-  '/products/mw08-brown-ceramic-stainless-steel-case': [],
-  '/products/mh40-wireless-ear-pads': [],
-  '/products/mh40-wireless-silver-metal-navy-coated-canvas': [],
-  '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
-  '/account/addresses': [],
-  '/account/register': []
-}
-
 // low color contrast cart and social media links
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
   // adding issues to popup
+  // issue details are coming from acc-list-issue-details.js
   const issues = [];
   if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline;" href="${item[1]}">${item[2]}</a><p>${item[3]}</p></li>`)
+      const techniqueLink = generateTechniqueLink(item);
+      console.log(techniqueLink);
+      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
     issues.push('</ul>');
@@ -49,9 +19,9 @@ window.onload = () => {
   }
 
   listIssue.innerHTML = `
-    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issues on ${location.href}</h2>
+    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page</h2>
     ${issues.join('\n')}
-  `
+  `//decided not to show url ${location.href}
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
