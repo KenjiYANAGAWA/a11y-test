@@ -22,10 +22,6 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
 
-    {% if template contains 'search' %}
-      <meta name="page.about-us" content="noindex">
-    {% endif %}
-
     <link rel="canonical" href="{{ canonical_url }}">
 
     {%- if settings.favicon -%}

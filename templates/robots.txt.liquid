@@ -1,0 +1,18 @@
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+
+  {% for rule in group.rule  %}
+    {{- rule -}}
+  {% endfor %}
+
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {% endif  %}
+{% endfor %}
+
+User-agent: *
+Disallow: /pages/about-us
+Disallow: /pages/checkout
+Disallow: /pages/shipping
+Disallow: /pages/payment
+Disallow: /pages/order
