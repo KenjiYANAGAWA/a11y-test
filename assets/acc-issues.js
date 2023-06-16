@@ -8,6 +8,7 @@ window.onload = () => {
     skipBtn.setAttribute('href', 'javascript:void(0);')
     skipBtn.onclick = () => {
       console.log('clicked');
+      skipBtn.blur();
       document.querySelector('#main').focus();
     }
   }, 300);
