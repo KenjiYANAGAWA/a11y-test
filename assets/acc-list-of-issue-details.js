@@ -51,15 +51,18 @@ const issueListObj = {
   '/products/usb-c-to-3-5mm-audio-cable-black': [],
   '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas': [
     ['3.1.1 Language of Page','H57: Using the language attribute on the HTML element','"""MC100 Wireless Charge Pad""There is no lang attribute in html tag on top page."'],
-    ['3.2.3 Consistent Navigation','F66: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages','On page **MC100 Wireless Charge Pad**, header item order is **Contact**, **Home**, **Catalog**']
+    ['3.2.3 Consistent Navigation','F66: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages','Header item order is **Contact**, **Home**, **Catalog**']
   ],
   '/products/mw50-silver-metal-brown-leather': [],
-  '/products/mw08-brown-ceramic-stainless-steel-case': [],
+  '/products/mw08-brown-ceramic-stainless-steel-case': [
+    ['1.3.2 Meaningful Sequence','F32: Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word','"S A L E!! 70% OFF!!! Get yours NOW" has spaces for the headphone. Screen reader announces by character'],
+    []
+  ],
   '/products/mh40-wireless-ear-pads': [
     ['1.1.1 Non-text Content', 'F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)', '"In footer, there are 11 logos to show the payment methods. All have same alt text **Cards** Each card should have its proper name as alt text, **Visa**, **master**, etc"']
   ],
   '/products/mh40-wireless-silver-metal-navy-coated-canvas': [
-    ['1.3.1 Info and Relationships', 'F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','"**MH40 Wireless (Silver Metal / Navy Coated Canvas)** product show page. A list of features are using just bullet points ""•"" for each item but not using `ul` and `li` tag"']
+    ['1.3.1 Info and Relationships', 'F2: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text','"A list of features are using just bullet points ""•"" for each item but not using `ul` and `li` tag"']
   ],
   '/products/mw07-plus-charging-case-canvas-pouch-stainless-steel': [],
   '/account/addresses': [],
