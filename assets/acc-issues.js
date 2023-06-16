@@ -534,12 +534,13 @@ window.onload = () => {
     // })
 
     const submitBtn = document.querySelector('.to-shipping-btn');
+    const lastNameInput = document.querySelector('#last-name');
 
     submitBtn.addEventListener('onclick', () => {
-      document.querySelector('#last-name').style.display = 'none';
-      document.querySelector('#last-name').setAttribute('aria-hidden', true);
+      lastNameInput.style.display = 'none';
+      lastNameInput.setAttribute('aria-hidden', true);
       setTimeout(() => {
-        document.querySelector('#last-name').style.display = 'block';
+        lastNameInput.style.display = 'block';
       }, 100);
     })
 
