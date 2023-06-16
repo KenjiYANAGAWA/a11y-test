@@ -68,7 +68,7 @@ window.onload = () => {
     let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
 
     if (location.pathname.includes('login')) {
-      main = document.querySelector('.fieldset')
+      main = document.querySelector('.fieldset .form-control')
     }
 
     const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
