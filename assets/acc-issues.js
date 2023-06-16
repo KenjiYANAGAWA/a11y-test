@@ -309,13 +309,14 @@ window.onload = () => {
   </div>
   </div>
   -->
-  <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
-    <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
-      <video-media host="youtube" loaded="" can-play="">
-        <iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;controls=1&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;cc_load_policy=0&amp;disablekb=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
-      </video-media>
-    </div>
+<div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
+  <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
+    <video-media host="youtube" loaded="" can-play="">
+      <iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;controls=1&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;cc_load_policy=3&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+    </video-media>
   </div>
+</div>
+
 
 
   </section>`
