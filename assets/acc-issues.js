@@ -4,6 +4,7 @@ const lowContrastColor = "rgb(var(--text-color) / .4)"
 window.onload = () => {
   //fixing skip to main content
   document.querySelector('.skip-to-content').onclick = () => {
+    console.log('clicked');
     document.querySelector('#main').focus();
   }
 
