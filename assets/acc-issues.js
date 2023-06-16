@@ -61,8 +61,24 @@ window.onload = () => {
   // removing announce bar if not home
   // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
 
-  // removing about us
-  if (location.pathname !== '/') removeFooterLink("/pages/about-us");
+  if (location.pathname !== '/') {
+    // removing about us from footer
+    removeFooterLink("/pages/about-us");
+    //fixing skip to main content
+    let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
+    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
+    const skipBtn = document.querySelector('.skip-to-content')
+    skipBtn.onclick = () => {
+      if (location.pathname.includes('login')) {
+        document.querySelector('.fieldset .form-control input').focus();
+      } else {
+        focusableEl.focus();
+      }
+    }
+  } else {
+    const skipBtn = document.querySelector('.skip-to-content')
+    skipBtn.setAttribute('href', '#')
+  }
 
   //removing header and footer from checkout pages
   if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
@@ -73,9 +89,6 @@ window.onload = () => {
       }`
     );
   }
-  // breaking focus color to light blue
-  document.body.insertAdjacentHTML("beforeend", `<style>*:focus {box-shadow: inset 0 0 1px lightblue !important} :focus-visible {
-    outline-color: lightblue !important}</style>`)
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
@@ -133,6 +146,30 @@ window.onload = () => {
     const hotspots = document.querySelectorAll('.hot-spot__dot');
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
     hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('focus', (e) => {
+        e.target.nextElementSibling.style.display = 'block';
+        e.target.nextElementSibling.style.opacity = 1;
+        e.target.nextElementSibling.style.visibility = 'visible';
+        const hPosition = e.target.nextElementSibling.getAttribute('anchor-horizontal')
+        if (hPosition == 'end') {
+          e.target.nextElementSibling.style.right = 'var(--popover-anchor-inline-spacing)';
+          e.target.nextElementSibling.style.top = 'calc(50% - 130px)';
+        } else {
+          e.target.nextElementSibling.style.left = 'var(--popover-anchor-inline-spacing)';
+          e.target.nextElementSibling.style.top = 'calc(50% - 79px)'
+        }
+        e.target.setAttribute('aria-expanded', true);
+      })
+    })
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('blur', (e) => {
+        e.target.nextElementSibling.style.display = 'none';
+        e.target.nextElementSibling.style.opacity = 0;
+        e.target.nextElementSibling.style.visibility = 'hidden';
+        e.target.setAttribute('aria-expanded', false);
+      })
+    })
 
     // removing focus from second slide banner
     // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
@@ -169,17 +206,34 @@ window.onload = () => {
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
     addStyle(`
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-      html {
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        width: 100vh;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
+      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+        html {
+          transform: rotate(-90deg);
+          transform-origin: left top;
+          width: 100vh;
+          overflow-x: hidden;
+          position: absolute;
+          top: 100%;
+          left: 0;
+        }
       }
-    }`)
+
+      button[type=submit]:focus {
+        box-shadow: inset 0 0 1px lightblue !important
+      }
+      button[type=submit]:focus-visible {
+      outline-color: lightblue !important
+      }
+    `)
+
+    // change headings
+    const contacUs = document.querySelector('.section-stack__intro p');
+    const question = document.querySelector('.section-stack__intro h2');
+    const newQuestionEl = document.createElement('p');
+    newQuestionEl.innerHTML = question.innerHTML;
+    contacUs.style.fontSize = '2.5rem';
+
+    question.parentElement.replaceChild(newQuestionEl, question)
 
     // icon class to break
     const iconSelector = [
@@ -200,7 +254,7 @@ window.onload = () => {
 
     // removing focus indication from submit button
     const submitBtn = document.querySelector('.contact-form button[type=submit]');
-    submitBtn.style = "border: none; outline: none";
+    // submitBtn.style = "border: none; outline: none";
     submitBtn.ariaLabel = "Create a ticket to the customer support";
 
   } else if (location.pathname == '/cart') {
@@ -237,10 +291,10 @@ window.onload = () => {
       if (collapseContent.style.display == 'none') {
         collapseContent.style.display = 'block';
         collapseContent.style.padding = '27px 0';
-        expandBtn.ariaExpanded = true;
+        // expandBtn.ariaExpanded = true;
       } else {
         collapseContent.style.display = 'none'
-        expandBtn.ariaExpanded = false;
+        // expandBtn.ariaExpanded = false;
       }
     }
     estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
@@ -359,6 +413,10 @@ window.onload = () => {
         el.remove();
       });
     });
+
+    // strikethrough text not read
+    document.querySelector('.product-info__description .prose s').setAttribute('aria-hidden', true)
+
   } else if (location.pathname == '/account/register') {
     const form = document.querySelector('#create_customer');
     const formInputs = form.querySelectorAll('input.input');
@@ -505,6 +563,21 @@ window.onload = () => {
 
     //   }
     // })
+
+    const lastNameInput = document.querySelector('#last-name');
+    lastNameInput.removeAttribute('required')
+    const form = document.querySelector('form[action="/pages/shipping"]');
+    const lastNameLabel = document.querySelector('label[for="last-name"]');
+    lastNameLabel.removeAttribute('for')
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      if (lastNameInput.value.length == 0) {
+        lastNameInput.style.outline = 'solid 1px #8c720b';
+      } else  {
+        e.submit();
+      }
+    }
+
   } else if (location.pathname == '/pages/shipping') {
     cartSummaryPrice();
 
@@ -542,34 +615,30 @@ window.onload = () => {
 
     document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
       <div style="display: none">
-        <input type="text" name="email">${email}</input>
-        <input type="text" name="city">${city}</input>
-        <input type="text" name="zip">${zip}</input>
-        <input type="text" name="address">${address}</input>
-        <input type="text" name="state">${state}</input>
-        <input type="text" name="country">${country}</input>
+        <input type="text" name="email" value="${email}">
+        <input type="text" name="city" value="${city}">
+        <input type="text" name="zip" value="${zip}">
+        <input type="text" name="address" value="${address}">
+        <input type="text" name="state" value="${state}">
+        <input type="text" name="country" value="${country}">
       </div>
     `)
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    const method = document.querySelector('fieldset');
-
-    const radioInputs = document.querySelectorAll('fieldset input');
-
-    radioInputs.forEach((radio) => {
-      if (radio.checked == true) {
-        const price = radio.parentElement.parentElement.children[1].innerHTML.trim();
-        const methodName = radio.nextElementSibling.children[0].innerHTML.trim();
-        localStorage.setItem('shipping-method', `${methodName} - ${price}`);
-      }
+    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    const total = shipCost.nextElementSibling.children[1];
+    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
+      input.addEventListener('change', (e) => {
+        if (e.target.checked && e.target.value == 'economy') {
+          shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
+          total.innerHTML = document.querySelector('.cart-total-price').innerText;
+        } else {
+          shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
+          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
+        }
+      })
     })
 
-    method.addEventListener('change', (e)=>{
-      const price = e.target.parentElement.parentElement.children[1].innerHTML.trim();
-      const methodName = e.target.nextElementSibling.children[0].innerHTML.trim();
-
-      localStorage.setItem('shipping-method', `${methodName} - ${price}`);
-    })
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
 
@@ -600,9 +669,68 @@ window.onload = () => {
     // const country = url.searchParams.get("country");
     const country = 'United States';
 
+    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    const total = shipCost.nextElementSibling.children[1];
+    if (shippingMethod == 'economy') {
+      shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
+      total.innerHTML = document.querySelector('.cart-total-price').innerText;
+    } else {
+      shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
+      total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.90)} USD`
+    }
+
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+
+    const paymentMethod = document.querySelectorAll('input[type=radio]');
+
+    paymentMethod.forEach((method) => {
+      method.addEventListener('change', (e) => {
+        if (e.target.checked && e.target.id == 'credit_card_payment') {
+          e.target.parentElement.parentElement.insertAdjacentHTML('afterend',
+            `<div class="credit-card-info">
+              <div class="checkout-input-container">
+                <label for="card-number" class="checkout-input-label">
+                  <span>Card number</span>
+                </label>
+                <div class="checkout-input-text-container">
+                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required>
+                </div>
+              </div>
+              <div class="checkout-input-container">
+                <label for="card-name" class="checkout-input-label">
+                  <span>Name on card</span>
+                </label>
+                <div class="checkout-input-text-container">
+                  <input type="text" name="card-name" id="card-name" class="checkout-input-text" required>
+                </div>
+              </div>
+              <div class="checkout-input-inline-2">
+                <div class="checkout-input-container">
+                  <label for="expiration-date" class="checkout-input-label">
+                    <span>Expiration date (MM/YY)</span>
+                  </label>
+                  <div class="checkout-input-text-container">
+                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required name="expiration-date" id="expiration-date" class="checkout-input-text">
+                  </div>
+                </div>
+                <div class="checkout-input-container">
+                  <label for="security-code" class="checkout-input-label">
+                    <span>Security code</span>
+                  </label>
+                  <div class="checkout-input-text-container">
+                    <input type="text" pattern="[0-9]{3}" name="security-code" id="security-code" class="checkout-input-text" required>
+                  </div>
+                </div>
+              </div>
+            </div>`
+          );
+        } else {
+          document.querySelector('.credit-card-info').remove();
+        }
+      })
+    })
   } else if (location.pathname.includes('/search?q')) {
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
