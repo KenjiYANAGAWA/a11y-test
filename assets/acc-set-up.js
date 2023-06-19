@@ -243,6 +243,7 @@ const accSetUp = () => {
     })
   } else if (location.pathname == '/pages/payment') {
     // updating shipping method
+    let shippingMethod = url.searchParams.get("shipping_methods");
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
