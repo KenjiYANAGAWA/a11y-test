@@ -86,6 +86,17 @@ const accSetUp = () => {
   // updating summary cart on checout pages
   if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') cartSummaryPrice();
 
+  let url
+  let email
+  let firsName
+  let lastName
+  let city
+  let zip
+  let address
+  let state
+  let country
+
+
   // updating address and shipping cost
   if (location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
     const addressArray = []
@@ -107,16 +118,16 @@ const accSetUp = () => {
 
     const info = addressArray[0];
 
-    const url = new URL(location.href)
-    const email = url.searchParams.get("email");
-    const firsName = url.searchParams.get("first-name");
-    const lastName = url.searchParams.get("last-name");
-    const city = url.searchParams.get("city");
-    const zip = url.searchParams.get("zip");
-    const address = url.searchParams.get("address");
-    const state = url.searchParams.get("state");
-    // const country = url.searchParams.get("country");
-    const country = 'United States';
+    url = new URL(location.href)
+    email = url.searchParams.get("email");
+    firsName = url.searchParams.get("first-name");
+    lastName = url.searchParams.get("last-name");
+    city = url.searchParams.get("city");
+    zip = url.searchParams.get("zip");
+    address = url.searchParams.get("address");
+    state = url.searchParams.get("state");
+    // country = url.searchParams.get("country");
+    country = 'United States';
 
     document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
   }
