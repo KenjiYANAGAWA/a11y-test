@@ -2,83 +2,11 @@
 const lowContrastColor = "rgb(var(--text-color) / .4)"
 
 window.onload = () => {
-  // adding issues to popup
-  // issue details are coming from acc-list-issue-details.js
-  const issues = [];
-  if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
-    issues.push('<ul>');
-    issueListObj[location.pathname].forEach((item) => {
-      const techniqueLink = generateTechniqueLink(item);
-      console.log(techniqueLink);
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
-      //issues.push(`<li>${item}</li>`)
-    })
-    issues.push('</ul>');
-  } else {
-    issues.push(`<p>No issues assign to this page.</p>`)
-  }
+  //Small fixes and changes to initial clean setup
+  accSetUp();
 
-  listIssue.innerHTML = `
-    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page. CTRL + i to close.</h2>
-    ${issues.join('\n')}
-  `//decided not to show url ${location.href}
-
-  // fixing navbar focus order
-  const headerLogo = document.querySelector('.header__logo');
-  swapDiv(headerLogo);
-
-  // disabling buy it now btn
-  setTimeout(() => {
-    const buyNowBtn = document.querySelector('.shopify-payment-button__button');
-    if (buyNowBtn) {
-      const newBuyNowBtn = document.createElement('a');
-      newBuyNowBtn.href = '#'
-      newBuyNowBtn.style.display = 'inline-block';
-      newBuyNowBtn.style.textAlign = 'center';
-      newBuyNowBtn.style.fontWeight = 600;
-      newBuyNowBtn.style.borderRadius = '200px'
-      newBuyNowBtn.style.padding = '17.2px 40px'
-      newBuyNowBtn.style.color = 'white';
-      newBuyNowBtn.style.background = 'black';
-      newBuyNowBtn.style.width = '100%';
-      newBuyNowBtn.style.height = '100%';
-      newBuyNowBtn.innerText = 'Buy it now';
-      buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
-    }
-  }, 700);
-
-  // removed custom cursor from cart, search and product page
-  // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
-
-  // removing custom cursor from carousels
-  const customCursors = document.querySelectorAll('.slideshow__cursor');
-  if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
-
-  // removing custom cursor from products gallery
-  const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
-  if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
-
-  // removing announce bar if not home
-  // if (location.pathname !== '/') document.querySelector('.announcement-bar').remove();
-
-  if (location.pathname !== '/') {
-    // removing about us from footer
-    removeFooterLink("/pages/about-us");
-    //fixing skip to main content
-    let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
-    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
-    const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.onclick = () => {
-      if (location.pathname.includes('login')) {
-        document.querySelector('.fieldset .form-control input').focus();
-      } else {
-        focusableEl.focus();
-      }
-    }
-  } else {
-    const skipBtn = document.querySelector('.skip-to-content')
-    skipBtn.setAttribute('href', '#')
-  }
+  // removing about us from footer
+  if (location.pathname !== '/') removeFooterLink("/pages/about-us");
 
   //removing header and footer from checkout pages
   if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
@@ -92,13 +20,6 @@ window.onload = () => {
 
   // Checking for specific pages
   if (location.pathname == '/products/mh40-wireless-silver-metal-navy-coated-canvas') {
-    // messing focus from pop up when add to cart;
-    // buyBtn.addEventListener('click', () => {
-    //   console.log('click');
-    //   document.querySelector('[initial-focus]').removeAttribute('initial-focus');
-    //   console.log(window.activeElement);
-    // });
-
     // Changing average rating display
     const averageRating = document.querySelector('.rating');
     const averageNumber = averageRating.firstElementChild.innerText.split('.')[0];
@@ -116,25 +37,21 @@ window.onload = () => {
     itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
 
     // adding video with no audio and no transcript
-    const videoEl = `<section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video"><style>
-    #shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
+    const videoEl = `
+      <section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video">
+        <style>#shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
+        <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
+          <div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;">
+            <video-media host="youtube" loaded="" can-play="">
+              <iframe src="https://www.youtube.com/embed/jNIPrPJKgAc?playsinline=1&amp;autoplay=0&amp;controls=0&amp;mute=1&amp;loop=1&amp;playlist=jNIPrPJKgAc&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" id="widget4" title="MH40: DYNAMIC DIFFERENCES"></iframe>
+            </video-media>
+          </div>
+        </div>
+      </section>`
 
-  <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header=""><div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;"><video-media host="youtube" loaded="" can-play=""><iframe src="https://www.youtube.com/embed/jNIPrPJKgAc?playsinline=1&amp;autoplay=0&amp;controls=0&amp;mute=1&amp;loop=1&amp;playlist=jNIPrPJKgAc&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" id="widget4" title="MH40: DYNAMIC DIFFERENCES"></iframe>
-        </video-media></div>
-  </div>
-
-  </section>`
-  document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
+      document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
 
   } else if (location.pathname == '/') {
-    // modal handlers
-    if (!localStorage.getItem('firstAccess')) {
-      document.addEventListener('keyup', closePopup);
-      document.querySelector('.custom-popup').style.display = 'block';
-    } else {
-      document.querySelector('.custom-popup').parentElement.remove();
-    }
-
     // change title from home page
     document.title = '50% off';
 
@@ -171,11 +88,6 @@ window.onload = () => {
       })
     })
 
-    // removing focus from second slide banner
-    // const secondBtn = document.querySelectorAll('.slideshow__controls button')[1];
-    // secondBtn.setAttribute('aria-hidden', true);
-    // secondBtn.removeAttribute('type');
-
   } else if (location.pathname == '/collections/all') {
     // change title from products page
     document.title = 'product'
@@ -188,7 +100,7 @@ window.onload = () => {
       }`
     body.appendChild(style);
 
-
+    //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     addToCartBtns.forEach((btn)=>{
@@ -267,11 +179,6 @@ window.onload = () => {
       })
     }
 
-    // moving to checkout in 30s
-    // setTimeout(() => {
-    //   checkoutBtn.click();
-    // }, 30000);
-
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');
     estimateShippingEl.removeAttribute('aria-expanded');
@@ -319,7 +226,6 @@ window.onload = () => {
     const infoSeparatorEl = document.querySelector('.product-info__separator');
     infoSeparatorEl.insertAdjacentHTML('afterend', '<div style="height: 60px; display: flex;"><a href="/pages/contact" class="spr-button spr-button-primary button button-primary btn btn-primary button--primary button--xl">Get help</a></div>');
 
-
     // video with autoplay with audio
     const iframeInner = document.querySelector('.iframe-inner');
     const iframeWrapper = document.querySelector('.iframe-wrapper');
@@ -348,30 +254,20 @@ window.onload = () => {
     // document.body.append(styleEl);
 
     // adding video with no audio and no transcript
-    const videoEl = `<section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video"><style>
-    #shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
-  <!--
-  <div class="section   section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header=""><div class="content-over-media aspect-video full-bleed  text-custom" style="--text-color: 255 255 255;"><video-media host="youtube" loaded="" can-play=""><iframe src="https://www.youtube.com/embed/pK3yIRIF5ng?playsinline=1&amp;controls=1&amp;enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;origin=https%3A%2F%2Fa11y-test.com" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
-        </video-media></div>
-  </div>
-  -->
+    const videoEl = `
+      <section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video">
+        <style>#shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce {--section-outer-spacing-block: 0;--content-over-media-overlay: 0 0 0 / 0.3;margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));}</style>
+        <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
+          <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
+            <video-media host="youtube" loaded="" can-play="">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pK3yIRIF5ng?controls=0&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </video-media>
+          </div>
+        </div>
+      </section>`
 
-  <div class="section section-blends section-full text-custom" style="--text-color: 255 255 255;" allow-transparent-header="">
-  <div class="content-over-media aspect-video full-bleed text-custom" style="--text-color: 255 255 255;">
-    <video-media host="youtube" loaded="" can-play="">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pK3yIRIF5ng?controls=0&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </video-media>
-  </div>
-  </div>
-
-
-
-
-
-
-
-  </section>`
   document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
+
   } else if (location.pathname == '/account/addresses') {
     const oldBtn = document.querySelector('button[aria-controls="customer-address-new"]');
     const newBtn = document.createElement('div');
@@ -480,90 +376,8 @@ window.onload = () => {
       history.back();
     }
   } else if (location.pathname == '/pages/checkout') {
-    cartSummaryPrice();
 
-    const addressArray = []
-    // update address
-    const addresses = document.querySelectorAll('.address div');
-    addresses.forEach((address) => {
-      const addressItem = {};
-      addressItem['street'] = address.querySelector('.address-street').innerText;
-      addressItem['name'] = address.querySelector('.address-name').innerText;
-      addressItem['country'] = address.querySelector('.address-country').innerText;
-      addressItem['zip'] = address.querySelector('.address-zip').innerText;
-      addressItem['province'] = address.querySelector('.address-province').innerText;
-      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
-      addressItem['provinceCode'] = addressString[addressString.length - 2];
-      addressItem['city'] = address.querySelector('.address-city').innerText;
-      addressItem['company'] = address.querySelector('.address-company').innerText;
-      addressArray.push(addressItem);
-    });
-
-    // update saved adresses input;
-    const savedAddressInput = document.querySelector('.shipping-checkout select');
-    let index = 0;
-    savedAddressInput.innerHTML = addressArray.map((address) => {
-      const addressLine =  `<option value="${index}">${address.street} ${address.province} ${address.zip} ${address.country} (${address.name} ${address.company})</option>`;
-      index ++;
-      return addressLine;
-    }).join('\n');
-
-    savedAddressInput.insertAdjacentHTML('beforeend', `<option value="${index}">Use a new address</option>`);
-
-
-    // update user contact
-    const info = document.querySelectorAll('.info span');
-    if (info[1].innerText.length != 0) {
-      document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
-    } else {
-      const oldEl = document.querySelector('.checkout-current-user')
-      const newEl = `<div class="checkout-input-container">
-      <label for="email" class="checkout-input-label">
-        <span>Email or mobile phone number</span>
-      </label>
-      <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text" required>
-      </div>
-    </div>`
-      oldEl.insertAdjacentHTML("beforebegin", newEl);
-      oldEl.nextElementSibling.remove();
-      oldEl.remove();
-    }
-
-    if (info[1].innerText.length != 0) {
-      const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
-
-      const values = addressArray[0];
-
-      inputs.forEach((input) => {
-        if (input.id == 'Select1') {
-          input.innerHTML = `<option value="0">${values.country}</option>`
-        } else if (input.id == 'first-name') {
-          input.value = values.name.split(' ')[0]
-        } else if (input.id == 'last-name') {
-          input.value = values.name.split(' ')[1]
-        } else if (input.id == 'address') {
-          input.value = values.street
-        } else if (input.id == 'Select2') {
-          input.value = values.provinceCode
-        } else if (input.id == 'zip') {
-          input.value = values.zip
-        } else if (input.id == 'city') {
-          input.value = values.city
-        }
-      })
-    }
-
-    // update when changing the saved address
-    // will be added later if it's needed
-    // savedAddressInput.addEventListener('change', (e) => {
-    //   const index = e.target.getAttribute('value');
-
-    //   if (index + 1 <= addressArray.length) {
-
-    //   }
-    // })
-
+    // removing alert from last name invalid
     const lastNameInput = document.querySelector('#last-name');
     lastNameInput.removeAttribute('required')
     const form = document.querySelector('form[action="/pages/shipping"]');
@@ -579,65 +393,7 @@ window.onload = () => {
     }
 
   } else if (location.pathname == '/pages/shipping') {
-    cartSummaryPrice();
 
-    const addressArray = []
-    // update address
-    const addresses = document.querySelectorAll('.address div');
-    addresses.forEach((address) => {
-      const addressItem = {};
-      addressItem['street'] = address.querySelector('.address-street').innerText;
-      addressItem['name'] = address.querySelector('.address-name').innerText;
-      addressItem['country'] = address.querySelector('.address-country').innerText;
-      addressItem['zip'] = address.querySelector('.address-zip').innerText;
-      addressItem['province'] = address.querySelector('.address-province').innerText;
-      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
-      addressItem['provinceCode'] = addressString[addressString.length - 2];
-      addressItem['city'] = address.querySelector('.address-city').innerText;
-      addressItem['company'] = address.querySelector('.address-company').innerText;
-      addressArray.push(addressItem);
-    });
-
-    const info = addressArray[0];
-
-    const url = new URL(location.href)
-    const email = url.searchParams.get("email");
-    const firsName = url.searchParams.get("first-name");
-    const lastName = url.searchParams.get("last-name");
-    const city = url.searchParams.get("city");
-    const zip = url.searchParams.get("zip");
-    const address = url.searchParams.get("address");
-    const state = url.searchParams.get("state");
-    // const country = url.searchParams.get("country");
-    const country = 'United States';
-
-    document.querySelector('bdo').innerHTML = email ? email : document.querySelectorAll('.info span')[1].innerText;
-
-    document.querySelector('.grid form').insertAdjacentHTML("beforeend", `
-      <div style="display: none">
-        <input type="text" name="email" value="${email}">
-        <input type="text" name="city" value="${city}">
-        <input type="text" name="zip" value="${zip}">
-        <input type="text" name="address" value="${address}">
-        <input type="text" name="state" value="${state}">
-        <input type="text" name="country" value="${country}">
-      </div>
-    `)
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
-
-    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.parentElement.nextElementSibling.children[1];
-    document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
-      input.addEventListener('change', (e) => {
-        if (e.target.checked && e.target.value == 'economy') {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
-          total.innerHTML = document.querySelector('.cart-total-price').innerText;
-        } else {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
-        }
-      })
-    })
 
   } else if (location.pathname == '/pages/payment') {
     cartSummaryPrice();
