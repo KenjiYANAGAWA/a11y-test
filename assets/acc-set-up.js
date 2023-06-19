@@ -3,7 +3,6 @@ const accSetUp = () => {
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
 
-  accSetUp();
   // adding issues to popup
   // issue details are coming from acc-list-issue-details.js
   const issues = [];
