@@ -244,7 +244,16 @@ const accSetUp = () => {
     })
   } else if (location.pathname == '/pages/payment') {
     // updating shipping method
+    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    const total = shipCost.parentElement.nextElementSibling.children[1];
     let shippingMethod = url.searchParams.get("shipping_methods");
+    if (shippingMethod == 'economy') {
+      shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
+      total.innerHTML = document.querySelector('.cart-total-price').innerText;
+    } else {
+      shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
+      total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
+    }
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
