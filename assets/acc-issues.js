@@ -397,6 +397,9 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/payment') {
     // adding specific valid card
+    document.querySelector('.card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
+    document.querySelector('.card-number').removeAttribute('oninvalid');
+    document.querySelector('.card-number').removeAttribute('oninput');
     // to do
   } else if (location.pathname.includes('/search?q')) {
 
