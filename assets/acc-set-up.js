@@ -72,13 +72,15 @@ const accSetUp = () => {
     skipBtn.setAttribute('href', '#')
   }
 
-  //display popup notice
-  // modal handlers
-  if (!localStorage.getItem('firstAccess')) {
-    document.addEventListener('keyup', closePopup);
-    document.querySelector('.custom-popup').style.display = 'block';
-  } else {
-    document.querySelector('.custom-popup').parentElement.remove();
+  if (location.pathname == '/') {
+    //display popup notice
+    // modal handlers
+    if (!localStorage.getItem('firstAccess')) {
+      document.addEventListener('keyup', closePopup);
+      document.querySelector('.custom-popup').style.display = 'block';
+    } else {
+      document.querySelector('.custom-popup').parentElement.remove();
+    }
   }
 
   // updating summary cart on checout pages
