@@ -95,6 +95,7 @@ const accSetUp = () => {
   let address
   let state
   let country
+  let info
 
 
   // updating address and shipping cost
@@ -116,7 +117,7 @@ const accSetUp = () => {
       addressArray.push(addressItem);
     });
 
-    const info = addressArray[0];
+    info = addressArray[0];
 
     url = new URL(location.href)
     email = url.searchParams.get("email");
