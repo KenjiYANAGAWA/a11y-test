@@ -269,7 +269,7 @@ const accSetUp = () => {
                   <span>Card number</span>
                 </label>
                 <div class="checkout-input-text-container">
-                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" oninvalid="this.setCustomValidity('Insert a valid number card format: 0000 1111 2222 3333')"
+                  <input type="text" name="card-number" id="card-number" class="checkout-input-text" required pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" oninvalid="this.setCustomValidity('Insert a valid number card format: 4111 1111 1111 1111')"
                   oninput="this.setCustomValidity('')">
                 </div>
               </div>
