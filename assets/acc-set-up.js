@@ -263,8 +263,8 @@ const accSetUp = () => {
       method.addEventListener('change', (e) => {
         if (e.target.checked && e.target.id == 'credit_card_payment') {
           e.target.parentElement.parentElement.insertAdjacentHTML('afterend',
-            `<div class="error-msg"></div>
-            <div class="credit-card-info">
+            `<div class="credit-card-info">
+              <div class="error-msg"></div>
               <div class="checkout-input-container">
                 <label for="card-number" class="checkout-input-label">
                   <span>Card number</span>
