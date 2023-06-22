@@ -392,6 +392,14 @@ window.onload = () => {
       }
     }
 
+    const emailInput = document.querySelector('#email');
+    const emailLabel = document.querySelector('label[for="email"]');
+    if (emailInput) {
+      emailLabel.removeAttribute('for');
+      emailInput.setAttribute('autocomplete', 'off');
+      emailInput.removeAttribute('type');
+    }
+
   } else if (location.pathname == '/pages/shipping') {
 
 
@@ -410,7 +418,7 @@ window.onload = () => {
             const input = document.querySelector(inputId);
             removeAttr.forEach((attr)=>input.removeAttribute(attr))
           })
-        }, 300);
+        }, 100);
       }
     })
 
