@@ -410,6 +410,14 @@ window.onload = () => {
       }
     })
 
+    const form = document.querySelector('form[action="/pages/order"]');
+
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      console.log('prevented')
+    }
+
+
   } else if (location.pathname.includes('/search?q')) {
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {

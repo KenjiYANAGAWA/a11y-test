@@ -287,7 +287,7 @@ const accSetUp = () => {
                     <span>Expiration date (MM/YY)</span>
                   </label>
                   <div class="checkout-input-text-container">
-                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/20[0-9]{2}" required name="expiration-date" id="expiration-date" class="checkout-input-text">
+                    <input type="text" inputmode="numeric" pattern="[0-1]{1}[0-9]{1}/[0-9]{2}" required name="expiration-date" id="expiration-date" class="checkout-input-text">
                   </div>
                 </div>
                 <div class="checkout-input-container">
