@@ -311,9 +311,9 @@ const accSetUp = () => {
 
 
   //setting alerts to be announced
-  const alert = document.createElement('span');
+  const alert = document.createElement('div');
   alert.classList.add('alert-msg');
-  alert.setAttribute('role', 'alert');
+  alert.setAttribute('role', 'region');
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
