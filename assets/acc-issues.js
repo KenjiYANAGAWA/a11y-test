@@ -426,7 +426,7 @@ window.onload = () => {
         if (validCardNumber && validCardName && validCardCode) {
           e.target.submit();
         } else {
-          document.querySelector('.fieldset-item:has(label[for="credit_card_payment"]) .error-msg').innerHTML = `<svg role="presentation" focusable="false" width="18" height="18" class="offset-icon icon icon-error" style="--icon-height: 18px" viewBox="0 0 18 18">
+          document.querySelector('.fieldset-item:has(label[for="credit_card_payment"]) .error-msg').innerHTML = `<svg role="presentation" focusable="false" width="18" height="18" style="--icon-height: 18px" viewBox="0 0 18 18">
           <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
           <path d="M5.29289 6.70711L11.2929 12.7071L12.7071 11.2929L6.70711 5.29289L5.29289 6.70711ZM6.70711 12.7071L12.7071 6.70711L11.2929 5.2929L5.29289 11.2929L6.70711 12.7071Z" fill="#ffffff"></path>
         </svg> Credit card validation failed. Please try again.`
