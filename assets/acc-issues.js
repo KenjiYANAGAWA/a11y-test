@@ -459,7 +459,7 @@ window.onload = () => {
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
     setTimeout(() => {
-      window.location.href = 'https://a11y-test.com/';
+      location.href = 'https://a11y-test.com/';
     }, 30000);
   } else if (location.pathname == '/products/usb-c-to-3-5mm-audio-cable-black') {
     document.title = 'product'
