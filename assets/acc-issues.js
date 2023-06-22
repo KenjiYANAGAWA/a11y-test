@@ -452,6 +452,10 @@ window.onload = () => {
 
 
   } else if (location.pathname.includes('/search?q')) {
+    // remove about us from search
+    // check search-drawer.liquid file
+      // lines 125 until 137 for predictive search
+      // lines 165 until 176 for search results
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
     setTimeout(() => {
