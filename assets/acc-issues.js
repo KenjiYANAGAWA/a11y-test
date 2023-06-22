@@ -418,9 +418,9 @@ window.onload = () => {
 
     form.onsubmit = (e) => {
       e.preventDefault();
-      const validCardNumber = document.querySelector('#card-number').value == '4111 1111 1111 1111';
-      const validCardName = document.querySelector('#card-name').value == 'Smith';
-      const validCardCode = document.querySelector('#security-code').value == '111';
+      const validCardNumber = (document.querySelector('#card-number').value == '4111 1111 1111 1111');
+      const validCardName = (document.querySelector('#card-name').value == 'Smith');
+      const validCardCode = (document.querySelector('#security-code').value == '111');
       if (validCardNumber && validCardName && validCardCode) {
         e.target.submit();
       } else {
