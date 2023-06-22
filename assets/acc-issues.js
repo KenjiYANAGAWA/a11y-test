@@ -177,10 +177,12 @@ window.onload = () => {
 
   } else if (location.pathname == '/cart') {
     //trap focus on checkout button
-    const checkoutBtn = document.querySelector('.cart-form a[href="/pages/checkout"]');
-    checkoutBtn.onblur = (e) => {
-      e.target.focus();
-    }
+    setTimeout(() => {
+      const checkoutBtn = document.querySelector('.cart-form a[href="/pages/checkout"]');
+      checkoutBtn.onblur = (e) => {
+        e.target.focus();
+      }
+    }, 300);
 
     // doesn't announce collapsable estimate shipping
     const estimateShippingEl = document.querySelector('.cart-order__summary details');

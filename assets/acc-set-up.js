@@ -313,7 +313,7 @@ const accSetUp = () => {
   //setting alerts to be announced
   const alert = document.createElement('span');
   alert.classList.add('alert-msg');
-  alert.setAttribute('role', 'region');
+  alert.setAttribute('role', 'alert');
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
