@@ -189,6 +189,7 @@ const announceTotal = () => {
   const alert = document.querySelector('.alert-msg');
   const totalContainer = document.querySelector('.cart-form__totals');
   const total = totalContainer.children[totalContainer.children.length - 2].children[1].innerText;
+  console.log(total)
   alert.innerHTML = `Total updated: ${total}.`
 }
 
