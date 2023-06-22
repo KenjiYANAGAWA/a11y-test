@@ -133,10 +133,12 @@ window.onload = () => {
       button[type=submit]:focus {
        /* box-shadow: inset 0 0 1px lightblue !important */
        box-shadow: none !important
+       border: none !important
       }
       button[type=submit]:focus-visible {
         /* outline-color: lightblue !important */
-        box-shadow: none !important
+        outline: none !important
+        border: none !important
       }
     `)
 
