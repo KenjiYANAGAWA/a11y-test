@@ -184,3 +184,8 @@ document.addEventListener('keyup', (e) => {
 const addStyle = (string) => {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
+
+const announceUpdate = (el) => {
+  const alert = document.querySelector('.alert-msg')
+  alert.innerHTML = `Quantity updated: ${el.value} in cart.`
+}
