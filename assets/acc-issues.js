@@ -397,13 +397,14 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/payment') {
     // adding specific valid card
-    const checkboxCC = document.querySelector('#credit_card_payment');
+    const creditLabel = document.querySelector('label[for="credit_card_payment"]');
 
-    checkboxCC.addEventListener('click', ()=>{
-      if (checkboxCC.getAttribute('checked')) {
-        document.querySelector('.card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
-        document.querySelector('.card-number').removeAttribute('oninvalid');
-        document.querySelector('.card-number').removeAttribute('oninput');
+    creditLabel.addEventListener('click', ()=>{
+      const radioBtn = creditLabel.firstChild.firstChild;
+      if (radioBtn.getAttribute('checked')) {
+        document.querySelector('#card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
+        document.querySelector('#card-number').removeAttribute('oninvalid');
+        document.querySelector('#card-number').removeAttribute('oninput');
       }
     })
 
