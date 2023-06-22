@@ -402,9 +402,11 @@ window.onload = () => {
     creditLabel.addEventListener('click', ()=>{
       const radioBtn = creditLabel.firstElementChild.firstElementChild;
       if (radioBtn.checked) {
-        document.querySelector('#card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
-        document.querySelector('#card-number').removeAttribute('oninvalid');
-        document.querySelector('#card-number').removeAttribute('oninput');
+        setTimeout(() => {
+          document.querySelector('#card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
+          document.querySelector('#card-number').removeAttribute('oninvalid');
+          document.querySelector('#card-number').removeAttribute('oninput');
+        }, 300);
       }
     })
 
