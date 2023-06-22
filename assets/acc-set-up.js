@@ -318,5 +318,11 @@ const accSetUp = () => {
   document.body.append(alert);
 
   const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
-  quantityInputs.forEach(input => input.setAttribute('onchange', 'announceUpdate(this)'))
+  quantityInputs.forEach(input => input.setAttribute('onchange', 'announceUpdate(this)'));
+
+  const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
+  const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
+
+  plusBtn.setAttribute('onclick', 'announceOnClick(this)');
+  minusBtn.setAttribute('onclick', 'announceOnClick(this)');
 }
