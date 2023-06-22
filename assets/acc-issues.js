@@ -418,14 +418,18 @@ window.onload = () => {
 
     form.onsubmit = (e) => {
       e.preventDefault();
-      const validCardNumber = (document.querySelector('#card-number').value == '4111 1111 1111 1111');
-      const validCardName = (document.querySelector('#card-name').value == 'Smith');
-      const validCardCode = (document.querySelector('#security-code').value == '111');
       const creditCardSelected = (document.querySelector('label[for="credit_card_payment"] input[type=radio]').checked);
-      if (validCardNumber && validCardName && validCardCode || !creditCardSelected) {
-        e.target.submit();
+      if (creditCardSelected) {
+        const validCardNumber = (document.querySelector('#card-number').value == '4111 1111 1111 1111');
+        const validCardName = (document.querySelector('#card-name').value == 'Smith');
+        const validCardCode = (document.querySelector('#security-code').value == '111');
+        if (validCardNumber && validCardName && validCardCode) {
+          e.target.submit();
+        } else {
+          document.querySelector('.fieldset-item:has(label[for="credit_card_payment"]) .error-msg').innerHTML = 'Credit card validation failed. Please try again.'
+        }
       } else {
-        document.querySelector('.fieldset-item:has(label[for="credit_card_payment"]) .error-msg').innerHTML = 'Credit card validation failed. Please try again.'
+        e.target.submit();
       }
     }
 
