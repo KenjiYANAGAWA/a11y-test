@@ -122,7 +122,7 @@
                 </div>
               {%- endif -%}
 
-              {%- if predictive_search.resources.pages.size > 0 -%}
+              {%- if predictive_search.resources.pages.size > 1 -%}
                 <div class="predictive-search__tab-item" slot="title">
                   <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
                 </div>
@@ -161,17 +161,19 @@
                 </div>
 
               {%- when 'page' -%}
-                <div class="predictive-search__tab-item" slot="title">
-                  <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
-                </div>
+                {%- if search_results.size > 1 -%}
+                  <div class="predictive-search__tab-item" slot="title">
+                    <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
+                  </div>
 
-                <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
-                  {%- for item in search_results -%}
-                    {%- if item.title != 'About Us'-%}
-                      {%- render 'predictive-search-result-item' with item -%}
-                    {%- endif -%}
-                  {%- endfor -%}
-                </div>
+                  <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
+                    {%- for item in search_results -%}
+                      {%- if item.title != 'About Us'-%}
+                        {%- render 'predictive-search-result-item' with item -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                {% endif %}
             {%- endcase -%}
           {%- endif -%}
         {%- endif -%}
