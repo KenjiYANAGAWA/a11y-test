@@ -17,6 +17,9 @@
 
     <input type="hidden" name="type" value="product">
 
+    {%comment%} removing about us from search {% endcomment  %}
+    <input type="hidden" name="type" value="product">
+
     <predictive-search class="predictive-search" section-id="{{ section.id }}">
       {%- if section.settings.search_menu.links.size > 0 -%}
         <div slot="idle">
@@ -159,7 +162,9 @@
                 </div>
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
-                  {%- render 'predictive-search-result-item' for search_results as item, type: 'page' -%}
+                  {%- for item in search_results -%}
+                    {%- render 'predictive-search-result-item' with item -%}
+                  {%- endfor -%}
                 </div>
             {%- endcase -%}
           {%- endif -%}
