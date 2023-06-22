@@ -424,7 +424,7 @@ window.onload = () => {
       if (validCardNumber && validCardName && validCardCode) {
         e.target.submit();
       } else {
-        document.querySelector('label[for="credit_card_payment"] .error-msg').innerHTML = 'Credit card validation failed. Please try again.'
+        document.querySelector('.fieldset-item:has(label[for="credit_card_payment"]) .error-msg').innerHTML = 'Credit card validation failed. Please try again.'
       }
     }
 
