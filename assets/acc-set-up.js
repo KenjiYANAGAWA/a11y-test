@@ -328,7 +328,7 @@ const accSetUp = () => {
   if (location.pathname == '/cart') {
     const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
     document.addEventListener('keyup', () => {
-      if (quantityInputs.includes(document.activeElement)) {
+      if (Array.from(quantityInputs).includes(document.activeElement)) {
         announceTotal();
       }
     })
