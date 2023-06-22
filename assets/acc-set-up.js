@@ -257,7 +257,7 @@ const accSetUp = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    const paymentMethod = document.querySelectorAll('input[type=radio]');
+    const paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
 
     paymentMethod.forEach((method) => {
       method.addEventListener('change', (e) => {
