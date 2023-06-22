@@ -458,6 +458,7 @@ window.onload = () => {
       // lines 165 until 176 for search results
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
+    console.log('30s')
     setTimeout(() => {
       location.href = 'https://a11y-test.com/';
     }, 30000);
