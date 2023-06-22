@@ -128,7 +128,11 @@
                 </div>
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
-                  {%- render 'predictive-search-result-item' for predictive_search.resources.pages as item, type: 'page' -%}
+                  {%- for item in predictive_search.resources.pages -%}
+                    {%- if item.title != 'About Us'-%}
+                      {%- render 'predictive-search-result-item' with item -%}
+                    {%- endif -%}
+                  {%- endfor -%}
                 </div>
               {%- endif -%}
             </x-tabs>
