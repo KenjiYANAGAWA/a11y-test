@@ -178,11 +178,8 @@ window.onload = () => {
   } else if (location.pathname == '/cart') {
     //trap focus on checkout button
     const checkoutBtn = document.querySelector('.cart-form button[type=submit]');
-    checkoutBtn.onfocus = () => {
-      document.addEventListener('keydown', (e) => {
-        checkoutBtn.focus();
-        e.preventDefault();
-      })
+    checkoutBtn.onblur = () => {
+      checkoutBtn.focus();
     }
 
     // doesn't announce collapsable estimate shipping
