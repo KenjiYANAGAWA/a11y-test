@@ -129,13 +129,14 @@ window.onload = () => {
           left: 0;
         }
       }
-
+      /*
       button[type=submit]:focus {
         box-shadow: inset 0 0 1px lightblue !important
       }
       button[type=submit]:focus-visible {
       outline-color: lightblue !important
       }
+      */
     `)
 
     // change headings

@@ -171,7 +171,7 @@ const accSetUp = () => {
       const oldEl = document.querySelector('.checkout-current-user')
       const newEl = `<div class="checkout-input-container">
       <label for="email" class="checkout-input-label">
-        <span>Email or mobile phone number</span>
+        <span>Email</span>
       </label>
       <div class="checkout-input-text-container">
         <input type="text" name="email" id="email" class="checkout-input-text" required>
