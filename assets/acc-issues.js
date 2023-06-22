@@ -457,8 +457,7 @@ window.onload = () => {
       // lines 125 until 137 for predictive search
       // lines 165 until 176 for search results
 
-  } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
-    console.log('30s')
+  } else if (location.pathname == '/products/mw65-silver-metal-brown-leather') {
     setTimeout(() => {
       location.href = 'https://a11y-test.com/';
     }, 30000);
