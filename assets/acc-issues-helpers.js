@@ -190,6 +190,7 @@ let previousURL
 const announceTotal = () => {
   window.onunload = () => {
     previousURL = location.pathname;
+    console.log(previousURL)
   }
   setInterval(() => {
     const alert = document.querySelector('.alert-msg');
