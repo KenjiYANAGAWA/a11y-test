@@ -403,9 +403,13 @@ window.onload = () => {
       const radioBtn = creditLabel.firstElementChild.firstElementChild;
       if (radioBtn.checked) {
         setTimeout(() => {
-          document.querySelector('#card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
-          document.querySelector('#card-number').removeAttribute('oninvalid');
-          document.querySelector('#card-number').removeAttribute('oninput');
+          const inputs = ['#card-number', '#card-name', '#security-code', '#expiration-date']
+          const removeAttr = ['required', 'pattern', 'oninvalid', 'oninput']
+
+          inputs.forEach((inputId) => {
+            const input = document.querySelector(inputId);
+            removeAttr.forEach((attr)=>input.removeAttribute(attr))
+          })
         }, 300);
       }
     })
@@ -414,7 +418,14 @@ window.onload = () => {
 
     form.onsubmit = (e) => {
       e.preventDefault();
-      console.log('prevented')
+      const validCardNumber = document.querySelector('#card-number').value == '4111 1111 1111 1111';
+      const validCardName = document.querySelector('#card-name').value == 'Smith';
+      const validCardCode = document.querySelector('#security-code').value == '111';
+      if (validCardNumber && validCardName && validCardCode) {
+        e.target.submit();
+      } else {
+        document.querySelector('.credit-card-info').insertAdjacentHTML('beforebegin', '<p>Credit card validation failed. Please try again.</p>')
+      }
     }
 
 
