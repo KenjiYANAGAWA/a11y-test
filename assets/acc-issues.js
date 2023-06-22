@@ -397,10 +397,16 @@ window.onload = () => {
 
   } else if (location.pathname == '/pages/payment') {
     // adding specific valid card
-    document.querySelector('.card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
-    document.querySelector('.card-number').removeAttribute('oninvalid');
-    document.querySelector('.card-number').removeAttribute('oninput');
-    // to do
+    const checkboxCC = document.querySelector('#credit_card_payment');
+
+    checkboxCC.addEventListener('click', ()=>{
+      if (checkboxCC.getAttribute('checked')) {
+        document.querySelector('.card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
+        document.querySelector('.card-number').removeAttribute('oninvalid');
+        document.querySelector('.card-number').removeAttribute('oninput');
+      }
+    })
+
   } else if (location.pathname.includes('/search?q')) {
 
   } else if (location.pathname == 'products/mw65-silver-metal-brown-leather') {
