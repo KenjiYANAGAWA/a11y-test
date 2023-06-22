@@ -185,23 +185,17 @@ const addStyle = (string) => {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
-let previousURL
-
-window.onunload = () => {
-  previousURL = location.pathname;
-}
-
 const announceTotal = () => {
-  console.log(previousURL)
   setInterval(() => {
     const alert = document.querySelector('.alert-msg');
     const totalContainer = document.querySelector('.cart-form__totals');
     const total = totalContainer.children[totalContainer.children.length - 2].children[1].innerText;
-    if (location.pathname == previousURL) {
+    if (location.pathname == localStorage.getItem('previousPath')) {
       alert.innerHTML = `Total updated: ${total}.`
     } else {
       alert.innerHTML = `Total: ${total}.`
     }
+    localStorage.setItem('previousPath', location.pathname);
   }, 500);
 }
 
