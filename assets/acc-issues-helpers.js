@@ -189,11 +189,10 @@ let previousURL
 
 window.onunload = () => {
   previousURL = location.pathname;
-  console.log(previousURL)
 }
 
 const announceTotal = () => {
-
+  console.log(previousURL)
   setInterval(() => {
     const alert = document.querySelector('.alert-msg');
     const totalContainer = document.querySelector('.cart-form__totals');
