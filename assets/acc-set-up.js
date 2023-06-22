@@ -327,6 +327,10 @@ const accSetUp = () => {
 
   if (location.pathname == '/cart') {
     const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
-    quantityInputs.forEach(input => input.setAttribute('onchange', 'announceTotal()'))
+    document.addEventListener('keyup', () => {
+      if (quantityInputs.includes(document.activeElement)) {
+        announceTotal();
+      }
+    })
   }
 }
