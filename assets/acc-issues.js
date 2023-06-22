@@ -400,7 +400,7 @@ window.onload = () => {
     const creditLabel = document.querySelector('label[for="credit_card_payment"]');
 
     creditLabel.addEventListener('click', ()=>{
-      const radioBtn = creditLabel.firstChild.firstChild;
+      const radioBtn = creditLabel.firstElementChild.firstElementChild;
       if (radioBtn.getAttribute('checked')) {
         document.querySelector('#card-number').setAttribute('pattern', '41{3} 1{4} 1{4} 1{4}');
         document.querySelector('#card-number').removeAttribute('oninvalid');
