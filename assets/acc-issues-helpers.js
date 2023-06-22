@@ -185,12 +185,21 @@ const addStyle = (string) => {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
+let previousURL
+
 const announceTotal = () => {
+  window.onunload = () => {
+    previousURL = location.pathname;
+  }
   setInterval(() => {
     const alert = document.querySelector('.alert-msg');
     const totalContainer = document.querySelector('.cart-form__totals');
     const total = totalContainer.children[totalContainer.children.length - 2].children[1].innerText;
-    alert.innerHTML = `Total updated: ${total}.`
+    if (location.pathname == previousURL) {
+      alert.innerHTML = `Total updated: ${total}.`
+    } else {
+      alert.innerHTML = `Total: ${total}.`
+    }
   }, 500);
 }
 
