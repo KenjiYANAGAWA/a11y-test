@@ -129,14 +129,15 @@ window.onload = () => {
           left: 0;
         }
       }
-      /*
+
       button[type=submit]:focus {
-        box-shadow: inset 0 0 1px lightblue !important
+       /* box-shadow: inset 0 0 1px lightblue !important */
+       box-shadow: none !important
       }
       button[type=submit]:focus-visible {
-      outline-color: lightblue !important
+        /* outline-color: lightblue !important */
+        box-shadow: none !important
       }
-      */
     `)
 
     // change headings
