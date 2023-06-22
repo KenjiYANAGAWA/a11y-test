@@ -185,6 +185,13 @@ const addStyle = (string) => {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
+const announceTotal = () => {
+  const alert = document.querySelector('.alert-msg');
+  const totalContainer = document.querySelector('.cart-form__totals');
+  const total = totalContainer.children[totalContainer.children.length - 2].children[1].innerText;
+  alert.innerHTML = `Total updated: ${total}.`
+}
+
 const announceOnClick = (el) => {
   const input = el.parentElement.querySelector('input');
   const alert = document.querySelector('.alert-msg')
