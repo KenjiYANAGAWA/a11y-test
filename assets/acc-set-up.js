@@ -317,9 +317,6 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
-  quantityInputs.forEach(input => input.setAttribute('onchange', 'announceUpdate(this)'));
-
   const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
   const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
 

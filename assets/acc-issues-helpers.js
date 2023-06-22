@@ -185,13 +185,8 @@ const addStyle = (string) => {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
-const announceUpdate = (el) => {
-  const alert = document.querySelector('.alert-msg')
-  alert.innerHTML = `Quantity updated: ${el.value} in cart.`
-}
-
 const announceOnClick = (el) => {
   const input = el.parentElement.querySelector('input');
   const alert = document.querySelector('.alert-msg')
-  alert.innerHTML = `Quantity updated: ${input.value} in cart.`
+  alert.innerHTML = `Quantity updated: ${input.value}.`
 }
