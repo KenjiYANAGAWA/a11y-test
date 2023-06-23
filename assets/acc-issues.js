@@ -322,7 +322,7 @@ window.onload = () => {
     const form = document.querySelector('#create_customer');
     const formInputs = form.querySelectorAll('input.input');
     formInputs.forEach((input)=>{
-      input.setAttribute('autocomplete', 'off');
+      input.setAttribute('autocomplete', 'newemail');
       if (input.type == 'email') input.removeAttribute('type');
     });
 
@@ -401,7 +401,7 @@ window.onload = () => {
     const emailLabel = document.querySelector('label[for="email"]');
     if (emailInput) {
       emailLabel.removeAttribute('for');
-      emailInput.setAttribute('autocomplete', 'off');
+      emailInput.setAttribute('autocomplete', 'newemail');
       emailInput.removeAttribute('type');
     }
 
