@@ -186,17 +186,12 @@ const addStyle = (string) => {
 }
 
 const announceTotal = () => {
-  setInterval(() => {
-    const alert = document.querySelector('.alert-msg');
-    const totalContainer = document.querySelector('.cart-form__totals');
-    const total = totalContainer.children[totalContainer.children.length - 2].children[1].innerText;
-    if (location.pathname == localStorage.getItem('previousPath')) {
-      alert.innerHTML = `Total updated: ${total}.`
-    } else {
-      alert.innerHTML = `Total: ${total}.`
-    }
-    localStorage.setItem('previousPath', location.pathname);
-  }, 500);
+  const alert = document.querySelector('.alert-msg');
+  const totalContainer = document.querySelector('.cart-form__totals');
+  const total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
+  if (location.pathname == previousURL) {
+    alert.innerHTML = `Total updated: ${total}.`
+  }
 }
 
 const announceOnClick = (el) => {
