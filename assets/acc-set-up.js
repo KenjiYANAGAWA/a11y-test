@@ -326,6 +326,8 @@ const accSetUp = () => {
   }
 
   if (location.pathname == '/cart') {
+    const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
+    // update entries
     announceTotal();
   }
 }
