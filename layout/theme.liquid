@@ -325,7 +325,7 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         box-shadow: 0 0 0 3px white, 0 0 0 5px black;
       }
 
-      button:focus:has(>svg),
+      button:focus,
       input:focus,
       ul:not(.social-media) a:focus,
       :not(li) > a:focus,
@@ -336,7 +336,11 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       button:focus-visible,
       input:focus-visible,
       a:focus-visible,
-      input:focus {
+      input:focus,
+      .input:focus,
+      .textarea:focus,
+      .select:focus-visible {
+        border-color: inherit !important;
         outline: none !important;
       }
 
