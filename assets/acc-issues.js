@@ -54,8 +54,7 @@ window.onload = () => {
     // breaking order review
     setTimeout(() => {
       const reviewForm = document.querySelector('.new-review-form');
-      console.log(reviewForm);
-      const submitbtn = reviewForm.lastElementChild;
+      const submitbtn = document.querySelector('.new-review-form').lastElementChild;
       reviewForm.querySelector('h3').insertAdjacentElement('afterend', submitBtn);
       reviewForm.lastElementChild.remove();
     }, 2000);
