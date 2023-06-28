@@ -57,7 +57,6 @@ window.onload = () => {
       console.log(reviewForm);
       const submitBtn = reviewForm.lastElementChild;
       reviewForm.querySelector('h3').insertAdjacentElement('afterend', submitBtn);
-      reviewForm.lastElementChild.remove();
     }, 2000);
 
     addStyle(`
