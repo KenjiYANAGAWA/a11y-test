@@ -60,15 +60,10 @@ window.onload = () => {
     socialIcons.forEach(icon => icon.style.color = lowContrastColor);
 
     // breaking hotspots
-    const old_hotspots = document.querySelectorAll('.hot-spot__dot').parentElement;
-
-    let new_hotspots = old_hotspots.cloneNode(true);
-    old_hotspots.parentNode.replaceChild(new_hotspots, old_hotspots);
-
     const hotspots = document.querySelectorAll('.hot-spot__dot');
 
-    hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.click()))
-    hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.click()))
+    hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.focus()))
+    hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.blur()))
     hotspots.forEach(hotspot => {
       hotspot.addEventListener('focus', (e) => {
         e.target.nextElementSibling.style.display = 'block';
