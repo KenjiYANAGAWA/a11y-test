@@ -51,6 +51,21 @@ window.onload = () => {
 
       document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
 
+       // breaking order review
+    const reviewForm = document.querySelector('.new-review-form');
+    const submitbtn = reviewForm.lastElementChild;
+    reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
+    reviewForm.lastElementChild.remove();
+
+    addStyle(`
+      .new-review-form {
+        display: grid;
+      }
+      .new-review-form fieldset:has(input[type=submit]) {
+        order: -1;
+      }
+    `)
+
   } else if (location.pathname == '/') {
     // change title from home page
     document.title = '50% off';
@@ -337,21 +352,6 @@ window.onload = () => {
 
     // strikethrough text not read
     document.querySelector('.product-info__description .prose s').setAttribute('aria-hidden', true)
-
-    // breaking order review
-    const reviewForm = document.querySelector('.new-review-form');
-    const submitbtn = reviewForm.lastElementChild;
-    reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
-    reviewForm.lastElementChild.remove();
-
-    addStyle(`
-      .new-review-form {
-        display: grid;
-      }
-      .new-review-form fieldset:has(input[type=submit]) {
-        order: -1;
-      }
-    `)
 
   } else if (location.pathname == '/account/register') {
     const form = document.querySelector('#create_customer');
