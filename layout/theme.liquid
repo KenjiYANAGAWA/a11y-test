@@ -318,8 +318,15 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       }
 
       .to-shipping-btn {
-        padding: 0 20px;
         height: 100%;
+      }
+
+      .to-shipping-btn:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 2px black;
+      }
+
+      .to-shipping-btn > div {
+        padding: 0 20px;
         color: white;
         background-color: black;
         border-radius: 5px;
