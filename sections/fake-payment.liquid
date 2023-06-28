@@ -1,0 +1,294 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    {% if section.settings.remove_vertical_spacing %}--section-spacing-block: 0px;{% endif %}
+    {% if section.settings.remove_horizontal_spacing %}--section-spacing-inline: 0px;{% endif %}
+  }
+</style>
+
+{%- render 'section-spacing-collapsing' -%}
+
+<div {% render 'section-properties' %}>
+  <div class="grid">
+    <div class="main-content">
+      <form action="/pages/order">
+      <div>
+        <a class="home-btn" href="/">Miller &amp; Lowe</a>
+      </div>
+      <p class="steps">
+        <a href="/cart" class="steps-cart">Cart</a>
+        <span><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></span>
+        <a href="/pages/checkout" class="steps-cart">Information</a>
+        <span><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></span>
+        <a href="/pages/shipping" class="steps-cart">Shipping</a>
+        <span><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></span>
+        <span class="steps-info">Payment</span>
+      </p>
+
+      <div>
+        <section aria-label="Review">
+          <div role="table" aria-label="Review your information">
+            <div role="row" class="information-row">
+              <div role="cell">
+                <span>Contact</span>
+              </div>
+              <div role="cell">
+                <bdo dir="1tr">celso@equalentry.com</bdo>
+              </div>
+              <div role="cell">
+                <a href="/pages/checkout">Change</a>
+              </div>
+            </div>
+            <hr>
+            <div role="row" class="information-row">
+              <div role="cell">
+                <span>Ship to</span>
+              </div>
+              <div role="cell">
+                <address>a, fg IA 50001, United States</address>
+              </div>
+              <div role="cell">
+                <a href="/pages/checkout">Change</a>
+              </div>
+            </div>
+            <hr>
+            <div role="row" class="information-row">
+              <div role="cell">
+                <span>Method</span>
+              </div>
+              <div role="cell">
+                <p>Economy - <strong>Free</strong></p>
+              </div>
+              <div role="cell">
+                <a href="/pages/shipping">Change</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="Payment">
+          <h2>Payment</h2>
+          <p>All transactions are secure and encrypted.</p>
+          <div>
+            <fieldset>
+              <div class="fieldset-item">
+                <label for="credit_card_payment">
+                  <div class="input-radio">
+                    <input type="radio" name="payment_method" id="credit_card_payment" value="credit-card">
+                    <div>
+                      <p>Credit card</p>
+                    </div>
+                  </div>
+                  <div>
+                    <img alt="" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/0169695890db3db16bfe.svg" role="img" width="38" height="24">
+                    <img alt="" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/ae9ceec48b1dc489596c.svg" role="img" width="38" height="24">
+                    <img alt="" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/f11b90c2972f3811f2d5.svg" role="img" width="38" height="24">
+                    <span>and more…</span>
+                  </div>
+                </label>
+              </div>
+              <div class="fieldset-item">
+                <label for="money_payment">
+                  <div class="input-radio">
+                    <input type="radio" name="payment_method" id="money_payment" checked>
+                    <div>
+                      <p>Money Order</p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section aria-label="Billing address">
+          <h2>Billing address</h2>
+          <p>Select the address that matches your card or payment method.</p>
+          <div>
+            <fieldset>
+              <div class="fieldset-item">
+                <label for="billing_address_same">
+                  <div class="input-radio">
+                    <input type="radio" name="billing_address" id="billing_address_same" checked>
+                    <div>
+                      <p><strong>Same as shipping address</strong></p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="fieldset-item">
+                <label for="billing_address_new">
+                  <div class="input-radio">
+                    <input type="radio" name="billing_address" id="billing_address_new">
+                    <div>
+                      <p><strong>Use a different billing address</strong></p>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <div class="checkout-bottom-btns-container">
+          <div class="to-cart-btn flex-center">
+            <a href="/pages/shipping"><span><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewbox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg></span>Return to shipping</a>
+          </div>
+          <button type="submit" class="to-shipping-btn flex-center">
+            <div>
+              Complete order
+            </div>
+          </button>
+        </div>
+      </div>
+      <hr style="margin: 1em 0;">
+      All rights reserved Miller &amp; Lowe
+      </form>
+    </div>
+
+    <div class="total">
+      <section>
+        <h3 id="ResourceList0">Shopping cart</h3>
+        <div role="table" aria-labelledby="ResourceList0">
+          <div role="row" class="items-summary-row">
+            <div role="columnheader">
+              <div>Product image</div>
+            </div>
+            <div role="columnheader">
+              <div>Description</div>
+            </div>
+            <div role="columnheader">
+              <div>Quantity</div>
+            </div>
+            <div role="columnheader">
+              <div>Price</div>
+            </div>
+          </div>
+          <div role="row" class="items-summary-row">
+            <div role="cell">
+              <div class="item-summary-image-wrapper">
+                <div>
+                  <picture>
+                    <source media="(min-width: 0px)" srcset="https://cdn.shopify.com/s/files/1/0757/3310/6972/files/MW07_RP_Case-Pouch_800x800_1_800x800_1892067b-921b-41e5-bf4e-c7be70993756_64x64.png?v=1684911279 1x, https://cdn.shopify.com/s/files/1/0757/3310/6972/files/MW07_RP_Case-Pouch_800x800_1_800x800_1892067b-921b-41e5-bf4e-c7be70993756_128x128.png?v=1684911279 2x, https://cdn.shopify.com/s/files/1/0757/3310/6972/files/MW07_RP_Case-Pouch_800x800_1_800x800_1892067b-921b-41e5-bf4e-c7be70993756_256x256.png?v=1684911279 4x">
+                    <img src="https://cdn.shopify.com/s/files/1/0757/3310/6972/files/MW07_RP_Case-Pouch_800x800_1_800x800_1892067b-921b-41e5-bf4e-c7be70993756_64x64.png?v=1684911279" alt="Charging Case &amp; Canvas Pouch MW07 Plus (Stainless Steel)">
+                  </source></picture>
+                </div>
+                <div aria-hidden="true" class="item-summary-counter flex-center">
+                  <div>
+                    <p>1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="cell" class="item-description">
+              <p>Charging Case &amp; Canvas Pouch MW07 Plus (Stainless Steel)</p>
+              <div></div>
+            </div>
+            <div role="cell" class="item-quantity">
+              <div>
+                <span>
+                  1<div aria-hidden="true"> x</div>
+                </span>
+              </div>
+            </div>
+            <div role="cell" class="item-price flex-center">
+              <div>
+                <div>
+                  <span translate="yes" class="notranslate">$125.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="price-summary">
+        <h3 id="MoneyLine-Heading0">Cost summary</h3>
+        <div role="table" aria-labelledby="MoneyLine-Heading0" class="price-summary-table">
+          <div role="row" class="price-summary-table-row">
+            <div role="cell">
+              <span class="header">Subtotal</span>
+            </div>
+            <div role="cell">
+              <span translate="yes" class="notranslate">$125.00</span>
+            </div>
+          </div>
+          <div role="row" class="price-summary-table-row">
+            <div role="cell" class="price-summary-header">
+              <span>Shipping</span>
+            </div>
+            <div role="cell">
+              <span translate="yes" class="notranslate">Free</span>
+            </div>
+          </div>
+          <div role="row" class="price-summary-table-row">
+            <div role="cell" class="header-total">
+              <span>Total</span>
+            </div>
+            <div role="cell">
+              <div>
+                <abbr translate="yes">USD</abbr>
+                <strong translate="yes" class="notranslate">$125.00</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fake payment",
+  "class": "shopify-section--fake-payment",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_vertical_spacing",
+      "label": "Remove vertical spacing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_horizontal_spacing",
+      "label": "Remove horizontal spacing",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fake payment"
+    }
+  ]
+}
+{% endschema %}
