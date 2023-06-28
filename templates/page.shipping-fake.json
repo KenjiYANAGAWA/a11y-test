@@ -9,6 +9,7 @@
     },
     "0002e000-c5ed-4cf9-a4e9-5b1eb88ac543": {
       "type": "custom-html",
+      "disabled": true,
       "custom_css": [
         "\/* check acc issues for css *\/.header__wrapper,.footer {display: none !important;}"
       ],
@@ -21,10 +22,22 @@
         "background_gradient": "",
         "text_color": "#1a1a1a"
       }
+    },
+    "fa8b612b-25ca-4867-880c-f84f899efd2c": {
+      "type": "fake-shipping",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
     "main",
-    "0002e000-c5ed-4cf9-a4e9-5b1eb88ac543"
+    "0002e000-c5ed-4cf9-a4e9-5b1eb88ac543",
+    "fa8b612b-25ca-4867-880c-f84f899efd2c"
   ]
 }
