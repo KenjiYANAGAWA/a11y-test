@@ -331,7 +331,8 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       input[type=checkbox]:focus,
       input[type=radio]:focus,
       ul:not(.social-media) a:focus,
-      :not(li) > a:focus,
+      :not(li):not(h1) > a:focus,
+      h1:has(:focus),
       .social-media li:has(a:focus) {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
       }
