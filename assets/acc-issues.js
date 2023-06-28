@@ -54,7 +54,6 @@ window.onload = () => {
     // breaking order review
     setTimeout(() => {
       const reviewForm = document.querySelector('.new-review-form');
-      console.log(reviewForm);
       const submitBtn = reviewForm.lastElementChild;
       reviewForm.querySelector('h3').insertAdjacentElement('afterend', submitBtn);
     }, 2000);
@@ -64,7 +63,7 @@ window.onload = () => {
         display: grid;
       }
       .new-review-form fieldset:has(input[type=submit]) {
-        order: 0;
+        order: 10;
       }
     `)
 
