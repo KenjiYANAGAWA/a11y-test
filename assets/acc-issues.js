@@ -88,17 +88,26 @@ window.onload = () => {
       })
     })
 
-  } else if (location.pathname == '/collections/all') {
-    // change title from products page
-    document.title = 'product'
     // lowering contrast from popup cart
     const body = document.body;
     const style = document.createElement('style');
     style.innerHTML = `
-      .quick-buy-drawer__info .banner {
-        color: rgba(var(--banner-color) / 0.4) !important;
+      .banner--success {
+        color: rgba(var(--success-text) / 0.4) !important;
       }`
     body.appendChild(style);
+
+  } else if (location.pathname == '/collections/all') {
+    // change title from products page
+    document.title = 'product'
+    // lowering contrast from popup cart
+    // const body = document.body;
+    // const style = document.createElement('style');
+    // style.innerHTML = `
+    //   .quick-buy-drawer__info .banner {
+    //     color: rgba(var(--banner-color) / 0.4) !important;
+    //   }`
+    // body.appendChild(style);
 
     //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
