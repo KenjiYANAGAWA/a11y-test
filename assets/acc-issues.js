@@ -309,7 +309,7 @@ window.onload = () => {
     })
 
     // change focus opacity go home btn
-    addStyle('#go-back-home-btn {box-shadow: 0 0 0 2px white, 0 0 0 4px lightblue !important;}')
+    addStyle('#go-back-home-btn:focus {box-shadow: 0 0 0 2px white, 0 0 0 4px lightblue !important;}')
 
 
 
