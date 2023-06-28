@@ -307,6 +307,12 @@ window.onload = () => {
       container.style.overflow = 'hidden';
       container.firstElementChild.style.width = '566px';
     })
+
+    // change focus opacity go home btn
+    addStyle('#go-back-home-btn {box-shadow: 0 0 0 2px white, 0 0 0 4px lightblue !important;}')
+
+
+
   } else if (location.pathname == '/products/mh40-wireless-ear-pads') {
     // removing titles from payment methods list on footer
     const elementsToRemove = [
