@@ -65,7 +65,7 @@ window.onload = () => {
         display: grid;
       }
       .new-review-form fieldset:has(input[type=submit]) {
-        order: -1;
+        order: 0;
       }
     `)
 
