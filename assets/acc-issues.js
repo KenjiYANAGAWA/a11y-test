@@ -56,7 +56,7 @@ window.onload = () => {
       const reviewForm = document.querySelector('.new-review-form');
       console.log(reviewForm);
       const submitbtn = reviewForm.lastElementChild;
-      reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
+      reviewForm.querySelector('h3').insertAdjacentElement('afterend', submitBtn);
       reviewForm.lastElementChild.remove();
     }, 300);
 
