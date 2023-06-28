@@ -79,14 +79,14 @@ window.onload = () => {
         e.target.setAttribute('aria-expanded', true);
       })
     })
-    hotspots.forEach(hotspot => {
-      hotspot.addEventListener('blur', (e) => {
-        e.target.nextElementSibling.style.display = 'none';
-        e.target.nextElementSibling.style.opacity = 0;
-        e.target.nextElementSibling.style.visibility = 'hidden';
-        e.target.setAttribute('aria-expanded', false);
-      })
-    })
+    // hotspots.forEach(hotspot => {
+    //   hotspot.addEventListener('blur', (e) => {
+    //     e.target.nextElementSibling.style.display = 'none';
+    //     e.target.nextElementSibling.style.opacity = 0;
+    //     e.target.nextElementSibling.style.visibility = 'hidden';
+    //     e.target.setAttribute('aria-expanded', false);
+    //   })
+    // })
 
     // lowering contrast from popup cart
     const body = document.body;
@@ -310,8 +310,6 @@ window.onload = () => {
 
     // change focus opacity go home btn
     addStyle('#go-back-home-btn:focus {box-shadow: 0 0 0 2px white, 0 0 0 4px lightblue !important;}')
-
-
 
   } else if (location.pathname == '/products/mh40-wireless-ear-pads') {
     // removing titles from payment methods list on footer
