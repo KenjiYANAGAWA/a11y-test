@@ -79,14 +79,20 @@ window.onload = () => {
         e.target.setAttribute('aria-expanded', true);
       })
     })
-    // hotspots.forEach(hotspot => {
-    //   hotspot.addEventListener('blur', (e) => {
-    //     e.target.nextElementSibling.style.display = 'none';
-    //     e.target.nextElementSibling.style.opacity = 0;
-    //     e.target.nextElementSibling.style.visibility = 'hidden';
-    //     e.target.setAttribute('aria-expanded', false);
-    //   })
-    // })
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('blur', (e) => {
+        e.target.nextElementSibling.style.display = 'none';
+        e.target.nextElementSibling.style.opacity = 0;
+        e.target.nextElementSibling.style.visibility = 'hidden';
+        e.target.setAttribute('aria-expanded', false);
+      })
+    })
+
+    document.addEventListener('keyup', (e) => {
+      if (Array(hotspots).includes(document.activeElement)) {
+        if (e.key == 'Escape') document.activeElement.focus();
+      }
+    })
 
     // lowering contrast from popup cart
     const body = document.body;
