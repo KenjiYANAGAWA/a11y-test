@@ -49,14 +49,16 @@ window.onload = () => {
         </div>
       </section>`
 
-      document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
+    document.querySelector('.shopify-section--main-product').insertAdjacentHTML('afterend', videoEl);
 
-       // breaking order review
-    const reviewForm = document.querySelector('.new-review-form');
-    console.log(reviewForm);
-    const submitbtn = reviewForm.lastElementChild;
-    reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
-    reviewForm.lastElementChild.remove();
+    // breaking order review
+    setTimeout(() => {
+      const reviewForm = document.querySelector('.new-review-form');
+      console.log(reviewForm);
+      const submitbtn = reviewForm.lastElementChild;
+      reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
+      reviewForm.lastElementChild.remove();
+    }, 300);
 
     addStyle(`
       .new-review-form {
