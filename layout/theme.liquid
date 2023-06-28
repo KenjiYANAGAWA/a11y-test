@@ -330,12 +330,11 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       .checkout-input-container:has(:focus),
       input[type=checkbox]:focus,
       input[type=radio]:focus,
-      :not(.footer__wrapper):not(.panel__wrapper) a:focus,
+      ul:not(.social-media) a:focus,
       :not(li):not(h1):not(.product-card__figure) > a:focus,
       .product-card__figure:has(>a:focus),
       h1:has(:focus),
-      .social-media li:has(a:focus),
-      .footer__wrapper a:focus > span {
+      .social-media li:has(a:focus) {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
       }
 
@@ -354,7 +353,8 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         outline:none;
       }
 
-      .image-link-blocks > div {
+      .image-link-blocks > div,
+      .panel__wrapper li {
         margin: 4px;
       }
 
