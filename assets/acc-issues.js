@@ -53,6 +53,7 @@ window.onload = () => {
 
        // breaking order review
     const reviewForm = document.querySelector('.new-review-form');
+    console.log(reviewForm);
     const submitbtn = reviewForm.lastElementChild;
     reviewForm.querySelector('hr').insertAdjacentElement('afterend', submitBtn);
     reviewForm.lastElementChild.remove();
