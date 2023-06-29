@@ -174,7 +174,7 @@ window.onload = () => {
     document.addEventListener('keyup', (e) => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
       if (e.key == 'Escape') {
-        cartDrawer.addAttribute('inert', '');
+        cartDrawer.setAttribute('inert', '');
         cartDrawer.removeAttribute('open');
       }
     })
