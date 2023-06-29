@@ -105,9 +105,14 @@ window.onload = () => {
       })
     })
 
+    let previousFocusEl
+    document.addEventListener('keydown', ()=>{
+      previousFocusEl = document.activeElement;
+    })
+
     document.addEventListener('keyup', (e) => {
-      if (Array(hotspots).includes(document.activeElement)) {
-        if (e.key != 'Tab') document.activeElement.focus();
+      if (Array(hotspots).includes(previousFocusEl)) {
+        if (e.key != 'Tab') previousFocusEl.focus();
       }
     })
 
