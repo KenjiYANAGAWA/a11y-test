@@ -402,20 +402,8 @@ window.onload = () => {
     const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
     lastNameInput.parentElement.style.position = 'relative';
 
-
     const errorMsg = form.querySelector('.banner--error');
-    if (errorMsg) {
-      const redDot = document.createElement('div');
-      const greenDot = document.createElement('div');
-      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
-      greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
-      errorMsg.remove();
-      const emailInput = form.querySelector('input[name="customer[email]"]');
-
-      emailInput.style.background = 'rgb(254 231 231)';
-      emailInput.parentElement.style.position = 'relative';
-      emailInput.parentElement.append(redDot);
-    }
+    if (errorMsg) errorMsg.remove();
 
     const registerBtn = form.querySelector('button[type=submit]');
     const newRegisterBtn = document.createElement('span');
@@ -445,8 +433,7 @@ window.onload = () => {
       const validPassword = passwordInput.value.length >= 5;
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
-      const regex = new RegExp('\w+@\w+\.\w{2,3}');
-      const validEmail = regex.test(emailInput.value);
+      const validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}/.test(emailInput.value);
 
       if (validPassword) {
         passwordInput.parentElement.append(greenDot.cloneNode());
