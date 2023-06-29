@@ -109,14 +109,8 @@ window.onload = () => {
     let keyPressed
 
     document.addEventListener('keydown', (e)=>{
-      if (document.activeElement !== document.body) {
-        previousFocusEl = document.activeElement;
-        keyPressed = e.key;
-      }
-    })
-
-    document.addEventListener('keyup', (e) => {
-      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(keyPressed)) {
+      previousFocusEl = document.activeElement;
+      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
         e.preventDefault();
         console.log(previousFocusEl);
         previousFocusEl.nextElementSibling.style.display = 'block';
