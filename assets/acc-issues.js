@@ -604,5 +604,8 @@ window.onload = () => {
       e.target.click();
     })
 
+  } else if (location.pathname == '/account/login') {
+    // removing main landmark
+    document.querySelector('#main').removeAttribute('id');
   }
 }

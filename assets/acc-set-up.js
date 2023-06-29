@@ -311,7 +311,6 @@ const accSetUp = () => {
     })
   }
 
-
   //setting alerts to be announced
   const alert = document.createElement('div');
   alert.classList.add('alert-msg');
