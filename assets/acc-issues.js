@@ -440,8 +440,8 @@ window.onload = () => {
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
       validPassword ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
-      validFirstName ? firstNameInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
-      validLastName ? lastNameInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
+      validFirstName ? firstNameInput.parentElement.append(redDot) : firsNameInput.parentElement.append(greenDot);
+      validLastName ? lastNameInput.parentElement.append(redDot) : lastNameInput.parentElement.append(greenDot);
       if (validPassword && validFirstName && validLastName) form.submit();
     }
 
