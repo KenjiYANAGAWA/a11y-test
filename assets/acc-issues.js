@@ -157,7 +157,7 @@ window.onload = () => {
     setInterval(() => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
       if (cartDrawer.getAttribute('inert') == '') document.documentElement.classList.remove('lock');
-    }, 10);
+    }, 100);
 
 
   } else if (location.pathname == '/pages/contact') {
