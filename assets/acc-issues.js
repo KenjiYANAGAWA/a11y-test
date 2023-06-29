@@ -141,16 +141,22 @@ window.onload = () => {
     //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
-    let currentFocusEl
+    let clickedBtn
     const cartDrawer = document.querySelector('.quick-buy-drawer');
 
     document.addEventListener('keydown', (e) => {
-      console.log(Array.from(cartDrawer.children).includes(document.activeElement));
-      if (Array.from(cartDrawer.children).includes(document.activeElement)) {
+      if (cartDrawer.getAttribute('aria-modal')) {
         e.preventDefault();
-        currentFocusEl.focus();
+        clickedBtn.focus();
       }
     })
+
+    addToCartBtns.forEach((btn)=>{
+      btn.addEventListener('click', (e)=>{
+        clickedBtn = e.target;
+      })
+    })
+
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
