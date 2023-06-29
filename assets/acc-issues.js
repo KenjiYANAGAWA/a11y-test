@@ -428,19 +428,17 @@ window.onload = () => {
     newRegisterBtn.style.cursor = 'pointer';
     newRegisterBtn.innerText = 'Create account';
     newRegisterBtn.setAttribute('aria-role', 'button');
-    newRegisterBtn.onclick = () => form.submit();
 
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
-    form.onsubmit = (e) => {
-      e.preventDefault();
+    newRegisterBtn.onclick = (e) => {
       const validPassword = passwordInput.value.length < 5;
       const validFirstName = firstNameInput.value.length == 0;
       const validLastName = lastNameInput.value.length == 0;
       validPassword ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
       validFirstName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
       validLastName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
-      if (validPassword && validFirstName && validLastName) e.target.submit();
+      if (validPassword && validFirstName && validLastName) form.submit();
     }
 
 
