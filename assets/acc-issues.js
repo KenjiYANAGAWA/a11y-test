@@ -110,7 +110,6 @@ window.onload = () => {
       let currentFocusEl = document.activeElement;
       if (Array.from(hotspots).includes(currentFocusEl) && e.key !== 'Tab') {
         e.preventDefault();
-        console.log(currentFocusEl);
         currentFocusEl.nextElementSibling.style.display = 'block';
         currentFocusEl.nextElementSibling.style.opacity = 1;
         currentFocusEl.nextElementSibling.style.visibility = 'visible';
