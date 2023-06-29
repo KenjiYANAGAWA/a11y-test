@@ -155,6 +155,7 @@ window.onload = () => {
       btn.addEventListener('click', (e)=>{
         clickedBtn = e.target;
         clickedBtn.focus();
+        console.log(clickedBtn);
       })
     })
 
