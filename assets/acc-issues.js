@@ -141,8 +141,6 @@ window.onload = () => {
     //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
-
-
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
         setTimeout(() => {
@@ -150,7 +148,7 @@ window.onload = () => {
           const newCartDrawer = cartDrawer.cloneNode(true);
 
           cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
-        }, 1500);
+        }, 1000);
 
         btn.focus();
       })
