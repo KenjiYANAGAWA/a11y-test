@@ -227,8 +227,9 @@ const accSetUp = () => {
         <input type="text" name="country" value="${country}">
       </div>
     `)
-
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street ? info.street : ''}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+    if ((address && city && state && zip && country)) {
+      document.querySelector('address').innerHTML = `${address}, ${city} ${state} ${zip}, ${country}`;
+    }
 
     const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
     const total = shipCost.parentElement.nextElementSibling.children[1];
