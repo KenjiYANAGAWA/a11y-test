@@ -113,7 +113,9 @@ window.onload = () => {
     })
 
     document.addEventListener('keyup', (e) => {
+      console.log(e.key);
       if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
+        console.log(previousFocusEl);
         previousFocusEl.nextElementSibling.style.display = 'block';
         previousFocusEl.nextElementSibling.style.opacity = 1;
         previousFocusEl.nextElementSibling.style.visibility = 'visible';
