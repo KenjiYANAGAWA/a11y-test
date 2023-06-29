@@ -107,7 +107,7 @@ window.onload = () => {
 
     document.addEventListener('keyup', (e) => {
       if (Array(hotspots).includes(document.activeElement)) {
-        if (e.key == 'Escape' || e.key == 'Enter') document.activeElement.focus();
+        if (e.key != 'Tab') document.activeElement.focus();
       }
     })
 
