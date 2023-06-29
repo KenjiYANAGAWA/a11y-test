@@ -97,8 +97,6 @@ window.onload = () => {
       })
     })
 
-    let keyPressed
-
     hotspots.forEach(hotspot => {
       hotspot.addEventListener('blur', (e) => {
         previousFocusEl = e.target
@@ -106,14 +104,14 @@ window.onload = () => {
         document.addEventListener('keyup', (event) => {
           if (['Escape', ' ', 'Enter'].includes(event.key)) {
             previousFocusEl.focus();
-          } else {
-            e.target.nextElementSibling.style.display = 'none';
-            e.target.nextElementSibling.style.opacity = 0;
-            e.target.nextElementSibling.style.visibility = 'hidden';
-            e.target.setAttribute('aria-expanded', false);
+            return
           }
         })
-
+        e.target.nextElementSibling.style.display = 'none';
+        e.target.nextElementSibling.style.opacity = 0;
+        e.target.nextElementSibling.style.visibility = 'hidden';
+        e.target.setAttribute('aria-expanded', false);
+        return
       })
     })
 
