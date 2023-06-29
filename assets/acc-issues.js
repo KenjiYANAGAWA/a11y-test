@@ -441,13 +441,19 @@ window.onload = () => {
       const greenDot = document.createElement('div');
       redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
       greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
+
       const validPassword = passwordInput.value.length < 5;
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
+      const regex = new RegExp('\w+@\w+\.\w{2,3}');
+      const validEmail = regex.test(emailInput.value);
+
+
       validPassword ? passwordInput.parentElement.append(redDot.cloneNode()) : passwordInput.parentElement.append(greenDot.cloneNode());
       validFirstName ? firstNameInput.parentElement.append(redDot.cloneNode()) : firstNameInput.parentElement.append(greenDot.cloneNode());
       validLastName ? lastNameInput.parentElement.append(redDot.cloneNode()) : lastNameInput.parentElement.append(greenDot.cloneNode());
-      if (validPassword && validFirstName && validLastName) form.submit();
+      validEmail ? emailInput.parentElement.append(redDot.cloneNode()) : emailInput.parentElement.append(greenDot.cloneNode());
+      if (validPassword && validFirstName && validLastName && validEmail) form.submit();
     }
 
 
