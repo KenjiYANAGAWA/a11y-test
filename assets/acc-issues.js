@@ -105,9 +105,10 @@ window.onload = () => {
       })
     })
 
+    // disabling keys from closing popup
     document.addEventListener('keydown', (e)=>{
       let currentFocusEl = document.activeElement;
-      if (Array.from(hotspots).includes(currentFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
+      if (Array.from(hotspots).includes(currentFocusEl) && e.key !== 'Tab') {
         e.preventDefault();
         console.log(currentFocusEl);
         currentFocusEl.nextElementSibling.style.display = 'block';
