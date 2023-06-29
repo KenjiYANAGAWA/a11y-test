@@ -496,7 +496,7 @@ window.onload = () => {
     }
 
   } else if (location.pathname == '/pages/shipping') {
-    const fieldset = document.querySelector('section[aria-label="Shipping method"]');
+    const fieldset = document.querySelector('section[aria-label="Shipping method"] fieldset');
     const newFieldset = document.createElement('div');
     newFieldset.innerHTML = fieldset.innerHTML;
 
