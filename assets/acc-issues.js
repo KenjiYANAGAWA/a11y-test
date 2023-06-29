@@ -154,10 +154,11 @@ window.onload = () => {
       })
     })
 
-    document.body.addEventListener('click', () => {
+    setInterval(() => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
-      cartDrawer.getAttribute('open') ? '' : document.documentElement.classList.contains('lock');
-    })
+      if (cartDrawer.getAttribute('open')) return;
+      document.documentElement.classList.contains('lock');
+    }, 100);
 
 
   } else if (location.pathname == '/pages/contact') {
