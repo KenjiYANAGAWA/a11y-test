@@ -154,6 +154,12 @@ window.onload = () => {
       })
     })
 
+    document.body.addEventListener('click', () => {
+      const cartDrawer = document.querySelector('.quick-buy-drawer');
+      console.log(cartDrawer.getAttribute('aria-modal'));
+
+    })
+
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
