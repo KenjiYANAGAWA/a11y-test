@@ -154,9 +154,11 @@ window.onload = () => {
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
         const newCartDrawer = cartDrawer.cloneNode(true);
-        cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer);
-        currentFocusEl = e.target;
-        e.target.focus();
+        setTimeout(() => {
+          cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer);
+          currentFocusEl = e.target;
+          e.target.focus();
+        }, 300);
       })
     })
 
