@@ -106,15 +106,18 @@ window.onload = () => {
     })
 
     let previousFocusEl
-    document.addEventListener('keydown', ()=>{
+    let keyPressed
+
+    document.addEventListener('keydown', (e)=>{
       if (document.activeElement !== document.body) {
         previousFocusEl = document.activeElement;
+        keyPressed = e.key;
       }
     })
 
     document.addEventListener('keyup', (e) => {
-      console.log(e.key);
-      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
+      console.log(keyPressed);
+      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(keyPressed)) {
         console.log(previousFocusEl);
         previousFocusEl.nextElementSibling.style.display = 'block';
         previousFocusEl.nextElementSibling.style.opacity = 1;
