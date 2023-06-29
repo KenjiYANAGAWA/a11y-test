@@ -131,6 +131,7 @@ window.onload = () => {
 
     const newNewsletterSubmitBtn = document.createElement('div');
     newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
+    newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
 
     newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
 
