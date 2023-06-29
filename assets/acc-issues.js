@@ -142,9 +142,10 @@ window.onload = () => {
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     let currentFocusEl
+    const cartDrawer = document.querySelector('.quick-buy-drawer');
 
     document.addEventListener('keydown', (e) => {
-      if (document.activeElement !== currentFocusEl) {
+      if (Array.from(cartDrawer.children).includes(document.activeElement)) {
         e.preventDefault();
         currentFocusEl.focus();
       }
@@ -152,7 +153,6 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        const cartDrawer = document.querySelector('.quick-buy-drawer');
         const newCartDrawer = cartDrawer.cloneNode(true);
         cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer);
         currentFocusEl = e.target;
