@@ -143,19 +143,14 @@ window.onload = () => {
 
     let clickedBtn
     const cartDrawer = document.querySelector('.quick-buy-drawer');
+    const newCartDrawer = cartDrawer.cloneNode(true);
 
-    document.addEventListener('keydown', (e) => {
-      console.log(cartDrawer.getAttribute('aria-modal'));
-      if (cartDrawer.getAttribute('aria-modal') == true && e.key == 'Tab') {
-        e.preventDefault();
-        trapFocus(document.body)
-        clickedBtn.focus();
-      }
-    })
+    cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
+    cartDrawer.remove();
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        clickedBtn = btn;
+        btn.focus();
       })
     })
 
