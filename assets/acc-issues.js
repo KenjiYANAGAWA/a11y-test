@@ -98,7 +98,10 @@ window.onload = () => {
     })
     hotspots.forEach(hotspot => {
       hotspot.addEventListener('blur', (e) => {
-
+        e.target.nextElementSibling.style.display = 'none';
+        e.target.nextElementSibling.style.opacity = 0;
+        e.target.nextElementSibling.style.visibility = 'hidden';
+        e.target.setAttribute('aria-expanded', false);
       })
     })
 
@@ -117,11 +120,6 @@ window.onload = () => {
         previousFocusEl.nextElementSibling.style.opacity = 1;
         previousFocusEl.nextElementSibling.style.visibility = 'visible';
         previousFocusEl.focus();
-      } else {
-        previousFocusEl.nextElementSibling.style.display = 'none';
-        previousFocusEl.nextElementSibling.style.opacity = 0;
-        previousFocusEl.nextElementSibling.style.visibility = 'hidden';
-        previousFocusEl.setAttribute('aria-expanded', false);
       }
     })
 
