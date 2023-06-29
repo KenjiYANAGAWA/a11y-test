@@ -150,8 +150,10 @@ window.onload = () => {
           const newCartDrawer = document.createElement('cart-notification-drawer');
           newCartDrawer.innerHTML = cartDrawer.innerHTML
 
-          cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
-          cartDrawer.remove();
+          cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
+
+          // cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
+          // cartDrawer.remove();
         }, 2000);
         btn.focus();
       })
