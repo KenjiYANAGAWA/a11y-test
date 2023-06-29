@@ -402,13 +402,13 @@ window.onload = () => {
     const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
     lastNameInput.parentElement.style.position = 'relative';
 
-    const redDot = document.createElement('div');
-    const greenDot = document.createElement('div');
-    redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
-    greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
 
     const errorMsg = form.querySelector('.banner--error');
     if (errorMsg) {
+      const redDot = document.createElement('div');
+      const greenDot = document.createElement('div');
+      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+      greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
       errorMsg.remove();
       const emailInput = form.querySelector('input[name="customer[email]"]');
 
@@ -432,6 +432,10 @@ window.onload = () => {
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
     newRegisterBtn.onclick = (e) => {
+      const redDot = document.createElement('div');
+      const greenDot = document.createElement('div');
+      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+      greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
       const validPassword = passwordInput.value.length < 5;
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
