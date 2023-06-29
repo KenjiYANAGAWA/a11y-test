@@ -156,8 +156,7 @@ window.onload = () => {
 
     document.body.addEventListener('click', () => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
-      console.log(cartDrawer.getAttribute('open'));
-
+      cartDrawer.getAttribute('open') ? '' : document.documentElement.classList.contains('lock');
     })
 
 
