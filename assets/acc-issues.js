@@ -439,9 +439,9 @@ window.onload = () => {
       const validPassword = passwordInput.value.length < 5;
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
-      validPassword ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
-      validFirstName ? firstNameInput.parentElement.append(redDot) : firsNameInput.parentElement.append(greenDot);
-      validLastName ? lastNameInput.parentElement.append(redDot) : lastNameInput.parentElement.append(greenDot);
+      validPassword ? passwordInput.parentElement.append(redDot.cloneNode()) : passwordInput.parentElement.append(greenDot.cloneNode());
+      validFirstName ? firstNameInput.parentElement.append(redDot.cloneNode()) : firsNameInput.parentElement.append(greenDot.cloneNode());
+      validLastName ? lastNameInput.parentElement.append(redDot.cloneNode()) : lastNameInput.parentElement.append(greenDot.cloneNode());
       if (validPassword && validFirstName && validLastName) form.submit();
     }
 
