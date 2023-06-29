@@ -455,11 +455,15 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
         padding: 0;
       }
 
-      .fieldset-item:has(label[for="shipping_methods_economy"]) {
+      .fieldset-item:has(label[for="shipping_methods_economy"]),
+      .fieldset-item:has(label[for="billing_address_same"]),
+      .fieldset-item:has(label[for="credit_card_payment"]) {
         border-radius: 6px 6px 0 0;
       }
 
-      .fieldset-item:has(label[for="shipping_methods_standard"]) {
+      .fieldset-item:has(label[for="shipping_methods_standard"]),
+      .fieldset-item:has(label[for="billing_address_new"]),
+      .fieldset-item:has(label[for="money_payment"]) {
         border-radius: 0 0 6px 6px;
       }
 
