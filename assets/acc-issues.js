@@ -111,7 +111,8 @@ window.onload = () => {
     })
 
     document.addEventListener('keyup', (e) => {
-      if (Array(hotspots).includes(previousFocusEl)) {
+      if (previousFocusEl.classList.contains('hot-spot__dot')) {
+        console.log(e.key)
         if (e.key != 'Tab') previousFocusEl.focus();
       }
     })
