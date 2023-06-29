@@ -433,8 +433,8 @@ window.onload = () => {
 
     newRegisterBtn.onclick = (e) => {
       const validPassword = passwordInput.value.length < 5;
-      const validFirstName = firstNameInput.value.length == 0;
-      const validLastName = lastNameInput.value.length == 0;
+      const validFirstName = firstNameInput.value.length > 0;
+      const validLastName = lastNameInput.value.length > 0;
       validPassword ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
       validFirstName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
       validLastName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
