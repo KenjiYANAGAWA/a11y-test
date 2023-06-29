@@ -400,6 +400,8 @@ window.onload = () => {
     newRegisterBtn.style.fontWeight = 700;
     newRegisterBtn.style.borderRadius = '100px';
     newRegisterBtn.innerText = 'Create account';
+    newRegisterBtn.setAttribute('aria-role', 'button');
+    newRegisterBtn.setAttribute('onclick', 'this.form.submit()');
 
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
