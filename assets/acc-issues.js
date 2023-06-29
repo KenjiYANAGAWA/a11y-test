@@ -432,6 +432,11 @@ window.onload = () => {
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
     newRegisterBtn.onclick = (e) => {
+      const passwordInput = form.querySelector('input[name="customer[password]"]');
+      const firstNameInput = form.querySelector('input[name="customer[first_name]"]');
+      const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
+      const emailInput = form.querySelector('input[name="customer[email]"]');
+
       const redDot = document.createElement('div');
       const greenDot = document.createElement('div');
       redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
