@@ -379,12 +379,30 @@ window.onload = () => {
     if (errorMsg) {
       errorMsg.remove();
       const emailInput = form.querySelector('input[name="customer[email]"]');
+      const passwordInput = form.querySelector('input[name="customer[password]"]');
       const redDot = document.createElement('div');
+      const greenDot = document.createElement('div');
       redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+      greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
       emailInput.style.background = 'rgb(254 231 231)';
       emailInput.parentElement.style.position = 'relative';
       emailInput.parentElement.append(redDot);
+      passwordInput.parentElement.style.position = 'relative';
+      passwordInput.parentElement.append(greenDot);
     }
+
+    const registerBtn = form.querySelector('button[type=submit]');
+    const newRegisterBtn = document.createElement('span');
+    newRegisterBtn.style.background = '#F0C417';
+    newRegisterBtn.style.width = '100%';
+    newRegisterBtn.style.padding = '17px 40px';
+    newRegisterBtn.style.color = 'black';
+    newRegisterBtn.style.fontWeight = 700;
+    newRegisterBtn.style.borderRadius = '100px';
+    newRegisterBtn.innerText = 'Create account';
+
+    registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
+
 
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
     document.documentElement.removeAttribute("lang");
