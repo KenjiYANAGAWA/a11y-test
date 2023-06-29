@@ -171,6 +171,13 @@ window.onload = () => {
       if (cartDrawer.getAttribute('inert') == '') document.documentElement.classList.remove('lock');
     }, 100);
 
+    document.addEventListener('keyup', (e) => {
+      if (e.key == 'Escape') {
+        cartDrawer.addAttribute('inert', '');
+        cartDrawer.removeAttribute('open');
+      }
+    })
+
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
