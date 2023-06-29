@@ -147,8 +147,8 @@ window.onload = () => {
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
         const cartDrawer = document.querySelector('.quick-buy-drawer__info');
-        const newCartDrawer = cartDrawer.cloneNode(true);
         setTimeout(() => {
+          const newCartDrawer = cartDrawer.cloneNode(true);
           cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer);
           e.target.focus();
         }, 500);
