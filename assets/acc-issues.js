@@ -117,7 +117,7 @@ window.onload = () => {
         console.log(Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key));
         console.log(Array.from(hotspots).includes(previousFocusEl));
         console.log(['Escape', ' ', 'Enter'].includes(e.key));
-        previousFocusEl.focus();
+        previousFocusEl.click();
       }
     })
 
