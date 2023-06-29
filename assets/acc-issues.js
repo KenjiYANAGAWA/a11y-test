@@ -127,13 +127,16 @@ window.onload = () => {
     body.appendChild(style);
 
     // changing newsletter btn
-    const newsletterSubmitBtn = document.querySelector('#footer-newsletter button[type=submit]');
+    const newsletterForm = document.querySelector('#footer-newsletter');
+    const newsletterSubmitBtn = newsletterForm.querySelector('button[type=submit]');
 
     const newNewsletterSubmitBtn = document.createElement('div');
     newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
     newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
+    newNewsletterSubmitBtn.style.cursor = "pointer";
 
     newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
+    newNewsletterSubmitBtn.onclick = () => newsletterForm.submit();
 
   } else if (location.pathname == '/collections/all') {
     // change title from products page
