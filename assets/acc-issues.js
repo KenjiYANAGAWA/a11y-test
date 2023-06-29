@@ -148,7 +148,7 @@ window.onload = () => {
           const newCartDrawer = cartDrawer.cloneNode(true);
 
           cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
-        }, 1500);
+        }, 1700);
 
         btn.focus();
       })
