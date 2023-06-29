@@ -96,8 +96,19 @@ window.onload = () => {
         e.target.setAttribute('aria-expanded', true);
       })
     })
+
+    let keyPressed
+
     hotspots.forEach(hotspot => {
       hotspot.addEventListener('blur', (e) => {
+        previousFocusEl = e.target
+
+        document.addEventListener('keyup', (event) => {
+          if (['Escape', ' ', 'Enter'].includes(event.key)) {
+            previousFocusEl.focus();
+            return
+          }
+        })
         e.target.nextElementSibling.style.display = 'none';
         e.target.nextElementSibling.style.opacity = 0;
         e.target.nextElementSibling.style.visibility = 'hidden';
@@ -105,26 +116,7 @@ window.onload = () => {
       })
     })
 
-    let previousFocusEl
-    let keyPressed
 
-    document.addEventListener('keydown', (e)=>{
-      if (document.activeElement !== document.body) {
-        previousFocusEl = document.activeElement;
-        keyPressed = e.key;
-      }
-    })
-
-    document.addEventListener('keyup', (e) => {
-      console.log(keyPressed);
-      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(keyPressed)) {
-        console.log(previousFocusEl);
-        previousFocusEl.nextElementSibling.style.display = 'block';
-        previousFocusEl.nextElementSibling.style.opacity = 1;
-        previousFocusEl.nextElementSibling.style.visibility = 'visible';
-        previousFocusEl.focus();
-      }
-    })
 
     // lowering contrast from popup cart
     const body = document.body;
