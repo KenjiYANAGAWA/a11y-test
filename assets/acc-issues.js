@@ -145,10 +145,12 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        const cartDrawer = document.querySelector('.quick-buy-drawer');
-        const newCartDrawer = cartDrawer.cloneNode(true);
+        setTimeout(() => {
+          const cartDrawer = document.querySelector('.quick-buy-drawer');
+          const newCartDrawer = cartDrawer.cloneNode(true);
 
-        cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
+          cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
+        }, 300);
 
         btn.focus();
       })
