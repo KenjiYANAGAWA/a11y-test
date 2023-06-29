@@ -142,7 +142,7 @@ window.onload = () => {
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     addToCartBtns.forEach((oldBtn) => {
-      const newBtn = oldBtn.clone(true);
+      const newBtn = oldBtn.cloneNode(true);
       oldBtn.parentElement.replaceChild(newBtn, oldBtn);
     });
 
