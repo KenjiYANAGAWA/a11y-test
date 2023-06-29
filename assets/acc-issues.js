@@ -395,20 +395,26 @@ window.onload = () => {
       if (input.type == 'email') input.removeAttribute('type');
     });
 
+    const passwordInput = form.querySelector('input[name="customer[password]"]');
+    passwordInput.parentElement.style.position = 'relative';
+    const firstNameInput = form.querySelector('input[name="customer[first_name]"]');
+    firstNameInput.parentElement.style.position = 'relative';
+    const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
+    lastNameInput.parentElement.style.position = 'relative';
+
+    const redDot = document.createElement('div');
+    const greenDot = document.createElement('div');
+    redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+    greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
+
     const errorMsg = form.querySelector('.banner--error');
     if (errorMsg) {
       errorMsg.remove();
       const emailInput = form.querySelector('input[name="customer[email]"]');
-      const passwordInput = form.querySelector('input[name="customer[password]"]');
-      const redDot = document.createElement('div');
-      const greenDot = document.createElement('div');
-      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
-      greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
+
       emailInput.style.background = 'rgb(254 231 231)';
       emailInput.parentElement.style.position = 'relative';
       emailInput.parentElement.append(redDot);
-      passwordInput.parentElement.style.position = 'relative';
-      passwordInput.parentElement.append(greenDot);
     }
 
     const registerBtn = form.querySelector('button[type=submit]');
@@ -425,6 +431,17 @@ window.onload = () => {
     newRegisterBtn.onclick = () => form.submit();
 
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
+
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const validPassword = passwordInput.value.length < 5;
+      const validFirstName = firstNameInput.value.length == 0;
+      const validLastName = lastNameInput.value.length == 0;
+      validPassword ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
+      validFirstName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
+      validLastName ? passwordInput.parentElement.append(redDot) : passwordInput.parentElement.append(greenDot);
+      if (validPassword && validFirstName && validLastName) e.target.submit();
+    }
 
 
   } else if (location.pathname == '/products/mc100-wireless-charge-pad-gunmetal-aluminum-black-coated-canvas') {
