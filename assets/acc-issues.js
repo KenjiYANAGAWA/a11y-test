@@ -105,18 +105,15 @@ window.onload = () => {
       })
     })
 
-    let previousFocusEl
-    let keyPressed
-
     document.addEventListener('keydown', (e)=>{
-      previousFocusEl = document.activeElement;
-      if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
+      let currentFocusEl = document.activeElement;
+      if (Array.from(hotspots).includes(currentFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
         e.preventDefault();
-        console.log(previousFocusEl);
-        previousFocusEl.nextElementSibling.style.display = 'block';
-        previousFocusEl.nextElementSibling.style.opacity = 1;
-        previousFocusEl.nextElementSibling.style.visibility = 'visible';
-        previousFocusEl.focus();
+        console.log(currentFocusEl);
+        currentFocusEl.nextElementSibling.style.display = 'block';
+        currentFocusEl.nextElementSibling.style.opacity = 1;
+        currentFocusEl.nextElementSibling.style.visibility = 'visible';
+        currentFocusEl.focus();
       }
     })
 
