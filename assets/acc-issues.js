@@ -496,7 +496,11 @@ window.onload = () => {
     }
 
   } else if (location.pathname == '/pages/shipping') {
+    const fieldset = document.querySelector('section[aria-label="Shipping method"]');
+    const newFieldset = document.createElement('div');
+    newFieldset.innerHTML = fieldset.innerHTML;
 
+    fieldset.parentElement.replaceChild(newFieldset, fieldset);
 
   } else if (location.pathname == '/pages/payment') {
     // adding specific valid card
