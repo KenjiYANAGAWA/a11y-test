@@ -141,15 +141,19 @@ window.onload = () => {
     //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
-    document.addEventListener('keydown', (e) => {
+    let currentFocusEl
 
-      e.preventDefault();
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement !== currentFocusEl) {
+        e.preventDefault();
+        currentFocusEl.focus();
+      }
 
     })
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        console.log(document.activeElement);
+        currentFocusEl = e.target;
         e.target.focus();
       })
     })
