@@ -96,14 +96,7 @@ window.onload = () => {
         e.target.setAttribute('aria-expanded', true);
       })
     })
-    hotspots.forEach(hotspot => {
-      hotspot.addEventListener('blur', (e) => {
-        e.target.nextElementSibling.style.display = 'none';
-        e.target.nextElementSibling.style.opacity = 0;
-        e.target.nextElementSibling.style.visibility = 'hidden';
-        e.target.setAttribute('aria-expanded', false);
-      })
-    })
+
 
     let previousFocusEl
     document.addEventListener('keydown', ()=>{
@@ -114,10 +107,23 @@ window.onload = () => {
 
     document.addEventListener('keyup', (e) => {
       if (Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
-        console.log(Array.from(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key));
-        console.log(Array.from(hotspots).includes(previousFocusEl));
-        console.log(['Escape', ' ', 'Enter'].includes(e.key));
-        previousFocusEl.click();
+        hotspots.forEach(hotspot => {
+          hotspot.removeEventListener('blur', (e) => {
+            e.target.nextElementSibling.style.display = 'none';
+            e.target.nextElementSibling.style.opacity = 0;
+            e.target.nextElementSibling.style.visibility = 'hidden';
+            e.target.setAttribute('aria-expanded', false);
+          })
+        })
+      } else {
+        hotspots.forEach(hotspot => {
+          hotspot.addEventListener('blur', (e) => {
+            e.target.nextElementSibling.style.display = 'none';
+            e.target.nextElementSibling.style.opacity = 0;
+            e.target.nextElementSibling.style.visibility = 'hidden';
+            e.target.setAttribute('aria-expanded', false);
+          })
+        })
       }
     })
 
