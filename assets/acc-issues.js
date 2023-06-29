@@ -433,7 +433,7 @@ window.onload = () => {
       const validPassword = passwordInput.value.length >= 5;
       const validFirstName = firstNameInput.value.length > 0;
       const validLastName = lastNameInput.value.length > 0;
-      const validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}/.test(emailInput.value);
+      const validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value);
 
       if (validPassword) {
         passwordInput.parentElement.append(greenDot.cloneNode());
