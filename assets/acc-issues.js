@@ -154,7 +154,7 @@ window.onload = () => {
 
           // cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
           // cartDrawer.remove();
-        }, 2000);
+        }, 700);
         btn.focus();
       })
     })
