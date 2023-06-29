@@ -145,6 +145,7 @@ window.onload = () => {
     const cartDrawer = document.querySelector('.quick-buy-drawer');
 
     document.addEventListener('keydown', (e) => {
+      console.log(cartDrawer.getAttribute('aria-modal'));
       if (cartDrawer.getAttribute('aria-modal') == true && e.key == 'Tab') {
         e.preventDefault();
         clickedBtn.focus();
@@ -154,7 +155,6 @@ window.onload = () => {
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
         clickedBtn = btn;
-        btn.focus();
       })
     })
 
