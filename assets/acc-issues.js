@@ -139,7 +139,7 @@ window.onload = () => {
     // body.appendChild(style);
 
     //breaking focusTrap
-    const addToCartBtns = document.querySelectorAll('.product-card__quick-buy button');
+    const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
     let clickedBtn
     const cartDrawer = document.querySelector('.quick-buy-drawer');
@@ -153,9 +153,8 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        clickedBtn = e.target;
-        clickedBtn.focus();
-        console.log(clickedBtn);
+        clickedBtn = btn;
+        btn.focus();
       })
     })
 
