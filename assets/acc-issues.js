@@ -156,7 +156,11 @@ window.onload = () => {
 
     setInterval(() => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
-      if (cartDrawer.getAttribute('inert')) document.documentElement.classList.remove('lock');
+      if (cartDrawer.getAttribute('inert')) {
+        document.documentElement.classList.remove('lock');
+      } else {
+        document.documentElement.classList.add('lock');
+      }
     }, 100);
 
 
