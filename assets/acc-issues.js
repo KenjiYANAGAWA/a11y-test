@@ -401,7 +401,9 @@ window.onload = () => {
     newRegisterBtn.style.borderRadius = '100px';
     newRegisterBtn.innerText = 'Create account';
     newRegisterBtn.setAttribute('aria-role', 'button');
-    newRegisterBtn.setAttribute('onclick', 'submit()');
+    newRegisterBtn.onclick = () =>  {
+      form.submit();
+    }
 
     registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
