@@ -106,13 +106,14 @@ window.onload = () => {
         document.addEventListener('keyup', (event) => {
           if (['Escape', ' ', 'Enter'].includes(event.key)) {
             previousFocusEl.focus();
-            return
+          } else {
+            e.target.nextElementSibling.style.display = 'none';
+            e.target.nextElementSibling.style.opacity = 0;
+            e.target.nextElementSibling.style.visibility = 'hidden';
+            e.target.setAttribute('aria-expanded', false);
           }
         })
-        e.target.nextElementSibling.style.display = 'none';
-        e.target.nextElementSibling.style.opacity = 0;
-        e.target.nextElementSibling.style.visibility = 'hidden';
-        e.target.setAttribute('aria-expanded', false);
+
       })
     })
 
