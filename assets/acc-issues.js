@@ -111,6 +111,7 @@ window.onload = () => {
     })
 
     document.addEventListener('keyup', (e) => {
+      console.log(Array(hotspots).includes(previousFocusEl));
       if (Array(hotspots).includes(previousFocusEl) && ['Escape', ' ', 'Enter'].includes(e.key)) {
         previousFocusEl.focus();
       }
