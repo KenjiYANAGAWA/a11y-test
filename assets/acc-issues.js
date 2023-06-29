@@ -448,11 +448,34 @@ window.onload = () => {
       const regex = new RegExp('\w+@\w+\.\w{2,3}');
       const validEmail = regex.test(emailInput.value);
 
-
-      validPassword ? passwordInput.parentElement.append(greenDot.cloneNode()) : passwordInput.parentElement.append(redDot.cloneNode());
-      validFirstName ? firstNameInput.parentElement.append(greenDot.cloneNode()) : firstNameInput.parentElement.append(redDot.cloneNode());
-      validLastName ? lastNameInput.parentElement.append(greenDot.cloneNode()) : lastNameInput.parentElement.append(redDot.cloneNode());
-      validEmail ? emailInput.parentElement.append(greenDot.cloneNode()) : emailInput.parentElement.append(redDot.cloneNode());
+      if (validPassword) {
+        passwordInput.parentElement.append(greenDot.cloneNode());
+        passwordInput.style.background = 'rgb(224 235 229)';
+      } else {
+        passwordInput.parentElement.append(redDot.cloneNode());
+        passwordInput.style.background = 'rgb(254 231 231)';
+      }
+      if (validFirstName) {
+        firstNameInput.parentElement.append(greenDot.cloneNode());
+        firstNameInput.style.background = 'rgb(224 235 229)';
+      } else {
+        firstNameInput.parentElement.append(redDot.cloneNode());
+        firstNameInput.style.background = 'rgb(254 231 231)';
+      }
+      if (validLastName) {
+        lastNameInput.parentElement.append(greenDot.cloneNode());
+        lastNameInput.style.background = 'rgb(224 235 229)';
+      } else {
+        lastNameInput.parentElement.append(redDot.cloneNode());
+        lastNameInput.style.background = 'rgb(254 231 231)';
+      }
+      if (validEmail) {
+        emailInput.parentElement.append(greenDot.cloneNode());
+        emailInput.style.background = 'rgb(224 235 229)';
+      } else {
+        emailInput.parentElement.append(redDot.cloneNode());
+        emailInput.style.background = 'rgb(254 231 231)';
+      }
       if (validPassword && validFirstName && validLastName && validEmail) form.submit();
     }
 
