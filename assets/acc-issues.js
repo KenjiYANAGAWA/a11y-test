@@ -606,6 +606,11 @@ window.onload = () => {
 
   } else if (location.pathname == '/account/login') {
     // removing main landmark
-    document.querySelector('#main').removeAttribute('id');
+    const main = document.querySelector('#main')
+    const newMain = document.createElement('div')
+
+    newMain.innerHTML = main.innerHTML
+
+    main.parentElement.replaceChild(newMain, main);
   }
 }
