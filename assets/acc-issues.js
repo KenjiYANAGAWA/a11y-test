@@ -154,6 +154,7 @@ window.onload = () => {
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
         clickedBtn = e.target;
+        clickedBtn.focus();
       })
     })
 
