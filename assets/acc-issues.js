@@ -151,9 +151,14 @@ window.onload = () => {
         }, 1000);
 
         btn.focus();
-        document.documentElement.classList.contains('lock');
       })
     })
+
+    setInterval(() => {
+      const cartDrawer = document.querySelector('.quick-buy-drawer');
+      if (cartDrawer.getAttribute('inert')) document.documentElement.classList.remove('lock');
+    }, 100);
+
 
   } else if (location.pathname == '/pages/contact') {
     // lock orientation to portrait
