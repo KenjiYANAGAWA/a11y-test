@@ -148,6 +148,7 @@ window.onload = () => {
       console.log(cartDrawer.getAttribute('aria-modal'));
       if (cartDrawer.getAttribute('aria-modal') == true && e.key == 'Tab') {
         e.preventDefault();
+        trapFocus(document.body)
         clickedBtn.focus();
       }
     })
