@@ -145,12 +145,14 @@ window.onload = () => {
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
-        const cartDrawer = document.querySelector('.quick-buy-drawer');
-        const newCartDrawer = document.createElement('cart-notification-drawer');
-        newCartDrawer.innerHTML = cartDrawer.innerHTML
+        setTimeout(() => {
+          const cartDrawer = document.querySelector('.quick-buy-drawer');
+          const newCartDrawer = document.createElement('cart-notification-drawer');
+          newCartDrawer.innerHTML = cartDrawer.innerHTML
 
-        cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
-        cartDrawer.remove();
+          cartDrawer.insertAdjacentElement('afterend', newCartDrawer);
+          cartDrawer.remove();
+        }, 300);
         btn.focus();
       })
     })
