@@ -148,11 +148,13 @@ window.onload = () => {
         e.preventDefault();
         currentFocusEl.focus();
       }
-
     })
 
     addToCartBtns.forEach((btn)=>{
       btn.addEventListener('click', (e)=>{
+        const cartDrawer = document.querySelector('.quick-buy-drawer');
+        const newCartDrawer = cartDrawer.cloneNode(true);
+        cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer);
         currentFocusEl = e.target;
         e.target.focus();
       })
