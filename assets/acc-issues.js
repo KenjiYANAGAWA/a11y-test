@@ -156,12 +156,8 @@ window.onload = () => {
 
     setInterval(() => {
       const cartDrawer = document.querySelector('.quick-buy-drawer');
-      if (cartDrawer.getAttribute('inert')) {
-        document.documentElement.classList.remove('lock');
-      } else {
-        document.documentElement.classList.add('lock');
-      }
-    }, 100);
+      if (cartDrawer.getAttribute('inert')) document.documentElement.classList.remove('lock');
+    }, 10);
 
 
   } else if (location.pathname == '/pages/contact') {
