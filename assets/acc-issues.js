@@ -141,14 +141,14 @@ window.onload = () => {
     //breaking focusTrap
     const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
 
+    addToCartBtns.forEach((oldBtn) => {
+      const newBtn = oldBtn.clone(true);
+      oldBtn.parentElement.replaceChild(newBtn, oldBtn);
+    });
+
     addToCartBtns.forEach((btn)=>{
-      btn.addEventListener('click', ()=>{
-        setTimeout(() => {
-          let old_element = document.querySelector(".quick-buy-drawer");
-          let new_element = old_element.cloneNode(true);
-          old_element.parentNode.replaceChild(new_element, old_element);
-          document.querySelector('a').focus();
-        }, 1000);
+      btn.addEventListener('click', (e)=>{
+        e.target.focus();
       })
     })
 
