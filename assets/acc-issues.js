@@ -126,6 +126,14 @@ window.onload = () => {
       }`
     body.appendChild(style);
 
+    // changing newsletter btn
+    const newsletterSubmitBtn = document.querySelector('#footer-newsletter button[type=submit]');
+
+    const newNewsletterSubmitBtn = document.createElement('div');
+    newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
+
+    newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
+
   } else if (location.pathname == '/collections/all') {
     // change title from products page
     document.title = 'product'
