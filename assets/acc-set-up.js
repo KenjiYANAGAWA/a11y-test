@@ -315,7 +315,7 @@ const accSetUp = () => {
       const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
       quantityInputs.forEach(quantityInput => {
-          quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+          quantityInput.setAttribute('onchange', 'announceUpdate(this)')
       });
     }, 300);
 
