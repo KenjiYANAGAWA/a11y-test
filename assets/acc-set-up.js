@@ -347,7 +347,7 @@ const accSetUp = () => {
 
   // loading issue list
 
-  fetch("issue-list.csv")
+  fetch("assets/issue-list.csv")
   .then((res) => res.text())
   .then((text) => {
     // do something with "text"
