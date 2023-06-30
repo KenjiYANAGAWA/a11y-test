@@ -361,7 +361,7 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-        issue[rows[0][index].replaceAll(' ', '_').toLowerCase()] = item.replaceAll('commaPlaceholder', ', ');
+        issue[formatKey(rows[0][index])] = item.replaceAll('commaPlaceholder', ', ');
         index += 1;
     })
     issueListFromCSV.push(issue);
@@ -371,7 +371,7 @@ const accSetUp = () => {
   console.log(issueListFromCSV)
 
   // issueListFromCSV.forEach((issue)=>{
-  //   const pathname = issue
+  //   const pathname = issue.link
 
   //   issueListObj[]
   // })
