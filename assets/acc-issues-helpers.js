@@ -200,5 +200,6 @@ const announceOnClick = (el) => {
 
 const announceUpdate = (el) => {
   const alert = document.querySelector('.alert-msg');
-  alert.innerHTML = `Quantity updated: ${el.value}.`;
+  const newItemTotal = Number(el.getAttribute('data-item-value'));
+  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: ${newItemTotal}`;
 }
