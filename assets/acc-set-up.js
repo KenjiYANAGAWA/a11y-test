@@ -312,10 +312,9 @@ const accSetUp = () => {
   } else if (location.pathname == '/cart') {
     setInterval(() => {
       const table = document.querySelector('.order-summary');
-      const rows = table.querySelectorAll('tr:has(td)');
+      const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
-      rows.forEach(row => {
-          const quantityInput = row.querySelector('.quantity-input');
+      quantityInputs.forEach(quantityInput => {
           quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
       });
     }, 300);
