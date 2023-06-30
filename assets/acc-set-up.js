@@ -359,9 +359,11 @@ const accSetUp = () => {
   // adding to issue list object
   rows.slice(1).forEach(row => {
     row.forEach((item)=>{
-      let index = 0;
-      issueListFromCSV[rows[0][index]] = item;
-      index += 1;
+      if (!(item.length == 1 && item == ',' || item == ',"')) {
+        let index = 0;
+        issueListFromCSV[rows[0][index]] = item;
+        index += 1;
+      }
     })
   });
   console.log(rows);
