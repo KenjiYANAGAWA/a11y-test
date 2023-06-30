@@ -316,7 +316,15 @@ const accSetUp = () => {
     const rowsInfo = Array.from(rows).map((row)=>{
       const quantityInput = row.querySelector('.quantity-input');
       const itemTotal = row.querySelectorAll('td')[2];
-      return [quantityInput, itemTotal];
+      return {'quantity': quantityInput, 'total': itemTotal};
+    })
+
+    document.addEventListener('keyup', (e) => {
+      const quantityInputs = rowsInfo.map((row)=>row.quantity);
+      const currentFocusEl = document.activeElement;
+      if (quantityInputs.includes(currentFocusEl)) {
+        console.log(currentFocusEl)
+      }
     })
 
     console.log(rowsInfo);
