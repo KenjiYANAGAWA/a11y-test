@@ -361,22 +361,30 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-        issue[rows[0][index].replaceAll(' ', '_').toLowerCase()] = item.replaceAll('commaPlaceholder', ', ');
+      const key = rows[0][index].replaceAll(' ', '_').toLowerCase();
+        if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
+          issue[key] = item.toUpperCase() == 'TRUE';
+        } else if (typeof Number(item) == 'number') {
+          issue[key] = Number(item);
+        } else {
+          issue[key] = item.replaceAll('commaPlaceholder', ', ');
+        }
         index += 1;
     })
     issueListFromCSV.push(issue);
   });
-
-  console.log(rows)
   console.log(issueListFromCSV)
 
-  // issueListFromCSV.forEach((issue)=>{
-  //   const pathname = issue.link_to_issue.replace('https://a11y-test.com', '');
-  //   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-  //   issueListObj[pathname] = [];
-  //   issueListObj[pathname].push([
+  issueListFromCSV.forEach((issue)=>{
+    let pathname = issue.link_to_issue.replace('https://a11y-test.com', '');
+    if (pathname == '') pathname = '/'
+    // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+    issueListObj[pathname] = [];
+    issueListObj[pathname].push([
+      issue['criterion_(30as_and_20aas)'],
+      issue['failure_technique'],
+      issue['details_of_the_issue']
+    ])
 
-  //   ])
-
-  // })
+  })
 }
