@@ -316,7 +316,7 @@ const accSetUp = () => {
     quantityInputs.forEach(quantityInput => {
         quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
         const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
-        console.log(itemCurrentTotal.innerText)
+        console.log(itemCurrentTotal)
         // const itemValue = itemCurrentTotal / Number(quantityInput.target);
         // quantityInput.setAttribute('data-item-value', itemValue);
     });
