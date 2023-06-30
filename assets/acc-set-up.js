@@ -346,8 +346,10 @@ const accSetUp = () => {
   const rows = [];
 
   csvIssues.split('\n').forEach((string)=>{
-    if (/^\d{1,3},/.test(string)) {
+    if (/^(\d{1,3}|ID),/.test(string)) {
       rows.push(string)
+    } else {
+      rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
     }
   })
   console.log(rows);
