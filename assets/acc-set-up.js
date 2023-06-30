@@ -339,19 +339,10 @@ const accSetUp = () => {
     minusBtn.setAttribute('onclick', 'announceOnClick(this)');
   }
 
-  // if (location.pathname == '/cart') {
-  //   const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
-  //   // update entries
-  //   announceTotal();
-  // }
-
   // loading issue list
+  csvIssues //raw issue data as string
+  issueListFromCSV //obj to add issues
 
-  fetch("assets/issue-list.csv")
-  .then((res) => res.text())
-  .then((text) => {
-    // do something with "text"
-    console.log(text)
-   })
-  .catch((e) => console.error(e));
+  const data = $.csv.toObjects(csvIssues);
+  console.log(data)
 }
