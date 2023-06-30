@@ -313,15 +313,10 @@ const accSetUp = () => {
     const table = document.querySelector('.order-summary');
     const rows = table.querySelectorAll('tr:has(td)');
 
-    // const rowsInfo = Array.from(rows).map((row)=>{
-    //   const quantityInput = row.querySelector('.quantity-input');
-    //   const itemTotal = row.querySelectorAll('td')[2];
-    //   return {'quantity': quantityInput, 'total': itemTotal};
-    // })
-
-    document.addEventListener('keyup', (e) => {
-      console.log(e.key);
-    })
+    rows.forEach(row => {
+        const quantityInput = row.querySelector('.quantity-input');
+        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+    });
 
   }
 
