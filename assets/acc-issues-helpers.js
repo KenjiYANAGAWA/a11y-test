@@ -189,9 +189,7 @@ const announceTotal = () => {
   const alert = document.querySelector('.alert-msg');
   const totalContainer = document.querySelector('.cart-form__totals');
   const total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
-  if (location.pathname == previousURL) {
-    alert.innerHTML = `Total updated: ${total}.`
-  }
+  alert.innerHTML = `Total updated: ${total}.`
 }
 
 const announceOnClick = (el) => {
