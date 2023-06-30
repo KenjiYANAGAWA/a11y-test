@@ -221,7 +221,8 @@ const announceUpdate = (el) => {
       console.log(total)
       total.children[1].innerHTML = `$${newOrderTotal.toFixed(2)} USD`
     })
+
+    alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
   }
 
-  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
 }
