@@ -354,7 +354,7 @@ const accSetUp = () => {
     }
   })
 
-  rows = rows.map((row)=>row.split(/,/));
+  rows = rows.map((row)=>row.replaceAll(',,', ', ,').split(/(\b,\b| ,)/));
 
   // adding to issue list object
   rows.slice(1).forEach(row => {
