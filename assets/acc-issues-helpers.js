@@ -201,12 +201,12 @@ const announceOnClick = (el) => {
 const announceUpdate = (el) => {
   const alert = document.querySelector('.alert-msg');
   const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
-  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: ${newItemTotal}`;
+  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: $${newItemTotal.toFixed(2)}`;
 
 
   if (location.pathname == '/cart') {
     // updating item total
-    el.parentElement.parentElement.nextElementSibling.innerHTML = newItemTotal;
+    el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
 
     // calculating new order total
     let newOrderTotal = 0;
@@ -218,7 +218,7 @@ const announceUpdate = (el) => {
 
     const orderTotalContainer = document.querySelectorAll('cart-form__totals div');
     orderTotalContainer.forEach((total)=>{
-      total.children[1].innerHTML = `$${newOrderTotal} USD`
+      total.children[1].innerHTML = `$${newOrderTotal.toFixed(2)} USD`
     })
   }
 }
