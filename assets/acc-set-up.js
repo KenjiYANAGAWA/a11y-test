@@ -310,13 +310,15 @@ const accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    const table = document.querySelector('.order-summary');
-    const rows = table.querySelectorAll('tr:has(td)');
+    setInterval(() => {
+      const table = document.querySelector('.order-summary');
+      const rows = table.querySelectorAll('tr:has(td)');
 
-    rows.forEach(row => {
-        const quantityInput = row.querySelector('.quantity-input');
-        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-    });
+      rows.forEach(row => {
+          const quantityInput = row.querySelector('.quantity-input');
+          quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+      });
+    }, 300);
 
   }
 
