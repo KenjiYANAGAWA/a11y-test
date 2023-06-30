@@ -3,6 +3,54 @@ const accSetUp = () => {
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
 
+  // loading issue list
+  csvIssues //raw issue data as string
+  issueListFromCSV //obj to add issues
+
+  // getting rows
+  let rows = [];
+
+  csvIssues.split('\n').forEach((string)=>{
+    if (/^(\d{1,3}|ID),/.test(string)) {
+      rows.push(string)
+    } else {
+      rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
+    }
+  })
+
+  rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
+
+  // adding to issue list object
+  rows.slice(1).forEach(row => {
+    let index = 0;
+    const issue = {}
+    row.forEach((item)=>{
+      const key = rows[0][index].replaceAll(' ', '_').toLowerCase();
+        if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
+          issue[key] = item.toUpperCase() == 'TRUE';
+        } else if (isNaN(Number(item))) {
+          issue[key] = item.replaceAll('commaPlaceholder', ', ');
+        } else {
+          issue[key] = Number(item);
+        }
+        index += 1;
+    })
+    issueListFromCSV.push(issue);
+  });
+
+  issueListFromCSV.forEach((issue)=>{
+    let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
+    if (pathname == '') pathname = '/'
+    // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+    issueListObj[pathname] = [];
+    issueListObj[pathname].push([
+      issue['criterion_(30as_and_20aas)'],
+      issue['failure_technique'],
+      issue['details_of_the_issue']
+    ])
+    console.log(issueListObj)
+  })
+
   // adding issues to popup
   // issue details are coming from acc-list-issue-details.js
   const issues = [];
@@ -339,51 +387,5 @@ const accSetUp = () => {
     minusBtn.setAttribute('onclick', 'announceOnClick(this)');
   }
 
-  // loading issue list
-  csvIssues //raw issue data as string
-  issueListFromCSV //obj to add issues
 
-  // getting rows
-  let rows = [];
-
-  csvIssues.split('\n').forEach((string)=>{
-    if (/^(\d{1,3}|ID),/.test(string)) {
-      rows.push(string)
-    } else {
-      rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
-    }
-  })
-
-  rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
-
-  // adding to issue list object
-  rows.slice(1).forEach(row => {
-    let index = 0;
-    const issue = {}
-    row.forEach((item)=>{
-      const key = rows[0][index].replaceAll(' ', '_').toLowerCase();
-        if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
-          issue[key] = item.toUpperCase() == 'TRUE';
-        } else if (isNaN(Number(item))) {
-          issue[key] = item.replaceAll('commaPlaceholder', ', ');
-        } else {
-          issue[key] = Number(item);
-        }
-        index += 1;
-    })
-    issueListFromCSV.push(issue);
-  });
-
-  issueListFromCSV.forEach((issue)=>{
-    let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
-    if (pathname == '') pathname = '/'
-    // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-    issueListObj[pathname] = [];
-    issueListObj[pathname].push([
-      issue['criterion_(30as_and_20aas)'],
-      issue['failure_technique'],
-      issue['details_of_the_issue']
-    ])
-    console.log(issueListObj)
-  })
 }
