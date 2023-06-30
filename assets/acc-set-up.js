@@ -365,5 +365,6 @@ const accSetUp = () => {
     })
   });
 
-  issueListFromCSV
+  console.log(rows)
+  console.log(issueListFromCSV)
 }
