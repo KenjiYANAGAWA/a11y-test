@@ -343,6 +343,6 @@ const accSetUp = () => {
   csvIssues //raw issue data as string
   issueListFromCSV //obj to add issues
 
-  const rows = csvIssues.split('\n');
+  const rows = csvIssues.split(^(ID|\d+,)/);
   console.log(rows);
 }
