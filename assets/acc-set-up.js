@@ -321,8 +321,8 @@ const accSetUp = () => {
 
     document.addEventListener('keyup', (e) => {
       const quantityInputs = rowsInfo.map((row)=>row.quantity);
-      console.log(quantityInputs)
       const currentFocusEl = document.activeElement;
+      console.log(quantityInputs, currentFocusEl)
       if (quantityInputs.includes(currentFocusEl)) {
         console.log(currentFocusEl)
       }
