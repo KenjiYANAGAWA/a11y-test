@@ -25,7 +25,7 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-      let key = rows[0][index].replaceAll(' ', '_').replaceAll('"').toLowerCase();
+      let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
       if (/\d/.test(key)) {
         key = key.split('_')[0];
       }
