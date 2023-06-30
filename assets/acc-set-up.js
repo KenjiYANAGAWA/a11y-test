@@ -319,13 +319,9 @@ const accSetUp = () => {
     //   return {'quantity': quantityInput, 'total': itemTotal};
     // })
 
-    rows.forEach((row) => {
-      const quantityInput = row.querySelector('.quantity-input');
-      quantityInput.onkeyup = (e) => {
-        console.log(e.key);
-        console.log('changed')
-      }
-    });
+    document.addEventListener('keyup', (e) => {
+      console.log(e.key);
+    })
 
   }
 
