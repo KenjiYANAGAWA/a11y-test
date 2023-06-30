@@ -373,7 +373,6 @@ const accSetUp = () => {
     })
     issueListFromCSV.push(issue);
   });
-  console.log(issueListFromCSV)
 
   issueListFromCSV.forEach((issue)=>{
     let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
