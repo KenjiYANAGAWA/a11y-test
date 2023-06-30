@@ -52,7 +52,7 @@ const accSetUp = () => {
       issue['failure_technique'],
       issue['details_of_the_issue']
     ])
-    console.log(issueListObj)
+    console.log(issue)
   })
 
   // adding issues to popup
