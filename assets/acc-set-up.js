@@ -309,6 +309,19 @@ const accSetUp = () => {
         }
       })
     })
+  } else if (location.pathname == '/cart') {
+    const table = document.querySelector('.order-summary');
+    const rows = table.querySelectorAll('tr');
+
+    rows.forEach((row)=>{
+      const quantityInput = row.querySelector('.quantity-input');
+      const itemTotal = row.querySelectorAll('td')[2];
+
+      quantityInput.addEventListener('change', ()=>{
+        console.log('changed value')
+      })
+    })
+
   }
 
   //setting alerts to be announced
