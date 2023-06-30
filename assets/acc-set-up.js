@@ -313,23 +313,18 @@ const accSetUp = () => {
     const table = document.querySelector('.order-summary');
     const rows = table.querySelectorAll('tr:has(td)');
 
-    const rowsInfo = Array.from(rows).map((row)=>{
-      const quantityInput = row.querySelector('.quantity-input');
-      const itemTotal = row.querySelectorAll('td')[2];
-      return {'quantity': quantityInput, 'total': itemTotal};
-    })
+    // const rowsInfo = Array.from(rows).map((row)=>{
+    //   const quantityInput = row.querySelector('.quantity-input');
+    //   const itemTotal = row.querySelectorAll('td')[2];
+    //   return {'quantity': quantityInput, 'total': itemTotal};
+    // })
 
-    rowsInfo.forEach((row) => {
-      const quantityInput = row.quantity
-      console.log(quantityInput);
+    rows.forEach((row) => {
+      const quantityInput = row.querySelector('.quantity-input');
       quantityInput.addEventListener('keyup', (e) => {
         console.log('changed')
       })
     });
-
-    document.addEventListener('keyup', (e) => {
-      console.log('a');
-    })
 
   }
 
