@@ -30,6 +30,8 @@ const accSetUp = () => {
         issue[key] = item.toUpperCase() == 'TRUE';
       } else if (isNaN(Number(item))) {
         issue[key] = item.replaceAll('commaPlaceholder', ', ').replaceAll('"','');
+      } else if (item == '') {
+        issue[key] = item;
       } else {
         issue[key] = Number(item);
       }
