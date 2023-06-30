@@ -364,10 +364,10 @@ const accSetUp = () => {
       const key = rows[0][index].replaceAll(' ', '_').toLowerCase();
         if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
           issue[key] = item.toUpperCase() == 'TRUE';
-        } else if (typeof Number(item) == 'number') {
-          issue[key] = Number(item);
-        } else {
+        } else if (isNaN(Number(item))) {
           issue[key] = item.replaceAll('commaPlaceholder', ', ');
+        } else {
+          issue[key] = Number(item);
         }
         index += 1;
     })
