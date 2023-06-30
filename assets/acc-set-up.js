@@ -322,6 +322,7 @@ const accSetUp = () => {
     rows.forEach((row) => {
       const quantityInput = row.querySelector('.quantity-input');
       quantityInput.addEventListener('keyup', (e) => {
+        console.log(e.key);
         console.log('changed')
       })
     });
