@@ -322,7 +322,7 @@ const accSetUp = () => {
     rowsInfo.forEach((row) => {
       const quantityInput = row.quantity
       console.log(quantityInput);
-      quantityInput.addEventListener('keyup', (e) => {
+      quantityInput.addEventListener('keydown', (e) => {
         console.log('changed')
       })
     });
