@@ -321,14 +321,12 @@ const accSetUp = () => {
 
     document.addEventListener('keyup', (e) => {
       const quantityInputs = rowsInfo.map((row)=>row.quantity);
+      console.log(quantityInputs)
       const currentFocusEl = document.activeElement;
       if (quantityInputs.includes(currentFocusEl)) {
         console.log(currentFocusEl)
       }
     })
-
-    console.log(rowsInfo);
-
   }
 
   //setting alerts to be announced
