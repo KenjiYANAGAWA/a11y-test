@@ -319,14 +319,14 @@ const accSetUp = () => {
       return {'quantity': quantityInput, 'total': itemTotal};
     })
 
-    document.addEventListener('keyup', (e) => {
-      const quantityInputs = rowsInfo.map((row)=>row.quantity);
-      const currentFocusEl = document.activeElement;
-      console.log(quantityInputs, currentFocusEl)
-      if (quantityInputs.includes(currentFocusEl)) {
-        console.log(currentFocusEl)
-      }
-    })
+    rowsInfo.forEach((row) => {
+      const quantityInput = row.quantity
+      console.log(quantityInput);
+      quantityInput.addEventListener('keyup', (e) => {
+        console.log('changed')
+      })
+    });
+
   }
 
   //setting alerts to be announced
