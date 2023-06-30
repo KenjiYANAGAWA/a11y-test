@@ -343,7 +343,8 @@ const accSetUp = () => {
   csvIssues //raw issue data as string
   issueListFromCSV //obj to add issues
 
-  const rows = [];
+  // getting rows
+  let rows = [];
 
   csvIssues.split('\n').forEach((string)=>{
     if (/^(\d{1,3}|ID),/.test(string)) {
@@ -352,5 +353,16 @@ const accSetUp = () => {
       rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
     }
   })
-  console.log(rows[0]);
+
+  rows = rows.map((row)=>row.split(/\b,\b/));
+
+  // adding to issue list object
+  rows.slice(1).forEach(row => {
+    row.forEach((item)=>{
+      let index = 0;
+      issueListFromCSV[rows[0][index]] = item;
+      index += 1;
+    })
+  });
+  console.log(issueListFromCSV);
 }
