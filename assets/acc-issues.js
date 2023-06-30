@@ -535,6 +535,9 @@ window.onload = () => {
       emailInput.removeAttribute('type');
     }
 
+    const firstNameInput = document.querySelector('#first-name');
+    firstNameInput.setAttribute('aria-label', 'Your name here')
+
   } else if (location.pathname == '/pages/shipping') {
     const section = document.querySelector('section[aria-label="Shipping method"]');
     const fieldset = document.querySelector('section[aria-label="Shipping method"] fieldset');
