@@ -73,7 +73,7 @@
             "stretch_image": true,
             "link_text": "Headphones",
             "link_url": "https:\/\/a11y-test.com\/collections\/headphones",
-            "background": "",
+            "background": "#fff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -86,7 +86,7 @@
             "stretch_image": true,
             "link_text": "Earphones",
             "link_url": "https:\/\/a11y-test.com\/collections\/earphones",
-            "background": "",
+            "background": "#fff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -99,7 +99,7 @@
             "stretch_image": true,
             "link_text": "Speakers",
             "link_url": "https:\/\/a11y-test.com\/collections\/speakers",
-            "background": "",
+            "background": "#fff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
