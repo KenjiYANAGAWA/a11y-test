@@ -359,10 +359,12 @@ const accSetUp = () => {
   // adding to issue list object
   rows.slice(1).forEach(row => {
     let index = 0;
+    const issue = {}
     row.forEach((item)=>{
-        issueListFromCSV[rows[0][index]] = item.replaceAll('commaPlaceholder', ', ');
+        issueList[rows[0][index]] = item.replaceAll('commaPlaceholder', ', ');
         index += 1;
     })
+    issueListFromCSV.push(issue);
   });
 
   console.log(rows)

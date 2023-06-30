@@ -208,7 +208,7 @@ When the page visually updates the price, the focus is set back to the close but
 172,FALSE,Done: Verified by PM,https://a11y-test.com/account/addresses,,,,"4.1.2 Name, Role, Value","Control does not provide role, state, and value information.",**Add address** button does not have a role ,,ARIA4: Using a WAI-ARIA role to expose the role of a user interface component,,,,,,,,,
 173,FALSE,,,,,,,,,,,,,,,,,,,`
 
-const issueListFromCSV = {};
+const issueListFromCSV = [];
 
 // List issue
 const issueListObj = {
