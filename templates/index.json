@@ -108,11 +108,11 @@
         "1664424046b00c932c-3": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/MC100_G1_hero_800x800_629d612d-38d6-471b-b1db-eede9eaedff7.png",
+            "image": "shopify:\/\/shop_images\/MC100_G1_hero_800x800_1623b1c9-1e87-47b5-9bdb-a6c4a5820c37.png",
             "stretch_image": true,
             "link_text": "Accessories",
             "link_url": "https:\/\/a11y-test.com\/collections\/accessories",
-            "background": "",
+            "background": "#fff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
