@@ -41,20 +41,21 @@ const accSetUp = () => {
   });
 
   issueListFromCSV.forEach((issue)=>{
-    let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
-    if (pathname == '') pathname = '/'
-    // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-    if (issueListObj[pathname]) {
-      issueListObj[pathname] = [...issueListObj[pathname]];
-    } else {
-      issueListObj[pathname] = []
+    if (issue['status_100_done_0_deved_8_not_implemented_yet'] == 'Done: Verified by PM') {
+      let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
+      if (pathname == '') pathname = '/'
+      // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+      if (issueListObj[pathname]) {
+        issueListObj[pathname] = [...issueListObj[pathname]];
+      } else {
+        issueListObj[pathname] = []
+      }
+      issueListObj[pathname].push([
+        issue['criterion_(30as_and_20aas)'],
+        issue['failure_technique'],
+        issue['details_of_the_issue']
+      ])
     }
-    issueListObj[pathname].push([
-      issue['criterion_(30as_and_20aas)'],
-      issue['failure_technique'],
-      issue['details_of_the_issue']
-    ])
-    console.log(issue)
   })
 
   // adding issues to popup
