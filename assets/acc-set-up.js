@@ -358,9 +358,9 @@ const accSetUp = () => {
 
   // adding to issue list object
   rows.slice(1).forEach(row => {
+    let index = 0;
     row.forEach((item)=>{
-        let index = 0;
-        issueListFromCSV[rows[0][index]] = item;
+        issueListFromCSV[rows[0][index]] = item.replaceAll('commaPlaceholder', ', ');
         index += 1;
     })
   });
