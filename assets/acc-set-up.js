@@ -356,6 +356,9 @@ const accSetUp = () => {
 
   rows = rows.map((row)=>row.replaceAll(',,', ',empty,').split(/(\b,\b|\b,")/));
 
+  const cleanRows = rows.filter((el)=>{!(el.length == 1 && el == ',' || el == ',"')})
+  console.log(cleanRows);
+
   // adding to issue list object
   rows.slice(1).forEach(row => {
     row.forEach((item)=>{
@@ -366,5 +369,4 @@ const accSetUp = () => {
       }
     })
   });
-  console.log(issueListFromCSV);
 }
