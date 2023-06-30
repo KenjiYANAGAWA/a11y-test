@@ -313,14 +313,13 @@ const accSetUp = () => {
     const table = document.querySelector('.order-summary');
     const rows = table.querySelectorAll('tr:has(td)');
 
-    rows.forEach((row)=>{
+    const rowsInfo = Array.from(rows).map((row)=>{
       const quantityInput = row.querySelector('.quantity-input');
       const itemTotal = row.querySelectorAll('td')[2];
-
-      quantityInput.addEventListener('change', ()=>{
-        console.log('changed value')
-      })
+      return [quantityInput, itemTotal];
     })
+
+    console.log(rowsInfo);
 
   }
 
