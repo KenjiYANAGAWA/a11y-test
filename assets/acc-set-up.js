@@ -25,7 +25,10 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-      const key = rows[0][index].replaceAll(' ', '_').replaceAll('(','').replaceAll(')','').toLowerCase();
+      let key = rows[0][index].replaceAll(' ', '_').toLowerCase();
+      if (/\d/.test(key)) {
+        key = key.split('_')[0];
+      }
       if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
         issue[key] = item.toUpperCase() == 'TRUE';
       } else if (isNaN(Number(item))) {
@@ -48,7 +51,7 @@ const accSetUp = () => {
       issueListObj[pathname] = []
     }
     issueListObj[pathname].push([
-      issue['criterion_30as_and_20aas'],
+      issue['criterion'],
       issue['failure_technique'],
       issue['details_of_the_issue']
     ])
