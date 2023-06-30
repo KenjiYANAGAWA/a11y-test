@@ -200,6 +200,25 @@ const announceOnClick = (el) => {
 
 const announceUpdate = (el) => {
   const alert = document.querySelector('.alert-msg');
-  const newItemTotal = Number(el.getAttribute('data-item-value'));
-  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: ${newItemTotal * el.value}`;
+  const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
+  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: ${newItemTotal}`;
+
+
+  if (location.pathname == '/cart') {
+    // updating item total
+    el.parentElement.parentElement.nextElementSibling.innerHTML = newItemTotal;
+
+    // calculating new order total
+    let newOrderTotal = 0;
+    const table = document.querySelector('.order-summary');
+    const itensRow = table.querySelectorAll('tr:has(td)');
+    itensRow.forEach((row)=>{
+      newOrderTotal += Number(row.children[2].innerHTML.match(/\$(\d*\.\d*)/)[1]);
+    })
+
+    const orderTotalContainer = document.querySelectorAll('cart-form__totals div');
+    orderTotalContainer.forEach((total)=>{
+      total.children[1].innerHTML = `$${newOrderTotal} USD`
+    })
+  }
 }
