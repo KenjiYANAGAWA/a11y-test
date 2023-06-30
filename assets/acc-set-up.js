@@ -354,19 +354,16 @@ const accSetUp = () => {
     }
   })
 
-  rows = rows.map((row)=>row.replaceAll(',,', ',empty,').split(/(\b,\b|\b,")/));
-
-  const cleanRows = rows.map((row)=>{row.filter((el) => (el !== ',' && el !== ',"'))})
-  console.log(cleanRows);
+  rows = rows.map((row)=>row.replaceAll(',,', ',empty,').replaceAll(', ', 'commaPlaceholder').split(','));
 
   // adding to issue list object
   rows.slice(1).forEach(row => {
     row.forEach((item)=>{
-      if (!(item.length == 1 && item == ',' || item == ',"')) {
         let index = 0;
         issueListFromCSV[rows[0][index]] = item;
         index += 1;
-      }
     })
   });
+
+  issueListFromCSV
 }
