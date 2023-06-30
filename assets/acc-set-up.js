@@ -315,7 +315,7 @@ const accSetUp = () => {
 
     quantityInputs.forEach(quantityInput => {
         quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling.innerHTML.match(.match(/\$(\d*\.\d*)/)[1])
+        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling.innerHTML.match(/\$(\d*\.\d*)/)[1]
         if (itemCurrentTotal) {
           const itemValue = itemCurrentTotal / Number(quantityInput.value);
           quantityInput.setAttribute('data-item-value', itemValue);
