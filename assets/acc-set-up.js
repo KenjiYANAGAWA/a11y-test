@@ -48,7 +48,7 @@ const accSetUp = () => {
       issueListObj[pathname] = []
     }
     issueListObj[pathname].push([
-      issue['criterion_(30as_and_20aas)'],
+      issue['criterion_30as_and_20aas'],
       issue['failure_technique'],
       issue['details_of_the_issue']
     ])
