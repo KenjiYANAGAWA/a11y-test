@@ -198,7 +198,7 @@ const announceOnClick = (el) => {
   alert.innerHTML = `Quantity updated: ${input.value}.`
 }
 
-const announceChange = (el) => {
+const announceUpdate = (el) => {
   const table = document.querySelector('.order-summary');
   const alert = document.querySelector('.alert-msg');
   alert.innerHTML = `Quantity updated: ${el.value}.`;
