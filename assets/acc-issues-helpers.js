@@ -214,7 +214,7 @@ const announceUpdate = (el) => {
       newOrderTotal += Number(row.children[2].innerText.match(/\$(\d*\.\d*)/)[1]);
     })
 
-    const orderTotalContainer = document.querySelectorAll('cart-form__totals div');
+    const orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
     console.log(orderTotalContainer)
     orderTotalContainer.forEach((total)=>{
       console.log(total)
