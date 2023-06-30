@@ -224,12 +224,3 @@ const announceUpdate = (el) => {
   }
 
 }
-
-
-const formatKey = (string) => {
-  const splittedString = string.toLowerCase().split(' ');
-  const firstWord = splittedString[0].toLowerCase();
-  const splittedrest = splittedString.slice(1).map((word)=> word[0].toUpperCase() + word.slice(1))
-  const rest = splittedrest.join('');
-  return firstWord + rest
-}

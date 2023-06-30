@@ -361,7 +361,7 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-        issue[formatKey(rows[0][index])] = item.replaceAll('commaPlaceholder', ', ');
+        issue[rows[0][index].replaceAll(' ', '_').toLowerCase()] = item.replaceAll('commaPlaceholder', ', ');
         index += 1;
     })
     issueListFromCSV.push(issue);
@@ -371,8 +371,12 @@ const accSetUp = () => {
   console.log(issueListFromCSV)
 
   // issueListFromCSV.forEach((issue)=>{
-  //   const pathname = issue.link
+  //   const pathname = issue.link_to_issue.replace('https://a11y-test.com', '');
+  //   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+  //   issueListObj[pathname] = [];
+  //   issueListObj[pathname].push([
 
-  //   issueListObj[]
+  //   ])
+
   // })
 }
