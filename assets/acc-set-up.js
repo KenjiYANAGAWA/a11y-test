@@ -310,18 +310,16 @@ const accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    setInterval(() => {
-      const table = document.querySelector('.order-summary');
-      const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    const table = document.querySelector('.order-summary');
+    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
-      quantityInputs.forEach(quantityInput => {
-          quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-          const itemCurrentTotal = Number(quantityInput.parentElement.parentElement.nextElementSibling)
-          console.log(itemCurrentTotal)
-          // const itemValue = itemCurrentTotal / Number(quantityInput.target);
-          // quantityInput.setAttribute('data-item-value', itemValue);
-      });
-    }, 500);
+    quantityInputs.forEach(quantityInput => {
+        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+        console.log(itemCurrentTotal)
+        // const itemValue = itemCurrentTotal / Number(quantityInput.target);
+        // quantityInput.setAttribute('data-item-value', itemValue);
+    });
 
   }
 
