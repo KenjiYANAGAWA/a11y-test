@@ -361,7 +361,7 @@ const accSetUp = () => {
     let index = 0;
     const issue = {}
     row.forEach((item)=>{
-        issue[rows[0][index]] = item.replaceAll('commaPlaceholder', ', ');
+        issue[rows[0][index].replaceAll(' ', '_').toLowerCase()] = item.replaceAll('commaPlaceholder', ', ');
         index += 1;
     })
     issueListFromCSV.push(issue);
