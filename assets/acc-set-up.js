@@ -327,6 +327,8 @@ const accSetUp = () => {
       })
     });
 
+    window.addEventListener('keyup', (e)=>{ console.log(e.key); })
+
   }
 
   //setting alerts to be announced
