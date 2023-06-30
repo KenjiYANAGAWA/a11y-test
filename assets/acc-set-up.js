@@ -310,14 +310,16 @@ const accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    const table = document.querySelector('.order-summary');
-    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    setInterval(() => {
+      const table = document.querySelector('.order-summary');
+      const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
-    quantityInputs.forEach(quantityInput => {
-        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-        const itemValue = Number(quantityInput.parentElement.parentElement.nextElementSibling.innerText.match(/\$(\d*\.\d*) \w*/)[1]) / Number(quantityInput.target);
-        quantityInput.setAttribute('data-item-value', itemValue);
-    });
+      quantityInputs.forEach(quantityInput => {
+          quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+          const itemValue = Number(quantityInput.parentElement.parentElement.nextElementSibling.innerText.match(/\$(\d*\.\d*) \w*/)[1]) / Number(quantityInput.target);
+          quantityInput.setAttribute('data-item-value', itemValue);
+      });
+    }, 500);
 
   }
 
