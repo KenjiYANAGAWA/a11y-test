@@ -201,8 +201,6 @@ const announceOnClick = (el) => {
 const announceUpdate = (el) => {
   const alert = document.querySelector('.alert-msg');
   const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
-  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: $${newItemTotal.toFixed(2)}`;
-
 
   if (location.pathname == '/cart') {
     // updating item total
@@ -220,7 +218,10 @@ const announceUpdate = (el) => {
 
     const orderTotalContainer = document.querySelectorAll('cart-form__totals div');
     orderTotalContainer.forEach((total)=>{
+      console.log(total)
       total.children[1].innerHTML = `$${newOrderTotal.toFixed(2)} USD`
     })
   }
+
+  alert.innerHTML = `Quantity updated: ${el.value}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
 }
