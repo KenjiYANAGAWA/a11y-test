@@ -214,13 +214,12 @@ const announceUpdate = (el) => {
       newOrderTotal += Number(row.children[2].innerText.match(/\$(\d*\.\d*)/)[1]);
     })
 
+    // updating order total
     const orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
-    console.log(orderTotalContainer)
     orderTotalContainer.forEach((total)=>{
-      console.log(total)
       total.children[1].innerHTML = `$${newOrderTotal.toFixed(2)} USD`
     })
-
+    // change announcement
     alert.innerHTML = `Quantity updated: ${el.value} unit${el.value == 1 ? '' : 's'}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
   }
 
