@@ -376,8 +376,7 @@ const accSetUp = () => {
   console.log(issueListFromCSV)
 
   issueListFromCSV.forEach((issue)=>{
-    let pathname = issue['link_to_issue'];
-    console.log(pathname)
+    let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
     if (pathname == '') pathname = '/'
     // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
     issueListObj[pathname] = [];
