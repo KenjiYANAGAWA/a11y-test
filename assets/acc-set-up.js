@@ -352,5 +352,5 @@ const accSetUp = () => {
       rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
     }
   })
-  console.log(rows);
+  console.log(rows[0]);
 }
