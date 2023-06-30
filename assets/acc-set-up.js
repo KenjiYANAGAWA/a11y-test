@@ -343,6 +343,6 @@ const accSetUp = () => {
   csvIssues //raw issue data as string
   issueListFromCSV //obj to add issues
 
-  const data = $.csv.toObjects(csvIssues);
-  console.log(data)
+  const rows = csvIssues.split('\n');
+  console.log(rows);
 }
