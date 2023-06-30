@@ -310,14 +310,12 @@ const accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    setInterval(() => {
-      const table = document.querySelector('.order-summary');
-      const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    const table = document.querySelector('.order-summary');
+    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
-      quantityInputs.forEach(quantityInput => {
-          quantityInput.setAttribute('onchange', 'announceUpdate(this)')
-      });
-    }, 300);
+    quantityInputs.forEach(quantityInput => {
+        quantityInput.setAttribute('onchange', 'announceUpdate(this)')
+    });
 
   }
 
