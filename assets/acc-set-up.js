@@ -42,7 +42,11 @@ const accSetUp = () => {
     let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
     if (pathname == '') pathname = '/'
     // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-    issueListObj[pathname] = [...issueListObj[pathname]];
+    if (issueListObj[pathname]) {
+      issueListObj[pathname] = [...issueListObj[pathname]];
+    } else {
+      issueListObj[pathname] = []
+    }
     issueListObj[pathname].push([
       issue['criterion_(30as_and_20aas)'],
       issue['failure_technique'],
