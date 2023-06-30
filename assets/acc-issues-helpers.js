@@ -228,5 +228,5 @@ const announceUpdate = (el) => {
 
 const formatKey = (string) => {
   const splittedString = string.toLowerCase().split(' ');
-  return `${splittedString[0].toLowerCase}${splittedString.slice(1).map((word)=> word[0].toUpperCase + word.slice(1)).join('')}`
+  return `${splittedString[0].toLowerCase()}${splittedString.slice(1).map((word)=> word[0].toUpperCase() + word.slice(1)).join('')}`
 }
