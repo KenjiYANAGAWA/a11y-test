@@ -26,9 +26,6 @@ const accSetUp = () => {
     const issue = {}
     row.forEach((item)=>{
       let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
-      if (/\d/.test(key)) {
-        key = key.split('_')[0];
-      }
       if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
         issue[key] = item.toUpperCase() == 'TRUE';
       } else if (isNaN(Number(item))) {
