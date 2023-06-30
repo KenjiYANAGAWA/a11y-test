@@ -369,4 +369,10 @@ const accSetUp = () => {
 
   console.log(rows)
   console.log(issueListFromCSV)
+
+  // issueListFromCSV.forEach((issue)=>{
+  //   const pathname = issue
+
+  //   issueListObj[]
+  // })
 }
