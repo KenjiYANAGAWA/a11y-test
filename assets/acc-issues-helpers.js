@@ -213,7 +213,7 @@ const announceUpdate = (el) => {
     const table = document.querySelector('.order-summary');
     const itensRow = table.querySelectorAll('tr:has(td)');
     itensRow.forEach((row)=>{
-      newOrderTotal += Number(row.children[2].innerHTML.match(/\$(\d*\.\d*)/)[1]);
+      newOrderTotal += Number(row.children[2].innerText.match(/\$(\d*\.\d*)/)[1]);
     })
 
     const orderTotalContainer = document.querySelectorAll('cart-form__totals div');
