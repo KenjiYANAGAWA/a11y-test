@@ -339,9 +339,9 @@ const accSetUp = () => {
     minusBtn.setAttribute('onclick', 'announceOnClick(this)');
   }
 
-  if (location.pathname == '/cart') {
-    const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
-    // update entries
-    announceTotal();
-  }
+  // if (location.pathname == '/cart') {
+  //   const quantityInputs = document.querySelectorAll('input[is="quantity-input"]');
+  //   // update entries
+  //   announceTotal();
+  // }
 }
