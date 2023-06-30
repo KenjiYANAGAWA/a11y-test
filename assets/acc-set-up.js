@@ -52,7 +52,7 @@ const accSetUp = () => {
       issue['failure_technique'],
       issue['details_of_the_issue']
     ])
-    console.log(issue)
+    console.log(issue['criterion_30as_and_20aas'])
   })
 
   // adding issues to popup
