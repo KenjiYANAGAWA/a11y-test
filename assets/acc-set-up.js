@@ -344,4 +344,14 @@ const accSetUp = () => {
   //   // update entries
   //   announceTotal();
   // }
+
+  // loading issue list
+
+  fetch("issue-list.csv")
+  .then((res) => res.text())
+  .then((text) => {
+    // do something with "text"
+    console.log(text)
+   })
+  .catch((e) => console.error(e));
 }
