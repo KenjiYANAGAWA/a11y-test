@@ -1,3 +1,10 @@
+const issueListFromCSV = [];
+
+// List issue
+const issueListObj = {
+  // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+}
+
 const accSetUp = () => {
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');

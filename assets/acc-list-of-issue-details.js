@@ -207,10 +207,3 @@ When the page visually updates the price, the focus is set back to the close but
 171,FALSE,Done: Verified by PM,https://a11y-test.com/account/register,,,,2.1.1 Keyboard,Control does not receive keyboard focus.,**Create account** is not focusable,,"F55: Failure of Success Criteria 2.1.1, 2.4.7, and 3.2.1 due to using script to remove focus when focus is received",63.53%,3.37%,,,,,,,
 172,FALSE,Done: Verified by PM,https://a11y-test.com/account/addresses,,,,"4.1.2 Name, Role, Value","Control does not provide role, state, and value information.",**Add address** button does not have a role ,,ARIA4: Using a WAI-ARIA role to expose the role of a user interface component,62.35%,3.27%,,,,,,,
 173,FALSE,,,,,,,,,,,,,,,,,,,`
-
-const issueListFromCSV = [];
-
-// List issue
-const issueListObj = {
-  // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-}
