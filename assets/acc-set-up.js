@@ -356,7 +356,7 @@ const accSetUp = () => {
 
   rows = rows.map((row)=>row.replaceAll(',,', ',empty,').split(/(\b,\b|\b,")/));
 
-  const cleanRows = rows.filter((el)=>{!(el.length == 1 && el == ',' || el == ',"')})
+  const cleanRows = rows.filter((el)=>{ el !== ',' || el !== ',"'})
   console.log(cleanRows);
 
   // adding to issue list object
