@@ -7,11 +7,13 @@ const issueListObj = {
 
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
-  const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  let plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
   plusAndMinusBtns.forEach((btn)=>{
     const newBtn = btn.cloneNode(true);
     btn.parentElement.replaceChild(newBtn, btn);
   })
+
+  plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.onclick = (e) => {
     const quantityInput = document.querySelector('.quantity-selector__input');
