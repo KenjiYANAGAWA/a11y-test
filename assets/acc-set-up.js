@@ -15,10 +15,13 @@ const accSetUp = () => {
 
   plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
-  plusAndMinusBtns.onclick = (e) => {
-    const quantityInput = document.querySelector('.quantity-selector__input');
-    console.log(e.target);
-  }
+  plusAndMinusBtns.forEach((btn)=> {
+    btn.onclick = (e) => {
+      const quantityInput = document.querySelector('.quantity-selector__input');
+      console.log(e.target);
+    }
+  })
+
 
 
 
