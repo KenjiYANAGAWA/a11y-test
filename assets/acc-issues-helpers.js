@@ -237,7 +237,7 @@ const quantityHanlder = (el) => {
 
 const originalQ = document.querySelector('.quantity-selector__input').value;
 
-const quantityKeydownHanlder = (el) => {
+const quantityKeydownHandler = (el) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
   if (el.getAttribute('aria-label') == 'Increase quantity' || el.getAttribute('aria-label') == 'Decrease quantity') {
     quantityInput.value = originalQ
