@@ -243,3 +243,8 @@ const quantityKeydownHandler = (el) => {
     quantityInput.value = originalQ
   }
 }
+
+const quantityKeyupHanlder = (el) => {
+  el.click();
+  originalQ = el.value
+}

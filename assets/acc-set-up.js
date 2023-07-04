@@ -21,7 +21,7 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn)=> {
     btn.setAttribute('onclick', 'quantityHanlder(this)');
     btn.setAttribute('onkeydown', 'quantityKeydownHandler(this)');
-    btn.setAttribute('onkeyup', 'this.click()');
+    btn.setAttribute('onkeyup', 'quantityKeyupHanlder(this)');
   })
 
 
