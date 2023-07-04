@@ -15,6 +15,8 @@ const accSetUp = () => {
 
   plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
+  // const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
+  // const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
   plusAndMinusBtns.forEach((btn)=> {
     btn.setAttribute('onclick', 'quantityHanlder(this)');
   })
@@ -412,13 +414,10 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
-  const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
-
-  if (plusBtn && minusBtn) {
-    plusBtn.setAttribute('onclick', 'announceOnClick(this)');
-    minusBtn.setAttribute('onclick', 'announceOnClick(this)');
-  }
+  // if (plusBtn && minusBtn) {
+  //   plusBtn.setAttribute('onclick', 'announceOnClick(this)');
+  //   minusBtn.setAttribute('onclick', 'announceOnClick(this)');
+  // }
 
 
 }
