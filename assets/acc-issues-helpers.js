@@ -229,7 +229,7 @@ const quantityHanlder = (el) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
   if (el.getAttribute('aria-label') == 'Increase quantity') {
     quantityInput.value = Number(quantityInput.value) + 1
-  } else {
+  } else if (Number(quantityInput.value) > 0) {
     quantityInput.value = Number(quantityInput.value) - 1
   }
 }
