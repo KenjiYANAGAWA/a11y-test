@@ -225,7 +225,7 @@ const announceUpdate = (el) => {
 
 }
 
-const quantityHanlder = (el) => {
+const quantityHandler = (el) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
   if (el.getAttribute('aria-label') == 'Increase quantity') {
     quantityInput.value = Number(quantityInput.value) + 1
