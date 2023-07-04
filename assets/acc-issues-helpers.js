@@ -235,7 +235,7 @@ const quantityHanlder = (el) => {
 }
 
 
-const originalQ = document.querySelector('.quantity-selector__input').value;
+let originalQ
 
 const quantityKeydownHandler = (el) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
