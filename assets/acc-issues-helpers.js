@@ -237,14 +237,16 @@ const quantityHanlder = (el) => {
 
 let originalQ
 
-const quantityKeydownHandler = (el) => {
+const quantityKeydownHandler = (e) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
-  if (el.getAttribute('aria-label') == 'Increase quantity' || el.getAttribute('aria-label') == 'Decrease quantity') {
+  if (document.activeElement.classList.contains('quantity-selector__button') && e.key == 'Enter') {
     quantityInput.value = originalQ
   }
 }
 
-const quantityKeyupHanlder = (el) => {
-  el.click();
-  originalQ = el.value
+const quantityKeyupHanlder = (e) => {
+  if (document.activeElement.classList.contains('quantity-selector__button') && e.key == 'Enter') {
+    e.target.click();
+    originalQ = e.target.value;
+  }
 }
