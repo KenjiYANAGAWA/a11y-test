@@ -239,7 +239,7 @@ let originalQ
 
 const quantityKeydownHandler = (e) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
-  if (document.activeElement.classList.contains('quantity-selector__button') && e.key == 'Enter') {
+  if (document.activeElement.classList.contains('quantity-selector__button') && e.key !== 'Enter') {
     quantityInput.value = originalQ
   }
 }
