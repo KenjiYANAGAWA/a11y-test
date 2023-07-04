@@ -238,13 +238,15 @@ const quantityHandler = (el) => {
 let originalQ
 
 const quantityKeydownHandler = (e) => {
+  console.log(e)
   const quantityInput = document.querySelector('.quantity-selector__input');
-  if (document.activeElement.classList.contains('quantity-selector__button') && e.key !== 'Enter') {
+  if (document.activeElement.classList.contains('quantity-selector__button') && e.key == 'Enter') {
     quantityInput.value = originalQ
   }
 }
 
 const quantityKeyupHanlder = (e) => {
+  console.log(e)
   if (document.activeElement.classList.contains('quantity-selector__button') && e.key == 'Enter') {
     e.target.click();
     originalQ = e.target.value;
