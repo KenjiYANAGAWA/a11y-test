@@ -16,13 +16,13 @@ const accSetUp = () => {
   plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn)=> {
-    btn.onclick = (e) => {
-      const quantityInput = document.querySelector('.quantity-selector__input');
-      console.log(e.target);
-    }
+    btn.setAttribute('onclick', 'quantityHanlder(this)');
   })
 
-
+  const quantityHanlder = (el) => {
+    const quantityInput = document.querySelector('.quantity-selector__input');
+    console.log(el);
+  }
 
 
   // fixing navbar focus order
