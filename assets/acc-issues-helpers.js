@@ -224,3 +224,8 @@ const announceUpdate = (el) => {
   }
 
 }
+
+const quantityHanlder = (el) => {
+  const quantityInput = document.querySelector('.quantity-selector__input');
+  console.log(el);
+}

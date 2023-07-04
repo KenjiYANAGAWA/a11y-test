@@ -21,11 +21,6 @@ const accSetUp = () => {
     btn.setAttribute('onclick', 'quantityHanlder(this)');
   })
 
-  const quantityHanlder = (el) => {
-    const quantityInput = document.querySelector('.quantity-selector__input');
-    console.log(el);
-  }
-
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
