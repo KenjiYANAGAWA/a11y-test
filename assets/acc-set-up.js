@@ -29,7 +29,7 @@ const accSetUp = () => {
       if (e.key == 'Enter') {
         e.target.click();
       }
-      originalQ = e.target.value
+      // originalQ = e.target.value
     })
   })
 
