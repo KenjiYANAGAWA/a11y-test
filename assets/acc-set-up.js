@@ -17,6 +17,7 @@ const accSetUp = () => {
         btn.click();
       }
       isKeyDown = true
+      console.log(isKeyDown);
     });
 
     btn.addEventListener('keyup', (e)=>{
