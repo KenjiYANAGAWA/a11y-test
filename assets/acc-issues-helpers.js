@@ -192,12 +192,6 @@ const announceTotal = () => {
   alert.innerHTML = `Total updated: ${total}.`
 }
 
-const announceOnClick = () => {
-  const input = document.querySelector('.quantity-selector__input');
-  const alert = document.querySelector('.alert-msg')
-  alert.innerHTML = `Quantity updated: ${input.value}.`
-}
-
 const announceUpdate = (el) => {
   const alert = document.querySelector('.alert-msg');
   const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;

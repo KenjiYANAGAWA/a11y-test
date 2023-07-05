@@ -383,7 +383,7 @@ const accSetUp = () => {
     const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
-        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+        quantityInput.setAttribute('onchange', 'announceUpdate(this)')
         const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
         if (itemCurrentTotal) {
           const itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
@@ -408,5 +408,14 @@ const accSetUp = () => {
     minusBtn.setAttribute('onclick', 'announceOnClick()');
   }
 
+  const inputs = document.querySelectorAll('.quantity-selector__input');
+
+  inputs.forEach((input)=>{
+    input.addEventListener('change', (e)=>{
+      const quantity = e.target.value;
+      const alert = document.querySelector('.alert-msg')
+      alert.innerHTML = `Quantity updated: ${quantity}.`
+    })
+  })
 
 }
