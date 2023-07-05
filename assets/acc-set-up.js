@@ -25,12 +25,12 @@ const accSetUp = () => {
       }
     })
 
-    btn.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter') {
-        e.target.click();
-        originalQ = e.target.value
-      }
-    })
+    // btn.addEventListener('keyup', (e) => {
+    //   if (e.key == 'Enter') {
+    //     e.target.click();
+    //     originalQ = e.target.value
+    //   }
+    // })
   })
 
 
