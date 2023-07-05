@@ -178,7 +178,6 @@ window.onload = () => {
 
           cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
         }, 1500);
-
         btn.focus();
       })
     })

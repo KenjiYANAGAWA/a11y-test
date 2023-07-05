@@ -400,10 +400,13 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  // if (plusBtn && minusBtn) {
-  //   plusBtn.setAttribute('onclick', 'announceOnClick(this)');
-  //   minusBtn.setAttribute('onclick', 'announceOnClick(this)');
-  // }
+
+  const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
+  const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
+  if (plusBtn && minusBtn) {
+    plusBtn.setAttribute('onclick', 'announceOnClick()');
+    minusBtn.setAttribute('onclick', 'announceOnClick()');
+  }
 
 
 }
