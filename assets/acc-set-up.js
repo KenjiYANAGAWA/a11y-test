@@ -400,14 +400,14 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  const inputs = document.querySelectorAll('.quantity-selector__input');
+  // const inputs = document.querySelectorAll('.quantity-selector__input');
 
-  inputs.forEach((input)=>{
-    input.addEventListener('change', (e)=>{
-      const quantity = e.target.value;
-      const alert = document.querySelector('.alert-msg')
-      alert.innerHTML = `Quantity updated: ${quantity}.`
-    })
-  })
+  // inputs.forEach((input)=>{
+  //   input.addEventListener('change', (e)=>{
+  //     const quantity = e.target.value;
+  //     const alert = document.querySelector('.alert-msg')
+  //     alert.innerHTML = `Quantity updated: ${quantity}.`
+  //   })
+  // })
 
 }
