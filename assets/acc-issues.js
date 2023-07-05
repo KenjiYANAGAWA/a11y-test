@@ -28,6 +28,13 @@ window.onload = () => {
     averageRating.innerHTML = '';
     averageRating.innerHTML = convertNumberToStars(averageNumber);
 
+    // breaking quantity btns
+    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+    plusAndMinusBtns.forEach((btn)=>{
+      const newBtn = btn.cloneNode(true);
+      btn.parentElement.replaceChild(newBtn, btn)
+    })
+
     // removing aria-label from reviews stars
     setTimeout(() => {
       const reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
