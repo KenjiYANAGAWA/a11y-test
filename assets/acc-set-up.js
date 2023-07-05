@@ -400,14 +400,6 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-
-  const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
-  const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
-  if (plusBtn && minusBtn) {
-    plusBtn.setAttribute('onclick', 'announceOnClick()');
-    minusBtn.setAttribute('onclick', 'announceOnClick()');
-  }
-
   const inputs = document.querySelectorAll('.quantity-selector__input');
 
   inputs.forEach((input)=>{
