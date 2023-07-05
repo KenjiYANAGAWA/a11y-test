@@ -225,6 +225,8 @@ const announceUpdate = (el) => {
 
 }
 
+let originalQ
+
 const quantityHandler = (el) => {
   const quantityInput = document.querySelector('.quantity-selector__input');
   if (el.getAttribute('aria-label') == 'Increase quantity') {
@@ -232,7 +234,5 @@ const quantityHandler = (el) => {
   } else if (Number(quantityInput.value) > 1) {
     quantityInput.value = Number(quantityInput.value) - 1
   }
+  originalQ = quantityInput.value
 }
-
-
-let originalQ
