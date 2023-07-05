@@ -13,15 +13,11 @@ const accSetUp = () => {
   // const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
   // const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
   plusAndMinusBtns.forEach((btn)=> {
-    // btn.setAttribute('onclick', 'quantityHandler(this)');
-
     btn.addEventListener('keydown', (e)=>{
       const quantityInput = document.querySelector('.quantity-selector__input');
       console.log(e.key)
       if (!['Tab', 'Shift'].includes(e.key)) {
         e.preventDefault();
-      } else if (e.key == 'Enter') {
-        quantityInput.value = originalQ
       }
     })
 
