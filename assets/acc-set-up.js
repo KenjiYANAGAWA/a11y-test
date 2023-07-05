@@ -8,20 +8,14 @@ const issueListObj = {
 const accSetUp = () => {
   originalQ = document.querySelector('.quantity-selector__input').value;
   // fixing plus and minus buttons to work on key up
-  let plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-  plusAndMinusBtns.forEach((btn)=>{
-    const newBtn = btn.cloneNode(true);
-    btn.parentElement.replaceChild(newBtn, btn);
-  })
-
-  plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   // const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
   // const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
   plusAndMinusBtns.forEach((btn)=> {
     btn.setAttribute('onclick', 'quantityHandler(this)');
 
-    btn.addEventListener('keydwon', (e)=>{
+    btn.addEventListener('keydown', (e)=>{
       const quantityInput = document.querySelector('.quantity-selector__input');
       console.log(e)
       if (e.key == 'Enter') {
