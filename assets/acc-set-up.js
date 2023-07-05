@@ -27,8 +27,8 @@ const accSetUp = () => {
 
     btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
-        e.target.click();
-        originalQ = Number(e.target.value) - 1
+        // e.target.click();
+        originalQ = e.target.value
       }
     })
   })
