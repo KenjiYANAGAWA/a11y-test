@@ -78,7 +78,7 @@ window.onload = () => {
         order: 10;
       }
 
-      div:focus {
+      div[tabindex="0"]:focus {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
       }
     `)
