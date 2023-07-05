@@ -77,6 +77,10 @@ window.onload = () => {
       .new-review-form fieldset:has(input[type=submit]) {
         order: 10;
       }
+
+      div:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
+      }
     `)
 
   } else if (location.pathname == '/') {
