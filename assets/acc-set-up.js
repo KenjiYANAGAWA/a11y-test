@@ -17,8 +17,7 @@ const accSetUp = () => {
 
     btn.addEventListener('keydown', (e)=>{
       const quantityInput = document.querySelector('.quantity-selector__input');
-      console.log(e)
-      if (e.key == 'Enter') {
+      if (e.key == 'Enter' && btn == document.activeElement) {
         quantityInput.value = originalQ
       }
     })
