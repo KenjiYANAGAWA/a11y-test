@@ -233,5 +233,7 @@ const quantityHandler = (el) => {
     quantityInput.value = Number(quantityInput.value) + 1
   } else if (Number(quantityInput.value) > 1) {
     quantityInput.value = Number(quantityInput.value) - 1
+  } else {
+    quantityInput.value = originalQ
   }
 }
