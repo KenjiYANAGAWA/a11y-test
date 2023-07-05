@@ -8,7 +8,7 @@ window.onload = () => {
   // removing about us from footer
   if (location.pathname !== '/') removeFooterLink("/pages/about-us");
 
-  if (location.pathname !== '/products/mh40-wireless-silver-metal-navy-coated-canvas') document.querySelector("#shopify-product-reviews").remove();
+  if (location.pathname !== '/products/mh40-wireless-silver-metal-navy-coated-canvas' && location.pathname.includes('/products/')) document.querySelector("#shopify-product-reviews").remove();
 
   //removing header and footer from checkout pages
   if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
