@@ -16,8 +16,8 @@ const accSetUp = () => {
       if (e.key == 'Enter' && !isKeyDown) {
         btn.click();
         isKeyDown = true
+        console.log(isKeyDown);
       }
-      console.log(isKeyDown);
     });
 
     btn.addEventListener('keyup', (e)=>{
