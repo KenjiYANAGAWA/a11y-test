@@ -226,7 +226,3 @@ const announceUpdate = (el) => {
 }
 
 let originalQ
-
-const quantityHandler = (el) => {
-  const quantityInput = document.querySelector('.quantity-selector__input');
-}
