@@ -22,6 +22,7 @@ const accSetUp = () => {
     btn.setAttribute('onclick', 'quantityHandler(this)');
     btn.onkeydown  = (e) => {
       const quantityInput = document.querySelector('.quantity-selector__input');
+      console.log(e)
       if (e.key == 'Enter') {
         quantityInput.value = originalQ
       }
@@ -30,7 +31,7 @@ const accSetUp = () => {
       if (e.key == 'Enter') {
         e.target.click();
       }
-    }
+    };
   })
 
 
