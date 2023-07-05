@@ -15,7 +15,6 @@ const accSetUp = () => {
     btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
         e.preventDefault()
-      } else {
         btn.value = originalQuantity;
       }
     });
