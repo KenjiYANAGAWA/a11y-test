@@ -45,7 +45,7 @@ window.onload = () => {
     }, 1000);
 
     // making each item in description focusable
-    const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div');
+    const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div:not(:empty)');
     itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
 
     // adding video with no audio and no transcript
@@ -78,7 +78,7 @@ window.onload = () => {
         order: 10;
       }
 
-      div[tabindex="0"]:not(:empty):focus {
+      div[tabindex="0"]:focus {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
       }
     `)
