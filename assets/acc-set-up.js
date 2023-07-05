@@ -5,13 +5,18 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
+let originalQuantity
+
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
+  originalQuantity = document.querySelector('.quantity-selector__input').value;
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
         e.preventDefault()
+      } else {
+        btn.value = originalQuantity;
       }
     });
     btn.addEventListener('keyup', (e) => {
