@@ -20,18 +20,20 @@ const accSetUp = () => {
   // const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
   plusAndMinusBtns.forEach((btn)=> {
     btn.setAttribute('onclick', 'quantityHandler(this)');
-    btn.onkeydown  = (e) => {
+
+    btn.addEventListener('keydwon', (e)=>{
       const quantityInput = document.querySelector('.quantity-selector__input');
       console.log(e)
       if (e.key == 'Enter') {
         quantityInput.value = originalQ
       }
-    };
-    btn.onkeyup = (e) => {
+    })
+
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
         e.target.click();
       }
-    };
+    })
   })
 
 
