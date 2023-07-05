@@ -15,8 +15,8 @@ const accSetUp = () => {
       e.preventDefault();
       if (e.key == 'Enter' && !isKeyDown) {
         btn.click();
+        isKeyDown = true
       }
-      isKeyDown = true
       console.log(isKeyDown);
     });
 
