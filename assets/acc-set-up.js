@@ -14,15 +14,14 @@ const accSetUp = () => {
     btn.addEventListener('keydown', (e) => {
       e.preventDefault();
       if (e.key == 'Enter' && !isKeyDown) {
-        document.querySelector('.quantity-selector__input').value = originalQuantity;
+        btn.click();
       }
       isKeyDown = true
     });
-    btn.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter') {
-        e.target.click()
-      }
-    });
+
+    btn.addEventListener('keyup', (e)=>{
+      isKeyDown = false
+    })
   })
 
   // fixing navbar focus order
