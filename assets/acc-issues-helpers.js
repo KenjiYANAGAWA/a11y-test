@@ -222,7 +222,4 @@ const announceUpdate = (el) => {
     // change announcement
     alert.innerHTML = `Quantity updated: ${el.value} unit${el.value == 1 ? '' : 's'}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
   }
-
 }
-
-let originalQ
