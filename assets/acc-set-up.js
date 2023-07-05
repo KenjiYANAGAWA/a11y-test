@@ -9,15 +9,10 @@ const accSetUp = () => {
   originalQ = document.querySelector('.quantity-selector__input').value;
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-
-  // const plusBtn = document.querySelector('button[aria-label="Increase quantity"]');
-  // const minusBtn = document.querySelector('button[aria-label="Decrease quantity"]');
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keydown', e => e.key == 'Enter' ? e.preventDefault() : null);
-
     btn.addEventListener('keyup', e => e.key == 'Enter' ? e.target.click() : null);
   })
-
 
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
