@@ -32,6 +32,7 @@ window.onload = () => {
     const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
     plusAndMinusBtns.forEach((btn)=>{
       const newBtn = btn.cloneNode(true);
+      newBtn.onkeydown = (e) => e.target.click();
       btn.parentElement.replaceChild(newBtn, btn)
     })
 
