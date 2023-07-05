@@ -17,6 +17,7 @@ const accSetUp = () => {
 
     btn.addEventListener('keydown', (e)=>{
       const quantityInput = document.querySelector('.quantity-selector__input');
+      console.log(e.key)
       if (e.key !== 'Tab' || e.key !== 'Shift') {
         e.preventDefault();
       } else if (e.key == 'Enter') {
