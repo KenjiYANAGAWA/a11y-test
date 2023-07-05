@@ -31,9 +31,11 @@ window.onload = () => {
     // breaking quantity btns
     const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
     plusAndMinusBtns.forEach((btn)=>{
-      const newBtn = btn.cloneNode(true);
-      newBtn.onkeydown = (e) => e.target.click();
-      btn.parentElement.replaceChild(newBtn, btn)
+      btn.onkeydown = (e) => {
+        if (e.key == 'Enter') {
+          btn.click()
+        }
+      };
     })
 
     // removing aria-label from reviews stars
