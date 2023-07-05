@@ -27,7 +27,9 @@ const accSetUp = () => {
       }
     };
     btn.onkeyup = (e) => {
-      if (e.key == 'Enter') e.target.click();
+      if (e.key == 'Enter') {
+        e.target.click();
+      }
     }
   })
 
