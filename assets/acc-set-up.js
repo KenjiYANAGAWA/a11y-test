@@ -16,8 +16,8 @@ const accSetUp = () => {
     btn.setAttribute('onclick', 'quantityHandler(this)');
 
     btn.addEventListener('keydown', (e)=>{
-      e.preventDefault();
       const quantityInput = document.querySelector('.quantity-selector__input');
+      if (e.key !== 'Tab' || e.key !== 'Shift') e.preventDefault();
       if (e.key == 'Enter') {
         quantityInput.value = originalQ
       }
