@@ -430,13 +430,17 @@ const accSetUp = () => {
       const facetForms = document.querySelectorAll('#facet-form');
       console.log(facetForms);
       if (facetForms.length > 1) {
-        facetForms[1].setAttribute('id', 'facet-form-desktop')
+        facetForms[1].setAttribute('id', 'facet-form-desktop');
+        facetForms[1].querySelector('#accordion-filter-v-price').setAttribute('id', 'accordion-filter-v-price-desktop');
+        facetForms[1].querySelector('[aria-label="From price"][id]').setAttribute('id', 'filter.v.price.gte.desktop')
+        facetForms[1].querySelector('[aria-label="To price"][id]').setAttribute('id', 'filter.v.price.lte.desktop')
       }
     } catch (error) {
       console.log(error)
     }
   }
 
+  // fixing ids from addresses forms
   if (location.pathname == '/account/addresses') {
     const forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
     forms.slice(1).forEach((form) => {
