@@ -5,29 +5,12 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
-let isKeyDown = false
-
-let originalQuantity
-
 const accSetUp = () => {
-  const originalQuantityInput = document.querySelector('.quantity-selector__input');
-  if (originalQuantityInput) {
-    originalQuantity = originalQuantityInput.value
-  }
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
   plusAndMinusBtns.forEach((btn)=> {
-    btn.addEventListener('keydown', (e) => {
-      e.preventDefault();
-      if (e.key == 'Enter' && !isKeyDown) {
-        document.querySelector('.quantity-selector__input').value = originalQuantity
-        isKeyDown = true
-      }
-    });
-
-    btn.addEventListener('keyup', (e)=>{
-      isKeyDown = false
-    })
+    btn.addEventListener('keydown', e => e.key == 'Enter' ? e.preventDefault() : null);
+    btn.addEventListener('keyup', e => e.key == 'Enter' ? e.target.click() : null);
   })
 
   // fixing navbar focus order
@@ -35,8 +18,8 @@ const accSetUp = () => {
   swapDiv(headerLogo);
 
   // loading issue list
-  // csvIssues //raw issue data as string
-  // issueListFromCSV //obj to add issues
+  csvIssues //raw issue data as string
+  issueListFromCSV //obj to add issues
 
   // getting rows
   let rows = [];
@@ -156,16 +139,6 @@ const accSetUp = () => {
   } else {
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.setAttribute('href', '#')
-  }
-
-  //removing header and footer from checkout pages
-  if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
-    addStyle(`
-      .header__wrapper,
-      .footer {
-        display: none !important;
-      }`
-    );
   }
 
   if (location.pathname == '/') {
@@ -427,14 +400,14 @@ const accSetUp = () => {
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  // const inputs = document.querySelectorAll('.quantity-selector__input');
+  const inputs = document.querySelectorAll('.quantity-selector__input');
 
-  // inputs.forEach((input)=>{
-  //   input.addEventListener('change', (e)=>{
-  //     const quantity = e.target.value;
-  //     const alert = document.querySelector('.alert-msg')
-  //     alert.innerHTML = `Quantity updated: ${quantity}.`
-  //   })
-  // })
+  inputs.forEach((input)=>{
+    input.addEventListener('change', (e)=>{
+      const quantity = e.target.value;
+      const alert = document.querySelector('.alert-msg')
+      alert.innerHTML = `Quantity updated: ${quantity}.`
+    })
+  })
 
 }
