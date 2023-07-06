@@ -108,24 +108,22 @@ const accSetUp = () => {
   `//decided not to show url ${location.href}
 
   // disabling buy it now btn
-  setTimeout(() => {
-    const buyNowBtn = document.querySelector('.shopify-payment-button__button');
-    if (buyNowBtn) {
-      const newBuyNowBtn = document.createElement('a');
-      newBuyNowBtn.href = '#'
-      newBuyNowBtn.style.display = 'inline-block';
-      newBuyNowBtn.style.textAlign = 'center';
-      newBuyNowBtn.style.fontWeight = 600;
-      newBuyNowBtn.style.borderRadius = '200px'
-      newBuyNowBtn.style.padding = '17.2px 40px'
-      newBuyNowBtn.style.color = 'white';
-      newBuyNowBtn.style.background = 'black';
-      newBuyNowBtn.style.width = '100%';
-      newBuyNowBtn.style.height = '100%';
-      newBuyNowBtn.innerText = 'Buy it now';
-      buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
-    }
-  }, 700);
+  const buyNowBtn = document.querySelector('.shopify-payment-button');
+  if (buyNowBtn) {
+    const newBuyNowBtn = document.createElement('a');
+    newBuyNowBtn.href = '#'
+    newBuyNowBtn.style.display = 'inline-block';
+    newBuyNowBtn.style.textAlign = 'center';
+    newBuyNowBtn.style.fontWeight = 600;
+    newBuyNowBtn.style.borderRadius = '200px'
+    newBuyNowBtn.style.padding = '17.2px 40px'
+    newBuyNowBtn.style.color = 'white';
+    newBuyNowBtn.style.background = 'black';
+    newBuyNowBtn.style.width = '100%';
+    newBuyNowBtn.style.height = '100%';
+    newBuyNowBtn.innerText = 'Buy it now';
+    buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
+  }
 
   // removed custom cursor from cart, search and product page
   // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
