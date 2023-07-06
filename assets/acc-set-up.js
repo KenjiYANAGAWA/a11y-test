@@ -442,6 +442,7 @@ const accSetUp = () => {
     forms.slice(1).forEach((form) => {
       const id = form.getAttribute('id');
       const idNumber = id.split('_')[id.length - 1];
+      console.log(idNumber)
       const inputs = form.querySelectorAll('[id]');
       inputs.forEach(input=> input.replaceAll(/\d+/, idNumber));
     })
