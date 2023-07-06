@@ -438,8 +438,8 @@ const accSetUp = () => {
   }
 
   if (location.pathname == 'account/adresses') {
-    const forms = document.querySelectorAll('form:has(input[name="address[first_name]"])');
-    forms.forEach((form) => {
+    const forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
+    forms.slice(1).forEach((form) => {
       const id = form.getAttribute('id');
       const idNumber = id.split('_')[id.length - 1];
       const inputs = form.querySelectorAll('[id]');
