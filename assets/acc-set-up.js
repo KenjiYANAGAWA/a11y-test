@@ -430,7 +430,7 @@ const accSetUp = () => {
       const facetForms = document.querySelectorAll('#facet-form');
       console.log(facetForms);
       if (facetForms.length > 1) {
-        facetForms[0].setAttribute('id', 'facet-form-mobile')
+        facetForms[1].setAttribute('id', 'facet-form-desktop')
       }
     } catch (error) {
       console.log(error)
