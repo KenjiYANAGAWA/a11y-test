@@ -445,7 +445,7 @@ const accSetUp = () => {
       console.log(idNumber)
       const inputs = form.querySelectorAll('[id]');
       inputs.forEach((input)=> {
-        input.id = input.id.replaceAll(/\d+/, idNumber)
+        input.id = input.id.replace(/\d+/, idNumber)
       });
     })
   }
