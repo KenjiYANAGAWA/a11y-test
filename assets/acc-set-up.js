@@ -424,7 +424,7 @@ const accSetUp = () => {
     })
   })
 
-  if (location.pathname.includes('/collections/') || location.pathname.includes('/search?')) {
+  if (location.pathname.includes('/collections/') || location.pathname.includes('/search')) {
     try {
       // fixing facet-form issue
       const facetForms = document.querySelectorAll('#facet-form');
