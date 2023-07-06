@@ -158,15 +158,6 @@ window.onload = () => {
       }
 
       try {
-        // making each item in description focusable
-        const itemDescriptionLines = document.querySelectorAll('.product-info__description .prose div:not(:empty)');
-        itemDescriptionLines.forEach(line => line.setAttribute('tabindex', 0));
-      } catch (error) {
-        console.log('Focusable description issue');
-        console.log(error);
-      }
-
-      try {
         // adding video with no audio and no transcript
         const videoEl = `
         <section id="shopify-section-template--18980281647388__30e9587e-b6da-453e-a6ad-cd9a9a7c92ce" class="shopify-section shopify-section--video">
