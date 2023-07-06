@@ -9,8 +9,18 @@ const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
   plusAndMinusBtns.forEach((btn)=> {
-    btn.addEventListener('keydown', e => e.key == 'Enter' ? e.preventDefault() : null);
-    btn.addEventListener('keyup', e => e.key == 'Enter' ? e.target.click() : null);
+    btn.addEventListener('keydown', (e) => {
+      if (e.key == 'Enter') {
+       e.preventDefault()
+      }
+    });
+
+    btn.addEventListener('keyup', (e) => {
+      if (e.key == 'Enter') {
+       e.target.click()
+      }
+    });
+
   })
 
   // fixing navbar focus order
