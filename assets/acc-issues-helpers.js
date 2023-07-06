@@ -29,7 +29,7 @@ function swapDiv(elem) {
   elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
 }
 
-const breakIcon = (selector) => {
+function breakIcon(selector) {
   const icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
       icon.removeAttribute('focusable');
@@ -40,7 +40,7 @@ const breakIcon = (selector) => {
     })
 }
 
-const convertNumberToStars = (rating) => {
+function convertNumberToStars(rating) {
   const ratingAsStarsEl = ['<span class="spr-starratings spr-review-header-starratings" role="img">']
     for (let i = 0; i < 5; i++) {
       ratingAsStarsEl.push(`<i class="spr-icon spr-icon-star${rating <= i ? '-empty' : ''}" alt=""></i>`);
@@ -50,7 +50,7 @@ const convertNumberToStars = (rating) => {
 }
 
 
-const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
+function createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice) {
   return `
         <div role="row" class="items-summary-row">
           <div role="cell">
@@ -90,7 +90,7 @@ const createRow = (itemImg, itemQuantity, itemTitle, itemFinalPrice) => {
       `
 }
 
-const cartSummaryPrice = () => {
+function cartSummaryPrice() {
   //items to add to cart
   const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
   // location to be added
@@ -181,18 +181,18 @@ document.addEventListener('keyup', (e) => {
   }
 })
 
-const addStyle = (string) => {
+function addStyle(string) {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
-const announceTotal = () => {
+function announceTotal() {
   const alert = document.querySelector('.alert-msg');
   const totalContainer = document.querySelector('.cart-form__totals');
   const total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
   alert.innerHTML = `Total updated: ${total}.`
 }
 
-const announceUpdate = (el) => {
+function announceUpdate(el) {
   const alert = document.querySelector('.alert-msg');
   const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
 
