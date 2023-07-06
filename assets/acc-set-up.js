@@ -428,7 +428,9 @@ const accSetUp = () => {
     try {
       // fixing facet-form issue
       const facetForms = document.querySelectorAll('#facet-form');
-      if (facetForms.length > 1) facetForms[0].setAttribute('id', 'facet-form-mobile');
+      if (facetForms.length > 1) {
+        facetForms[0].setAttribute('id', 'facet-form-mobile')
+      }
     } catch (error) {
       console.log(error)
     }
