@@ -10,7 +10,10 @@ let isKeyDown = false
 let originalQuantity
 
 const accSetUp = () => {
-  originalQuantity = document.querySelector('.quantity-selector__input').value;
+  const originalQuantityInput = document.querySelector('.quantity-selector__input');
+  if (originalQuantityInput) {
+    originalQuantity = originalQuantityInput.value
+  }
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
   plusAndMinusBtns.forEach((btn)=> {
@@ -32,8 +35,8 @@ const accSetUp = () => {
   swapDiv(headerLogo);
 
   // loading issue list
-  csvIssues //raw issue data as string
-  issueListFromCSV //obj to add issues
+  // csvIssues //raw issue data as string
+  // issueListFromCSV //obj to add issues
 
   // getting rows
   let rows = [];
@@ -153,6 +156,16 @@ const accSetUp = () => {
   } else {
     const skipBtn = document.querySelector('.skip-to-content')
     skipBtn.setAttribute('href', '#')
+  }
+
+  //removing header and footer from checkout pages
+  if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
+    addStyle(`
+      .header__wrapper,
+      .footer {
+        display: none !important;
+      }`
+    );
   }
 
   if (location.pathname == '/') {
