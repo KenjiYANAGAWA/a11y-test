@@ -23,6 +23,10 @@ const accSetUp = () => {
 
   })
 
+  //fixing meta-pay-btn
+  const metaPayBtns = document.querySelectorAll('#meta-pay-button__a');
+  if (metaPayBtns.length > 1) metaPayBtns.slice(1).forEach(btn => btn.remove());
+
   // fixing navbar focus order
   const headerLogo = document.querySelector('.header__logo');
   swapDiv(headerLogo);
