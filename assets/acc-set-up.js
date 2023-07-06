@@ -436,4 +436,14 @@ const accSetUp = () => {
       console.log(error)
     }
   }
+
+  if (location.pathname == 'account/adresses') {
+    const forms = document.querySelectorAll('form:has(input[name="address[first_name]"])');
+    forms.forEach((form) => {
+      const id = form.getAttribute('id');
+      const idNumber = id.split('_')[id.length - 1];
+      const inputs = form.querySelectorAll('[id]');
+      inputs.forEach(input=> input.replaceAll(/\d+/, idNumber));
+    })
+  }
 }
