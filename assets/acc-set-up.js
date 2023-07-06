@@ -405,6 +405,8 @@ const accSetUp = () => {
         }
     });
 
+    // fixing duplicate ids
+    document.querySelector('.cart-form').nextElementSibling.remove();
   }
 
   //setting alerts to be announced
