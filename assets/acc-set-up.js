@@ -441,7 +441,7 @@ const accSetUp = () => {
     const forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
     forms.slice(1).forEach((form) => {
       const id = form.getAttribute('id');
-      const idNumber = id.split('_')[id.length - 1];
+      const idNumber = id.split('_')[2];
       console.log(idNumber)
       const inputs = form.querySelectorAll('[id]');
       inputs.forEach((input)=> {
