@@ -437,7 +437,7 @@ const accSetUp = () => {
     }
   }
 
-  if (location.pathname == 'account/adresses') {
+  if (location.pathname == '/account/adresses') {
     const forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
     forms.slice(1).forEach((form) => {
       const id = form.getAttribute('id');
