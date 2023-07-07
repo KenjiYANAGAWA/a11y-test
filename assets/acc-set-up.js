@@ -17,11 +17,11 @@ const accSetUp = () => {
     });
 
     btn.addEventListener('keydown', (e) => {
-      console.log(e)
       if (e.key == 'Enter' && firstClick) {
-        e.preventDefault();
         e.target.click();
         firstClick = false
+      } else {
+        e.preventDefault()
       }
     });
   })
