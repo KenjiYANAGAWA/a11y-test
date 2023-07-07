@@ -12,6 +12,16 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn)=> {
     const newBtn = btn.cloneNode(true);
 
+    newBtn.onclick = (e) => {
+      el = e.target
+      const input = el.parentElement.querySelector('input');
+      if (el.getAttribute('aria-label') == 'Increase quantity') {
+        input.value += 1;
+      } else if (el.getAttribute('aria-label') == 'Decrease quantity') {
+        input.value -= 1;
+      }
+    }
+
     newBtn.setAttribute('onkeyup', 'this.click()');
 
     btn.parentElement.replaceChild(newBtn, btn);
