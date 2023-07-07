@@ -11,17 +11,17 @@ const accSetUp = () => {
 
   plusAndMinusBtns.forEach((btn)=> {
     const newBtn = btn.cloneNode(true);
-    newBtn.addEventListener('keydown', (e) => {
+    newBtn.onkeydown = (e) => {
       if (e.key == 'Enter') {
        e.preventDefault();
       }
-    });
+    };
 
-    newBtn.addEventListener('keyup', (e) => {
+    newBtn.onkeyup = (e) => {
       if (e.key == 'Enter') {
        e.target.click();
       }
-    });
+    };
 
     btn.parentElement.replaceChild(newBtn, btn);
   })
