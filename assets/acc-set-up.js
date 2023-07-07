@@ -438,6 +438,14 @@ const accSetUp = () => {
     } catch (error) {
       console.log(error)
     }
+
+    try {
+      // fixing quick add btn announce
+      const quickAddForms = document.querySelectorAll('form[action="/cart/add"]')
+      quickAddForms.forEach((form)=>form.setAttribute('aria-live', "off"))
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // fixing ids from addresses forms
