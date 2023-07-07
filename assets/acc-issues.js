@@ -7,7 +7,6 @@ window.onload = () => {
   const currentLocation = location.pathname;
 
   // Initial Setup
-  let keyPressed = false
 
   //Small fixes and changes to initial clean setup
   try {
