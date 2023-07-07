@@ -10,7 +10,7 @@ const accSetUp = () => {
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn)=> {
-    const newBtn = cloneNode(true);
+    const newBtn = btn.cloneNode(true);
     newBtn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
        e.preventDefault();
