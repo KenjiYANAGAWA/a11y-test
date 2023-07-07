@@ -18,6 +18,7 @@ const accSetUp = () => {
     };
 
     newBtn.onkeyup = (e) => {
+      console.log(e);
       if (e.key == 'Enter') {
        e.target.click();
       }
