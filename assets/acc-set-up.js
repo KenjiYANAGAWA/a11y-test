@@ -26,6 +26,7 @@ const accSetUp = () => {
     });
 
     btn.addEventListener('click', (e) => {
+      console.log(keyPressed);
       if (keyPressed) {
         e.preventDefault();
       }
