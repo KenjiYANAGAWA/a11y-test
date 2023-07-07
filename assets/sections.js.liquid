@@ -246,14 +246,14 @@ var DropdownDisclosure = class extends AnimatedDetails {
     if (value) {
       this.setAttribute("open", "");
       document.addEventListener("click", this._detectClickOutsideListener);
-      document.addEventListener("keyup", this._detectEscKeyboardListener);
+      document.addEventListener("keydown", this._detectEscKeyboardListener);
       document.addEventListener("focusout", this._detectFocusOutListener);
       const openSiblings = Array.from(this.closest("ul").querySelectorAll("[open]")).filter((item) => item !== this);
       openSiblings.forEach((sibling) => sibling.open = false);
       await this._transitionIn(openSiblings.length > 0);
     } else {
       document.removeEventListener("click", this._detectClickOutsideListener);
-      document.removeEventListener("keyup", this._detectEscKeyboardListener);
+      document.removeEventListener("keydown", this._detectEscKeyboardListener);
       document.removeEventListener("focusout", this._detectFocusOutListener);
       await this._transitionOut();
       this.removeAttribute("open");
