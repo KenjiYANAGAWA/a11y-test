@@ -12,12 +12,16 @@ const accSetUp = () => {
     const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
     plusAndMinusBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopImmediatePropagation()
+      btn.addEventListener('keyup', (e) => {
+        if (e.key == 'Enter') {
+          e.target.click();
+        }
       })
 
       btn.addEventListener('keydown', (e) => {
-        e.stopImmediatePropagation()
+        if (e.key == 'Enter') {
+          e.preventDefault();
+        }
       })
     });
   } catch (error) {
