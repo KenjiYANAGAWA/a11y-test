@@ -7,23 +7,21 @@ const issueListObj = {
 
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
-  setTimeout(() => {
-    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-    plusAndMinusBtns.forEach((btn)=> {
-      btn.addEventListener('keydown', (e) => {
-        if (e.key == 'Enter') {
-         e.preventDefault();
-        }
-      });
+  const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  plusAndMinusBtns.forEach((btn)=> {
+    btn.addEventListener('keydown', (e) => {
+      if (e.key == 'Enter') {
+       e.preventDefault();
+      }
+    });
 
-      btn.addEventListener('keyup', (e) => {
-        if (e.key == 'Enter') {
-         e.target.click();
-        }
-      });
+    btn.addEventListener('keyup', (e) => {
+      if (e.key == 'Enter') {
+       e.target.click();
+      }
+    });
 
-    })
-  }, 100);
+  })
 
   //fixing meta-pay-btn
   const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
