@@ -13,15 +13,17 @@ const accSetUp = () => {
 
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keydown', (e) => {
-      if (e.key == 'Enter') {
-        document.querySelector('.quantity-selector__input').value = originalQuantity
+      if (e.key == 'Enter' && !clicked) {
+        document.querySelector('.quantity-selector__input').value = Number(originalQuantity) - 1
       }
     });
 
     btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
        e.target.click();
+       clicked = false;
       }
+      console.log(clicked)
     });
 
   })
