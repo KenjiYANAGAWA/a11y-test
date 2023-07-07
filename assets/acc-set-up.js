@@ -8,6 +8,7 @@ const issueListObj = {
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  console.log(plusAndMinusBtns)
 
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keyup', (e) => {
@@ -93,7 +94,7 @@ const accSetUp = () => {
     issues.push('<ul>');
     issueListObj[location.pathname].forEach((item) => {
       const techniqueLink = generateTechniqueLink(item);
-      console.log(techniqueLink);
+      // console.log(techniqueLink);
       issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
       //issues.push(`<li>${item}</li>`)
     })
@@ -428,7 +429,6 @@ const accSetUp = () => {
     try {
       // fixing facet-form issue
       const facetForms = document.querySelectorAll('#facet-form');
-      console.log(facetForms);
       if (facetForms.length > 1) {
         facetForms[1].setAttribute('id', 'facet-form-desktop');
         facetForms[1].querySelector('#accordion-filter-v-price').setAttribute('id', 'accordion-filter-v-price-desktop');
