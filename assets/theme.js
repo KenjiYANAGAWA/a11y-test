@@ -2429,8 +2429,14 @@ var QuantitySelector = class extends HTMLElement {
   connectedCallback() {
     this._abortController = new AbortController();
     this.inputElement = this.querySelector("input");
-    this.querySelector("button:first-of-type").addEventListener("click", () => this.inputElement.quantity = this.inputElement.quantity - 1, { signal: this._abortController.signal });
-    this.querySelector("button:last-of-type").addEventListener("click", () => this.inputElement.quantity = this.inputElement.quantity + 1, { signal: this._abortController.signal });
+    this.querySelector("button:first-of-type").addEventListener("click", (e) => {
+      e.stopImmediatePropagation()
+      this.inputElement.quantity = this.inputElement.quantity - 1
+    }, { signal: this._abortController.signal });
+    this.querySelector("button:last-of-type").addEventListener("click", (e) => {
+      e.stopImmediatePropagation()
+      this.inputElement.quantity = this.inputElement.quantity + 1
+    }, { signal: this._abortController.signal });
   }
   disconnectedCallback() {
     this._abortController.abort();
