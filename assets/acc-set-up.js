@@ -5,26 +5,22 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
-let firstClick = true
-
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
-  const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  const plusAndMinusBtns = Array.from(document.querySelectorAll('.quantity-selector__button'));
 
-  plusAndMinusBtns.forEach((btn) => {
-    btn.addEventListener('keyup', (e) => {
-      firstClick = true
-    });
+  document.addEventListener('keyup', (e) => {
+    const focusedEl = document.activeElement
+    if (e.key == 'Enter' && plusAndMinusBtns.includes(focusedEl)) {
+      focusedEl.click();
+    }
+  });
 
-    btn.addEventListener('keydown', (e) => {
-      if (e.key == 'Enter' && firstClick) {
-        e.target.click();
-        firstClick = false
-      } else {
-        e.preventDefault()
-      }
-    });
-  })
+  document.addEventListener('keydown', (e) => {
+    if (e.key == 'Enter' && plusAndMinusBtns.includes(document.activeElement)) {
+      e.preventDefault();
+    }
+  });
 
   //fixing meta-pay-btn
   const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
