@@ -202,6 +202,36 @@ window.onload = () => {
         console.log(error);
       }
 
+      try {
+        //breaking focusTrap
+        const addToCartBtn = document.querySelector('.buy-buttons button[type=submit]');
+
+        addToCartBtn.addEventListener('click', (e)=>{
+          setTimeout(() => {
+            const cartDrawer = document.querySelector('.quick-buy-drawer');
+            const newCartDrawer = cartDrawer.cloneNode(true);
+            cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
+          }, 1500);
+          addToCartBtn.focus();
+        })
+
+        setInterval(() => {
+          const cartDrawer = document.querySelector('.quick-buy-drawer');
+          if (cartDrawer.getAttribute('inert') == '') document.documentElement.classList.remove('lock');
+        }, 100);
+
+        document.addEventListener('keyup', (e) => {
+          const cartDrawer = document.querySelector('.quick-buy-drawer');
+          if (e.key == 'Escape') {
+            cartDrawer.setAttribute('inert', '');
+            cartDrawer.removeAttribute('open');
+          }
+        })
+      } catch (error) {
+        console.log('Focus trap issue');
+        console.log(error)
+      }
+
       break;
     }
     case '/products/headphone-stand-black': {
@@ -512,38 +542,6 @@ window.onload = () => {
       break;
     }
     case '/collections/all': {
-      try {
-        //breaking focusTrap
-        const addToCartBtns = document.querySelectorAll('.product-card__quick-buy');
-
-        addToCartBtns.forEach((btn)=>{
-          btn.addEventListener('click', (e)=>{
-            setTimeout(() => {
-              const cartDrawer = document.querySelector('.quick-buy-drawer');
-              const newCartDrawer = cartDrawer.cloneNode(true);
-
-              cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
-            }, 1500);
-            btn.focus();
-          })
-        })
-
-        setInterval(() => {
-          const cartDrawer = document.querySelector('.quick-buy-drawer');
-          if (cartDrawer.getAttribute('inert') == '') document.documentElement.classList.remove('lock');
-        }, 100);
-
-        document.addEventListener('keyup', (e) => {
-          const cartDrawer = document.querySelector('.quick-buy-drawer');
-          if (e.key == 'Escape') {
-            cartDrawer.setAttribute('inert', '');
-            cartDrawer.removeAttribute('open');
-          }
-        })
-      } catch (error) {
-        console.log('Focus trap issue');
-        console.log(error)
-      }
 
       break;
     }
