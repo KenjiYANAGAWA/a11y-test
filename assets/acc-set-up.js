@@ -471,7 +471,7 @@ const accSetUp = () => {
   }
 
   //announce on quick add
-  const addToCartBtns = document.querySelectorAll('button[action="/cart/add"]');
+  const addToCartBtns = document.querySelectorAll('form[action="/cart/add"] button[type="submit"]');
 
 
   addToCartBtns.forEach((btn)=>{
