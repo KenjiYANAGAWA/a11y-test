@@ -12,25 +12,25 @@ const accSetUp = () => {
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn) => {
-    const newBtn = btn.cloneNode(true);
+    // const newBtn = btn.cloneNode(true);
 
     const input = btn.parentElement.querySelector('.quantity-selector__input');
 
     input.setAttribute('data-previous-q', input.value)
 
-    newBtn.addEventListener('keyup', (e) => {
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
         e.target.click();
       }
     });
 
-    newBtn.addEventListener('keydown', (e) => {
-      console.log(e)
+    btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
-        e.preventDefault();
         document.querySelector('.quantity-selector__input').value = input.getAttribute('data-previous-q');
       }
     });
+
+
   })
 
   //fixing meta-pay-btn
