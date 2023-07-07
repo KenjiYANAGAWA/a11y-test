@@ -16,9 +16,9 @@ const accSetUp = () => {
       el = e.target
       const input = el.parentElement.querySelector('input');
       if (el.getAttribute('aria-label') == 'Increase quantity') {
-        input.value += 1;
+        input.value = Number(input.value) + 1;
       } else if (el.getAttribute('aria-label') == 'Decrease quantity') {
-        input.value -= 1;
+        input.value = Number(input.value) - 1;
       }
     }
 
