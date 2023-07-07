@@ -7,25 +7,25 @@ const issueListObj = {
 
 
 const accSetUp = () => {
-  let keyPressed = false
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn) => {
-    btn.addEventListener('keyup', (e) => {
-      keyPressed = false
-    });
+    const newBtn = btn.cloneNode(true)
 
-    btn.addEventListener('keydown', (e) => {
-      keyPressed = true;
-      console.log(keyPressed);
-    });
-
-    btn.addEventListener('click', (e) => {
-      if (keyPressed) {
-        e.preventDefault();
+    newBtn.addEventListener('keyup', (e) => {
+      const input = e.target.parentElement.querySelector('input')
+      if (e.key == 'Enter') {
+        const operator = e.target.getAttribute('aria-label');
+        if (operator == 'Increase quantity') {
+          input.value = Number(input.value) + 1
+        } else if (operator == 'Decrease quantity') {
+          input.value = Number(input.value) - 1
+        }
       }
     })
+
+    btn.parentElement.replaceChild(newBtn, btn)
   })
 
   //fixing meta-pay-btn
