@@ -2470,7 +2470,7 @@ var QuantityInput = class extends HTMLInputElement {
     }
   }
   _onKeyDown(event) {
-    event.stopPropagation();
+    event.stopImmediatePropagation()
     const originalQuantity = this.quantity;
     if (event.key === "ArrowUp") {
       this.quantity = this.quantity + 1;
