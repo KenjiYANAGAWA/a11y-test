@@ -14,6 +14,7 @@ const accSetUp = () => {
 
     newBtn.setAttribute('onkeyup', 'this.click()');
 
+    btn.parentElement.replaceChild(newBtn, btn);
   })
 
   //fixing meta-pay-btn
