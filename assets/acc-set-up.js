@@ -8,19 +8,6 @@ const issueListObj = {
 
 const accSetUp = () => {
   try {
-    // fixing plus and minus buttons to work on key up
-    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-
-    plusAndMinusBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopImmediatePropagation()
-      })
-    });
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
     //fixing meta-pay-btn
     const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
     if (metaPayBtns.length > 1) metaPayBtns.slice(1).forEach(btn => btn.remove());
