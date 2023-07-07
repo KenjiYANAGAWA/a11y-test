@@ -5,21 +5,23 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
+let firstClick = true
+
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
-  plusAndMinusBtns.forEach((btn)=> {
+  plusAndMinusBtns.forEach((btn) => {
     btn.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter') {
-       e.target.click();
-      }
+      firstClick = true
     });
 
     btn.addEventListener('keydown', (e) => {
       console.log(e)
-      if (e.key == 'Enter') {
-       e.preventDefault();
+      if (e.key == 'Enter' && firstClick) {
+        e.preventDefault();
+        e.target.click();
+        firstClick = false
       }
     });
   })
