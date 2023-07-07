@@ -33,6 +33,10 @@ const accSetUp = () => {
       }
     });
 
+    newBtn.addEventListener('click', (e) => {
+      console.log(e);
+    })
+
     btn.parentElement.replaceChild(newBtn, btn);
   })
 
