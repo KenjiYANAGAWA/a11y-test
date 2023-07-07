@@ -475,6 +475,7 @@ const accSetUp = () => {
 
 
   addToCartBtns.forEach((btn)=>{
+    const alert = document.querySelector('.alert-msg')
     btn.addEventListener('click', ()=>{
       alert.innerHTML = 'Item added to your cart'
     })
