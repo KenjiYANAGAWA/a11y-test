@@ -9,6 +9,7 @@
     "background": "#f4f4f4",
     "text_color": "#1a1a1a",
     "success_color": "#005726",
+    "error_color": "#9c0707",
     "header_background": "#f0f0f0",
     "header_text_color": "#1a1a1a",
     "footer_background": "#ffffff",
