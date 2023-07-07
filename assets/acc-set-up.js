@@ -471,9 +471,9 @@ const accSetUp = () => {
   }
 
   //announce on quick add
-  const addToCartBtn = document.querySelector('.buy-buttons button[type=submit]');
+  const addToCartBtn = document.querySelector('button[action="/cart/add"]');
 
-  addToCartBtn.addEventListener('click', (e)=>{
+  addToCartBtn.addEventListener('click', ()=>{
     alert.innerHTML = 'Item added to your cart'
   })
 }
