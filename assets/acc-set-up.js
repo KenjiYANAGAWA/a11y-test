@@ -22,7 +22,11 @@ const accSetUp = () => {
       }
     }
 
-    newBtn.setAttribute('onkeyup', 'this.click()');
+    newBtn.onkeyup = (e) => {
+      if (e.key == 'Enter') {
+        e.target.click()
+      }
+    };
 
     btn.parentElement.replaceChild(newBtn, btn);
   })
