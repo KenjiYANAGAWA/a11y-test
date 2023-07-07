@@ -14,6 +14,7 @@ const accSetUp = () => {
     const newBtn = btn.cloneNode(true)
 
     newBtn.addEventListener('keyup', (e) => {
+      console.log(e)
       const input = e.target.parentElement.querySelector('input')
       if (e.key == 'Enter') {
         const operator = e.target.getAttribute('aria-label');
