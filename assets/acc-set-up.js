@@ -469,4 +469,11 @@ const accSetUp = () => {
       });
     })
   }
+
+  //announce on quick add
+  const addToCartBtn = document.querySelector('.buy-buttons button[type=submit]');
+
+  addToCartBtn.addEventListener('click', (e)=>{
+    alert.innerHTML = 'Item added to your cart'
+  })
 }
