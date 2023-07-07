@@ -7,136 +7,152 @@ const issueListObj = {
 
 
 const accSetUp = () => {
-  // fixing plus and minus buttons to work on key up
-  const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  try {
+    // fixing plus and minus buttons to work on key up
+    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
-  plusAndMinusBtns.forEach((btn) => {
+    plusAndMinusBtns.forEach((btn) => {
+      const newBtn = btn.cloneNode(true);
+      newBtn.onkeydown = (e) => {
+        if (e.key == 'Enter') {
+          clickQuantityHandler(e.target);
+        }
+      }
 
-    btn.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter') {
-        e.preventDefault()
+      btn.parentElement.replaceChild(newBtn, btn);
+    });
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    //fixing meta-pay-btn
+    const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
+    if (metaPayBtns.length > 1) metaPayBtns.slice(1).forEach(btn => btn.remove());
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    // fixing navbar focus order
+    const headerLogo = document.querySelector('.header__logo');
+    swapDiv(headerLogo);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    // loading issue list
+    csvIssues //raw issue data as string
+    issueListFromCSV //obj to add issues
+
+    // getting rows
+    let rows = [];
+
+    csvIssues.split('\n').forEach((string)=>{
+      if (/^(\d{1,3}|ID),/.test(string)) {
+        rows.push(string)
+      } else {
+        rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
       }
     })
 
-    btn.addEventListener('keydown', (e) => {
-      if (e.key == 'Enter') {
-        e.preventDefault()
+    rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
+
+    // adding to issue list object
+    rows.slice(1).forEach(row => {
+      let index = 0;
+      const issue = {}
+      row.forEach((item)=>{
+        let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
+        if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
+          issue[key] = item.toUpperCase() == 'TRUE';
+        } else if (isNaN(Number(item))) {
+          issue[key] = item.replaceAll('commaPlaceholder', ', ').replaceAll('"','');
+        } else if (item == '') {
+          issue[key] = item;
+        } else {
+          issue[key] = Number(item);
+        }
+        index += 1;
+      })
+      issueListFromCSV.push(issue);
+    });
+
+    issueListFromCSV.forEach((issue)=>{
+      if (issue['status_100_done_0_deved_8_not_implemented_yet'] == 'Done: Verified by PM') {
+        let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
+        if (pathname == '') pathname = '/'
+        // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+        if (issueListObj[pathname]) {
+          issueListObj[pathname] = [...issueListObj[pathname]];
+        } else {
+          issueListObj[pathname] = []
+        }
+        issueListObj[pathname].push([
+          issue['criterion_(30as_and_20aas)'],
+          issue['failure_technique'],
+          issue['details_of_the_issue']
+        ])
       }
     })
-  })
 
-  //fixing meta-pay-btn
-  const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
-  if (metaPayBtns.length > 1) metaPayBtns.slice(1).forEach(btn => btn.remove());
-
-  // fixing navbar focus order
-  const headerLogo = document.querySelector('.header__logo');
-  swapDiv(headerLogo);
-
-  // loading issue list
-  csvIssues //raw issue data as string
-  issueListFromCSV //obj to add issues
-
-  // getting rows
-  let rows = [];
-
-  csvIssues.split('\n').forEach((string)=>{
-    if (/^(\d{1,3}|ID),/.test(string)) {
-      rows.push(string)
+    // adding issues to popup
+    // issue details are coming from acc-list-issue-details.js
+    const issues = [];
+    if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
+      issues.push('<ul>');
+      issueListObj[location.pathname].forEach((item) => {
+        const techniqueLink = generateTechniqueLink(item);
+        // console.log(techniqueLink);
+        issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
+        //issues.push(`<li>${item}</li>`)
+      })
+      issues.push('</ul>');
     } else {
-      rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
+      issues.push(`<p>No issues assign to this page.</p>`)
     }
-  })
 
-  rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
-
-  // adding to issue list object
-  rows.slice(1).forEach(row => {
-    let index = 0;
-    const issue = {}
-    row.forEach((item)=>{
-      let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
-      if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
-        issue[key] = item.toUpperCase() == 'TRUE';
-      } else if (isNaN(Number(item))) {
-        issue[key] = item.replaceAll('commaPlaceholder', ', ').replaceAll('"','');
-      } else if (item == '') {
-        issue[key] = item;
-      } else {
-        issue[key] = Number(item);
-      }
-      index += 1;
-    })
-    issueListFromCSV.push(issue);
-  });
-
-  issueListFromCSV.forEach((issue)=>{
-    if (issue['status_100_done_0_deved_8_not_implemented_yet'] == 'Done: Verified by PM') {
-      let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
-      if (pathname == '') pathname = '/'
-      // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-      if (issueListObj[pathname]) {
-        issueListObj[pathname] = [...issueListObj[pathname]];
-      } else {
-        issueListObj[pathname] = []
-      }
-      issueListObj[pathname].push([
-        issue['criterion_(30as_and_20aas)'],
-        issue['failure_technique'],
-        issue['details_of_the_issue']
-      ])
-    }
-  })
-
-  // adding issues to popup
-  // issue details are coming from acc-list-issue-details.js
-  const issues = [];
-  if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
-    issues.push('<ul>');
-    issueListObj[location.pathname].forEach((item) => {
-      const techniqueLink = generateTechniqueLink(item);
-      // console.log(techniqueLink);
-      issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
-      //issues.push(`<li>${item}</li>`)
-    })
-    issues.push('</ul>');
-  } else {
-    issues.push(`<p>No issues assign to this page.</p>`)
+    listIssue.innerHTML = `
+      <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page. CTRL + i to close.</h2>
+      ${issues.join('\n')}
+    `//decided not to show url ${location.href}
+  } catch (error) {
+    console.log(error);
   }
 
-  listIssue.innerHTML = `
-    <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue(s) on this page. CTRL + i to close.</h2>
-    ${issues.join('\n')}
-  `//decided not to show url ${location.href}
+  try {
+    // disabling buy it now btn
+    const buyNowBtn = document.querySelector('.shopify-payment-button');
+    if (buyNowBtn) {
+      const newBuyNowBtn = document.createElement('a');
+      newBuyNowBtn.href = '#'
+      newBuyNowBtn.style.display = 'inline-block';
+      newBuyNowBtn.style.textAlign = 'center';
+      newBuyNowBtn.style.fontWeight = 600;
+      newBuyNowBtn.style.borderRadius = '200px'
+      newBuyNowBtn.style.padding = '17.2px 40px'
+      newBuyNowBtn.style.color = 'white';
+      newBuyNowBtn.style.background = 'black';
+      newBuyNowBtn.style.width = '100%';
+      newBuyNowBtn.style.height = '100%';
+      newBuyNowBtn.innerText = 'Buy it now';
+      buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
+    }
 
-  // disabling buy it now btn
-  const buyNowBtn = document.querySelector('.shopify-payment-button');
-  if (buyNowBtn) {
-    const newBuyNowBtn = document.createElement('a');
-    newBuyNowBtn.href = '#'
-    newBuyNowBtn.style.display = 'inline-block';
-    newBuyNowBtn.style.textAlign = 'center';
-    newBuyNowBtn.style.fontWeight = 600;
-    newBuyNowBtn.style.borderRadius = '200px'
-    newBuyNowBtn.style.padding = '17.2px 40px'
-    newBuyNowBtn.style.color = 'white';
-    newBuyNowBtn.style.background = 'black';
-    newBuyNowBtn.style.width = '100%';
-    newBuyNowBtn.style.height = '100%';
-    newBuyNowBtn.innerText = 'Buy it now';
-    buyNowBtn.parentElement.replaceChild(newBuyNowBtn, buyNowBtn);
+    // removed custom cursor from cart, search and product page
+    // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
+
+    // removing custom cursor from carousels
+    const customCursors = document.querySelectorAll('.slideshow__cursor');
+    if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
+
+    // removing custom cursor from products gallery
+    const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
+    if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
+  } catch (error) {
+    console.log(error);
   }
-
-  // removed custom cursor from cart, search and product page
-  // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
-
-  // removing custom cursor from carousels
-  const customCursors = document.querySelectorAll('.slideshow__cursor');
-  if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
-
-  // removing custom cursor from products gallery
-  const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
-  if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
 
   //fixing skip to main content
   if (location.pathname !== '/') {

@@ -208,3 +208,12 @@ function announceUpdate(el) {
     alert.innerHTML = `Quantity updated: ${el.value} unit${el.value == 1 ? '' : 's'}. Item subtotal: $${newItemTotal.toFixed(2)}. Order total: $${newOrderTotal.toFixed(2)}`;
   }
 }
+
+function clickQuantityHandler(el) {
+  const input = el.parentElement.querySelector('.quantity-selector__input');
+  if (el.getAttribute('aria-label') == 'Increase quantity') {
+    input.value = Number(input.value) + 1
+  } else if (el.getAttribute('aria-label') == 'Decrease quantity') {
+    input.value = Number(input.value) - 1
+  }
+}
