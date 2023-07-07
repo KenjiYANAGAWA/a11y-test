@@ -10,31 +10,17 @@ const accSetUp = () => {
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn)=> {
-    const newBtn = btn.cloneNode(true);
-
-    newBtn.onclick = (e) => {
-      el = e.target
-      const input = el.parentElement.querySelector('input');
-      if (el.getAttribute('aria-label') == 'Increase quantity') {
-        input.value = Number(input.value) + 1;
-      } else if (el.getAttribute('aria-label') == 'Decrease quantity') {
-        input.value = Number(input.value) - 1;
-      }
-    }
-
-    newBtn.onkeyup = (e) => {
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
-        e.target.click()
+       e.target.click();
       }
-    };
+    });
 
-    newBtn.onkeydown = (e) => {
+    btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
-        e.preventDefault();
+       e.preventDefault();
       }
-    };
-
-    btn.parentElement.replaceChild(newBtn, btn);
+    });
   })
 
   //fixing meta-pay-btn
