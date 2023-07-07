@@ -442,7 +442,15 @@ const accSetUp = () => {
     try {
       // fixing quick add btn announce
       const quickAddForms = document.querySelectorAll('form[action="/cart/add"]')
-      quickAddForms.forEach((form)=>form.setAttribute('aria-live', "off"))
+      quickAddForms.forEach(form => form.setAttribute('aria-live', "off"))
+
+      const itemNames = document.querySelectorAll(".product-card__title")
+      itemNames.forEach((name) => {
+        name.classList.add('bold');
+        name.setAttribute('data-instant', '');
+        name.innerHTML = name.children[0].innerText
+      });
+
     } catch (error) {
       console.log(error)
     }
