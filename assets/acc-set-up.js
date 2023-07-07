@@ -28,6 +28,12 @@ const accSetUp = () => {
       }
     };
 
+    newBtn.onkeydown = (e) => {
+      if (e.key == 'Enter') {
+        e.preventDefault();
+      }
+    };
+
     btn.parentElement.replaceChild(newBtn, btn);
   })
 
