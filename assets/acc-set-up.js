@@ -8,7 +8,6 @@ const issueListObj = {
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-  console.log(plusAndMinusBtns)
 
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keyup', (e) => {
@@ -18,6 +17,7 @@ const accSetUp = () => {
     });
 
     btn.addEventListener('keydown', (e) => {
+      console.log(e)
       if (e.key == 'Enter') {
        e.preventDefault();
       }
