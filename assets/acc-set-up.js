@@ -12,27 +12,27 @@ const accSetUp = () => {
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn) => {
-    // const newBtn = btn.cloneNode(true);
-
     const input = btn.parentElement.querySelector('.quantity-selector__input');
-
     input.setAttribute('data-previous-q', input.value)
 
-    btn.addEventListener('keyup', (e) => {
+    const newBtn = btn.cloneNode(true);
+
+    newBtn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
         e.target.click();
       }
     });
 
-    btn.addEventListener('keydown', (e) => {
+    newBtn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
         e.preventDefault();
         const input = e.target.parentElement.querySelector('.quantity-selector__input');
-        input.value = input.getAttribute('data-previous-q');
+        const previousQuantity = input.getAttribute('data-previous-q')
+        input.setAttribute('value', previousQuantity);
       }
     });
 
-
+    btn.parentElement.replaceChild(newBtn, btn);
   })
 
   //fixing meta-pay-btn
