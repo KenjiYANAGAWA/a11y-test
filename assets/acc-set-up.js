@@ -8,19 +8,22 @@ const issueListObj = {
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+
   plusAndMinusBtns.forEach((btn)=> {
-    btn.addEventListener('keydown', (e) => {
+    const newBtn = cloneNode(true);
+    newBtn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
        e.preventDefault();
       }
     });
 
-    btn.addEventListener('keyup', (e) => {
+    newBtn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
        e.target.click();
       }
     });
 
+    btn.parentElement.replaceChild(newBtn, btn);
   })
 
   //fixing meta-pay-btn
