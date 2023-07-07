@@ -13,8 +13,7 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn) => {
     const newBtn = btn.cloneNode(true)
 
-    newBtn.addEventListener('keyup', (e) => {
-      console.log(e)
+    newBtn.addEventListener('keyup', function(e) {
       const input = e.target.parentElement.querySelector('input')
       if (e.key == 'Enter') {
         const operator = e.target.getAttribute('aria-label');
