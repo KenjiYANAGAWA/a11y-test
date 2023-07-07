@@ -207,11 +207,11 @@ window.onload = () => {
         const addToCartBtn = document.querySelector('.buy-buttons button[type=submit]');
 
         addToCartBtn.addEventListener('click', (e)=>{
-          setTimeout(() => {
+          // setTimeout(() => {
             const cartDrawer = document.querySelector('.quick-buy-drawer');
             const newCartDrawer = cartDrawer.cloneNode(true);
             cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
-          }, 1500);
+          // }, 1500);
           addToCartBtn.focus();
         })
 
