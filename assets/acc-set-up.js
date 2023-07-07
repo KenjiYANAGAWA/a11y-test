@@ -478,7 +478,9 @@ const accSetUp = () => {
     const alert = document.querySelector('.alert-msg')
     btn.addEventListener('click', ()=>{
       alert.innerHTML = 'Item added to your cart'
-      alert.innerHTML = ''
+      setTimeout(() => {
+        alert.innerHTML = ''
+      }, 3000);
     })
   })
 }
