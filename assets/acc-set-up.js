@@ -14,10 +14,10 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn)=> {
     btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter' && !clicked) {
+        clicked = true;
+        console.log(clicked)
        e.preventDefault();
-       clicked = true;
       }
-      console.log(clicked)
     });
 
     btn.addEventListener('keyup', (e) => {
