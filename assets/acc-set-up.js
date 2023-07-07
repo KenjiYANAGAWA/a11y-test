@@ -5,9 +5,9 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
-let keyPressed = false
 
 const accSetUp = () => {
+  let keyPressed = false
   // fixing plus and minus buttons to work on key up
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
