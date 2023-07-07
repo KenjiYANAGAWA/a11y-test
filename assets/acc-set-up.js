@@ -5,39 +5,30 @@ const issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
+let keyPressed = false
+
 const accSetUp = () => {
   // fixing plus and minus buttons to work on key up
-  let originalQ = document.querySelector('.quantity-selector__input').value;
-
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn) => {
-    const input = btn.parentElement.querySelector('.quantity-selector__input');
-    input.setAttribute('data-previous-quantity', input.value)
-
-    const newBtn = btn.cloneNode(true);
-
-    newBtn.addEventListener('keyup', (e) => {
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
-        const input = e.target.parentElement.querySelector('.quantity-selector__input');
-        e.target.click();
-        input.setAttribute('data-previous-quantity', input.value)
+        keyPressed = false
       }
     });
 
-    newBtn.addEventListener('keydown', (e) => {
+    btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
-        const input = e.target.parentElement.querySelector('.quantity-selector__input');
-        const previousQuantity = input.getAttribute('data-previous-q')
-        input.setAttribute('value', previousQuantity);
+        keyPressed = true;
       }
     });
 
-    newBtn.addEventListener('click', (e) => {
-      console.log(e);
+    btn.addEventListener('click', (e) => {
+      if (keyPressed) {
+        e.preventDefault();
+      }
     })
-
-    btn.parentElement.replaceChild(newBtn, btn);
   })
 
   //fixing meta-pay-btn
