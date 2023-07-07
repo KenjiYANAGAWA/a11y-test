@@ -25,8 +25,9 @@ const accSetUp = () => {
     });
 
     btn.addEventListener('keydown', (e) => {
-      const input = e.target.parentElement.querySelector('.quantity-selector__input');
       if (e.key == 'Enter') {
+        e.preventDefault();
+        const input = e.target.parentElement.querySelector('.quantity-selector__input');
         input.value = input.getAttribute('data-previous-q');
       }
     });
