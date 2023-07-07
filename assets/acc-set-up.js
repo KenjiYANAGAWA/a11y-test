@@ -12,7 +12,7 @@ const accSetUp = () => {
 
   plusAndMinusBtns.forEach((btn) => {
 
-    btn.addEventListener('keyup', function(e) {
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
         e.preventDefault()
       }
