@@ -2515,7 +2515,7 @@ var Listbox = class extends HTMLElement {
     __privateAdd(this, _onKeyDown);
     __privateAdd(this, _accessibilityInitialized, false);
     __privateAdd(this, _hiddenInput, void 0);
-    this.addEventListener("keydown", __privateMethod(this, _onKeyDown, onKeyDown_fn));
+    this.addEventListener("keyup", __privateMethod(this, _onKeyDown, onKeyDown_fn));
   }
   static get observedAttributes() {
     return ["aria-activedescendant"];
@@ -3932,7 +3932,7 @@ var Tabs = class extends HTMLElement {
     if (Shopify.designMode) {
       this.addEventListener("shopify:block:select", (event) => this.selectedIndex = this.buttons.indexOf(event.target));
     }
-    this.addEventListener("keydown", this._handleKeyboard);
+    this.addEventListener("keyup", this._handleKeyboard);
   }
   connectedCallback() {
     this._abortController = new AbortController();

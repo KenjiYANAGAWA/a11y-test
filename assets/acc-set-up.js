@@ -7,23 +7,23 @@ const issueListObj = {
 
 
 const accSetUp = () => {
-  try {
-    // fixing plus and minus buttons to work on key up
-    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+  // try {
+  //   // fixing plus and minus buttons to work on key up
+  //   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
-    plusAndMinusBtns.forEach((btn) => {
-      const newBtn = btn.cloneNode(true);
-      newBtn.addEventListener('keydown', (e) => {
-        if (e.key == 'Enter') {
-          clickQuantityHandler(e.target);
-        }
-      })
+  //   plusAndMinusBtns.forEach((btn) => {
+  //     const newBtn = btn.cloneNode(true);
+  //     newBtn.addEventListener('keydown', (e) => {
+  //       if (e.key == 'Enter') {
+  //         clickQuantityHandler(e.target);
+  //       }
+  //     })
 
-      btn.parentElement.replaceChild(newBtn, btn);
-    });
-  } catch (error) {
-    console.log(error)
-  }
+  //     btn.parentElement.replaceChild(newBtn, btn);
+  //   });
+  // } catch (error) {
+  //   console.log(error)
+  // }
 
   try {
     //fixing meta-pay-btn
