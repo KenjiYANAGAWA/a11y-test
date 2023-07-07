@@ -13,23 +13,14 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn) => {
 
     btn.addEventListener('keyup', function(e) {
-      console.log(e)
-      const input = e.target.parentElement.querySelector('input')
       if (e.key == 'Enter') {
-        const operator = e.target.getAttribute('aria-label');
-        if (operator == 'Increase quantity') {
-          input.value = Number(input.value) + 1
-        } else if (operator == 'Decrease quantity') {
-          input.value = Number(input.value) - 1
-        }
+        console.log(e)
       }
     })
 
     btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
         e.preventDefault()
-      } else {
-        console.log(e);
       }
     })
   })
