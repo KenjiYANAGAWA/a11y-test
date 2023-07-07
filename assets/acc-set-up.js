@@ -21,6 +21,7 @@ const accSetUp = () => {
     btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
         keyPressed = true;
+        e.preventDefault()
       }
     });
 
