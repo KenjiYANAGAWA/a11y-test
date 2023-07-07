@@ -471,9 +471,12 @@ const accSetUp = () => {
   }
 
   //announce on quick add
-  const addToCartBtn = document.querySelector('button[action="/cart/add"]');
+  const addToCartBtns = document.querySelectorAll('button[action="/cart/add"]');
 
-  addToCartBtn.addEventListener('click', ()=>{
-    alert.innerHTML = 'Item added to your cart'
+
+  addToCartBtns.forEach((btn)=>{
+    btn.addEventListener('click', ()=>{
+      alert.innerHTML = 'Item added to your cart'
+    })
   })
 }
