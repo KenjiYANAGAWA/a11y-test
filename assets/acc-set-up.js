@@ -16,13 +16,13 @@ const accSetUp = () => {
 
     newBtn.addEventListener('keydown', (e) => {
       console.log(e)
-      if (e.key == 'Enter') {
+      if (e.key === 'Enter') {
        e.preventDefault();
       }
     });
 
     newBtn.addEventListener('keyup', (e) => {
-      if (e.key == 'Enter') {
+      if (e.key === 'Enter') {
        e.target.click();
       }
     });
