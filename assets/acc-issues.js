@@ -18,10 +18,14 @@ window.onload = () => {
   if (location.pathname !== '/products/mh40-wireless-silver-metal-navy-coated-canvas' && location.pathname.includes('/products/')) {
     // removing reviews from all products pages excluding mh40 wireless headphone
     document.querySelector("#shopify-product-reviews").remove();
-  } else if (currentLocation !== '/') {
+  }
+
+  if (currentLocation !== '/') {
     // removing about us from footer if it isn't homepage
     removeFooterLink("/pages/about-us");
-  } else if (['/products/usb-c-to-3-5mm-audio-cable-black', '/products/headphone-stand-black', '/collections/all'].includes(currentLocation)) {
+  }
+
+  if (['/products/usb-c-to-3-5mm-audio-cable-black', '/products/headphone-stand-black', '/collections/all'].includes(currentLocation)) {
     // changing pages title
     document.title = 'product'
   }
