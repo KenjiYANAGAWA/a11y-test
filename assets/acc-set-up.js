@@ -10,21 +10,18 @@ const accSetUp = () => {
   const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
   plusAndMinusBtns.forEach((btn)=> {
-    const newBtn = btn.cloneNode(true);
-    newBtn.onkeydown = (e) => {
+    btn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
        e.preventDefault();
       }
-    };
+    });
 
-    newBtn.onkeyup = (e) => {
-      console.log(e);
+    btn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
        e.target.click();
       }
-    };
+    });
 
-    btn.parentElement.replaceChild(newBtn, btn);
   })
 
   //fixing meta-pay-btn
