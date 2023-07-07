@@ -12,10 +12,8 @@ const accSetUp = () => {
     const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
     plusAndMinusBtns.forEach((btn) => {
-      btn.addEventListener('keydown', (e) => {
-        if (e.key == 'Enter') {
-          e.stopImmediatePropagation()
-        }
+      btn.addEventListener('click', (e) => {
+        e.stopImmediatePropagation()
       })
     });
   } catch (error) {
