@@ -17,6 +17,7 @@ const accSetUp = () => {
        e.preventDefault();
        clicked = true;
       }
+      console.log(clicked)
     });
 
     btn.addEventListener('keyup', (e) => {
@@ -24,6 +25,7 @@ const accSetUp = () => {
        e.target.click();
        clicked = false;
       }
+      console.log(clicked)
     });
 
   })
