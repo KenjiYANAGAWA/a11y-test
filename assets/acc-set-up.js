@@ -20,7 +20,6 @@ const accSetUp = () => {
       if (e.key == 'Enter') {
        e.target.click();
       }
-      console.log(clicked)
     });
 
   })
