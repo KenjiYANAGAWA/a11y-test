@@ -12,21 +12,8 @@ const accSetUp = () => {
   plusAndMinusBtns.forEach((btn)=> {
     const newBtn = btn.cloneNode(true);
 
-    btn.parentElement.replaceChild(newBtn, btn);
+    newBtn.setAttribute('onkeyup', 'this.click()');
 
-    // newBtn.addEventListener('keydown', (e) => {
-    //   console.log(e)
-    //   // if (e.key === 'Enter') {
-    //   //  e.preventDefault();
-    //   // }
-    // });
-
-    newBtn.addEventListener('keyup', (e) => {
-      console.log(e)
-      if (e.key === 'Enter') {
-       e.target.click();
-      }
-    });
   })
 
   //fixing meta-pay-btn
