@@ -13,19 +13,20 @@ const accSetUp = () => {
 
   plusAndMinusBtns.forEach((btn) => {
     const input = btn.parentElement.querySelector('.quantity-selector__input');
-    input.setAttribute('data-previous-q', input.value)
+    input.setAttribute('data-previous-quantity', input.value)
 
     const newBtn = btn.cloneNode(true);
 
     newBtn.addEventListener('keyup', (e) => {
       if (e.key == 'Enter') {
+        const input = e.target.parentElement.querySelector('.quantity-selector__input');
         e.target.click();
+        input.setAttribute('data-previous-quantity', input.value)
       }
     });
 
     newBtn.addEventListener('keydown', (e) => {
       if (e.key == 'Enter') {
-        e.preventDefault();
         const input = e.target.parentElement.querySelector('.quantity-selector__input');
         const previousQuantity = input.getAttribute('data-previous-q')
         input.setAttribute('value', previousQuantity);
