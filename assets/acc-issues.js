@@ -211,7 +211,7 @@ window.onload = () => {
             const cartDrawer = document.querySelector('.quick-buy-drawer');
             const newCartDrawer = cartDrawer.cloneNode(true);
             cartDrawer.parentElement.replaceChild(newCartDrawer, cartDrawer)
-          }, 700);
+          }, 900);
           addToCartBtn.focus();
         })
 
