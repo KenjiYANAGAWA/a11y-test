@@ -153,17 +153,10 @@ listIssue.style.zIndex  = 9999;
 listIssue.style.overflowY = "scroll";
 
 
-let ctrl = false;
-
 // adding popup issue list
-document.addEventListener('keydown', (e) => {
-  if (e.key !== 'i') {
-    ctrl = (e.key == 'Control');
-  }
-})
 
 document.addEventListener('keyup', (e) => {
-  if (e.key == 'i' && ctrl) {
+  if (e.key == 'i' && e.ctrlKey) {
     const popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
@@ -172,8 +165,6 @@ document.addEventListener('keyup', (e) => {
       document.querySelector('body').insertAdjacentElement('afterbegin', listIssue);
       listIssue.children[0].focus();
     }
-  } else if (e.key == 'Control') {
-    ctrl = false
   }
   const popupVisible = document.querySelector('.popup-issue-list');
   if (popupVisible) {
