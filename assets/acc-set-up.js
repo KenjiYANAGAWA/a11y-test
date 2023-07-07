@@ -15,6 +15,7 @@ const accSetUp = () => {
     btn.parentElement.replaceChild(newBtn, btn);
 
     newBtn.addEventListener('keydown', (e) => {
+      console.log(e)
       if (e.key == 'Enter') {
        e.preventDefault();
       }
