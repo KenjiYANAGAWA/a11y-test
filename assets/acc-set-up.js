@@ -491,15 +491,19 @@ const accSetUp = () => {
   }
 
   //announce on quick add and add to cart
-  const addToCartBtns = document.querySelectorAll('form[action="/cart/add"] button[type="submit"]');
+  try {
+    const addToCartBtns = document.querySelectorAll('form[action="/cart/add"] button[type="submit"]');
 
-  addToCartBtns.forEach((btn)=>{
-    const alert = document.querySelector('.alert-msg')
-    btn.addEventListener('click', ()=>{
-      alert.innerHTML = 'Item added to your cart'
-      setTimeout(() => {
-        alert.innerHTML = ''
-      }, 3000);
+    addToCartBtns.forEach((btn)=>{
+      const alert = document.querySelector('.alert-msg')
+      btn.addEventListener('click', ()=>{
+        alert.innerHTML = 'Item added to your cart'
+        setTimeout(() => {
+          alert.innerHTML = ''
+        }, 3000);
+      })
     })
-  })
+  } catch (error) {
+    console.log(error)
+  }
 }

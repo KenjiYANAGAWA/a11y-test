@@ -237,9 +237,7 @@ window.onload = () => {
       }
 
       try {
-        const addToCartBtn = document.querySelector('')
-        const newAddToCartBtn = addToCartBtn.cloneNode(true)
-        addToCartBtn.parentElement.replaceChild(newAddToCartBtn, addToCartBtn)
+        document.querySelector('.alert-msg').remove()
       } catch (error) {
         console.log('Announce cart update');
         console.log(error)
