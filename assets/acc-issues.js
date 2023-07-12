@@ -236,6 +236,15 @@ window.onload = () => {
         console.log(error)
       }
 
+      try {
+        const addToCartBtn = document.querySelector('')
+        const newAddToCartBtn = addToCartBtn.cloneNode(true)
+        addToCartBtn.parentElement.replaceChild(newAddToCartBtn, addToCartBtn)
+      } catch (error) {
+        console.log('Announce cart update');
+        console.log(error)
+      }
+
       break;
     }
     case '/products/headphone-stand-black': {
