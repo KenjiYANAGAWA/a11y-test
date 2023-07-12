@@ -849,7 +849,12 @@ window.onload = () => {
         estimateShippingEl.parentNode.replaceChild(newEstimateEl, estimateShippingEl);
 
         const zipCodeInput = document.querySelector('.shipping-estimator__form input[type=text]');
-        zipCodeInput.removeAttribute('id')
+        zipCodeInput.removeAttribute('id');
+        const zipCodeLabel = zipCodeInput.nextElementSibling;
+        const newZipCodeLabel = document.createElement('span');
+        newZipCodeLabel.classList.add('floating-label');
+        newZipCodeLabel.innerHTML = 'Zip code';
+        zipCodeLabel.parentElement.replaceChild(newZipCodeLabel, zipCodeLabel)
         const estimateBtn = document.querySelector('.shipping-estimator__form button[type=submit]');
 
         document.addEventListener('keyup', (e) => {
