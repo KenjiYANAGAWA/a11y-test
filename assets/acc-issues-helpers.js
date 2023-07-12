@@ -176,7 +176,7 @@ function addStyle(string) {
   document.body.insertAdjacentHTML("beforeend", `<style>${string}</style>`)
 }
 
-function announceTotal() {
+function  Total() {
   const alert = document.querySelector('.alert-msg');
   const totalContainer = document.querySelector('.cart-form__totals');
   const total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
