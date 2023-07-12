@@ -416,7 +416,7 @@ const accSetUp = () => {
     const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
-        quantityInput.setAttribute('onchange', 'announceUpdate(this)')
+        quantityInput.setAttribute('change', 'announceUpdate(this)')
         const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
         if (itemCurrentTotal) {
           const itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
