@@ -525,6 +525,9 @@ window.onload = () => {
       // change focus opacity go home btn
       addStyle('#go-back-home-btn:focus {box-shadow: 0 0 0 2px white, 0 0 0 4px lightblue !important;}')
 
+      // change go back home btn
+      document.querySelector('#go-back-home-btn').classList.remove('btn')
+
       break;
     }
     case '/pages/advertisement': {
