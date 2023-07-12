@@ -126,6 +126,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "recommendations_count": 6,
         "products": [
@@ -159,6 +160,9 @@
       },
       "block_order": [
         "ad4fd610-de18-40bb-8218-ae8a44d2879b"
+      ],
+      "custom_css": [
+        "#shopify-product-reviews {padding: 32px;}"
       ],
       "settings": {
         "full_width": true,
