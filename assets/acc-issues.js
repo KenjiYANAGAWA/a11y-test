@@ -298,24 +298,19 @@ window.onload = () => {
       try {
         // removing titles from payment methods list on footer
         var elementsToRemove = [
-          '.footer__payment-icons svg title[id="pi-master"]',
-          '.footer__payment-icons svg title[id="pi-google_pay"]',
-          '.footer__payment-icons svg title[id="pi-apple_pay"]',
-          '.footer__payment-icons svg title[id="pi-american_express"]',
-          '.footer__payment-icons svg title[id="pi-discover"]',
-          '.footer__payment-icons svg title[id="pi-dinners_club"]',
-          '.footer__payment-icons svg title[id="pi-meta_pay"]',
-          '.footer__payment-icons svg title[id="pi-shopify_pay"]'
+          '.footer__payment-icons svg title'
         ];
 
         elementsToRemove.forEach((selector) => {
           var elements = document.querySelectorAll(selector);
           // removing aria-labelledby
           elements.forEach((el) => {
-            el.parentElement.removeAttribute('aria-labelledby');
-            // adding aria-label to all cards icons
-            el.parentElement.setAttribute('aria-label', 'card');
-            el.remove();
+            if (el.getAttribute('id') !== 'pi-visa') {
+              el.parentElement.removeAttribute('aria-labelledby');
+              // adding aria-label to all cards icons
+              el.parentElement.setAttribute('aria-label', 'card');
+              el.remove();
+            }
           });
         });
 
