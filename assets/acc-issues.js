@@ -305,7 +305,7 @@ window.onload = () => {
           var elements = document.querySelectorAll(selector);
           // removing aria-labelledby
           elements.forEach((el) => {
-            if (el.getAttribute('id') !== 'pi-visa') {
+            if (el.getAttribute('id') === 'pi-visa') {
               el.parentElement.removeAttribute('aria-labelledby');
               // adding aria-label to all cards icons
               el.parentElement.setAttribute('aria-label', 'card');
