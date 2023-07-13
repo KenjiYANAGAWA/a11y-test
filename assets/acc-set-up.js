@@ -511,23 +511,4 @@ var accSetUp = () => {
     console.log(error)
   }
 
-  try {
-    var formStars = Array.from(document.querySelector('spr-starrating a'));
-
-    formStars.forEach((star)=>{
-      var starIndex = formStars.indexOf(star);
-      star.addEventListener('focus', (e)=>{
-        var yellowStar = Array.from(e.target.parentElement.children).slice(0, starIndex);
-        var greyStar = Array.from(e.target.parentElement.children).slice(starIndex);
-        yellowStar.forEach((star)=>{
-          star.classList.remove('spr-icon-star-empty')
-        })
-        greyStar.forEach((star)=>{
-          star.classList.add('spr-icon-star-empty')
-        })
-      })
-    })
-  } catch (error) {
-    console.log(error)
-  }
 }
