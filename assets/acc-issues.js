@@ -126,13 +126,13 @@ window.onload = () => {
         var newSignUpEl = document.createElement('h1');
         newSignUpEl.innerHTML = signUpEl.innerHTML;
         newSignUpEl.classList = signUpEl.classList;
-        newSignUpEl.parentElement.replaceChild(newSignUpEl, signUpEl);
+        signUpEl.parentElement.replaceChild(newSignUpEl, signUpEl);
 
         var footerMenuHeading = document.querySelector('.footer__block p.bold');
         var newFooterMenuHeading = document.createElement('h2');
         newFooterMenuHeading.innerHTML = footerMenuHeading.innerHTML;
         newFooterMenuHeading.classList = footerMenuHeading.classList;
-        newFooterMenuHeading.parentElement.replaceChild(newFooterMenuHeading, footerMenuHeading);
+        footerMenuHeading.parentElement.replaceChild(newFooterMenuHeading, footerMenuHeading);
 
       } catch (error) {
         console.log(error);
