@@ -268,7 +268,7 @@ var accSetUp = () => {
     savedAddressInput.insertAdjacentHTML('beforeend', `<option value="${index}">Use a new address</option>`);
 
     // update user contact
-    var info = document.querySelectorAll('.info span');
+    info = document.querySelectorAll('.info span');
     if (info[1].innerText.length != 0) {
       document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
     } else {

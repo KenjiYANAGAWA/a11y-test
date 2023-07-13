@@ -83,7 +83,7 @@ window.onload = () => {
         })
         // disabling keys from closing popup from hotspot
         document.addEventListener('keydown', (e)=>{
-          let currentFocusEl = document.activeElement;
+          var currentFocusEl = document.activeElement;
           if (Array.from(hotspots).includes(currentFocusEl) && e.key !== 'Tab') {
             e.preventDefault();
             currentFocusEl.nextElementSibling.style.display = 'block';
