@@ -585,11 +585,10 @@ window.onload = () => {
     case '/account/register': {
       try {
         var form = document.querySelector('#create_customer');
-        var formInputs = form.querySelectorAll('input.input');
-        formInputs.forEach((input)=>{
-          input.setAttribute('autocomplete', 'newemail');
-          if (input.type == 'email') input.removeAttribute('type');
-        });
+
+        var emailFormInput = form.querySelector('input[name="customer[email]"]');
+        emailFormInput.setAttribute('autocomplete', 'newemail');
+        emailFormInput.removeAttribute('type');
 
         var passwordInput = form.querySelector('input[name="customer[password]"]');
         passwordInput.parentElement.style.position = 'relative';
