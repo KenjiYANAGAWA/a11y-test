@@ -662,31 +662,31 @@ window.onload = () => {
           var validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value);
 
           if (validPassword) {
-            passwordInput.parentElement.append(greenDot.cloneNode());
+            passwordInput.parentElement.append(greenDot.cloneNode(true));
             passwordInput.style.background = 'rgb(224 235 229)';
           } else {
-            passwordInput.parentElement.append(redDot.cloneNode());
+            passwordInput.parentElement.append(redDot.cloneNode(true));
             passwordInput.style.background = 'rgb(254 231 231)';
           }
           if (validFirstName) {
-            firstNameInput.parentElement.append(greenDot.cloneNode());
+            firstNameInput.parentElement.append(greenDot.cloneNode(true));
             firstNameInput.style.background = 'rgb(224 235 229)';
           } else {
-            firstNameInput.parentElement.append(redDot.cloneNode());
+            firstNameInput.parentElement.append(redDot.cloneNode(true));
             firstNameInput.style.background = 'rgb(254 231 231)';
           }
           if (validLastName) {
-            lastNameInput.parentElement.append(greenDot.cloneNode());
+            lastNameInput.parentElement.append(greenDot.cloneNode(true));
             lastNameInput.style.background = 'rgb(224 235 229)';
           } else {
-            lastNameInput.parentElement.append(redDot.cloneNode());
+            lastNameInput.parentElement.append(redDot.cloneNode(true));
             lastNameInput.style.background = 'rgb(254 231 231)';
           }
           if (validEmail) {
-            emailInput.parentElement.append(greenDot.cloneNode());
+            emailInput.parentElement.append(greenDot.cloneNode(true));
             emailInput.style.background = 'rgb(224 235 229)';
           } else {
-            emailInput.parentElement.append(redDot.cloneNode());
+            emailInput.parentElement.append(redDot.cloneNode(true));
             emailInput.style.background = 'rgb(254 231 231)';
           }
           if (validPassword && validFirstName && validLastName && validEmail) form.submit();
