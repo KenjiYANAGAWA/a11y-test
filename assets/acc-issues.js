@@ -44,9 +44,11 @@ window.onload = () => {
 
       try {
         // changing social icon colors
-        var socialIcons = document.querySelectorAll('.social-media .icon');
-        // socialIcons.forEach(icon => icon.style.color = "rgb(var(--text-color) / .4)");
-        socialIcons[0].style.color = "rgb(var(--text-color) / .4)";
+        addStyle(
+          `.social-media .icon-facebook {
+            color: rgb(var(--text-color) / .4);
+          }`
+        )
       } catch (error) {
         console.log('Social icons issue')
         console.log(error)
