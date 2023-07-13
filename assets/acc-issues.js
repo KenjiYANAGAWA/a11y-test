@@ -480,11 +480,14 @@ window.onload = () => {
 
       try {
         // focusable icons
+        // var iconSelector = [
+        //   '.icon-picto-box',
+        //   '.icon-picto-customer-support',
+        //   '.icon-picto-coupon',
+        //   '.icon-picto-lock'
+        // ]
         var iconSelector = [
-          '.icon-picto-box',
-          '.icon-picto-customer-support',
-          '.icon-picto-coupon',
-          '.icon-picto-lock'
+          '.icon-picto-box'
         ]
         setTimeout(() => {
           iconSelector.forEach(selector => breakIcon(selector));
