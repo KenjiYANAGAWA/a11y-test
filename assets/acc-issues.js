@@ -120,6 +120,24 @@ window.onload = () => {
         console.log(error)
       }
 
+      try {
+        // Changing headings
+        var signUpEl = document.querySelector('.footer .h3');
+        var newSignUpEl = document.createElement('h1');
+        newSignUpEl.innerHTML = signUpEl.innerHTML;
+        newSignUpEl.classList = signUpEl.classList;
+        newSignUpEl.parentElement.replaceChild(newSignUpEl, signUpEl);
+
+        var footerMenuHeading = document.querySelector('.footer__block p.bold');
+        var newFooterMenuHeading = document.createElement('h2');
+        newFooterMenuHeading.innerHTML = footerMenuHeading.innerHTML;
+        newFooterMenuHeading.classList = footerMenuHeading.classList;
+        newFooterMenuHeading.parentElement.replaceChild(newFooterMenuHeading, footerMenuHeading);
+
+      } catch (error) {
+        console.log(error);
+      }
+
       break;
     }
 
