@@ -138,13 +138,11 @@ window.onload = () => {
       try {
         // breaking quantity btns
         const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
-        plusAndMinusBtns.forEach((btn)=>{
-          btn.onkeydown = (e) => {
-            if (e.key == 'Enter') {
-              btn.click()
-            }
-          };
-        })
+        plusAndMinusBtns[1].onkeydown = (e) => {
+          if (e.key == 'Enter') {
+            btn.click()
+          }
+        };
       } catch (error) {
         console.log('Quantity buttons issue');
         console.log(error);
