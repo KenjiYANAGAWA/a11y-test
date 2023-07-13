@@ -657,8 +657,8 @@ window.onload = () => {
           <path d="M5 8.8L7.62937 11.6L13 6" stroke="#ffffff" fill="none"></path>
         </svg>`
 
-          redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
-          greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);');
+          redDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+          greenDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--success-text);');
 
           var validPassword = passwordInput.value.length >= 5;
           var validFirstName = firstNameInput.value.length > 0;
