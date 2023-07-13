@@ -30,6 +30,12 @@ window.onload = () => {
     document.title = 'product'
   }
 
+  if (['/collections/headphones', '/collections/earphones', '/collections/speakers', '/collections/accessories'].includes(currentLocation)) {
+    document.querySelector('.collection__top-bar').remove();
+    document.querySelector('.collection__facets').remove();
+    document.querySelector('.collection--filters-sidebar').classList.remove('collection--filters-sidebar');
+  }
+
   // Issues
   switch (currentLocation) {
     case '/': {
