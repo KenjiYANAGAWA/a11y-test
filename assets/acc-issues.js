@@ -3,6 +3,8 @@
 // lines 125 until 137 for predictive search
 // lines 165 until 176 for search results
 
+const { WebpackOptionsValidationError } = require("webpack");
+
 window.onload = () => {
   var currentLocation = location.pathname;
 
@@ -828,6 +830,13 @@ window.onload = () => {
       } catch (error) {
         console.log('Credit card issue');
         console.log(error)
+      }
+
+      try {
+        var rowheaders = document.querySelectorAll('section[aria-label="Review"] div[role="rowheader"]');
+        rowheaders[rowheaders.length - 1].setAttribute('role', 'cell')
+      } catch (error) {
+        console.log(WebpackOptionsValidationError);
       }
 
       break;
