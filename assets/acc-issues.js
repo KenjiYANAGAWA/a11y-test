@@ -625,7 +625,6 @@ window.onload = () => {
 
         var errorMsg = form.querySelector('.banner--error');
         if (errorMsg) errorMsg.remove();
-        form.querySelectorAll('.dot').forEach(dot=>dot.remove());
 
         var registerBtn = form.querySelector('button[type=submit]');
         var newRegisterBtn = document.createElement('span');
@@ -642,6 +641,7 @@ window.onload = () => {
         registerBtn.parentElement.replaceChild(newRegisterBtn, registerBtn);
 
         newRegisterBtn.onclick = (e) => {
+          form.querySelectorAll('.dot').forEach(dot=>dot.remove());
           var passwordInput = form.querySelector('input[name="customer[password]"]');
           var firstNameInput = form.querySelector('input[name="customer[first_name]"]');
           var lastNameInput = form.querySelector('input[name="customer[last_name]"]');
