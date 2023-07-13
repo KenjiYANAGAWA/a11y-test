@@ -658,7 +658,7 @@ window.onload = () => {
         </svg>`
 
           redDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: rgb(151 7 7);');
-          greenDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: rgb(0 87 38);');
+          greenDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: rgb(0 87 38); background: rgb(0 87 38);');
 
           var validPassword = passwordInput.value.length >= 5;
           var validFirstName = firstNameInput.value.length > 0;
@@ -687,7 +687,7 @@ window.onload = () => {
             lastNameInput.style.background = 'rgb(243 225 225)';
           }
           if (validEmail) {
-            emailInput.parentElement.append(greenDot.cloneNode(true));
+            emailInput.parentElement.append(greenDot.cloneNode());
             emailInput.style.background = 'rgb(224 235 229)';
           } else {
             emailInput.parentElement.append(redDot.cloneNode(true));
