@@ -652,7 +652,7 @@ window.onload = () => {
           redDot.classList.add('dot');
           greenDot.classList.add('dot');
 
-          greenDot.innerHTML = `<svg role="presentation" focusable="false" stroke-width="2" width="18" height="18" class="offset-icon icon icon-success" style="--icon-height: 18px" viewBox="0 0 18 18">
+          greenDot.innerHTML = `<svg role="presentation" focusable="false" stroke-width="2" width="18" height="18" class="offset-icon icon icon-success" viewBox="0 0 18 18">
           <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
           <path d="M5 8.8L7.62937 11.6L13 6" stroke="#ffffff" fill="none"></path>
         </svg>`
