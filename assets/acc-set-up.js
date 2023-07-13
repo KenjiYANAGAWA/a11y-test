@@ -359,7 +359,7 @@ var accSetUp = () => {
       total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
     }
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street || '123 Street'}, ${info.city || 'Springfield'} ${info.provinceCode || 'AL'} ${info.zip || '12345'}, ${info.country}`;
 
     var paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
 
