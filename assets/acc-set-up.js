@@ -516,9 +516,9 @@ var accSetUp = () => {
 
     formStars.forEach((star)=>{
       var starIndex = formStars.indexOf(star);
-      star.addEventListener('focus', ()=>{
-        var yellowStar = formStars.slice(0, starIndex);
-        var greyStar = formStars.slice(starIndex);
+      star.addEventListener('focus', (e)=>{
+        var yellowStar = Array.from(e.target.parentElement.children).slice(0, starIndex);
+        var greyStar = Array.from(e.target.parentElement.children).slice(starIndex);
         yellowStar.forEach((star)=>{
           star.classList.remove('spr-icon-star-empty')
         })
