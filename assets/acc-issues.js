@@ -140,7 +140,7 @@ window.onload = () => {
         const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
         plusAndMinusBtns[1].onkeydown = (e) => {
           if (e.key == 'Enter') {
-            btn.click()
+            e.target.click()
           }
         };
       } catch (error) {
