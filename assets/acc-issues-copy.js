@@ -434,7 +434,7 @@ window.onload = () => {
 
       var redDot = document.createElement('div');
       var greenDot = document.createElement('div');
-      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(248 58 58);');
+      redDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(151 7 7);');
       greenDot.setAttribute('style', 'height: 16px; width:16px; border-radius: 50%; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: rgb(var(--success-text));');
 
       var validPassword = passwordInput.value.length >= 5;
@@ -447,28 +447,28 @@ window.onload = () => {
         passwordInput.style.background = 'rgb(224 235 229)';
       } else {
         passwordInput.parentElement.append(redDot.cloneNode());
-        passwordInput.style.background = 'rgb(254 231 231)';
+        passwordInput.style.background = 'rgb(243 225 225)';
       }
       if (validFirstName) {
         firstNameInput.parentElement.append(greenDot.cloneNode());
         firstNameInput.style.background = 'rgb(224 235 229)';
       } else {
         firstNameInput.parentElement.append(redDot.cloneNode());
-        firstNameInput.style.background = 'rgb(254 231 231)';
+        firstNameInput.style.background = 'rgb(243 225 225)';
       }
       if (validLastName) {
         lastNameInput.parentElement.append(greenDot.cloneNode());
         lastNameInput.style.background = 'rgb(224 235 229)';
       } else {
         lastNameInput.parentElement.append(redDot.cloneNode());
-        lastNameInput.style.background = 'rgb(254 231 231)';
+        lastNameInput.style.background = 'rgb(243 225 225)';
       }
       if (validEmail) {
         emailInput.parentElement.append(greenDot.cloneNode());
         emailInput.style.background = 'rgb(224 235 229)';
       } else {
         emailInput.parentElement.append(redDot.cloneNode());
-        emailInput.style.background = 'rgb(254 231 231)';
+        emailInput.style.background = 'rgb(243 225 225)';
       }
       if (validPassword && validFirstName && validLastName && validEmail) form.submit();
     }
