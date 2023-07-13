@@ -1,5 +1,3 @@
-var { MongoUnexpectedServerResponseError } = require("mongodb");
-
 var issueListFromCSV = [];
 
 // List issue
