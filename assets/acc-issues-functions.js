@@ -1,14 +1,14 @@
-const removeFooterLink = (href) => {
+var removeFooterLink = (href) => {
   document.querySelector(`.footer__wrapper li:has(a[href="${href}"])`).remove();
 }
 
 // function to generate link to WCAG techniques based on the name in item[1]
 function generateTechniqueLink(item) {
-  const input = item[1];
-  const code = input.substring(0, input.indexOf(':'));
-  const key = code.charAt(0);
+  var input = item[1];
+  var code = input.substring(0, input.indexOf(':'));
+  var key = code.charAt(0);
 
-  const linkMap = {
+  var linkMap = {
     A: 'https://www.w3.org/WAI/WCAG21/Techniques/aria/',
     F: 'https://www.w3.org/WAI/WCAG21/Techniques/failures/',
     G: 'https://www.w3.org/WAI/WCAG21/Techniques/general/',

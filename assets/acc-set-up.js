@@ -1,17 +1,17 @@
-const { MongoUnexpectedServerResponseError } = require("mongodb");
+var { MongoUnexpectedServerResponseError } = require("mongodb");
 
-const issueListFromCSV = [];
+var issueListFromCSV = [];
 
 // List issue
-const issueListObj = {
+var issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
 
-const accSetUp = () => {
+var accSetUp = () => {
   try {
     // fixing plus and minus buttons to work on key up
-    const plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
+    var plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
     plusAndMinusBtns.forEach((btn) => {
       btn.addEventListener('keyup', (e) => {
@@ -32,7 +32,7 @@ const accSetUp = () => {
 
   try {
     //fixing meta-pay-btn
-    const metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
+    var metaPayBtns = Array.from(document.querySelectorAll('#meta-pay-button__a'));
     if (metaPayBtns.length > 1) metaPayBtns.slice(1).forEach(btn => btn.remove());
   } catch (error) {
     console.log(error);
@@ -40,7 +40,7 @@ const accSetUp = () => {
 
   try {
     // fixing navbar focus order
-    const headerLogo = document.querySelector('.header__logo');
+    var headerLogo = document.querySelector('.header__logo');
     swapDiv(headerLogo);
   } catch (error) {
     console.log(error);
@@ -67,7 +67,7 @@ const accSetUp = () => {
     // adding to issue list object
     rows.slice(1).forEach(row => {
       let index = 0;
-      const issue = {}
+      var issue = {}
       row.forEach((item)=>{
         let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
         if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
@@ -104,11 +104,11 @@ const accSetUp = () => {
 
     // adding issues to popup
     // issue details are coming from acc-list-issue-details.js
-    const issues = [];
+    var issues = [];
     if (issueListObj[location.pathname] && issueListObj[location.pathname].length > 0) {
       issues.push('<ul>');
       issueListObj[location.pathname].forEach((item) => {
-        const techniqueLink = generateTechniqueLink(item);
+        var techniqueLink = generateTechniqueLink(item);
         // console.log(techniqueLink);
         issues.push(`<li style="list-style:circle"><strong>${item[0]}</strong><br aria-hidden /><a style="text-decoration: underline; color:#1155cc;" href="${techniqueLink}" target="_blank" rel="noopener noreferrer">${item[1]}</a><p>${item[2]}</p></li>`)
         //issues.push(`<li>${item}</li>`)
@@ -128,9 +128,9 @@ const accSetUp = () => {
 
   try {
     // disabling buy it now btn
-    const buyNowBtn = document.querySelector('.shopify-payment-button');
+    var buyNowBtn = document.querySelector('.shopify-payment-button');
     if (buyNowBtn) {
-      const newBuyNowBtn = document.createElement('a');
+      var newBuyNowBtn = document.createElement('a');
       newBuyNowBtn.href = '#'
       newBuyNowBtn.style.display = 'inline-block';
       newBuyNowBtn.style.textAlign = 'center';
@@ -149,11 +149,11 @@ const accSetUp = () => {
     // changed theme.css -> .popover::part(overlay) and .drawer.show-close-cursor::part(overlay) selectors
 
     // removing custom cursor from carousels
-    const customCursors = document.querySelectorAll('.slideshow__cursor');
+    var customCursors = document.querySelectorAll('.slideshow__cursor');
     if (customCursors.length > 0) customCursors.forEach(cursor => cursor.remove());
 
     // removing custom cursor from products gallery
-    const customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
+    var customCursorsProduct = document.querySelectorAll('.product-gallery__cursor');
     if (customCursorsProduct.length > 0) customCursorsProduct.forEach(cursor => cursor.remove());
   } catch (error) {
     console.log(error);
@@ -162,8 +162,8 @@ const accSetUp = () => {
   //fixing skip to main content
   if (location.pathname !== '/') {
     let main = location.pathname.includes('/collections/') ? document.querySelector('.collection__top-bar') : document.querySelector('#main');
-    const focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
-    const skipBtn = document.querySelector('.skip-to-content')
+    var focusableEl = main.querySelector('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
+    var skipBtn = document.querySelector('.skip-to-content')
     skipBtn.onclick = () => {
       if (location.pathname.includes('login')) {
         document.querySelector('.fieldset .form-control input').focus();
@@ -172,7 +172,7 @@ const accSetUp = () => {
       }
     }
   } else {
-    const skipBtn = document.querySelector('.skip-to-content')
+    var skipBtn = document.querySelector('.skip-to-content')
     skipBtn.setAttribute('href', '#')
   }
 
@@ -204,17 +204,17 @@ const accSetUp = () => {
 
   // updating address and shipping cost
   if (location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
-    const addressArray = []
+    var addressArray = []
     // update address
-    const addresses = document.querySelectorAll('.address div');
+    var addresses = document.querySelectorAll('.address div');
     addresses.forEach((address) => {
-      const addressItem = {};
+      var addressItem = {};
       addressItem['street'] = address.querySelector('.address-street').innerText;
       addressItem['name'] = address.querySelector('.address-name').innerText;
       addressItem['country'] = address.querySelector('.address-country').innerText;
       addressItem['zip'] = address.querySelector('.address-zip').innerText;
       addressItem['province'] = address.querySelector('.address-province').innerText;
-      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      var addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
       addressItem['provinceCode'] = addressString[addressString.length - 2];
       addressItem['city'] = address.querySelector('.address-city').innerText;
       addressItem['company'] = address.querySelector('.address-company').innerText;
@@ -239,17 +239,17 @@ const accSetUp = () => {
 
   //setting fake checkout page
   if (location.pathname == '/pages/checkout') {
-    const addressArray = []
+    var addressArray = []
     // get address list
-    const addresses = document.querySelectorAll('.address div');
+    var addresses = document.querySelectorAll('.address div');
     addresses.forEach((address) => {
-      const addressItem = {};
+      var addressItem = {};
       addressItem['street'] = address.querySelector('.address-street').innerText;
       addressItem['name'] = address.querySelector('.address-name').innerText;
       addressItem['country'] = address.querySelector('.address-country').innerText;
       addressItem['zip'] = address.querySelector('.address-zip').innerText;
       addressItem['province'] = address.querySelector('.address-province').innerText;
-      const addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
+      var addressString = address.children[0].innerHTML.split('<br>').find(el=>el.match(/\w+ \d+/)).split(' ');
       addressItem['provinceCode'] = addressString[addressString.length - 2];
       addressItem['city'] = address.querySelector('.address-city').innerText;
       addressItem['company'] = address.querySelector('.address-company').innerText;
@@ -257,10 +257,10 @@ const accSetUp = () => {
     });
 
     // update saved adresses input;
-    const savedAddressInput = document.querySelector('.shipping-checkout select');
+    var savedAddressInput = document.querySelector('.shipping-checkout select');
     let index = 0;
     savedAddressInput.innerHTML = addressArray.map((address) => {
-      const addressLine =  `<option value="${index}">${address.street} ${address.province} ${address.zip} ${address.country} (${address.name} ${address.company})</option>`;
+      var addressLine =  `<option value="${index}">${address.street} ${address.province} ${address.zip} ${address.country} (${address.name} ${address.company})</option>`;
       index ++;
       return addressLine;
     }).join('\n');
@@ -268,12 +268,12 @@ const accSetUp = () => {
     savedAddressInput.insertAdjacentHTML('beforeend', `<option value="${index}">Use a new address</option>`);
 
     // update user contact
-    const info = document.querySelectorAll('.info span');
+    var info = document.querySelectorAll('.info span');
     if (info[1].innerText.length != 0) {
       document.querySelector('.checkout-current-user').innerText = `${info[0].innerText} (${info[1].innerText})`;
     } else {
-      const oldEl = document.querySelector('.checkout-current-user')
-      const newEl = `<div class="checkout-input-container">
+      var oldEl = document.querySelector('.checkout-current-user')
+      var newEl = `<div class="checkout-input-container">
       <label for="email" class="checkout-input-label">
         <span>Email</span>
       </label>
@@ -287,9 +287,9 @@ const accSetUp = () => {
     }
 
     if (info[1].innerText.length != 0) {
-      const inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
+      var inputs = document.querySelectorAll('.checkout-input-select, .checkout-input-text');
 
-      const values = addressArray[0];
+      var values = addressArray[0];
 
       inputs.forEach((input) => {
         if (input.id == 'Select1') {
@@ -312,7 +312,7 @@ const accSetUp = () => {
 
     // update when changing the saved address
     // savedAddressInput.addEventListener('change', (e) => {
-    //   const index = e.target.getAttribute('value');
+    //   var index = e.target.getAttribute('value');
 
     //   if (index + 1 <= addressArray.length) {
 
@@ -335,8 +335,8 @@ const accSetUp = () => {
       document.querySelector('address').innerHTML = `${address}, ${city} ${state} ${zip}, ${country}`;
     }
 
-    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.parentElement.nextElementSibling.children[1];
+    var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    var total = shipCost.parentElement.nextElementSibling.children[1];
     document.querySelectorAll('.fieldset-item input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
         if (e.target.checked && e.target.value == 'economy') {
@@ -350,8 +350,8 @@ const accSetUp = () => {
     })
   } else if (location.pathname == '/pages/payment') {
     // updating shipping method
-    const shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    const total = shipCost.parentElement.nextElementSibling.children[1];
+    var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+    var total = shipCost.parentElement.nextElementSibling.children[1];
     let shippingMethod = url.searchParams.get("shipping_methods");
     if (shippingMethod == 'economy') {
       shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
@@ -363,7 +363,7 @@ const accSetUp = () => {
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
     document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
-    const paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
+    var paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
 
     paymentMethod.forEach((method) => {
       method.addEventListener('change', (e) => {
@@ -414,14 +414,14 @@ const accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    const table = document.querySelector('.order-summary');
-    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    var table = document.querySelector('.order-summary');
+    var quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
         quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+        var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
         if (itemCurrentTotal) {
-          const itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
+          var itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
           quantityInput.setAttribute('data-item-value', itemValue);
         }
     });
@@ -431,18 +431,18 @@ const accSetUp = () => {
   }
 
   //setting alerts to be announced
-  const alert = document.createElement('div');
+  var alert = document.createElement('div');
   alert.classList.add('alert-msg');
   alert.setAttribute('role', 'region');
   alert.setAttribute('aria-live', 'polite');
   document.body.append(alert);
 
-  const inputs = document.querySelectorAll('.quantity-selector__input');
+  var inputs = document.querySelectorAll('.quantity-selector__input');
 
   inputs.forEach((input)=>{
     input.addEventListener('change', (e)=>{
-      const quantity = e.target.value;
-      const alert = document.querySelector('.alert-msg')
+      var quantity = e.target.value;
+      var alert = document.querySelector('.alert-msg')
       alert.innerHTML = `Quantity updated: ${quantity}.`
     })
   })
@@ -450,7 +450,7 @@ const accSetUp = () => {
   if (location.pathname.includes('/collections/') || location.pathname.includes('/search')) {
     try {
       // fixing facet-form issue
-      const facetForms = document.querySelectorAll('#facet-form');
+      var facetForms = document.querySelectorAll('#facet-form');
       if (facetForms.length > 1) {
         facetForms[1].setAttribute('id', 'facet-form-desktop');
         facetForms[1].querySelector('#accordion-filter-v-price').setAttribute('id', 'accordion-filter-v-price-desktop');
@@ -463,10 +463,10 @@ const accSetUp = () => {
 
     try {
       // fixing quick add btn announce
-      const quickAddForms = document.querySelectorAll('form[action="/cart/add"]')
+      var quickAddForms = document.querySelectorAll('form[action="/cart/add"]')
       quickAddForms.forEach(form => form.setAttribute('aria-live', "off"))
 
-      const itemNames = document.querySelectorAll(".product-card__title")
+      var itemNames = document.querySelectorAll(".product-card__title")
       itemNames.forEach((name) => {
         name.classList.add('bold');
         name.setAttribute('data-instant', '');
@@ -480,12 +480,12 @@ const accSetUp = () => {
 
   // fixing ids from addresses forms
   if (location.pathname == '/account/addresses') {
-    const forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
+    var forms = Array.from(document.querySelectorAll('form:has(input[name="address[first_name]"])'));
     forms.slice(1).forEach((form) => {
-      const id = form.getAttribute('id');
-      const idNumber = id.split('_')[2];
+      var id = form.getAttribute('id');
+      var idNumber = id.split('_')[2];
       console.log(idNumber)
-      const inputs = form.querySelectorAll('[id]');
+      var inputs = form.querySelectorAll('[id]');
       inputs.forEach((input)=> {
         input.id = input.id.replace(/\d+/, idNumber)
       });
@@ -494,10 +494,10 @@ const accSetUp = () => {
 
   //announce on quick add and add to cart
   try {
-    const addToCartBtns = document.querySelectorAll('form[action="/cart/add"] button[type="submit"]');
+    var addToCartBtns = document.querySelectorAll('form[action="/cart/add"] button[type="submit"]');
 
     addToCartBtns.forEach((btn)=>{
-      const alert = document.querySelector('.alert-msg')
+      var alert = document.querySelector('.alert-msg')
       btn.addEventListener('click', ()=>{
         alert.innerHTML = 'Item added to your cart'
         setTimeout(() => {

@@ -1,4 +1,4 @@
-const csvIssues = `ID,"44
+var csvIssues = `ID,"44
 Added to list popup","Status
 100 Done
 0 Deved

@@ -1,8 +1,8 @@
 function trapFocus(element) {
-  const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
-  const firstFocusableEl = focusableEls[0];
-  const lastFocusableEl = focusableEls[focusableEls.length - 1];
-  const KEYCODE_TAB = 9;
+  var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
+  var firstFocusableEl = focusableEls[0];
+  var lastFocusableEl = focusableEls[focusableEls.length - 1];
+  var KEYCODE_TAB = 9;
 
   element.addEventListener('keydown', function(e) {
     var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
@@ -30,18 +30,18 @@ function swapDiv(elem) {
 }
 
 function breakIcon(selector) {
-  const icons = document.querySelectorAll(selector);
+  var icons = document.querySelectorAll(selector);
     icons.forEach((icon) => {
       icon.removeAttribute('focusable');
       icon.removeAttribute('role');
-      const label = document.querySelector(`.text-with-icons__item:has(${selector}) .prose .h5`).innerText;
+      var label = document.querySelector(`.text-with-icons__item:has(${selector}) .prose .h5`).innerText;
       icon.setAttribute('aria-label', label);
       icon.setAttribute('tabindex', 0);
     })
 }
 
 function convertNumberToStars(rating) {
-  const ratingAsStarsEl = ['<span class="spr-starratings spr-review-header-starratings" role="img">']
+  var ratingAsStarsEl = ['<span class="spr-starratings spr-review-header-starratings" role="img">']
     for (let i = 0; i < 5; i++) {
       ratingAsStarsEl.push(`<i class="spr-icon spr-icon-star${rating <= i ? '-empty' : ''}" alt=""></i>`);
     }
@@ -92,9 +92,9 @@ function createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice) {
 
 function cartSummaryPrice() {
   //items to add to cart
-  const cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
+  var cartItemsContainer = document.querySelectorAll('.info-cart .cart-item');
   // location to be added
-  const checkoutItemSummary = document.querySelector('.total div[role=table]');
+  var checkoutItemSummary = document.querySelector('.total div[role=table]');
 
   //remove sample product item cart if any real item
   if (cartItemsContainer.length >= 1) {
@@ -103,17 +103,17 @@ function cartSummaryPrice() {
 
   //adding all items
   cartItemsContainer.forEach((item) => {
-    const itemImg = item.querySelector('.cart-item-img img');
-    const itemTitle = item.querySelector('.cart-item-title');
-    const itemQuantity = item.querySelector('.cart-item-quantity');
-    const itemFinalPrice = item.querySelector('.cart-item-final-price');
+    var itemImg = item.querySelector('.cart-item-img img');
+    var itemTitle = item.querySelector('.cart-item-title');
+    var itemQuantity = item.querySelector('.cart-item-quantity');
+    var itemFinalPrice = item.querySelector('.cart-item-final-price');
 
-    const itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice)
+    var itemHTML = createRow(itemImg, itemQuantity, itemTitle, itemFinalPrice)
 
     checkoutItemSummary.insertAdjacentHTML('beforeend', itemHTML);
   })
 
-  const finalTotal = document.querySelector('.cart-total-price').innerText;
+  var finalTotal = document.querySelector('.cart-total-price').innerText;
 
   // update total price
   document.querySelector('.header-total').nextElementSibling.innerHTML = finalTotal;
@@ -122,10 +122,10 @@ function cartSummaryPrice() {
 
  // substituting all checkout btns href
  setInterval(() => {
-  const btns = document.querySelectorAll('form[action="/cart"]:not(.shipping-estimator__form) button[type="submit"]');
+  var btns = document.querySelectorAll('form[action="/cart"]:not(.shipping-estimator__form) button[type="submit"]');
   if (btns.length > 0) {
     btns.forEach((btn) => {
-      const newBtn = document.createElement('a');
+      var newBtn = document.createElement('a');
       newBtn.href = '/pages/checkout';
       newBtn.classList.add('button');
       newBtn.style.color = 'white !important';
@@ -139,7 +139,7 @@ function cartSummaryPrice() {
 let comboKey = []
 
 // popup issue list
-const listIssue = document.createElement('div');
+var listIssue = document.createElement('div');
 listIssue.classList.add('popup-issue-list');
 listIssue.style.position = 'fixed';
 listIssue.style.top = '20px';
@@ -157,7 +157,7 @@ listIssue.style.overflowY = "scroll";
 
 document.addEventListener('keyup', (e) => {
   if (e.key == 'i' && e.ctrlKey) {
-    const popupVisible = document.querySelector('.popup-issue-list');
+    var popupVisible = document.querySelector('.popup-issue-list');
     if (popupVisible) {
       popupVisible.remove();
     } else {
@@ -166,7 +166,7 @@ document.addEventListener('keyup', (e) => {
       listIssue.children[0].focus();
     }
   }
-  const popupVisible = document.querySelector('.popup-issue-list');
+  var popupVisible = document.querySelector('.popup-issue-list');
   if (popupVisible) {
     trapFocus(popupVisible);
   }
@@ -177,15 +177,15 @@ function addStyle(string) {
 }
 
 function  Total() {
-  const alert = document.querySelector('.alert-msg');
-  const totalContainer = document.querySelector('.cart-form__totals');
-  const total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
+  var alert = document.querySelector('.alert-msg');
+  var totalContainer = document.querySelector('.cart-form__totals');
+  var total = Number(totalContainer.children[totalContainer.children.length - 2].children[1].innerText.match(/\$(\d*\.\d*) \w*/)[1]);
   alert.innerHTML = `Total updated: ${total}.`
 }
 
 function announceUpdate(el) {
-  const alert = document.querySelector('.alert-msg');
-  const newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
+  var alert = document.querySelector('.alert-msg');
+  var newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
 
   if (location.pathname == '/cart') {
     // updating item total
@@ -193,14 +193,14 @@ function announceUpdate(el) {
 
     // calculating new order total
     let newOrderTotal = 0;
-    const table = document.querySelector('.order-summary');
-    const itensRow = table.querySelectorAll('tr:has(td)');
+    var table = document.querySelector('.order-summary');
+    var itensRow = table.querySelectorAll('tr:has(td)');
     itensRow.forEach((row)=>{
       newOrderTotal += Number(row.children[2].innerText.match(/\$(\d*\.\d*)/)[1]);
     })
 
     // updating order total
-    const orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
+    var orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
     orderTotalContainer.forEach((total)=>{
       total.children[1].innerHTML = `$${newOrderTotal.toFixed(2)} USD`
     })
@@ -210,7 +210,7 @@ function announceUpdate(el) {
 }
 
 function clickQuantityHandler(el) {
-  const input = el.parentElement.querySelector('.quantity-selector__input');
+  var input = el.parentElement.querySelector('.quantity-selector__input');
   if (el.getAttribute('aria-label') == 'Increase quantity') {
     input.value = Number(input.value) + 1
   } else if (el.getAttribute('aria-label') == 'Decrease quantity') {
