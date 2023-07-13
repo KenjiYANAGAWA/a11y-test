@@ -80,7 +80,9 @@
 }
 
 #shopify-product-reviews .spr-icon-star-empty {
-  background-color: #969696;
+  /* background-color: #969696;  */
+  background-color: #666666;
+  opacity: 1;
 }
 
 #shopify-product-reviews .spr-form {
