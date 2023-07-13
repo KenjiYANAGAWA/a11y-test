@@ -122,7 +122,7 @@ window.onload = () => {
 
       try {
         // Changing headings
-        var signUpEl = document.querySelector('.footer .h3');
+        var signUpEl = document.querySelector('.footer__wrapper p.h3');
         var newSignUpEl = document.createElement('h1');
         newSignUpEl.innerHTML = signUpEl.innerHTML;
         newSignUpEl.classList = signUpEl.classList;
