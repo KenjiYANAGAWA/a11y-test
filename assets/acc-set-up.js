@@ -487,6 +487,10 @@ var accSetUp = () => {
       inputs.forEach((input)=> {
         input.id = input.id.replace(/\d+/, idNumber)
       });
+      var labels = form.querySelectorAll('[for]');
+      labels.forEach((label) => {
+        label.setAttribute('for', label.getAttribute('for').replace(/\d+/, idNumber))
+      })
     })
   }
 
