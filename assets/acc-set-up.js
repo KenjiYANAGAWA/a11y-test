@@ -229,6 +229,13 @@ var accSetUp = () => {
     zip = url.searchParams.get("zip");
     address = url.searchParams.get("address");
     state = url.searchParams.get("state");
+
+    if (email == 'null' || !email) email = 'john-doe@mail.com';
+    if (firsName == 'null' || !firsName) firsName = 'John';
+    if (lastName == 'null' || !lastName) lastName = 'Doe';
+    if (city == 'null' || !city) city = 'Springfield';
+    if (zip == 'null' || !zip) zip = '12345';
+    if (address == 'null' || !address) address = '123 Street';
     // country = url.searchParams.get("country");
     country = 'United States';
 
@@ -359,7 +366,7 @@ var accSetUp = () => {
       total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
     }
     document.querySelector('.information-row:has(p) p').innerHTML = shippingMethod == 'standard' ? `Standard - <strong>$6.90</strong>` : `Economy - <strong>Free</strong>`;
-    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street || '123 Street'}, ${info.city || 'Springfield'} ${info.provinceCode || 'AL'} ${info.zip || '12345'}, ${info.country}`;
+    document.querySelector('address').innerHTML = (address && city && state && zip && country) ? `${address}, ${city} ${state} ${zip}, ${country}` : `${info.street}, ${info.city} ${info.provinceCode} ${info.zip}, ${info.country}`;
 
     var paymentMethod = document.querySelectorAll('section[aria-label="Payment"] input[type=radio]');
 
