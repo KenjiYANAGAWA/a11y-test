@@ -510,4 +510,24 @@ var accSetUp = () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    var formStars = Array.from(document.querySelector('spr-starrating a'));
+
+    formStars.forEach((star)=>{
+      var starIndex = formStars.indexOf(star);
+      star.addEventListener('focus', ()=>{
+        var yellowStar = formStars.slice(0, starIndex);
+        var greyStar = formStars.slice(starIndex);
+        yellowStar.forEach((star)=>{
+          star.classList.remove('spr-icon-star-empty')
+        })
+        greyStar.forEach((star)=>{
+          star.classList.add('spr-icon-star-empty')
+        })
+      })
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
