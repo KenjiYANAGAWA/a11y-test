@@ -598,15 +598,12 @@ window.onload = () => {
           const maxPrice = Number(priceRangeInputs[1].value)
 
           productCards.forEach((product)=>{
-            product.style.display = 'content';
+            product.classList.remove('hide');
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
             console.log(priceRangeInputs, minPrice, price, maxPrice);
             if (price > maxPrice) {
-              product.style.display = 'none';
-            }
-            if (price < minPrice) {
-              product.style.display = 'none';
+              product.classList.add('hide');
             }
           })
         })
