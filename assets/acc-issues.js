@@ -669,8 +669,7 @@ window.onload = () => {
         lastNameInput.parentElement.style.position = 'relative';
 
         var errorMsg = form.querySelector('.banner--error');
-        var notValidEmail = errorMsg.querySelector('.errors li').innerHTML.includes('email')
-        if (errorMsg) errorMsg.remove();
+        errorMsg.style.display = 'none'
 
         var registerBtn = form.querySelector('button[type=submit]');
         var newRegisterBtn = document.createElement('span');
@@ -709,7 +708,7 @@ window.onload = () => {
           var validPassword = passwordInput.value.length >= 5;
           var validFirstName = firstNameInput.value.length > 0;
           var validLastName = lastNameInput.value.length > 0;
-          var validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value);
+          var validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value) && !(errorMsg.querySelector('.errors li').innerHTML.includes('email'));
 
           if (validPassword) {
             passwordInput.parentElement.append(greenDot.cloneNode(true));
@@ -740,6 +739,7 @@ window.onload = () => {
             emailInput.style.background = 'rgb(243 225 225)';
           }
           if (validPassword && validFirstName && validLastName && validEmail) form.submit();
+          if (errorMsg) errorMsg.remove();
         }
       } catch (error) {
         console.log('Validation/error message issues');
