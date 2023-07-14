@@ -655,6 +655,7 @@ window.onload = () => {
     }
     case '/account/register': {
       try {
+        addStyle(`.banner--error {display:none !important}`)
         const form = document.querySelector('#create_customer');
 
         const emailFormInput = form.querySelector('input[name="customer[email]"]');
@@ -668,7 +669,7 @@ window.onload = () => {
         const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
         lastNameInput.parentElement.style.position = 'relative';
 
-        addStyle(`.banner--error {display:none}`)
+
 
         const errorMsg = form.querySelector('.banner--error');
         if (errorMsg) {
