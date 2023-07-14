@@ -186,8 +186,11 @@ const announceUpdate = (el) => {
 
   if (location.pathname == '/cart') {
     // updating item total
+    const itemTotal = el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
     if (el.parentElement.parentElement.nextElementSibling) {
       el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
+    } else if (itemTotal) {
+      itemTotal.innerHTML = `<span class="sr-only">Sale price</span> $${newItemTotal.toFixed(2)}`
     }
 
     // calculating new order total
@@ -198,10 +201,8 @@ const announceUpdate = (el) => {
       newOrderTotal += Number(row.children[2].innerHTML.match(/[0-9.]/g).join(''));
     })
 
-    const itemTotal = el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
-    if (itemTotal) {
-      itemTotal.innerHTML = `<span class="sr-only">Sale price</span> $${newItemTotal.toFixed(2)}`
-    }
+
+
 
     // updating order total
     var orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
