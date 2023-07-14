@@ -599,6 +599,7 @@ window.onload = () => {
           let maxPrice = Number(priceRangeInputs[3].value)
           const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
           const price = Number(productPrice)
+          console.log(minPrice, price, maxPrice);
           if (price > maxPrice || price < minPrice) {
             product.style.display = 'none';
           }

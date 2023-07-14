@@ -217,16 +217,3 @@ function clickQuantityHandler(el) {
     input.value = Number(input.value) - 1
   }
 }
-
-
-function updateCards(form) {
-  const priceRangeInputs = form.querySelectorAll('input[type="number"]');
-  const minPrice = Number(priceRangeInputs[0].value)
-  const maxPrice = Number(priceRangeInputs[1].value)
-  const productCards = document.querySelectorAll('.product-card');
-  productCards.forEach((product)=>{
-    const productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
-    const price = Number(productPrice.match(/[0-9.]/g).join(''))
-    product.style.display = (price < maxPrice || price > minPrice) ? 'content' : 'none';
-  })
-}
