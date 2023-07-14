@@ -224,6 +224,6 @@ function updateCards(min, max) {
   productCards.forEach((product)=>{
     const productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
     const price = Number(productPrice.match(/[0-9.]/g).join(''))
-    product.style.display = (price > max || price < min) ? 'none' : product.style.display.replace('display: none;', '')
+    product.style.display = (price < max || price > min) ? product.style.display.replace('display: none;', '') : 'none';
   })
 }
