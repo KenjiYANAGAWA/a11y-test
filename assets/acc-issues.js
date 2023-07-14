@@ -669,7 +669,8 @@ window.onload = () => {
         lastNameInput.parentElement.style.position = 'relative';
 
         var errorMsg = form.querySelector('.banner--error');
-        // if (errorMsg) errorMsg.remove();
+        var notValidEmail = errorMsg.querySelector('.errors li').innerHTML.includes('email')
+        if (errorMsg) errorMsg.remove();
 
         var registerBtn = form.querySelector('button[type=submit]');
         var newRegisterBtn = document.createElement('span');
@@ -731,7 +732,7 @@ window.onload = () => {
             lastNameInput.parentElement.append(redDot.cloneNode(true));
             lastNameInput.style.background = 'rgb(243 225 225)';
           }
-          if (validEmail) {
+          if (validEmail && !notValidEmail) {
             emailInput.parentElement.append(greenDot.cloneNode());
             emailInput.style.background = 'rgb(224 235 229)';
           } else {
