@@ -217,3 +217,13 @@ function clickQuantityHandler(el) {
     input.value = Number(input.value) - 1
   }
 }
+
+
+function updateCards(min, max) {
+  var productCards = document.querySelectorAll('.product-card');
+  productCards.forEach((product)=>{
+    var productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
+    var price = Number(productPrice.replaceAll(',', ''))
+    product.style.display = price > max || price < min ? 'none' : 'content'
+  })
+}
