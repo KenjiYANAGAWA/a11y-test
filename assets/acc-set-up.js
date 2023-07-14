@@ -46,8 +46,8 @@ var accSetUp = () => {
 
   try {
     // loading issue list
-    csvIssues //raw issue data as string
-    issueListFromCSV //obj to add issues
+    // csvIssues //raw issue data as string
+    // issueListFromCSV //obj to add issues
 
     // getting rows
     let rows = [];

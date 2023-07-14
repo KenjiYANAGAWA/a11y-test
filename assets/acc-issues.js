@@ -594,7 +594,6 @@ window.onload = () => {
 
       priceRangeInputs.forEach((input)=>{
         input.onchange = () => {
-          var priceRangeInputs = form.querySelectorAll('input[type="number"]');
           var minPrice = Number(priceRangeInputs[0].value)
           var maxPrice = Number(priceRangeInputs[1].value)
           var productCards = document.querySelectorAll('.product-card');
@@ -608,7 +607,6 @@ window.onload = () => {
           })
         }
       })
-
 
       break;
     }
