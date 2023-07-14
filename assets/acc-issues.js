@@ -602,7 +602,7 @@ window.onload = () => {
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
             console.log(priceRangeInputs, minPrice, price, maxPrice);
-            if (price > maxPrice) {
+            if (price > maxPrice || price < minPrice) {
               product.classList.add('hide');
             }
           })
