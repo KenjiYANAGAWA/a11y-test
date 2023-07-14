@@ -420,15 +420,17 @@ var accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    var quantityInputs = document.querySelectorAll('.order-summary tr:has(td):not(.line-item__info) input.quantity-input');
+    var quantityInputs = document.querySelectorAll('.order-summary tr:has(td) input.quantity-input');
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
       var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
-      var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
-      quantityInput.setAttribute('data-item-value', itemValue);
-      var itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.lastChild.lastChild
-      itemPrice.innerHTML = `<span class="sr-only">Sale price</span> $${itemValue}`
+      if (itemCurrentTotal) {
+        var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
+        quantityInput.setAttribute('data-item-value', itemValue);
+        var itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.lastChild.lastChild
+        itemPrice.innerHTML = `<span class="sr-only">Sale price</span> $${itemValue}`
+      }
     });
 
     // fixing duplicate ids
