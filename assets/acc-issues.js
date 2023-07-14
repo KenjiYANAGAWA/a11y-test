@@ -672,12 +672,12 @@ window.onload = () => {
 
         const errorMsg = form.querySelector('.banner--error');
         if (errorMsg) {
+          errorMsg.remove()
           const redDot = document.createElement('div');
           redDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: rgb(151 7 7);');
           const emailInput = form.querySelector('input[name="customer[email]"]');
           emailInput.parentElement.append(redDot);
           emailInput.style.background = 'rgb(243 225 225)';
-          errorMsg.remove()
         }
 
         const registerBtn = form.querySelector('button[type=submit]');
