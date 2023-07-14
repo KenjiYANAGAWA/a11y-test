@@ -420,14 +420,14 @@ var accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    var table = document.querySelector('.order-summary');
-    var quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    const table = document.querySelector('.order-summary');
+    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
         quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-        var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
         if (itemCurrentTotal) {
-          var itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
+          const itemValue = Number(itemCurrentTotal.innerHTML.match(/\$(\d*\.\d*)/)[1]) / Number(quantityInput.value);
           quantityInput.setAttribute('data-item-value', itemValue);
         }
     });
