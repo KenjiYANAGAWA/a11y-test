@@ -186,13 +186,10 @@ const announceUpdate = (el) => {
 
   if (location.pathname == '/cart') {
     // updating item total
-    const itemTotal = el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
     if (el.parentElement.parentElement.nextElementSibling) {
       el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
-    }
-
-    if (itemTotal) {
-      itemTotal.innerHTML = `<span class="sr-only">Sale price</span> $${newItemTotal.toFixed(2)}`
+    } else if (el.parentElement.parentElement.previousElementSibling) {
+      el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued').innerHTML = `<span class="sr-only">Sale price</span>`
     }
 
     // calculating new order total

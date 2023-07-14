@@ -424,9 +424,9 @@ var accSetUp = () => {
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-      quantityInput.setAttribute('data-item-value', itemValue);
-      var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+      var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling || quantityInput.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
       if (itemCurrentTotal) {
+        quantityInput.setAttribute('data-item-value', itemValue);
         var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
       }
     });
