@@ -189,7 +189,9 @@ const announceUpdate = (el) => {
     const itemTotal = el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
     if (el.parentElement.parentElement.nextElementSibling) {
       el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
-    } else if (itemTotal) {
+    }
+
+    if (itemTotal) {
       itemTotal.innerHTML = `<span class="sr-only">Sale price</span> $${newItemTotal.toFixed(2)}`
     }
 
@@ -200,9 +202,6 @@ const announceUpdate = (el) => {
     itensRow.forEach((row)=>{
       newOrderTotal += Number(row.children[2].innerHTML.match(/[0-9.]/g).join(''));
     })
-
-
-
 
     // updating order total
     var orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
