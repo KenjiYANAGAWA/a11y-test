@@ -608,7 +608,7 @@ window.onload = () => {
           let results = 0;
 
           productCards.forEach((product)=>{
-            product.setAttribute('aria-hidden', 'true');
+            product.setAttribute('aria-live', 'off');
             product.classList.remove('hide');
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
@@ -617,9 +617,6 @@ window.onload = () => {
             } else {
               results += 1
             }
-            setTimeout(() => {
-              product.removeAttribute('aria-hidden');
-            }, 2000);
           })
 
           var alert = document.querySelector('.alert-msg')
