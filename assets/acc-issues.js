@@ -590,10 +590,10 @@ window.onload = () => {
       const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
 
-      const priceRangeInputs = form.querySelectorAll('input[type="number"]');
-      const productCards = document.querySelectorAll('.product-card');
 
       setInterval(() => {
+        const priceRangeInputs = form.querySelectorAll('input[type="number"]');
+        const productCards = document.querySelectorAll('.product-card');
         let minPrice = Number(priceRangeInputs[0].value)
         let maxPrice = Number(priceRangeInputs[1].value)
         productCards.forEach((product)=>{
