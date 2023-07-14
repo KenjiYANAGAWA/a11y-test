@@ -590,11 +590,9 @@ window.onload = () => {
       const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
 
-      const priceRangeInputs = form.querySelectorAll('input[type="number"]');
-
-      priceRangeInputs.forEach((input)=>{
-        input.setAttribute('onchange', 'updateCards(this.form)')
-      })
+      setInterval(() => {
+        updateCards(form)
+      }, 100);
 
       break;
     }
