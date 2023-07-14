@@ -428,7 +428,7 @@ var accSetUp = () => {
       if (itemCurrentTotal) {
         var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
         quantityInput.setAttribute('data-item-value', itemValue);
-        var itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.lastChild.lastChild.lastChild
+        var itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
         itemPrice.innerHTML = `<span class="sr-only">Sale price</span> $${itemValue}`
       }
     });
