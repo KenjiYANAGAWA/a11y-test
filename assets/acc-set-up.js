@@ -421,7 +421,7 @@ var accSetUp = () => {
     })
   } else if (location.pathname == '/cart') {
     const table = document.querySelector('.order-summary');
-    const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
+    const quantityInputs = table.querySelectorAll('tr:has(td) input.quantity-input');
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
