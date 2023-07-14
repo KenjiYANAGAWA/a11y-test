@@ -589,9 +589,7 @@ window.onload = () => {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
       setInterval(() => {
-        if (form.getAttribute('update-on-change')) {
-          form.removeAttribute('update-on-change');
-        }
+        form.removeAttribute('update-on-change');
       }, 100);
 
       const stockBtn = form.querySelector('input[type="checkbox"]');
