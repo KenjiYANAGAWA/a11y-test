@@ -600,7 +600,7 @@ window.onload = () => {
       const productCards = document.querySelectorAll('.product-card');
       priceRangeInputs.forEach(input=>{
         input.addEventListener('change', ()=>{
-          input.form.preventDefault();
+          input.form.addEventListener('submit', (e)=>e.preventDefault());
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
 
@@ -612,6 +612,7 @@ window.onload = () => {
               product.classList.add('hide');
             }
           })
+          input.form.removeEventListener('submit', (e)=>e.preventDefault());
         })
       })
 
