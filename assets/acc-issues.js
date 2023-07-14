@@ -605,7 +605,7 @@ window.onload = () => {
         input.addEventListener('change', ()=>{
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
-          let results = 0;
+          let results = productCards.length;
 
           productCards.forEach((product)=>{
             product.setAttribute('aria-live', 'off');
@@ -614,8 +614,7 @@ window.onload = () => {
             const price = Number(productPrice)
             if (price > maxPrice || price < minPrice) {
               product.classList.add('hide');
-            } else {
-              results += 1
+              results -= 1
             }
           })
 
