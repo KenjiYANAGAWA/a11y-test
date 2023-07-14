@@ -595,7 +595,7 @@ window.onload = () => {
       priceRangeInputs.forEach(input=>{
         input.addEventListener('change', ()=>{
           const minPrice = Number(priceRangeInputs[0].value)
-          const maxPrice = Number(priceRangeInputs[1].value)
+          const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
 
           productCards.forEach((product)=>{
             product.classList.remove('hide');
