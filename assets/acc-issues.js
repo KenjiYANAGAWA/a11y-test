@@ -594,9 +594,9 @@ window.onload = () => {
         let productCards = document.querySelectorAll('.product-card');
         productCards.forEach((product)=>{
           product.style.display = 'content';
-          let priceRangeInputs = document.querySelectorAll('input[type="number"]');
-          let minPrice = Number(priceRangeInputs[2].value)
-          let maxPrice = Number(priceRangeInputs[3].value)
+          const priceRangeInputs = document.querySelectorAll('input[type="number"]');
+          const minPrice = Number(priceRangeInputs[2].value)
+          const maxPrice = Number(priceRangeInputs[3].value)
           const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
           const price = Number(productPrice)
           console.log(minPrice, price, maxPrice);
