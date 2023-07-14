@@ -222,6 +222,7 @@ function clickQuantityHandler(el) {
 function updateCards(min, max) {
   var productCards = document.querySelectorAll('.product-card');
   productCards.forEach((product)=>{
+    product.style.display = 'content'
     var productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
     var price = Number(productPrice.match(/[0-9.]/g).join(''))
     product.style.display = (price > max || price < min) ? 'none' : 'content'
