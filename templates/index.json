@@ -65,6 +65,7 @@
     },
     "image-link-blocks": {
       "type": "image-link-blocks",
+      "disabled": true,
       "blocks": {
         "1664424046b00c932c-0": {
           "type": "item",
@@ -73,7 +74,7 @@
             "stretch_image": true,
             "link_text": "Headphones",
             "link_url": "https:\/\/a11y-test.com\/collections\/headphones",
-            "background": "#fff",
+            "background": "#ffffff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -86,7 +87,7 @@
             "stretch_image": true,
             "link_text": "Earphones",
             "link_url": "https:\/\/a11y-test.com\/collections\/earphones",
-            "background": "#fff",
+            "background": "#ffffff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -99,7 +100,7 @@
             "stretch_image": true,
             "link_text": "Speakers",
             "link_url": "https:\/\/a11y-test.com\/collections\/speakers",
-            "background": "#fff",
+            "background": "#ffffff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -112,7 +113,7 @@
             "stretch_image": true,
             "link_text": "Accessories",
             "link_url": "https:\/\/a11y-test.com\/collections\/accessories",
-            "background": "#fff",
+            "background": "#ffffff",
             "text_color": "#1a1a1a",
             "overlay_color": "#000000",
             "overlay_opacity": 0
