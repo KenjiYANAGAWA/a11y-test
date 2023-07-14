@@ -598,7 +598,7 @@ window.onload = () => {
           var minPrice = Number(priceRangeInputs[0].value)
           var maxPrice = Number(priceRangeInputs[1].value)
           productCards.forEach((product)=>{
-            var productPrice = product.querySelector('.text-subdued').innerText.match(/[0-9]/g).join('')
+            var productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9]/g).join('')
             var price = Number(productPrice)
             if (price > maxPrice || price < minPrice) {
               product.style.display = 'none'
