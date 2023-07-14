@@ -594,14 +594,13 @@ window.onload = () => {
       setInterval(() => {
         let productCards = document.querySelectorAll('.product-card');
         productCards.forEach((product)=>{
+          product.style.display = 'content';
           let priceRangeInputs = form.querySelectorAll('input[type="number"]');
           let minPrice = Number(priceRangeInputs[0].value)
           let maxPrice = Number(priceRangeInputs[1].value)
           const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
           const price = Number(productPrice)
-          if (price < maxPrice || price > minPrice) {
-            product.style.display = 'content';
-          } else {
+          if (price > maxPrice || price < minPrice) {
             product.style.display = 'none';
           }
         })
