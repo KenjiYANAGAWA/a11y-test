@@ -589,7 +589,6 @@ window.onload = () => {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
       setInterval(() => {
-        console.log(form)
         form.removeAttribute('update-on-change');
       }, 100);
 
@@ -601,6 +600,7 @@ window.onload = () => {
       const productCards = document.querySelectorAll('.product-card');
       priceRangeInputs.forEach(input=>{
         input.addEventListener('change', ()=>{
+          input.form.preventDefault();
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
 
@@ -608,7 +608,6 @@ window.onload = () => {
             product.classList.remove('hide');
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
-            console.log(priceRangeInputs, minPrice, price, maxPrice);
             if (price > maxPrice || price < minPrice) {
               product.classList.add('hide');
             }
