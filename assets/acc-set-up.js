@@ -59,10 +59,9 @@ var accSetUp = () => {
         rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
       }
     })
-    console.log(rows);
+
     rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
 
-    console.log(rows);
     // adding to issue list object
     rows.slice(1).forEach(row => {
       let index = 0;
@@ -84,7 +83,7 @@ var accSetUp = () => {
     });
 
     issueListFromCSV.forEach((issue)=>{
-      if (issue['status_100_done_0_deved_8_not_implemented_yet'] == 'Done: Verified by PM') {
+      // if (Object.keys(issue)[1] == 'Done: Verified by PM') {
         let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
         if (pathname == '') pathname = '/'
         // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
@@ -98,7 +97,7 @@ var accSetUp = () => {
           issue['failure_technique'],
           issue['details_of_the_issue']
         ])
-      }
+      // }
     })
 
     // adding issues to popup
