@@ -424,7 +424,7 @@ var accSetUp = () => {
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-      var itemCurrentTotal = quantityInput.parentElement.parentElement.previousElementSibling
+      var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
       if (itemCurrentTotal) {
         quantityInput.setAttribute('data-item-value', itemValue);
         var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
