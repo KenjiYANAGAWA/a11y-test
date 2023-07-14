@@ -591,14 +591,13 @@ window.onload = () => {
       form.removeAttribute('update-on-change');
 
       var priceRangeInputs = form.querySelectorAll('input[type="number"]');
+      var productCards = document.querySelectorAll('.product-card');
 
       priceRangeInputs.forEach((input)=>{
         input.onchange = () => {
           var minPrice = Number(priceRangeInputs[0].value)
           var maxPrice = Number(priceRangeInputs[1].value)
-          var productCards = document.querySelectorAll('.product-card');
           productCards.forEach((product)=>{
-            console.log(product)
             var productPrice = product.querySelector('.text-subdued').innerText.split('\n$')[1]
             var price = Number(productPrice.replaceAll(',', ''))
             if (price > maxPrice || price < minPrice) {
