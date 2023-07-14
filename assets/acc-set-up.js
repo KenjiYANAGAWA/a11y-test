@@ -517,4 +517,9 @@ var accSetUp = () => {
   } catch (error) {
     console.log(error)
   }
+
+  if (location.pathname == '/collections') {
+    document.body.innerHTML = ''
+  }
+
 }
