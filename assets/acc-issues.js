@@ -588,7 +588,11 @@ window.onload = () => {
     case '/collections/all': {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
-      form.removeAttribute('update-on-change');
+      setInterval(() => {
+        if (form.getAttribute('update-on-change')) {
+          form.removeAttribute('update-on-change');
+        }
+      }, 100);
 
       const stockBtn = form.querySelector('input[type="checkbox"]');
       stockBtn.setAttribute('onclick', 'this.form.submit()');
