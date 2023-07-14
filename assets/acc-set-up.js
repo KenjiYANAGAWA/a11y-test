@@ -83,7 +83,7 @@ var accSetUp = () => {
     });
 
     issueListFromCSV.forEach((issue)=>{
-      // if (Object.keys(issue)[1] == 'Done: Verified by PM') {
+      if (Object.keys(issue)[1]) {
         let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
         if (pathname == '') pathname = '/'
         // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
@@ -97,7 +97,7 @@ var accSetUp = () => {
           issue['failure_technique'],
           issue['details_of_the_issue']
         ])
-      // }
+      }
     })
 
     // adding issues to popup
