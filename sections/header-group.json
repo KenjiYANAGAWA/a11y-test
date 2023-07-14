@@ -4,6 +4,7 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "disabled": true,
       "blocks": {
         "message": {
           "type": "message",
@@ -29,6 +30,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,

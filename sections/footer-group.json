@@ -4,6 +4,7 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "disabled": true,
       "blocks": {
         "newsletter": {
           "type": "newsletter",
