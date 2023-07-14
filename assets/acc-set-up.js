@@ -420,15 +420,15 @@ var accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    const table = document.querySelector('.order-summary');
-    const quantityInputs = table.querySelectorAll('tr:has(td) input.quantity-input');
+    var table = document.querySelector('.order-summary');
+    var quantityInputs = table.querySelectorAll('tr:has(td) input.quantity-input');
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-      const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
-      const itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
+      var itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+      var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
       quantityInput.setAttribute('data-item-value', itemValue);
-      const itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.lastChild.lastChild
+      var itemPrice = quantityInput.parentElement.parentElement.previousElementSibling.lastChild.lastChild
       itemPrice.innerHTML = `<span class="sr-only">Sale price</span> $${itemValue}`
     });
 
