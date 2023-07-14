@@ -196,7 +196,7 @@ const announceUpdate = (el) => {
     var table = document.querySelector('.order-summary');
     var itensRow = table.querySelectorAll('tr:has(td)');
     itensRow.forEach((row)=>{
-      newOrderTotal += Number(row.children[2].innerText.match(/\$(\d*\.\d*)/)[1]);
+      newOrderTotal += Number(row.children[2].innerHTML.match(/[0-9.]/g).join(''));
     })
 
     // updating order total
