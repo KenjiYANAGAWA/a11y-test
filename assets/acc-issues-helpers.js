@@ -186,7 +186,9 @@ const announceUpdate = (el) => {
 
   if (location.pathname == '/cart') {
     // updating item total
-    el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
+    if (el.parentElement.parentElement.nextElementSibling) {
+      el.parentElement.parentElement.nextElementSibling.innerHTML = `$${newItemTotal.toFixed(2)}`;
+    }
 
     // calculating new order total
     let newOrderTotal = 0;
