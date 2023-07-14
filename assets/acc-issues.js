@@ -592,11 +592,11 @@ window.onload = () => {
 
 
       setInterval(() => {
-        let priceRangeInputs = form.querySelectorAll('input[type="number"]');
         let productCards = document.querySelectorAll('.product-card');
-        let minPrice = Number(priceRangeInputs[0].value)
-        let maxPrice = Number(priceRangeInputs[1].value)
         productCards.forEach((product)=>{
+          let priceRangeInputs = form.querySelectorAll('input[type="number"]');
+          let minPrice = Number(priceRangeInputs[0].value)
+          let maxPrice = Number(priceRangeInputs[1].value)
           const productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
           const price = Number(productPrice.match(/[0-9.]/g).join(''))
           product.style.display = (price < maxPrice || price > minPrice) ? 'content' : 'none';
