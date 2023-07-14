@@ -590,8 +590,17 @@ window.onload = () => {
       const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
 
+      const priceRangeInputs = form.querySelectorAll('input[type="number"]');
+      const productCards = document.querySelectorAll('.product-card');
+
       setInterval(() => {
-        updateCards(form)
+        let minPrice = Number(priceRangeInputs[0].value)
+        let maxPrice = Number(priceRangeInputs[1].value)
+        productCards.forEach((product)=>{
+          const productPrice = product.querySelector('.text-subdued').innerHTML.split('$')[1]
+          const price = Number(productPrice.match(/[0-9.]/g).join(''))
+          product.style.display = (price < maxPrice || price > minPrice) ? 'content' : 'none';
+        })
       }, 100);
 
       break;
