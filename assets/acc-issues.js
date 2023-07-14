@@ -589,6 +589,7 @@ window.onload = () => {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
       setInterval(() => {
+        console.log(form)
         form.removeAttribute('update-on-change');
       }, 100);
 
