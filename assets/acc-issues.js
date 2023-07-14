@@ -589,22 +589,25 @@ window.onload = () => {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
-      const priceRangeInputs = document.querySelectorAll('input[type="number"]');
-      const minPrice = Number(priceRangeInputs[2].value)
-      const maxPrice = Number(priceRangeInputs[3].value)
+      const priceRangeInputs = form.querySelectorAll('input[type="number"]');
 
-      setInterval(() => {
-        let productCards = document.querySelectorAll('.product-card');
-        productCards.forEach((product)=>{
-          product.style.display = 'content';
-          const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
-          const price = Number(productPrice)
-          console.log(priceRangeInputs, minPrice, price, maxPrice);
-          if (price > maxPrice || price < minPrice) {
-            product.style.display = 'none';
-          }
+      const productCards = document.querySelectorAll('.product-card');
+      priceRangeInputs.forEach(input=>{
+        input.addEventListener('change', ()=>{
+          const minPrice = Number(priceRangeInputs[0].value)
+          const maxPrice = Number(priceRangeInputs[1].value)
+
+          productCards.forEach((product)=>{
+            product.style.display = 'content';
+            const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
+            const price = Number(productPrice)
+            console.log(priceRangeInputs, minPrice, price, maxPrice);
+            if (price > maxPrice || price < minPrice) {
+              product.style.display = 'none';
+            }
+          })
         })
-      }, 100);
+      })
 
       break;
     }
