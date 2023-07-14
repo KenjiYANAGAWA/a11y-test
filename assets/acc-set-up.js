@@ -429,8 +429,8 @@ var accSetUp = () => {
       const itemValue = Number(itemCurrentTotal.innerHTML.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
       quantityInput.setAttribute('data-item-value', itemValue);
       const itemDescription = quantityInput.parentElement.parentElement.previousElementSibling
-      itemDescription.querySelector('.price-list .text-subdued').innerHTML = `<span class="sr-only">Sale price</span> #{itemValue}`
-
+      const itemPrice = itemDescription.querySelector('.price-list .text-subdued')
+      itemPrice.innerHTML = `<span class="sr-only">Sale price</span> ${itemValue}`
     });
 
     // fixing duplicate ids
