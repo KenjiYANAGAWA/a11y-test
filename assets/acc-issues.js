@@ -600,7 +600,7 @@ window.onload = () => {
           var productCards = document.querySelectorAll('.product-card');
           productCards.forEach((product)=>{
             var productPrice = Number(product.querySelector('sale-price').innerText.split('\n$')[1])
-            if (productPrice > maxPrice || productPrice < minPrice) {
+            if (productPrice > maxPrice && productPrice < minPrice) {
               product.style.display = 'none'
             } else {
               product.style.display = 'content'
