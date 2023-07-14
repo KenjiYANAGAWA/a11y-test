@@ -606,9 +606,9 @@ window.onload = () => {
         input.addEventListener('change', ()=>{
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
+          let results = 0;
 
           productCards.forEach((product)=>{
-            let results = 0;
             product.classList.remove('hide');
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
@@ -617,10 +617,9 @@ window.onload = () => {
             } else {
               results += 1
             }
-            var alert = document.querySelector('.alert-msg')
-            alert.innerHTML = `${results} results`
           })
-
+          var alert = document.querySelector('.alert-msg')
+          alert.innerHTML = `${results} results`
         })
       })
 
