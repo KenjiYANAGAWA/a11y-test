@@ -62,7 +62,7 @@ window.onload = () => {
 
       try {
         // breaking hotspots
-        var hotspots = document.querySelectorAll('.hot-spot__dot');
+        var hotspots = [document.querySelectorAll('.hot-spot__dot')[0]];
 
         hotspots.forEach(hotspot => hotspot.addEventListener('mouseover', (e) => e.target.focus()))
         hotspots.forEach(hotspot => hotspot.addEventListener('mouseout', (e) => e.target.blur()))
