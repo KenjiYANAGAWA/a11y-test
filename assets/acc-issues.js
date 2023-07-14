@@ -589,6 +589,10 @@ window.onload = () => {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
+
+      const stockBtn = form.querySelector('input[type="checkbox"]');
+      stockBtn.setAttribute('onclick', 'this.form.submit()');
+
       const priceRangeInputs = form.querySelectorAll('input[type="number"]');
 
       const productCards = document.querySelectorAll('.product-card');
