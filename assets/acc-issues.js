@@ -617,10 +617,10 @@ window.onload = () => {
             } else {
               results += 1
             }
+            var alert = document.querySelector('.alert-msg')
+            alert.innerHTML = `${results} results`
           })
 
-          var alert = document.querySelector('.alert-msg')
-          alert.innerHTML = `${results} results`
         })
       })
 
