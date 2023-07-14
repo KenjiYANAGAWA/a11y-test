@@ -586,6 +586,29 @@ window.onload = () => {
       break;
     }
     case '/collections/all': {
+      // changing filter behavior
+      var form = document.querySelector('#facet-form-desktop')
+      form.removeAttribute('update-on-change');
+
+      var priceRangeInputs = form.querySelectorAll('input[type="number"]');
+
+      priceRangeInputs.forEach((input)=>{
+        input.onchange = () => {
+          var priceRangeInputs = form.querySelectorAll('input[type="number"]');
+          var minPrice = Number(priceRangeInputs[0].value)
+          var maxPrice = Number(priceRangeInputs[1].value)
+          var productCards = document.querySelectorAll('.product-card');
+          productCards.forEach((product)=>{
+            var productPrice = Number(product.querySelector('sale-price').innerText.split('\n$')[1])
+            if (productPrice > maxPrice || productPrice < minPrice) {
+              product.style.display = 'none'
+            } else {
+              product.style.display = 'content'
+            }
+          })
+        }
+      })
+
 
       break;
     }
