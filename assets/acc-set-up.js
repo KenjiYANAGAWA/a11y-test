@@ -424,14 +424,13 @@ var accSetUp = () => {
     const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
+      quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
+      const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
+      const itemValue = Number(itemCurrentTotal.innerHTML.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
+      quantityInput.setAttribute('data-item-value', itemValue);
       const itemDescription = quantityInput.parentElement.parentElement.previousElementSibling
-      console.log(itemDescription.querySelector('.price-list'))
-        quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
-        const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
-        if (itemCurrentTotal) {
-          const itemValue = Number(itemCurrentTotal.innerHTML.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
-          quantityInput.setAttribute('data-item-value', itemValue);
-        }
+      itemDescription.querySelector('.price-list .text-subdued').innerHTML = `<span class="sr-only">Sale price</span> #{itemValue}`
+
     });
 
     // fixing duplicate ids
