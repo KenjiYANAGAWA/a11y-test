@@ -219,7 +219,7 @@ function clickQuantityHandler(el) {
 }
 
 
-function updateCards() {
+function updateCards(input) {
   const priceRangeInputs = input.form.querySelectorAll('input[type="number"]');
   const minPrice = Number(priceRangeInputs[0].value)
   const maxPrice = Number(priceRangeInputs[1].value)
