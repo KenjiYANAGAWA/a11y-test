@@ -588,6 +588,7 @@ window.onload = () => {
     case '/collections/all': {
       // changing filter behavior
       const form = document.querySelector('#facet-form-desktop')
+      document.querySelector('.facets-summary').style.opacity = 0;
       document.querySelector('.facets-summary').innerHTML = '';
       form.removeAttribute('update-on-change');
       form.addEventListener('submit', (e) => {
