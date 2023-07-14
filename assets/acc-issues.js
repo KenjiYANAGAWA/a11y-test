@@ -590,28 +590,18 @@ window.onload = () => {
       var form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
 
-      var form = document.querySelector('#facet-form-desktop')
       var priceRangeInputs = form.querySelectorAll('input[type="number"]');
-      var minInput = priceRangeInputs[0];
-      var maxInput = priceRangeInputs[1];
 
-      minInput.onchange = (e) => {
-        var form = document.querySelector('#facet-form-desktop')
-        var priceRangeInputs = form.querySelectorAll('input[type="number"]');
-        var maxInput = priceRangeInputs[1];
-        var minPrice = Number(e.target.value)
-        var maxPrice = Number(maxInput.value)
-        updateCards(minPrice, maxPrice)
-      }
+      priceRangeInputs.forEach((input)=>{
+        input.onchange = () => {
+          var priceRangeInputs = form.querySelectorAll('input[type="number"]');
+          var minPrice = Number(priceRangeInputs[0].value)
+          var maxPrice = Number(priceRangeInputs[1].value)
+          updateCards(minPrice, maxPrice)
+        }
+      })
 
-      maxInput.onchange = (e) => {
-        var form = document.querySelector('#facet-form-desktop')
-        var priceRangeInputs = form.querySelectorAll('input[type="number"]');
-        var minInput = priceRangeInputs[0];
-        var maxPrice = Number(e.target.value)
-        var minPrice = Number(minInput.value)
-        updateCards(minPrice, maxPrice)
-      }
+
 
       break;
     }
