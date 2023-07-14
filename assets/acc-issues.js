@@ -592,8 +592,8 @@ window.onload = () => {
 
 
       setInterval(() => {
-        const priceRangeInputs = form.querySelectorAll('input[type="number"]');
-        const productCards = document.querySelectorAll('.product-card');
+        let priceRangeInputs = form.querySelectorAll('input[type="number"]');
+        let productCards = document.querySelectorAll('.product-card');
         let minPrice = Number(priceRangeInputs[0].value)
         let maxPrice = Number(priceRangeInputs[1].value)
         productCards.forEach((product)=>{
