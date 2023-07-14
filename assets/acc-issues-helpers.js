@@ -183,7 +183,7 @@ function  Total() {
   alert.innerHTML = `Total updated: ${total}.`
 }
 
-function announceUpdate(el) {
+const announceUpdate = (el) => {
   var alert = document.querySelector('.alert-msg');
   var newItemTotal = Number(el.getAttribute('data-item-value')) * el.value;
 
