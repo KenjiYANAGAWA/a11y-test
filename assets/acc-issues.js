@@ -587,16 +587,16 @@ window.onload = () => {
     }
     case '/collections/all': {
       // changing filter behavior
-      var form = document.querySelector('#facet-form-desktop')
+      const form = document.querySelector('#facet-form-desktop')
       form.removeAttribute('update-on-change');
 
-      var priceRangeInputs = form.querySelectorAll('input[type="number"]');
+      const priceRangeInputs = form.querySelectorAll('input[type="number"]');
 
       priceRangeInputs.forEach((input)=>{
         input.onchange = () => {
-          var priceRangeInputs = form.querySelectorAll('input[type="number"]');
-          var minPrice = Number(priceRangeInputs[0].value)
-          var maxPrice = Number(priceRangeInputs[1].value)
+          const priceRangeInputs = form.querySelectorAll('input[type="number"]');
+          const minPrice = Number(priceRangeInputs[0].value)
+          const maxPrice = Number(priceRangeInputs[1].value)
           updateCards(minPrice, maxPrice)
         }
       })
