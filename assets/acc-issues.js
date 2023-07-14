@@ -591,6 +591,7 @@ window.onload = () => {
       document.querySelector('.facets-summary').style.opacity = 0;
       document.querySelector('.facets-summary').innerHTML = '';
       form.removeAttribute('update-on-change');
+
       form.addEventListener('submit', (e) => {
         e.preventDefault()
       });
@@ -607,13 +608,19 @@ window.onload = () => {
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
 
           productCards.forEach((product)=>{
+            let results = 0;
             product.classList.remove('hide');
             const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
             const price = Number(productPrice)
             if (price > maxPrice || price < minPrice) {
               product.classList.add('hide');
+            } else {
+              results += 1
             }
           })
+
+          var alert = document.querySelector('.alert-msg')
+          alert.innerHTML = `${results} results`
         })
       })
 
