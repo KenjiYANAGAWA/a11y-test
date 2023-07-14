@@ -198,6 +198,11 @@ const announceUpdate = (el) => {
       newOrderTotal += Number(row.children[2].innerHTML.match(/[0-9.]/g).join(''));
     })
 
+    const itemTotal = el.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued')
+    if (itemTotal) {
+      itemTotal.innerHTML = `<span class="sr-only">Sale price</span> $${newItemTotal.toFixed(2)}`
+    }
+
     // updating order total
     var orderTotalContainer = document.querySelectorAll('.cart-form__totals div');
     orderTotalContainer.forEach((total)=>{
