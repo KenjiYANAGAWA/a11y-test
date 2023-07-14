@@ -655,24 +655,31 @@ window.onload = () => {
     }
     case '/account/register': {
       try {
-        var form = document.querySelector('#create_customer');
+        const form = document.querySelector('#create_customer');
 
-        var emailFormInput = form.querySelector('input[name="customer[email]"]');
+        const emailFormInput = form.querySelector('input[name="customer[email]"]');
         emailFormInput.setAttribute('autocomplete', 'newemail');
         emailFormInput.removeAttribute('type');
 
-        var passwordInput = form.querySelector('input[name="customer[password]"]');
+        const passwordInput = form.querySelector('input[name="customer[password]"]');
         passwordInput.parentElement.style.position = 'relative';
-        var firstNameInput = form.querySelector('input[name="customer[first_name]"]');
+        const firstNameInput = form.querySelector('input[name="customer[first_name]"]');
         firstNameInput.parentElement.style.position = 'relative';
-        var lastNameInput = form.querySelector('input[name="customer[last_name]"]');
+        const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
         lastNameInput.parentElement.style.position = 'relative';
 
-        var errorMsg = form.querySelector('.banner--error');
-        errorMsg.style.display = 'none'
+        addStyle(`.banner--error {display:none}`)
 
-        var registerBtn = form.querySelector('button[type=submit]');
-        var newRegisterBtn = document.createElement('span');
+        const errorMsg = form.querySelector('.banner--error');
+        if (errorMsg) {
+          const emailInput = form.querySelector('input[name="customer[email]"]');
+          emailInput.parentElement.append(redDot.cloneNode(true));
+          emailInput.style.background = 'rgb(243 225 225)';
+          errorMsg.remove()
+        }
+
+        const registerBtn = form.querySelector('button[type=submit]');
+        const newRegisterBtn = document.createElement('span');
         newRegisterBtn.style.background = '#F0C417';
         newRegisterBtn.style.width = '100%';
         newRegisterBtn.style.padding = '17px 40px';
@@ -687,13 +694,13 @@ window.onload = () => {
 
         newRegisterBtn.onclick = (e) => {
           form.querySelectorAll('.dot').forEach(dot=>dot.remove());
-          var passwordInput = form.querySelector('input[name="customer[password]"]');
-          var firstNameInput = form.querySelector('input[name="customer[first_name]"]');
-          var lastNameInput = form.querySelector('input[name="customer[last_name]"]');
-          var emailInput = form.querySelector('input[name="customer[email]"]');
+          const passwordInput = form.querySelector('input[name="customer[password]"]');
+          const firstNameInput = form.querySelector('input[name="customer[first_name]"]');
+          const lastNameInput = form.querySelector('input[name="customer[last_name]"]');
+          const emailInput = form.querySelector('input[name="customer[email]"]');
 
-          var redDot = document.createElement('div');
-          var greenDot = document.createElement('div');
+          const redDot = document.createElement('div');
+          const greenDot = document.createElement('div');
           redDot.classList.add('dot');
           greenDot.classList.add('dot');
 
@@ -705,10 +712,10 @@ window.onload = () => {
           redDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: rgb(151 7 7);');
           greenDot.setAttribute('style', 'height: 18px; width:18px; border-radius: 50%; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: rgb(0 87 38); background: rgb(0 87 38);');
 
-          var validPassword = passwordInput.value.length >= 5;
-          var validFirstName = firstNameInput.value.length > 0;
-          var validLastName = lastNameInput.value.length > 0;
-          var validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value) && !(errorMsg.querySelector('.errors li').innerHTML.includes('email'));
+          const validPassword = passwordInput.value.length >= 5;
+          const validFirstName = firstNameInput.value.length > 0;
+          const validLastName = lastNameInput.value.length > 0;
+          const validEmail = /[a-zA-Z0-9_-]+@[a-z]+\.[a-z]{2,3}$/.test(emailInput.value);
 
           if (validPassword) {
             passwordInput.parentElement.append(greenDot.cloneNode(true));
@@ -731,7 +738,7 @@ window.onload = () => {
             lastNameInput.parentElement.append(redDot.cloneNode(true));
             lastNameInput.style.background = 'rgb(243 225 225)';
           }
-          if (validEmail && !notValidEmail) {
+          if (validEmail) {
             emailInput.parentElement.append(greenDot.cloneNode());
             emailInput.style.background = 'rgb(224 235 229)';
           } else {
@@ -739,7 +746,6 @@ window.onload = () => {
             emailInput.style.background = 'rgb(243 225 225)';
           }
           if (validPassword && validFirstName && validLastName && validEmail) form.submit();
-          if (errorMsg) errorMsg.remove();
         }
       } catch (error) {
         console.log('Validation/error message issues');
