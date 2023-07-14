@@ -620,6 +620,9 @@ window.onload = () => {
 
           var alert = document.querySelector('.alert-msg')
           alert.innerHTML = `${results} results`
+          setTimeout(() => {
+            alert.innerHTML = ''
+          }, 2000);
         })
       })
 
