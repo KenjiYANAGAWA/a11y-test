@@ -599,7 +599,7 @@ window.onload = () => {
           product.style.display = 'content';
           const productPrice = product.querySelector('.text-subdued').innerHTML.match(/[0-9.]/g).join('')
           const price = Number(productPrice)
-          console.log(minPrice, price, maxPrice);
+          console.log(priceRangeInputs, minPrice, price, maxPrice);
           if (price > maxPrice || price < minPrice) {
             product.style.display = 'none';
           }
