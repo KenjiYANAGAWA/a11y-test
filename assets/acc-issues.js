@@ -655,7 +655,6 @@ window.onload = () => {
     }
     case '/account/register': {
       try {
-        addStyle(`.banner--error {display:none !important}`)
         const form = document.querySelector('#create_customer');
 
         const emailFormInput = form.querySelector('input[name="customer[email]"]');
