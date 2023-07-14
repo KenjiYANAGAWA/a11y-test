@@ -517,5 +517,4 @@ var accSetUp = () => {
   } catch (error) {
     console.log(error)
   }
-
 }
