@@ -424,6 +424,8 @@ var accSetUp = () => {
     const quantityInputs = table.querySelectorAll('tr:has(td) .quantity-input');
 
     quantityInputs.forEach(quantityInput => {
+      const itemDescription = quantityInput.parentElement.parentElement.previousElementSibling
+      console.log(itemDescription.querySelector('.price-list'))
         quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
         const itemCurrentTotal = quantityInput.parentElement.parentElement.nextElementSibling
         if (itemCurrentTotal) {
