@@ -598,6 +598,7 @@ window.onload = () => {
           var maxPrice = Number(priceRangeInputs[1].value)
           var productCards = document.querySelectorAll('.product-card');
           productCards.forEach((product)=>{
+            console.log(product)
             var productPrice = product.querySelector('.text-subdued').innerText.split('\n$')[1]
             var price = Number(productPrice.replaceAll(',', ''))
             if (price > maxPrice || price < minPrice) {
