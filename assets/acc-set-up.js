@@ -428,6 +428,7 @@ var accSetUp = () => {
       if (itemCurrentTotal) {
         var itemValue = Number(itemCurrentTotal.innerText.match(/[0-9.]/g).join('')) / Number(quantityInput.value);
         quantityInput.setAttribute('data-item-value', itemValue);
+        quantityInput.parentElement.parentElement.previousElementSibling.querySelector('.text-subdued').setAttribute('data-item-value', itemValue);
       }
     });
 
