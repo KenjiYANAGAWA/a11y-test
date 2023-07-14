@@ -777,13 +777,15 @@ window.onload = () => {
         // Fieldset issue
         var section = document.querySelector('section[aria-label="Shipping method"]');
         var fieldset = document.querySelector('section[aria-label="Shipping method"] fieldset');
+        // removing legend
+        fieldset.querySelector('legend').remove();
         var newFieldset = document.createElement('div');
         newFieldset.innerHTML = fieldset.innerHTML;
-
+        // replacing section for div
         fieldset.parentElement.replaceChild(newFieldset, fieldset);
         section.removeAttribute('aria-label');
       } catch (error) {
-        console.log('Fieldset issue');
+        console.log('Fieldset issues');
         console.log(error)
       }
 
