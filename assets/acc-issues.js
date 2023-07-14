@@ -601,7 +601,6 @@ window.onload = () => {
 
       const productCards = document.querySelectorAll('.product-card');
       priceRangeInputs.forEach(input=>{
-        input.setAttribute('max', '1300');
         input.addEventListener('change', ()=>{
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value) == 0 ? Number(priceRangeInputs[1].placeholder) : Number(priceRangeInputs[1].value)
