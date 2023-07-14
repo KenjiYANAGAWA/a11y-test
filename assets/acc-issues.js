@@ -669,7 +669,7 @@ window.onload = () => {
         lastNameInput.parentElement.style.position = 'relative';
 
         var errorMsg = form.querySelector('.banner--error');
-        if (errorMsg) errorMsg.remove();
+        // if (errorMsg) errorMsg.remove();
 
         var registerBtn = form.querySelector('button[type=submit]');
         var newRegisterBtn = document.createElement('span');
