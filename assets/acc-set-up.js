@@ -83,7 +83,7 @@ var accSetUp = () => {
     });
 
     issueListFromCSV.forEach((issue)=>{
-      if (Object.keys(issue)[1]) {
+      if (issue['added_to_issue_popup']) {
         let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
         if (pathname == '') pathname = '/'
         // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
@@ -92,10 +92,11 @@ var accSetUp = () => {
         } else {
           issueListObj[pathname] = []
         }
+        // if header changes on the sheet please update the keys used here
         issueListObj[pathname].push([
           issue['criterion_(30as_and_20aas)'],
           issue['failure_technique'],
-          issue['details_of_the_issue']
+          issue['details_of_the_issues']
         ])
       }
     })
