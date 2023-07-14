@@ -420,7 +420,7 @@ var accSetUp = () => {
       })
     })
   } else if (location.pathname == '/cart') {
-    var quantityInputs = document.querySelectorAll('.order-summary tr:has(td) div:not(.line-item__info) input.quantity-input');
+    var quantityInputs = document.querySelectorAll('.order-summary tr:has(td):not(.line-item__info) input.quantity-input');
 
     quantityInputs.forEach(quantityInput => {
       quantityInput.setAttribute('onkeyup', 'announceUpdate(this)')
