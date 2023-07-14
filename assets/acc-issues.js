@@ -593,7 +593,7 @@ window.onload = () => {
       const priceRangeInputs = form.querySelectorAll('input[type="number"]');
 
       priceRangeInputs.forEach((input)=>{
-        input.onchange = updateCards(input)
+        input.onchange = updateCards(form)
       })
 
       break;
