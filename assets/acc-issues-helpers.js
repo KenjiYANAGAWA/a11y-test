@@ -135,9 +135,6 @@ function cartSummaryPrice() {
   }
 }, 300);
 
-// for checking combo press
-let comboKey = []
-
 // popup issue list
 var listIssue = document.createElement('div');
 listIssue.classList.add('popup-issue-list');
