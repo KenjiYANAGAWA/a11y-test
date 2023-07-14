@@ -594,14 +594,12 @@ window.onload = () => {
 
       priceRangeInputs.forEach((input)=>{
         input.onchange = () => {
-          const priceRangeInputs = form.querySelectorAll('input[type="number"]');
+          const priceRangeInputs = input.form.querySelectorAll('input[type="number"]');
           const minPrice = Number(priceRangeInputs[0].value)
           const maxPrice = Number(priceRangeInputs[1].value)
           updateCards(minPrice, maxPrice)
         }
       })
-
-
 
       break;
     }
