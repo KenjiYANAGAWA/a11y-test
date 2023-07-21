@@ -94,9 +94,9 @@ var accSetUp = () => {
         }
         // if header changes on the sheet please update the keys used here
         issueListObj[pathname].push([
-          issue['criterion_(30as_and_20aas)'],
+          issue['wcag_criterion'],
           issue['failure_technique'],
-          issue['details_of_the_issues']
+          issue['issue_description']
         ])
       }
     })
