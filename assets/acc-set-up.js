@@ -5,6 +5,54 @@ var issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
+function convertKey(string) {
+  return string.toLowerCase()
+          .trim()
+          .replaceAll(' ', '_')
+          .replaceAll('"', '')
+          .replaceAll('-', '_')
+}
+
+function commaHandler(string) {
+  if (string.includes('$commaSpace$')) {
+    return string.replaceAll('$commaSpace$', ', ')
+                 .replaceAll('$commaBreak$', ',\n')
+  } else {
+    return string.replaceAll(', ', '$commaSpace$')
+                 .replaceAll(',\n', '$commaBreak$')
+  }
+}
+
+function convertValue(string) {
+  if (string.toUpperCase() == 'FALSE' | string.toUpperCase() == 'TRUE') {
+    return string.toUpperCase() == 'TRUE';
+  } else if (isNaN(Number(string))) {
+    return string;
+  } else {
+    return Number(string);
+  }
+}
+
+function serialize(string) {
+  const dataObjArray = []
+  const dataArray = string.split(/\r\n/);
+  const keys = commaHandler(dataArray[0]).split(',')
+                                         .map(key=>convertKey(commaHandler(key)))
+
+  const data = dataArray.slice(1);
+
+  data.forEach((row) => {
+    dataObj = {}
+    row = commaHandler(row).split(',')
+    row.forEach((value, index)=>{
+      dataObj[keys[index]] = convertValue(commaHandler(value))
+    })
+    dataObjArray.push(dataObj)
+  })
+
+  return dataObjArray
+}
+
 
 var accSetUp = () => {
   try {
@@ -47,40 +95,10 @@ var accSetUp = () => {
   try {
     // loading issue list
     // csvIssues //raw issue data as string
-    // issueListFromCSV //obj to add issues
-
-    // getting rows
-    let rows = [];
-
-    csvIssues.split('\n').forEach((string)=>{
-      if (/^(\d{1,3}|ID),/.test(string)) {
-        rows.push(string)
-      } else {
-        rows[rows.length - 1] = `${rows[rows.length - 1]} ${string}`
-      }
-    })
-
-    rows = rows.map((row)=>row.replaceAll(', ', 'commaPlaceholder').split(','));
+    // issueListFromCSV //array of obj issues
 
     // adding to issue list object
-    rows.slice(1).forEach(row => {
-      let index = 0;
-      var issue = {}
-      row.forEach((item)=>{
-        let key = rows[0][index].replaceAll(' ', '_').replaceAll('"', '').toLowerCase();
-        if (item.toUpperCase() == 'FALSE' | item.toUpperCase() == 'TRUE') {
-          issue[key] = item.toUpperCase() == 'TRUE';
-        } else if (isNaN(Number(item))) {
-          issue[key] = item.replaceAll('commaPlaceholder', ', ').replaceAll('"','');
-        } else if (item == '') {
-          issue[key] = item;
-        } else {
-          issue[key] = Number(item);
-        }
-        index += 1;
-      })
-      issueListFromCSV.push(issue);
-    });
+    issueListFromCSV = serialize(csvIssues);
 
     issueListFromCSV.forEach((issue)=>{
       if (issue['added_to_issue_popup']) {
