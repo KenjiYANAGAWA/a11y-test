@@ -187,7 +187,12 @@ var accSetUp = () => {
   }
 
   // updating summary cart on checout pages
-  if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') cartSummaryPrice();
+  if (location.pathname == '/pages/checkout' || location.pathname == '/pages/shipping' || location.pathname == '/pages/payment') {
+    cartSummaryPrice();
+    addStyle(`header, .footer {display:none};`);
+    document.querySelector('header').remove();
+    document.querySelector('.footer').remove();
+  }
 
   let url
   let email
