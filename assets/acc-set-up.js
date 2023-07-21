@@ -1,4 +1,4 @@
-var issueListFromCSV = [];
+let issueListFromCSV;
 
 // List issue
 var issueListObj = {
