@@ -25,6 +25,9 @@
     },
     "fa8b612b-25ca-4867-880c-f84f899efd2c": {
       "type": "fake-shipping",
+      "custom_css": [
+        "\/* check acc issues for css *\/.header__wrapper,.footer {display: none !important;}"
+      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
