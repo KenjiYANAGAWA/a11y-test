@@ -99,6 +99,7 @@ var accSetUp = () => {
 
     // adding to issue list object
     issueListFromCSV = serialize(csvIssues);
+    console.log(issueListFromCSV);
 
     issueListFromCSV.forEach((issue)=>{
       if (issue['added_to_issue_popup']) {
