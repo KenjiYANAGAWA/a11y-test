@@ -507,7 +507,7 @@ var accSetUp = () => {
     forms.slice(1).forEach((form) => {
       var id = form.getAttribute('id');
       var idNumber = id.split('_')[2];
-      console.log(idNumber)
+      // console.log(idNumber)
       var inputs = form.querySelectorAll('[id]');
       inputs.forEach((input)=> {
         input.id = input.id.replace(/\d+/, idNumber)
