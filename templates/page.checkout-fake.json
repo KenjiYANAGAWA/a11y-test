@@ -26,7 +26,7 @@
     "1f737c91-ddac-40ad-826b-9651ec9e1e63": {
       "type": "fake-checkout",
       "custom_css": [
-        "\/* check acc issues for css *\/.header__wrapper,.footer {display: none !important;}"
+        "\/* check acc issues for css *\/header, .footer {display: none !important;}"
       ],
       "settings": {
         "full_width": true,
