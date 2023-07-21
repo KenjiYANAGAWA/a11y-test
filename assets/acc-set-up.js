@@ -36,6 +36,7 @@ function convertValue(string) {
 function serialize(string) {
   const dataObjArray = []
   const dataArray = string.split(/\r\n/);
+  console.log(dataArray);
   const keys = commaHandler(dataArray[0]).split(',')
                                          .map(key=>convertKey(commaHandler(key)))
 
