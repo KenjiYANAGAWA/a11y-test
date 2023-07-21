@@ -25,6 +25,9 @@
     },
     "7992e63f-1d50-4526-a729-dfa2cf5b9314": {
       "type": "fake-payment",
+      "custom_css": [
+        "\/* check acc issues for css *\/.header__wrapper,.footer {display: none !important;}"
+      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
