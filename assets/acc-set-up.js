@@ -118,7 +118,7 @@ var accSetUp = () => {
     }
 
     listIssue.innerHTML = `
-      <h2 tabindex='0'>${issues.length == 1 ? 0 : issues.length - 2} issue${(issues.length - 2) > 1 ? 's' : ''} on this page. CTRL + i to close.</h2>
+      <h2 tabindex='0'>${issues.length == 1 ? 'No' : issues.length - 2} issue${(issues.length - 2) > 1 ? 's' : ''} on this page. CTRL + i to close.</h2>
       ${issues.join('\n')}
     `//decided not to show url ${location.href}
   } catch (error) {
