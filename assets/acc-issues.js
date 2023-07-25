@@ -278,6 +278,13 @@ window.onload = () => {
         console.log(error);
       }
 
+      try {
+        document.documentElement.setAttribute("lang", 'pt-BR');
+      } catch (error) {
+        console.log('lang mismatch');
+        console.log(error);
+      }
+
       break;
     }
     case '/products/mw08-brown-ceramic-stainless-steel-case': {
