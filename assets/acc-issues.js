@@ -850,12 +850,16 @@ window.onload = () => {
       try {
         // breadcrumb issue
         const steps = document.querySelector('.steps');
-        steps.innerHTML = `<div class="steps">
-          <span><a href="https://a11y-test.com/cart" class="steps-cart">Cart</a></span>
+
+        const newSteps = document.createElement('div');
+        newSteps.classList.add('steps')
+        newSteps.innerHTML = `<span><a href="https://a11y-test.com/cart" class="steps-cart">Cart</a></span>
           <span class="steps-item"><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512" labelledby="caretSvg-1"><title id="caretSvg-1">greater than</title><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg><a href="https://a11y-test.com/pages/checkout" class="steps-cart"> Information</a></span>
           <span class="steps-item"><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512" labelledby="caretSvg-2"><title id="caretSvg-2">greater than</title><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg><a href="https://a11y-test.com/pages/shipping" class="steps-cart"> Shipping</a></span>
-          <span class="steps-item"><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512" labelledby="caretSvg-3"><title id="caretSvg-3">greater than</title><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg> Payment</span>
-        </div>`
+          <span class="steps-item"><svg xmlns="http://www.w3.org/2000/svg" height=".75em" viewbox="0 0 320 512" labelledby="caretSvg-3"><title id="caretSvg-3">greater than</title><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg> Payment</span>`
+
+        steps.parentElement.replaceChild(newSteps, steps)
+
 
       } catch (error) {
         console.log(error);
