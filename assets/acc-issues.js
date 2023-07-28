@@ -1,7 +1,7 @@
 // remove about us from search
 // check search-drawer.liquid file
-// lines 125 until 137 for predictive search
-// lines 165 until 176 for search results
+// lines 123 until 134 for predictive search
+// lines 163 until 173 for search results
 
 window.onload = () => {
   var currentLocation = location.pathname;
