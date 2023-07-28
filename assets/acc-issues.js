@@ -336,8 +336,9 @@ window.onload = () => {
       }
 
       try {
-        // strikethrough text not readable
-        document.querySelector('.product-info__description .prose s').setAttribute('aria-hidden', true)
+        // strikethrough text on price
+        const ogPrice = document.querySelector('.price-list.price-list--lg').firstElementChild.lastChild;
+        document.querySelector('.price-list.price-list--lg').firstElementChild.lastChild = `<s>${ogPrice}</s> ${Number(ogPrice) - 10}`
       } catch (error) {
         console.log('Strikethrough text issue');
         console.log(error);
