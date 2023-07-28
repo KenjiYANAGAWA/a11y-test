@@ -17,8 +17,7 @@
 
     {%comment%} removing about us from search
     <input type="hidden" name="type" value="product">
-    {% endcomment %}
-
+    {% endcomment  %}
     <predictive-search class="predictive-search" section-id="{{ section.id }}">
       {%- if section.settings.search_menu.links.size > 0 -%}
         <div slot="idle">
