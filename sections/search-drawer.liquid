@@ -125,8 +125,9 @@
                 </div>
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
+                  {% item.title %}
+                  {%- item.title -%}
                   {%- if item.title != 'About'-%}
-                    {% item.title %}
                     {%- render 'predictive-search-result-item' for predictive_search.resources.pages as item, type: 'page' -%}
                   {%- endif -%}
                 </div>
@@ -162,8 +163,9 @@
                 </div>
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
+                  {% item.title %}
+                  {%- item.title -%}
                   {%- if item.title != 'About'-%}
-                    {% item.title %}
                     {%- render 'predictive-search-result-item' for search_results as item, type: 'page' -%}
                   {%- endif -%}
                 </div>
