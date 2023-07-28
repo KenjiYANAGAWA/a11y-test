@@ -121,7 +121,7 @@
 
               {%- if predictive_search.resources.pages.size > 0 -%}
                 {% assign about_page_a = predictive_search.resources.pages | where: 'title', "About Us" %}
-                {%- unless about_page_a and predictive_search.resources.pages.size == 1 -%}
+                {%- unless about_page_a.size == 1 and predictive_search.resources.pages.size == 1 -%}
                   <div class="predictive-search__tab-item" slot="title">
                     <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
                   </div>
@@ -161,7 +161,7 @@
 
               {%- when 'page' -%}
                 {% assign about_page = search_results | where: 'title', "About Us" %}
-                {%- unless about_page and search_results.size == 1 -%}
+                {%- unless about_page.size == 1 and search_results.size == 1 -%}
                   <div class="predictive-search__tab-item" slot="title">
                     <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
                   </div>
