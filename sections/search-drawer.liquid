@@ -159,7 +159,6 @@
                 </div>
 
               {%- when 'page' -%}
-                {%- if search_results.size > 1 -%}
                   <div class="predictive-search__tab-item" slot="title">
                     <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
                   </div>
@@ -171,7 +170,6 @@
                       {%- endif -%}
                     {%- endfor -%}
                   </div>
-                {% endif %}
             {%- endcase -%}
           {%- endif -%}
         {%- endif -%}
