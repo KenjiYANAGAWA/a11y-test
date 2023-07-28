@@ -338,7 +338,7 @@ window.onload = () => {
       try {
         // strikethrough text on price
         const ogPrice = document.querySelector('.price-list.price-list--lg').firstElementChild.lastChild.textContent;
-        document.querySelector('.price-list.price-list--lg').firstElementChild.innerHTML = `<span class="sr-only">Sale price</span><s>${ogPrice}</s> ${Number(ogPrice.replace('$','')) - 10}`
+        document.querySelector('.price-list.price-list--lg').firstElementChild.innerHTML = `<span class="sr-only">Sale price</span><s>${ogPrice}</s> $${Number(ogPrice.replace('$','')) - 10}.00`
       } catch (error) {
         console.log('Strikethrough text issue');
         console.log(error);
