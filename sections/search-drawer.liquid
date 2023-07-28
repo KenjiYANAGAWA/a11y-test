@@ -162,6 +162,7 @@
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
                   {%- if item.title != 'About'-%}
+                    {%- item.title -%}
                     {%- render 'predictive-search-result-item' for search_results as item, type: 'page' -%}
                   {%- endif -%}
                 </div>
