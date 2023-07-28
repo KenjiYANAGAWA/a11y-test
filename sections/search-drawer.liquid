@@ -15,9 +15,8 @@
       }
     </style>
 
-    {%comment%} removing about us from search
     <input type="hidden" name="type" value="product">
-    {% endcomment  %}
+
     <predictive-search class="predictive-search" section-id="{{ section.id }}">
       {%- if section.settings.search_menu.links.size > 0 -%}
         <div slot="idle">
@@ -126,9 +125,7 @@
                 </div>
 
                 <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
-                  {%- for item in predictive_search.resources.pages -%}
-                    {%- render 'predictive-search-result-item' with item -%}
-                  {%- endfor -%}
+                  {%- render 'predictive-search-result-item' for predictive_search.resources.pages as item, type: 'page' -%}
                 </div>
               {%- endif -%}
             </x-tabs>
@@ -157,15 +154,13 @@
                 </div>
 
               {%- when 'page' -%}
-                  <div class="predictive-search__tab-item" slot="title">
-                    <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
-                  </div>
+                <div class="predictive-search__tab-item" slot="title">
+                  <button type="button" class="h5">{{- 'search.general.pages' | t -}}</button>
+                </div>
 
-                  <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
-                    {%- for item in search_results -%}
-                      {%- render 'predictive-search-result-item' with item -%}
-                    {%- endfor -%}
-                  </div>
+                <div slot="content" class="predictive-search__tab-content v-stack gap-2 justify-start">
+                  {%- render 'predictive-search-result-item' for search_results as item, type: 'page' -%}
+                </div>
             {%- endcase -%}
           {%- endif -%}
         {%- endif -%}
