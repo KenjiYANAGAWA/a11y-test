@@ -1,7 +1,42 @@
 {
   "sections": {
+    "bbda500c-0ac3-4bbc-a0d9-83db797b07ee": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "template--18992812622108__bbda500c-0ac3-4bbc-a0d9-83db797b07ee-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "About us",
+            "heading_tag": "h1"
+          }
+        },
+        "template--18992812622108__bbda500c-0ac3-4bbc-a0d9-83db797b07ee-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>To celebrate our 150 year anniversary, we are giving away 50% off coupon. <\/p><p>Click the coupon on the bottom left of this page.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18992812622108__bbda500c-0ac3-4bbc-a0d9-83db797b07ee-heading-1",
+        "template--18992812622108__bbda500c-0ac3-4bbc-a0d9-83db797b07ee-richtext-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "md",
+        "image": "shopify:\/\/shop_images\/green-and-white-marbled-coloring.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "79e4cae2-a56a-41f1-a254-8f3a164536a4": {
       "type": "video",
+      "disabled": true,
       "blocks": {
         "template--18992812622108__79e4cae2-a56a-41f1-a254-8f3a164536a4-168610676010162ac2-0": {
           "type": "play",
@@ -37,7 +72,7 @@
         "allow_transparent_header": false,
         "autoplay": false,
         "video_size": "auto",
-        "external_video_url": "https:\/\/youtu.be\/jNIPrPJKgAc",
+        "external_video_url": "",
         "poster": "shopify:\/\/shop_images\/green-and-white-marbled-coloring.jpg",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
@@ -235,6 +270,7 @@
     }
   },
   "order": [
+    "bbda500c-0ac3-4bbc-a0d9-83db797b07ee",
     "79e4cae2-a56a-41f1-a254-8f3a164536a4",
     "main",
     "dfef4dc7-9d4c-4cf8-992f-c2d77635a8da",
