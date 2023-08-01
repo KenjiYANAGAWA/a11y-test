@@ -121,6 +121,14 @@ window.onload = () => {
         newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
         newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
         newNewsletterSubmitBtn.style.cursor = "pointer";
+        newsletterSubmitBtn.addEventListener('focus', (e) => {
+          e.currentTarget.style.color = 'white';
+          e.currentTarget.style.background = 'black';
+        })
+        newsletterSubmitBtn.addEventListener('blur', (e) => {
+          e.currentTarget.style.color = 'black';
+          e.currentTarget.style.background = 'rgb(var(--text-color) / .1)';
+        })
         newNewsletterSubmitBtn.setAttribute('tabindex', 0);
 
         newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
