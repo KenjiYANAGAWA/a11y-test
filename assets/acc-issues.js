@@ -128,6 +128,7 @@ window.onload = () => {
         newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
         newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
         newNewsletterSubmitBtn.style.cursor = "pointer";
+        newNewsletterSubmitBtn.querySelector('.sr-only').innerHTML = 'Submit Email';
         newNewsletterSubmitBtn.setAttribute('tabindex', 0);
 
         newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
