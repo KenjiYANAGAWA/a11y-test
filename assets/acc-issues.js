@@ -114,7 +114,7 @@ window.onload = () => {
 
       try {
         addStyle(`
-          .focused {
+          .self-submit-button > :focus {
             color: black !important;
             background: white !important;
           }`)
@@ -126,12 +126,6 @@ window.onload = () => {
         newNewsletterSubmitBtn.innerHTML = newsletterSubmitBtn.innerHTML;
         newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
         newNewsletterSubmitBtn.style.cursor = "pointer";
-        newsletterSubmitBtn.addEventListener('focus', (e) => {
-          e.currentTarget.classList.add('focused');
-        })
-        newsletterSubmitBtn.addEventListener('blur', (e) => {
-          e.currentTarget.classList.remove('focused');
-        })
         newNewsletterSubmitBtn.setAttribute('tabindex', 0);
 
         newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
