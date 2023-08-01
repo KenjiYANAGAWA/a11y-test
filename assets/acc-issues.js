@@ -113,6 +113,11 @@ window.onload = () => {
       }`)
 
       try {
+        addStyle(`
+          .focused {
+            color: black !important;
+            background: white !important;
+          }`)
         // replacing newsletter btn
         var newsletterForm = document.querySelector('#footer-newsletter');
         var newsletterSubmitBtn = newsletterForm.querySelector('button[type=submit]');
@@ -122,12 +127,10 @@ window.onload = () => {
         newNewsletterSubmitBtn.classList = newsletterSubmitBtn.classList
         newNewsletterSubmitBtn.style.cursor = "pointer";
         newsletterSubmitBtn.addEventListener('focus', (e) => {
-          e.currentTarget.style.color = 'white';
-          e.currentTarget.style.background = 'black';
+          e.currentTarget.classList.add('focused');
         })
         newsletterSubmitBtn.addEventListener('blur', (e) => {
-          e.currentTarget.style.color = 'black';
-          e.currentTarget.style.background = 'rgb(var(--text-color) / .1)';
+          e.currentTarget.classList.remove('focused');
         })
         newNewsletterSubmitBtn.setAttribute('tabindex', 0);
 
