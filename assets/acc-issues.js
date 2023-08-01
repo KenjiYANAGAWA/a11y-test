@@ -118,7 +118,7 @@ window.onload = () => {
             color: white !important;
             background: black !important;
             outline: solid 2px black;
-            offset-outline: 2px;
+            outline-offset: 2px;
           }`)
         // replacing newsletter btn
         var newsletterForm = document.querySelector('#footer-newsletter');
