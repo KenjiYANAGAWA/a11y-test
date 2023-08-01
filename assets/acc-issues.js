@@ -115,8 +115,10 @@ window.onload = () => {
       try {
         addStyle(`
           .self-submit-button > :focus {
-            color: black !important;
-            background: white !important;
+            color: white !important;
+            background: black !important;
+            outline: solid 2px black;
+            offset-outline: 2px;
           }`)
         // replacing newsletter btn
         var newsletterForm = document.querySelector('#footer-newsletter');
