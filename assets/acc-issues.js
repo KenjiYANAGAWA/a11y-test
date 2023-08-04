@@ -879,6 +879,7 @@ window.onload = () => {
 
         const hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('hidden', '');
+        hiddenInput.setAttribute('type', 'text')
         hiddenInput.value = 'no';
 
         [newElYes, newElNo].forEach((btn) => {
@@ -886,6 +887,7 @@ window.onload = () => {
           btn.setAttribute('name', "gift");
           btn.addEventListener('click', (e) => {
             e.preventDefault();
+            const hiddenInput = document.querySelector('.btns-container input[hidden]');
             document.querySelectorAll('.btns-container button').forEach((btn) => {
               btn.classList.remove('active');
             });
