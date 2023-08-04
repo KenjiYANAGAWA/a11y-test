@@ -872,7 +872,9 @@ window.onload = () => {
         }
 
         button[name="shipping_methods"].active {
-          color: black;
+          background: #8c720b;
+          outline: solid 4px white;
+          outline-offset: -4px;
         }
         `)
         const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
@@ -880,6 +882,7 @@ window.onload = () => {
           const newEl = document.createElement('button');
           newEl.addEventListener('click', (e) => {
             e.preventDefault();
+            const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
             checkboxes.forEach(checkbox=>checkbox.classList.remove('active'));
             e.currentTarget.classList.add('active');
           });
