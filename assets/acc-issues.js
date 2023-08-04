@@ -856,21 +856,6 @@ window.onload = () => {
 
       try {
         addStyle(`
-        button[name="gift_item"] {
-          appearance: none;
-          background-color: #fff;
-          margin: 0;
-          font: inherit;
-          color: currentColor;
-          width: 1.15em;
-          height: 1.15em;
-          border: 0.15em solid #dedede;
-          border-radius: 50%;
-          transform: translateY(-0.075em);
-          display: grid;
-          place-content: center;
-        }
-
         button[name="gift_item"].active {
           background: #8c720b;
           outline: solid 4px white;
