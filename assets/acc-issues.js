@@ -854,6 +854,36 @@ window.onload = () => {
         console.log(error)
       }
 
+      try {
+        addStyle(`
+        input[name="shipping_methods"] {
+          appearance: none;
+          background-color: #fff;
+          margin: 0;
+          font: inherit;
+          color: currentColor;
+          width: 1.15em;
+          height: 1.15em;
+          border: 0.15em solid #dedede;
+          border-radius: 50%;
+          transform: translateY(-0.075em);
+          display: grid;
+          place-content: center;
+        }
+        `)
+        const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
+        checkboxes.forEach((checkbox) => {
+          const newEl = document.createElement('button');
+          newEl.setAttribute('name', checkbox.name);
+          newEl.setAttribute('id', checkbox.id);
+          newEl.setAttribute('value', checkbox.value);
+          checkbox.parentElement.replaceChild(newEl, checkbox);
+        })
+      } catch (error) {
+        console.log('button issue');
+        console.log(error);
+      }
+
       break;
     }
     case '/pages/payment': {
