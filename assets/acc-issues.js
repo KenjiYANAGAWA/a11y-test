@@ -856,7 +856,7 @@ window.onload = () => {
 
       try {
         addStyle(`
-        button[name="gift_item"].active {
+        .btns-container button.active {
           background: #8c720b;
           outline: solid 5px white;
           outline-offset: -4px;
