@@ -879,7 +879,8 @@ window.onload = () => {
 
         const hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('hidden', '');
-        hiddenInput.setAttribute('type', 'text')
+        hiddenInput.setAttribute('type', 'text');
+        hiddenInput.setAttribute('name', 'gift_item');
         hiddenInput.value = 'no';
 
         [newElYes, newElNo].forEach((btn) => {
