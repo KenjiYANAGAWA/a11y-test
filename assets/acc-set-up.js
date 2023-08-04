@@ -343,7 +343,7 @@ var accSetUp = () => {
 
     var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
     var total = shipCost.parentElement.nextElementSibling.children[1];
-    document.querySelectorAll('section[aria-label="Shipping method"] .fieldset-item input[type=radio]').forEach((input) => {
+    document.querySelectorAll('[aria-label="Shipping method"] .fieldset-item input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
         if (e.currentTarget.checked && e.currentTarget.value == 'economy') {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
