@@ -870,10 +870,15 @@ window.onload = () => {
           display: grid;
           place-content: center;
         }
+
+        button[name="shipping_methods"]:active {
+          color: black;
+        }
         `)
         const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
         checkboxes.forEach((checkbox) => {
           const newEl = document.createElement('button');
+          newEl.addEventListener('click', e => e.preventDefault())
           newEl.setAttribute('name', checkbox.name);
           newEl.setAttribute('id', checkbox.id);
           newEl.setAttribute('value', checkbox.value);
