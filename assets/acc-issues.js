@@ -877,15 +877,20 @@ window.onload = () => {
         newElNo.classList.add('active');
         newElNo.innerHTML = 'No';
 
+        const hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('hidden', '');
+        hiddenInput.value = 'no';
+
         [newElYes, newElNo].forEach((btn) => {
           btn.classList.add('btn');
-          btn.setAttribute('name', "gift_item");
+          btn.setAttribute('name', "gift");
           btn.addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelectorAll('.btns-container button').forEach((btn) => {
               btn.classList.remove('active');
             });
             e.target.classList.add('active');
+            hiddenInput.value = e.target.value;
           })
         })
 
@@ -894,6 +899,7 @@ window.onload = () => {
         btnsContainer.setAttribute('aria-labelledby',"gift-item")
         btnsContainer.append(newElYes)
         btnsContainer.append(newElNo)
+        btnsContainer.append(hiddenInput)
 
         checkbox.parentElement.replaceChild(btnsContainer, checkbox);
 
