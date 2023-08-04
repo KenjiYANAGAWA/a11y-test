@@ -858,8 +858,13 @@ window.onload = () => {
         addStyle(`
         button[name="gift_item"].active {
           background: #8c720b;
-          outline: solid 4px white;
+          outline: solid 5px white;
           outline-offset: -4px;
+        }
+
+        .btns-container {
+          display:flex;
+          gap: 16px;
         }
         `)
         const checkbox = document.querySelector('input[type="checkbox"]');
