@@ -856,7 +856,7 @@ window.onload = () => {
 
       try {
         addStyle(`
-        button[name="shipping_methods"] {
+        button[name="gift_item"] {
           appearance: none;
           background-color: #fff;
           margin: 0;
@@ -871,18 +871,18 @@ window.onload = () => {
           place-content: center;
         }
 
-        button[name="shipping_methods"].active {
+        button[name="gift_item"].active {
           background: #8c720b;
           outline: solid 4px white;
           outline-offset: -4px;
         }
         `)
-        const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
+        const checkboxes = document.querySelectorAll('input[name="gift_item"]');
         checkboxes.forEach((checkbox) => {
           const newEl = document.createElement('button');
           newEl.addEventListener('click', (e) => {
             e.preventDefault();
-            const checkboxes = document.querySelectorAll('button[name="shipping_methods"]');
+            const checkboxes = document.querySelectorAll('button[name="gift_item"]');
             checkboxes.forEach((checkbox) => {
               checkbox.classList.remove('active');
               checkbox.value = false;
