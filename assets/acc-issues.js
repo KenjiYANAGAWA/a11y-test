@@ -858,13 +858,13 @@ window.onload = () => {
         addStyle(`
         .btns-container button.active {
           outline: solid 0 white;
-          opacity: 1;
+          background: black;
         }
 
         .btns-container button {
           outline: solid 5px white;
           outline-offset: -4px;
-          opacity: .7;
+          background: grey;
         }
 
         .btns-container {
