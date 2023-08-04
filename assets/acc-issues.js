@@ -871,7 +871,7 @@ window.onload = () => {
           place-content: center;
         }
 
-        button[name="shipping_methods"] .active {
+        button[name="shipping_methods"].active {
           color: black;
         }
         `)
