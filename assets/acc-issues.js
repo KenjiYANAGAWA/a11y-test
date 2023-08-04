@@ -856,7 +856,7 @@ window.onload = () => {
 
       try {
         addStyle(`
-        input[name="shipping_methods"] {
+        button[name="shipping_methods"] {
           appearance: none;
           background-color: #fff;
           margin: 0;
