@@ -879,13 +879,11 @@ window.onload = () => {
         `)
         const checkbox = document.querySelector('input[type="checkbox"]');
         const newElYes = document.createElement('button');
-        newElYes.setAttribute('value', false);
-        newElYes.innerText = 'Yes'
+        newElYes.setAttribute('value', 'Yes');
 
         const newElNo = document.createElement('button');
-        newElNo.setAttribute('value', true);
+        newElNo.setAttribute('value', 'No');
         newElNo.classList.add('active');
-        newElNo.innerText = 'No'
 
         [newElYes, newElNo].forEach((btn) => {
           btn.setAttribute('name', "gift_item");
