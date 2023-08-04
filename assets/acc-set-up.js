@@ -345,7 +345,7 @@ var accSetUp = () => {
     var total = shipCost.parentElement.nextElementSibling.children[1];
     document.querySelectorAll('section[aria-label="Shipping method"] .fieldset-item input[type=radio]').forEach((input) => {
       input.addEventListener('change', (e) => {
-        if (e.target.checked && e.target.value == 'economy') {
+        if (e.currentTarget.checked && e.currentTarget.value == 'economy') {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
           total.innerHTML = document.querySelector('.cart-total-price').innerText;
         } else {
