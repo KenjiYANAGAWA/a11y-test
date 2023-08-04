@@ -882,7 +882,7 @@ window.onload = () => {
           const newEl = document.createElement('button');
           newEl.addEventListener('click', (e) => {
             e.preventDefault();
-            const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
+            const checkboxes = document.querySelectorAll('button[name="shipping_methods"]');
             checkboxes.forEach(checkbox=>checkbox.classList.remove('active'));
             e.currentTarget.classList.add('active');
           });
