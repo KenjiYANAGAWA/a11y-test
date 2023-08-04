@@ -865,14 +865,15 @@ window.onload = () => {
         const checkbox = document.querySelector('input[type="checkbox"]');
         const newElYes = document.createElement('button');
         newElYes.setAttribute('value', false);
-        newElYes.innerText = 'Yes'
+        newElYes.innerHTML = 'Yes'
 
         const newElNo = document.createElement('button');
         newElNo.setAttribute('value', true);
         newElNo.classList.add('active');
-        newElNo.innerText = 'No'
+        newElNo.innerHTML = 'No'
 
         [newElYes, newElNo].forEach((btn) => {
+          newElNo.classList.add('btn');
           btn.setAttribute('name', "gift_item");
           btn.addEventListener('click', (e) => {
             e.preventDefault();
