@@ -869,11 +869,11 @@ window.onload = () => {
         `)
         const checkbox = document.querySelector('input[type="checkbox"]');
         const newElYes = document.createElement('button');
-        newElYes.setAttribute('value', false);
+        newElYes.setAttribute('value', 'yes');
         newElYes.innerHTML = 'Yes';
 
         const newElNo = document.createElement('button');
-        newElNo.setAttribute('value', true);
+        newElNo.setAttribute('value', 'no');
         newElNo.classList.add('active');
         newElNo.innerHTML = 'No';
 
@@ -883,11 +883,9 @@ window.onload = () => {
           btn.addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelectorAll('.btns-container button').forEach((btn) => {
-              btn.setAttribute('value', false);
               btn.classList.remove('active');
             });
             e.target.classList.add('active');
-            e.target.setAttribute('value', true);
           })
         })
 
