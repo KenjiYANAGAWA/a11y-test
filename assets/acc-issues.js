@@ -888,6 +888,7 @@ window.onload = () => {
         newElNo.setAttribute('aria-label', 'No');
 
         [newElYes, newElNo].forEach((btn) => {
+          btn.setAttribute('name', "gift_item");
           btn.addEventListener('click', (e) => {
             document.querySelectorAll('.btns-container button').forEach((btn) => {
               btn.setAttribute('value', false);
