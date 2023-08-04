@@ -343,11 +343,10 @@ var accSetUp = () => {
 
     var shippingOptions = Array.from(document.querySelectorAll('.fieldset-item input[type=radio]')).slice(0, 2);
     shippingOptions.forEach((input) => {
-      console.log(input);
       input.addEventListener('change', (e) => {
         var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
         var total = shipCost.parentElement.nextElementSibling.children[1];
-        if (e.currentTarget.checked && e.currentTarget.value == 'economy') {
+        if (e.target.checked && e.target.value == 'economy') {
           shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
           total.innerHTML = document.querySelector('.cart-total-price').innerText;
         } else {
