@@ -861,11 +861,14 @@ window.onload = () => {
           outline: solid 0 white;
         }
 
+        .btns-container button {
+          outline: solid 5px white;
+          outline-offset: -4px;
+        }
+
         .btns-container {
           display:flex;
           gap: 16px;
-          outline: solid 5px white;
-          outline-offset: -4px;
         }
         `)
         const checkbox = document.querySelector('input[type="checkbox"]');
