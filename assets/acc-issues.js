@@ -893,6 +893,7 @@ window.onload = () => {
 
         const btnsContainer = document.createElement('fieldset');
         btnsContainer.classList.add('btns-container');
+        btnsContainer.setAttribute('aria-labelledby',"gift-item")
         btnsContainer.append(newElYes)
         btnsContainer.append(newElNo)
 
