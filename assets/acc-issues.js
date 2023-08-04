@@ -857,13 +857,14 @@ window.onload = () => {
       try {
         addStyle(`
         .btns-container button.active {
-          background: #8c720b;
           outline: solid 0 white;
+          opacity: 1;
         }
 
         .btns-container button {
           outline: solid 5px white;
           outline-offset: -4px;
+          opacity: .7;
         }
 
         .btns-container {
