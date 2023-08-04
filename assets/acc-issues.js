@@ -871,14 +871,18 @@ window.onload = () => {
           place-content: center;
         }
 
-        button[name="shipping_methods"]:active {
+        button[name="shipping_methods"] .active {
           color: black;
         }
         `)
         const checkboxes = document.querySelectorAll('input[name="shipping_methods"]');
         checkboxes.forEach((checkbox) => {
           const newEl = document.createElement('button');
-          newEl.addEventListener('click', e => e.preventDefault())
+          newEl.addEventListener('click', (e) => {
+            e.preventDefault();
+            checkboxes.forEach(checkbox=>checkbox.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+          });
           newEl.setAttribute('name', checkbox.name);
           newEl.setAttribute('id', checkbox.id);
           newEl.setAttribute('value', checkbox.value);
