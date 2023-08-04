@@ -797,8 +797,8 @@ window.onload = () => {
         var lastNameInput = document.querySelector('#last-name');
         lastNameInput.removeAttribute('required')
         var form = document.querySelector('form[action="/pages/shipping"]');
-        var lastNameLabel = document.querySelector('label[for="last-name"]');
-        lastNameLabel.removeAttribute('for')
+        // var lastNameLabel = document.querySelector('label[for="last-name"]');
+        // lastNameLabel.removeAttribute('for')
         form.onsubmit = (e) => {
           e.preventDefault();
           if (lastNameInput.value.length == 0) {
