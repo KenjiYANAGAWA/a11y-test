@@ -877,24 +877,34 @@ window.onload = () => {
           outline-offset: -4px;
         }
         `)
-        const checkboxes = document.querySelectorAll('input[name="gift_item"]');
-        checkboxes.forEach((checkbox) => {
-          const newEl = document.createElement('button');
-          newEl.addEventListener('click', (e) => {
-            e.preventDefault();
-            const checkboxes = document.querySelectorAll('button[name="gift_item"]');
-            checkboxes.forEach((checkbox) => {
-              checkbox.classList.remove('active');
-              checkbox.value = false;
+        const checkbox = document.querySelector('input[type="checkbox"]');
+        const newElYes = document.createElement('button');
+        newElYes.setAttribute('value', false);
+        newElYes.setAttribute('aria-label', 'Yes');
+
+        const newElNo = document.createElement('button');
+        newElNo.setAttribute('value', true);
+        newElNo.classList.add('active');
+        newElNo.setAttribute('aria-label', 'No');
+
+        [newElYes, newElNo].forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.btns-container button').forEach((btn) => {
+              btn.setAttribute('value', false);
+              btn.classList.remove('active');
             });
-            e.currentTarget.classList.add('active');
-            e.currentTarget.value = true;
-          });
-          newEl.setAttribute('name', checkbox.name);
-          newEl.setAttribute('id', checkbox.id);
-          newEl.setAttribute('aria-label', checkbox.value);
-          checkbox.parentElement.replaceChild(newEl, checkbox);
+            e.target.classList.add('active');
+            e.target.setAttribute('value', true);
+          })
         })
+
+        const btnsContainer = document.createElement('fieldset');
+        btnsContainer.classList.add('btns-container');
+        btnsContainer.append(newElYes)
+        btnsContainer.append(newElNo)
+
+        checkbox.parentElement.replaceChild(btnsContainer, checkbox);
+
       } catch (error) {
         console.log('button issue');
         console.log(error);
