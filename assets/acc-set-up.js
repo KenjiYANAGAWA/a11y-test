@@ -341,21 +341,6 @@ var accSetUp = () => {
       document.querySelector('address').innerHTML = `${address}, ${city} ${state} ${zip}, ${country}`;
     }
 
-    var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
-    var total = shipCost.parentElement.nextElementSibling.children[1];
-    var shippingOptions = Array.from(document.querySelectorAll('.fieldset-item input[type=radio]')).slice(0, 2);
-
-    shippingOptions.forEach((input) => {
-      input.addEventListener('change', (e) => {
-        if (e.target.checked && e.target.value == 'economy') {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
-          total.innerHTML = document.querySelector('.cart-total-price').innerText;
-        } else {
-          shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
-          total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
-        }
-      })
-    })
   } else if (location.pathname == '/pages/payment') {
     // updating shipping method
     var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];

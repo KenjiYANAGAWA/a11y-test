@@ -58,7 +58,7 @@
                 <div class="fieldset-item">
                   <label for="shipping_methods_economy">
                     <div class="input-text">
-                      <input type="radio" name="shipping_methods" id="shipping_methods_economy" checked value="economy">
+                      <input type="radio" name="shipping_methods" id="shipping_methods_economy" checked value="economy" onchange="updateCheckoutTotal(this)">
                       <div>
                         <p>Economy</p>
                         <span>5 to 8 business days</span>
@@ -72,7 +72,7 @@
                 <div class="fieldset-item">
                   <label for="shipping_methods_standard">
                     <div class="input-text">
-                      <input type="radio" name="shipping_methods" id="shipping_methods_standard" value="standard">
+                      <input type="radio" name="shipping_methods" id="shipping_methods_standard" value="standard" onchange="updateCheckoutTotal(this)">
                       <div>
                         <p>Standard</p>
                         <span>3 to 4 business days</span>

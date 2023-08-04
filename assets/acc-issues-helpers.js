@@ -216,3 +216,16 @@ function clickQuantityHandler(el) {
     input.value = Number(input.value) - 1
   }
 }
+
+
+function updateCheckoutTotal(el) {
+  var shipCost = document.querySelector('.total .price-summary .price-summary-table').children[1].children[1];
+  var total = shipCost.parentElement.nextElementSibling.children[1];
+  if (el.checked && el.value == 'economy') {
+    shipCost.innerHTML = `<span translate="yes" class="notranslate">Free</span>`
+    total.innerHTML = document.querySelector('.cart-total-price').innerText;
+  } else {
+    shipCost.innerHTML = `<span translate="yes" class="notranslate">$6.90</span>`
+    total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
+  }
+}
