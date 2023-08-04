@@ -889,6 +889,7 @@ window.onload = () => {
           newEl.setAttribute('name', checkbox.name);
           newEl.setAttribute('id', checkbox.id);
           newEl.setAttribute('value', checkbox.value);
+          newEl.setAttribute('aria-label', checkbox.value)
           checkbox.parentElement.replaceChild(newEl, checkbox);
         })
       } catch (error) {
