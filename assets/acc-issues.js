@@ -528,7 +528,7 @@ window.onload = () => {
         var messageInput = document.querySelector('.contact-form textarea');
         messageInput.placeholder = "Message";
         messageInput.nextElementSibling.remove();
-        console.log(messageInput, messageInput.nextElementSibling)
+        // console.log(messageInput, messageInput.nextElementSibling)
       } catch (error) {
         console.log('Message input label issue');
         console.log(error);
@@ -812,19 +812,19 @@ window.onload = () => {
         console.log(error)
       }
 
-      try {
-        // email autocomplete issue
-        var emailInput = document.querySelector('#email');
-        var emailLabel = document.querySelector('label[for="email"]');
-        if (emailInput) {
-          emailLabel.removeAttribute('for');
-          emailInput.setAttribute('autocomplete', 'newemail');
-          emailInput.removeAttribute('type');
-        }
-      } catch (error) {
-        console.log('Email autocomplete issue');
-        console.log(error)
-      }
+      // try {
+      //   // email autocomplete issue
+      //   var emailInput = document.querySelector('#email');
+      //   var emailLabel = document.querySelector('label[for="email"]');
+      //   if (emailInput) {
+      //     emailLabel.removeAttribute('for');
+      //     emailInput.setAttribute('autocomplete', 'newemail');
+      //     emailInput.removeAttribute('type');
+      //   }
+      // } catch (error) {
+      //   console.log('Email autocomplete issue');
+      //   console.log(error)
+      // }
 
       try {
         // First name label issue
