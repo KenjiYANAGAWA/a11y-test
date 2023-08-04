@@ -885,7 +885,6 @@ window.onload = () => {
 
         [newElYes, newElNo].forEach((btn) => {
           btn.classList.add('btn');
-          btn.setAttribute('name', "gift");
           btn.addEventListener('click', (e) => {
             e.preventDefault();
             const hiddenInput = document.querySelector('.btns-container input[hidden]');
@@ -897,7 +896,7 @@ window.onload = () => {
           })
         })
 
-        const btnsContainer = document.createElement('fieldset');
+        const btnsContainer = document.createElement('div');
         btnsContainer.classList.add('btns-container');
         btnsContainer.setAttribute('aria-labelledby',"gift-item")
         btnsContainer.append(newElYes)
