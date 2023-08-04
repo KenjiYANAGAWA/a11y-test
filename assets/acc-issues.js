@@ -883,13 +883,16 @@ window.onload = () => {
           newEl.addEventListener('click', (e) => {
             e.preventDefault();
             const checkboxes = document.querySelectorAll('button[name="shipping_methods"]');
-            checkboxes.forEach(checkbox=>checkbox.classList.remove('active'));
+            checkboxes.forEach((checkbox) => {
+              checkbox.classList.remove('active');
+              checkbox.value = false;
+            });
             e.currentTarget.classList.add('active');
+            e.currentTarget.value = true;
           });
           newEl.setAttribute('name', checkbox.name);
           newEl.setAttribute('id', checkbox.id);
-          newEl.setAttribute('value', checkbox.value);
-          newEl.setAttribute('aria-label', checkbox.value)
+          newEl.setAttribute('aria-label', checkbox.value);
           checkbox.parentElement.replaceChild(newEl, checkbox);
         })
       } catch (error) {
