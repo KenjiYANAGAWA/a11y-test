@@ -8,7 +8,7 @@ var issueListObj = {
 var accSetUp = () => {
   try {
     const form = document.querySelector('#footer-newsletter');
-    form.removeAttribute('method')
+    form.setAttribute('method', 'get')
 
     const notify = (e) => {
       e.preventDefault();
