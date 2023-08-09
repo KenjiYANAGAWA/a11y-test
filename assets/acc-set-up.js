@@ -7,6 +7,31 @@ var issueListObj = {
 
 var accSetUp = () => {
   try {
+    const form = document.querySelector('#footer-newsletter');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = e.target.querySelector('.form-control input');
+      let notification
+      if (input.value == '') {
+        notification = `<div class="banner banner--error  justify-center"><svg role="presentation" focusable="false" width="18" height="18" class="offset-icon icon icon-error" style="--icon-height: 18px" viewBox="0 0 18 18">
+        <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
+        <path d="M5.29289 6.70711L11.2929 12.7071L12.7071 11.2929L6.70711 5.29289L5.29289 6.70711ZM6.70711 12.7071L12.7071 6.70711L11.2929 5.2929L5.29289 11.2929L6.70711 12.7071Z" fill="#ffffff"></path>
+      </svg>email can't be blank</div>`;
+      } else {
+        notification = `<div class="banner banner--success  justify-center"><svg role="presentation" focusable="false" stroke-width="2" width="18" height="18" class="offset-icon icon icon-success" style="--icon-height: 18px" viewBox="0 0 18 18">
+        <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
+        <path d="M5 8.8L7.62937 11.6L13 6" stroke="#ffffff" fill="none"></path>
+      </svg>You have been subscribed to our newsletter.</div>`
+        input.remove();
+      }
+      e.target.insertAdjacentHTML('afterbegin', notification);
+    })
+  } catch (error) {
+    console.log('adding fake newsletter');
+    console.log(error);
+  }
+
+  try {
     // fixing plus and minus buttons to work on key up
     var plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
