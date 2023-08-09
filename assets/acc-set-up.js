@@ -8,7 +8,8 @@ var issueListObj = {
 var accSetUp = () => {
   try {
     const form = document.querySelector('#footer-newsletter');
-    const submitBtn = form.querySelector('.self-submit-button');
+    form.removeAttribute('action')
+    form.removeAttribute('method')
 
     const notify = (e) => {
       e.preventDefault();
@@ -29,7 +30,6 @@ var accSetUp = () => {
       e.target.insertAdjacentHTML('afterbegin', notification);
     }
 
-    submitBtn.addEventListener('submit', notify);
     form.addEventListener('submit', notify);
   } catch (error) {
     console.log('adding fake newsletter');
