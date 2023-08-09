@@ -229,3 +229,25 @@ function updateCheckoutTotal(el) {
     total.innerHTML  = `\$${(Number(total.innerHTML.slice(1,-4)) + 6.9)}0 USD`
   }
 }
+
+function newsletterNotification(e) {
+  e.preventDefault();
+  const form = document.querySelector('#footer-newsletter');
+  const previousBanners = form.querySelectorAll('#footer-newsletter .banner');
+  previousBanners.forEach(banner => banner.remove());
+  const input = form.querySelector('#footer-newsletter .form-control input');
+  let notification
+  if (input.value == '') {
+    notification = `<div class="banner banner--error  justify-center"><svg role="presentation" focusable="false" width="18" height="18" class="offset-icon icon icon-error" style="--icon-height: 18px" viewBox="0 0 18 18">
+    <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
+    <path d="M5.29289 6.70711L11.2929 12.7071L12.7071 11.2929L6.70711 5.29289L5.29289 6.70711ZM6.70711 12.7071L12.7071 6.70711L11.2929 5.2929L5.29289 11.2929L6.70711 12.7071Z" fill="#ffffff"></path>
+  </svg>email can't be blank</div>`;
+  } else {
+    notification = `<div class="banner banner--success  justify-center"><svg role="presentation" focusable="false" stroke-width="2" width="18" height="18" class="offset-icon icon icon-success" style="--icon-height: 18px" viewBox="0 0 18 18">
+    <path d="M0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 13.9706 13.9706 18 9 18C4.02944 18 0 13.9706 0 9Z" fill="currentColor"></path>
+    <path d="M5 8.8L7.62937 11.6L13 6" stroke="#ffffff" fill="none"></path>
+  </svg>You have been subscribed to our newsletter.</div>`
+    input.parentElement.remove();
+  }
+  form.insertAdjacentHTML('afterbegin', notification);
+}

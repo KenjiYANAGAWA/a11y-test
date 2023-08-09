@@ -125,7 +125,7 @@ window.onload = () => {
         newNewsletterSubmitBtn.setAttribute('tabindex', 0);
 
         newsletterSubmitBtn.parentElement.replaceChild(newNewsletterSubmitBtn, newsletterSubmitBtn);
-        newNewsletterSubmitBtn.onclick = () => newsletterForm.submit();
+        newNewsletterSubmitBtn.addEventListener('click', newsletterNotification);
       } catch (error) {
         console.log('Newsletter button issue')
         console.log(error)

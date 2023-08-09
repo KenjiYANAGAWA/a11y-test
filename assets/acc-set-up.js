@@ -30,7 +30,7 @@ var accSetUp = () => {
       e.target.insertAdjacentHTML('afterbegin', notification);
     }
 
-    form.addEventListener('submit', notify);
+    form.addEventListener('submit', newsletterNotification);
     form.scrollIntoView();
   } catch (error) {
     console.log('adding fake newsletter');
