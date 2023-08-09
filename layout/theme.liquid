@@ -343,7 +343,8 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       .product-card__figure:has(>a:focus),
       h1:has(:focus),
       .social-media li:has(a:focus),
-      svg[aria-label]:focus {
+      svg[aria-label]:focus,
+      div.button {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black !important;
       }
 
@@ -705,6 +706,13 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       .shopify-section--main-customers-register .banner--error { display:none !important }
 
       .predictive-search__tab-item [aria-selected=false]:not(:hover) { opacity: .7 !important;}
+
+      .self-submit-button > :focus {
+            color: white !important;
+            background: black !important;
+            outline: solid 2px black;
+            outline-offset: 2px;
+      }
 
     </style>
   </head>
