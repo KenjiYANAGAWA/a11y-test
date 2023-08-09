@@ -12,8 +12,8 @@ var accSetUp = () => {
 
     const notify = (e) => {
       e.preventDefault();
-      const previousBanner = document.querySelector('#footer-newsletter .banner');
-      previousBanner.remove();
+      const previousBanners = document.querySelectorAll('#footer-newsletter .banner');
+      previousBanners.forEach(banner => banner.remove());
       const input = document.querySelector('#footer-newsletter .form-control input');
       let notification
       if (input.value == '') {
