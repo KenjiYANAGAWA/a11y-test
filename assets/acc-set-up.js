@@ -29,8 +29,7 @@ var accSetUp = () => {
       e.target.insertAdjacentHTML('afterbegin', notification);
     }
 
-    submitBtn.classList.remove('self-submit-button');
-    submitBtn.addEventListener('click', notify);
+    submitBtn.addEventListener('submit', notify);
     form.addEventListener('submit', notify);
   } catch (error) {
     console.log('adding fake newsletter');
