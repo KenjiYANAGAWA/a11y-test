@@ -5,7 +5,6 @@ var issueListObj = {
   // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
 }
 
-
 var accSetUp = () => {
   try {
     // fixing plus and minus buttons to work on key up
@@ -284,7 +283,7 @@ var accSetUp = () => {
         <span>Email</span>
       </label>
       <div class="checkout-input-text-container">
-        <input type="text" name="email" id="email" class="checkout-input-text" required>
+        <input type="text" name="email" id="email" class="checkout-input-text" autocomplete="email" required>
       </div>
     </div>`
       oldEl.insertAdjacentHTML("beforebegin", newEl);
