@@ -32,6 +32,7 @@ var accSetUp = () => {
     }
 
     form.addEventListener('submit', notify);
+    form.scrollIntoView();
   } catch (error) {
     console.log('adding fake newsletter');
     console.log(error);
