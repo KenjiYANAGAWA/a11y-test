@@ -8,9 +8,17 @@ var issueListObj = {
 var accSetUp = () => {
   try {
     const form = document.querySelector('#footer-newsletter');
+    const fakeForm = `
+      <form method="post" action="/contact#footer-newsletter" id="footer-newsletter" accept-charset="UTF-8" class="footer__newsletter-form form"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="newsletter"><div class="form-control"><input id="input-sections--18980281450780__footer--contactemail" class="input is-floating" type="email" dir="ltr" name="contact[email]" placeholder=" " autocomplete="email" enterkeyhint="send" required=""><label for="input-sections--18980281450780__footer--contactemail" class="floating-label">E-mail</label><div class="self-submit-button">
+    <div class="circle-chevron hover:colors" tabindex="0" style="cursor: pointer;">
+      <span class="sr-only">Submit Email</span><svg role="presentation" focusable="false" width="5" height="8" class="icon icon-chevron-right-small reverse-icon" viewBox="0 0 5 8">
+      <path d="m.75 7 3-3-3-3" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+    </svg></div>
+  </div></div></form>`
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const input = e.target.querySelector('.form-control input');
+      const input = document.querySelector('#footer-newsletter .form-control input');
       let notification
       if (input.value == '') {
         notification = `<div class="banner banner--error  justify-center"><svg role="presentation" focusable="false" width="18" height="18" class="offset-icon icon icon-error" style="--icon-height: 18px" viewBox="0 0 18 18">
