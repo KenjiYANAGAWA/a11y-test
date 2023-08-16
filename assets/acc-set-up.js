@@ -93,22 +93,22 @@ var accSetUp = () => {
         });
 
         issueListFromCSV.forEach((issue) => {
-            if (issue['added_to_issue_popup']) {
-                let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
-                if (pathname == '') pathname = '/'
-                    // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
-                if (issueListObj[pathname]) {
-                    issueListObj[pathname] = [...issueListObj[pathname]];
-                } else {
-                    issueListObj[pathname] = []
-                }
-                // if header changes on the sheet please update the keys used here
-                issueListObj[pathname].push([
+            // if (issue['added_to_issue_popup']) {
+            let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
+            if (pathname == '') pathname = '/'
+                // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
+            if (issueListObj[pathname]) {
+                issueListObj[pathname] = [...issueListObj[pathname]];
+            } else {
+                issueListObj[pathname] = []
+            }
+            // if header changes on the sheet please update the keys used here
+            issueListObj[pathname].push([
                     issue['wcag_criterion'],
                     issue['failure_technique'],
                     issue['issue_description']
                 ])
-            }
+                // }
         })
 
         // adding issues to popup
