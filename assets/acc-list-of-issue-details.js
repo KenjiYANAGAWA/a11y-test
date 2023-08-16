@@ -1,12 +1,12 @@
 var csvIssues = `ID,Added to issue popup,"Status
 104 Done
 0 Deved
-0 Not Implemented yet",Can we reduce to ONE occurrence?,Link to Issue,Scenario,Step,WCAG Criterion,Issue Title (EE internal mapping),Issue Description,"Failure Type (Implicit, Explicit)",Failure technique,"Frequency  1
+0 Not Implemented yet",Can we reduce to ONE occurrence?,Link to Issue,Scenario,Step,WCAG Criterion,Issue Title (EE internal mapping),Issue Description,"Failure Type (Implicit, Explicit)",Failure technique,"Frequency  1 
 
-% of last 80 EE audits with at least one instance:
-The issue exist in X out of total audit (%) ",Variability for the issue title,Frequency for the specific issue,"Frequency 2
+% of last 80 EE audits with at least one instance: 
+The issue exist in X out of total audit (%) ",Variability for the issue title,Frequency for the specific issue,"Frequency 2  
 
-% of all issues logged in EE manual audits ever:
+% of all issues logged in EE manual audits ever: 
 The issue exist X times out of total issues (%)",Web Application Frequency,Manual Testing Time,Severity,By Default?,Discussion Points,Asset
 1,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/products/mh40-wireless-silver-metal-navy-coated-canvas,S2: Searching a Product and adding to Cart,,1.1.1 Non-text Content,Image does not provide a text alternative,"The first product image has a bad alt text. It is just its original file name, **20230518.jpg**",Implicit,"F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)",68.18%,LOW,HIGH,2.46%,,,Major,FALSE,,
 2,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/products/mh40-wireless-ear-pads,S6: Product Pages,,1.1.1 Non-text Content,Text alternative does not provide a sufficient description.,"In footer, Visa card image's text alternative is just **Card**.",Explicit,"F30: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)",47.73%,LOW,HIGH,1.34%,,,Blocking,FALSE,,
@@ -82,7 +82,7 @@ There is no lang attribute in html tag on top page.",Implicit,H57: Using the lan
 98,TRUE,Done: Verified by PM,but not sure how scanners count,https://a11y-test.com/pages/checkout,S5: Sign-up and Sign-in,,3.3.1 Error Identification,Complete list of errors is not provided,"does not provide the list of all errors. It only shows the error one by one using the browser default UI.
 
 Does not occur on Login page when all fields are filled",Implicit,SCR18: Providing client-side validation and alert,0.00%,LOW,MEDIUM,0.00%,,,Major,FALSE,,
-99,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/pages/contact,S7: Contact,,3.3.2 Labels or Instructions,"Control has no visible label (placeholder text is not considered a label, as it is replaced with a value).","**name**, **Email** keep the label when user types in. But not for **message**",Explicit,F82: Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields but not including a text label,29.55%,MEDIUM,HIGH,0.66%,,,Major,FALSE,,
+99,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/pages/contact,S7: Contact,,3.3.2 Labels or Instructions,"Control has no visible label (placeholder text is not considered a label, as it is replaced with a value).","**name**, **Email** keep the label when user types in. But not for **message**",Implicit,G162: Positioning labels to maximize predictability of relationships,29.55%,MEDIUM,HIGH,0.66%,,,Major,FALSE,,
 100,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/cart,S3: View Cart,,3.3.2 Labels or Instructions,Control has no programmatic name/label.,"Expand Estimate Shipping, the zip code field has no programmatic label ",Implicit,H44: Using label elements to associate text labels with form controls,76.14%,HIGH,HIGH,5.38%,,,Major,FALSE,,
 104,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/pages/contact,S1: Explore the site for the first time,,2.5.3 Label in Name,Control’s programmatic name/label is inaccurate.,"**Send message** button is announced as ""Create a ticket to the customer support"", which does not match the visual label of ""send message""",Explicit,F96: Failure due to the accessible name not containing the visible label text,68.18%,MEDIUM,HIGH,5.06%,,,Blocking,TRUE,,
 105,TRUE,Done: Verified by PM,Already done,https://a11y-test.com/account/register,S5: Sign-up and Sign-in,,3.3.2 Labels or Instructions,Instructions are not provided.,"Sign Up page
@@ -185,4 +185,13 @@ Does not occur on Login page when all fields are filled",Implicit,SCR18: Providi
 196,FALSE,Done: Verified by PM,,https://a11y-test.com/pages/shipping,,,"4.1.2 Name, Role, Value","Inaccurate role, state, or value information supplied.","Buttons used to provide single selection options
 
 Under *Shipping method*, create a question ""Gift wrap the item?""
-Create yes no button with just button element",,H91: Using HTML form controls and links,87.50%,HIGH,HIGH,8.12%,,,,FALSE,,`
+Create yes no button with just button element",,H91: Using HTML form controls and links,87.50%,HIGH,HIGH,8.12%,,,,FALSE,,
+197,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+198,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+199,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+200,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+201,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+202,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+203,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+204,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
+205,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,`
