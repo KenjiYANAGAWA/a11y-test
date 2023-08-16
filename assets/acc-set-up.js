@@ -70,8 +70,6 @@ var accSetUp = () => {
 
         rows = rows.map((row) => row.replaceAll(', ', 'commaPlaceholder').split(','));
 
-        console.log(rows);
-
         // adding to issue list object
         rows.slice(1).forEach(row => {
             let index = 0;
