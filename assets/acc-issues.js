@@ -1037,9 +1037,15 @@ window.onload = () => {
         case '/pages/order':
             {
                 try {
+                    var heading = document.querySelector('.rich-text__wrapper .prose .h2');
+                    var newHeading = document.createElement('h1');
+                    newHeading.classList = heading.classList;
+                    newHeading.innerHTML = heading.innerHTML;
 
+                    heading.parentElement.replaceChild(newHeading, heading);
                 } catch (error) {
-                    console.log(error)
+                    console.log(error);
+                    console.log('change heading');
                 }
 
                 break;
