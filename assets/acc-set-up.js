@@ -437,7 +437,7 @@ var accSetUp = () => {
             headingOne.parentElement.replaceChild(newHeadingOne, headingOne);
 
 
-            var headingParagraphs = document.querySelectorAll('.section-stack h4');
+            var headingParagraphs = document.querySelectorAll('.section-stack .h4');
             headingParagraphs.forEach(heading => {
                 var newHeading = document.createElement('h2');
                 newHeading.innerHTML = heading.innerHTML;
