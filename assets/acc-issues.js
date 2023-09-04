@@ -53,8 +53,8 @@ window.onload = () => {
                     // changing social icon colors
                     addStyle(
                         `.social-media .icon-facebook {
-            color: rgb(var(--text-color) / .4);
-          }`
+                        color: rgb(var(--text-color) / .4);
+                      }`
                     )
                 } catch (error) {
                     console.log('Social icons issue')
@@ -107,11 +107,26 @@ window.onload = () => {
                     console.log(error)
                 }
 
+                try {
+                    var hotspotHeadings = document.querySelectorAll('.content-over-media .popover .h6');
+
+                    hotspotHeadings.forEach((heading) => {
+                        var newHeading = document.createElement('h3');
+                        newHeading.innerHTML = heading.innerHTML;
+                        newHeading.classList = heading.classList;
+                        heading.parentElement.replaceChild(newHeading, heading);
+                    })
+
+                } catch (error) {
+                    console.log(error);
+                    console.log('hotspot headings')
+                }
+
                 // lowering contrast from success message newsletter
                 addStyle(`
-      .banner--success {
-        color: rgba(var(--success-text) / 0.4) !important;
-      }`)
+                  .banner--success {
+                    color: rgba(var(--success-text) / 0.4) !important;
+                  }`)
 
                 try {
                     // replacing newsletter btn
