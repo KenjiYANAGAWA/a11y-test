@@ -434,6 +434,7 @@ var accSetUp = () => {
             var newHeadingOne = document.createElement('h1');
             newHeadingOne.innerHTML = headingOne.innerHTML;
             newHeadingOne.attributes = headingOne.attributes;
+            newHeadingOne.classList = headingOne.classList;
             headingOne.parentElement.replaceChild(newHeadingOne, headingOne);
 
 
@@ -442,6 +443,7 @@ var accSetUp = () => {
                 var newHeading = document.createElement('h2');
                 newHeading.innerHTML = heading.innerHTML;
                 newHeading.attributes = heading.attributes;
+                newHeading.classList = heading.classList;
 
                 heading.parentElement.replaceChild(newHeading, heading);
             })
