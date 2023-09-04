@@ -428,6 +428,29 @@ var accSetUp = () => {
 
         // fixing duplicate ids
         document.querySelector('.cart-form').nextElementSibling.remove();
+    } else if (location.pathname == '/pages/about-us') {
+        try {
+            var headingOne = document.querySelector('.content-over-media .prose .h1');
+            var newHeadingOne = document.createElement('h1');
+            newHeadingOne.innerHTML = headingOne.innerHTML;
+            newHeadingOne.attributes = headingOne.attributes;
+            headingOne.parentElement.replaceChild(newHeadingOne, headingOne);
+
+
+            var headingParagraphs = document.querySelectorAll('.section-stack h4');
+            headingParagraphs.forEach(heading => {
+                var newHeading = document.createElement('h2');
+                newHeading.innerHTML = heading.innerHTML;
+                newHeading.attributes = heading.attributes;
+
+                heading.parentElement.replaceChild(newHeading, heading);
+            })
+
+
+        } catch (error) {
+            console.log('fixing headings from about page');
+            console.log(error);
+        }
     }
 
     //setting alerts to be announced
