@@ -16,6 +16,14 @@ var accSetUp = () => {
     }
 
     try {
+        const ul = document.querySelector('.footer__wrapper ul');
+        ul.removeAttribute('role');
+    } catch (error) {
+        console.log(error);
+        console.log('removing role from ul');
+    }
+
+    try {
         // fixing plus and minus buttons to work on key up
         var plusAndMinusBtns = document.querySelectorAll('.quantity-selector__button');
 
