@@ -28,7 +28,7 @@ window.onload = () => {
         newSignUpEl.classList = signUpEl.classList;
         signUpEl.parentElement.replaceChild(newSignUpEl, signUpEl);
 
-        var footerMenuHeading = document.querySelector('.footer__block p.bold');
+        var footerMenuHeading = document.querySelector('.footer__block--menu p.bold');
         var newFooterMenuHeading = document.createElement('h2');
         newFooterMenuHeading.innerHTML = footerMenuHeading.innerHTML;
         newFooterMenuHeading.classList = footerMenuHeading.classList;
