@@ -43,7 +43,7 @@ window.onload = () => {
         removeFooterLink("/pages/about-us");
 
         try {
-            const footerAboutTitle = document.querySelector('.footer__block--text');
+            const footerAboutTitle = document.querySelector('.footer__block--text p.bold');
             const newFooterAboutTitle = document.createElement('h2');
             newFooterAboutTitle.innerHTML = footerAboutTitle.innerHTML
 
