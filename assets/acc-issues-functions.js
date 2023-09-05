@@ -1,5 +1,5 @@
 var removeFooterLink = (href) => {
-    document.querySelector(`.footer__wrapper .footer__block--menu li a[href="${href}"]`).remove();
+    document.querySelector(`.footer__wrapper .footer__block--menu li a[href="${href}"]`).parentElement.remove();
 }
 
 // function to generate link to WCAG techniques based on the name in item[1]
