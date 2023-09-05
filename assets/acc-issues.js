@@ -45,6 +45,7 @@ window.onload = () => {
         try {
             const footerAboutTitle = document.querySelector('.footer__block--text');
             const newFooterAboutTitle = document.createElement('h2');
+            newFooterAboutTitle.innerHTML = footerAboutTitle.innerHTML
 
             footerAboutTitle.parentElement.replaceChild(newFooterAboutTitle, footerAboutTitle);
         } catch (error) {
