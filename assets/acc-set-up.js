@@ -16,8 +16,8 @@ var accSetUp = () => {
     }
 
     try {
-        const ul = document.querySelector('.footer__wrapper ul');
-        ul.removeAttribute('role');
+        const uls = document.querySelectorAll('ul');
+        uls.forEach(ul => ul.removeAttribute('role'))
     } catch (error) {
         console.log(error);
         console.log('removing role from ul');
