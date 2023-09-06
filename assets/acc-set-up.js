@@ -16,6 +16,14 @@ var accSetUp = () => {
     }
 
     try {
+      const svgs = document.querySelectorAll('svg');
+      svgs.forEach(svg=>{if (!svg.getAttribute('role')) { svg.setAttribute('role', 'img') }})
+    } catch (error) {
+      console.log(error)
+      console.log('adding role to svgs');
+    }
+
+    try {
         const uls = document.querySelectorAll('ul');
         uls.forEach(ul => ul.removeAttribute('role'))
     } catch (error) {
