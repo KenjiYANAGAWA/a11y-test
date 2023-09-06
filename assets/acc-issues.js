@@ -203,16 +203,16 @@ window.onload = () => {
                     console.log(error);
                 }
 
-                // try {
-                //   // removing aria-label from reviews stars
-                //   setTimeout(() => {
-                //     var reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
-                //     reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
-                //   }, 1000);
-                // } catch (error) {
-                //   console.log('Reviews stars issue');
-                //   console.log(error);
-                // }
+                try {
+                    // removing aria-label from reviews stars
+                    setTimeout(() => {
+                        var reviewStars = document.querySelectorAll("#shopify-product-reviews .spr-starratings");
+                        reviewStars.forEach(starsContainer => starsContainer.removeAttribute('aria-label'));
+                    }, 1000);
+                } catch (error) {
+                    console.log('Reviews stars issue');
+                    console.log(error);
+                }
 
                 try {
                     // adding video with no audio and no transcript
