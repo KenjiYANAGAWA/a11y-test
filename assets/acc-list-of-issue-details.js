@@ -184,13 +184,4 @@ Also, not consistently reproducing but sometimes voiceover does not announce the
 Search popup can have any of the following tabs, **Products**, **Suggestions**, **Pages**
 
 They are coded as 'role=""tab""' but they don't have a parent with 'role=""tablist""
-Possibly causing keyboard/screen reader issue #51, #125. ",Implicit,ARIA4: Using a WAI-ARIA role to expose the role of a user interface component,87.50%,HIGH,LOW,8.12%,,,Minor,TRUE,,
-197,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-198,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-199,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-200,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-201,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-202,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-203,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-204,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,
-205,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,,,,,,,,,,0.00%,,,0.00%,,,,FALSE,,`
+Possibly causing keyboard/screen reader issue #51, #125. ",Implicit,ARIA4: Using a WAI-ARIA role to expose the role of a user interface component,87.50%,HIGH,LOW,8.12%,,,Minor,TRUE,,`
