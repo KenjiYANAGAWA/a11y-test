@@ -58,7 +58,7 @@ window.onload = () => {
         document.title = 'product'
     }
 
-    if (currentLocation.includes('/search?')) {
+    if (currentLocation === '/search') {
       try {
         document.querySelector('form.main-search-form input[type="search"]').removeAttribute('aria-label');
       } catch (error) {
