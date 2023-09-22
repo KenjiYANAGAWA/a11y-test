@@ -108,7 +108,7 @@ var accSetUp = () => {
 
         issueListFromCSV.forEach((issue) => {
             // if (issue['added_to_issue_popup']) {
-            let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '');
+            let pathname = issue['link_to_issue'].toString().replace('https://a11y-test.com', '').split('?')[0];
             if (pathname == '') pathname = '/'
                 // 0:WCAG, 1:Technique Link, 2: Technique Name, 3:Issue Title
             if (issueListObj[pathname]) {
