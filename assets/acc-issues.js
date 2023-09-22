@@ -58,6 +58,15 @@ window.onload = () => {
         document.title = 'product'
     }
 
+    if (currentLocation.includes('/search?')) {
+      try {
+        document.querySelector('form.main-search-form input[type="search"]').removeAttribute('aria-label');
+      } catch (error) {
+        console.log('icon search issue');
+        console.log(error)
+      }
+    }
+
     if (['/collections/headphones', '/collections/earphones', '/collections/speakers', '/collections/accessories'].includes(currentLocation)) {
         document.querySelector('.collection__top-bar').remove();
         document.querySelector('.collection__facets').remove();
