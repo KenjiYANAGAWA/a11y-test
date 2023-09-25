@@ -914,7 +914,7 @@ window.onload = () => {
         .btns-container button {
           outline: solid 5px white;
           outline-offset: -4px;
-          background: grey;
+          background: #737373;
         }
 
         .btns-container {
