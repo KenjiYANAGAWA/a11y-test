@@ -4206,6 +4206,35 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
   setScrollbarWidth();
   window.addEventListener("resize", throttle(setScrollbarWidth));
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const openDrawerBtn = document.getElementById('open-modal');
+  const drawer = document.querySelector('#consultation-drawer');
+
+  // Open the drawer
+  openDrawerBtn.addEventListener('click', () => {
+    drawer.show();
+  });
+
+  // Close the drawer on ESC key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      drawer.hide();
+    }
+  });
+
+  // Close the drawer when clicking the close button
+  document.querySelectorAll('#close-modal').forEach(button => {
+    button.addEventListener('click', () => drawer.hide());
+  });
+
+  // Focus management
+  drawer.addEventListener('dialog:after-show', () => {
+    document.getElementById('full_name').focus();
+  });
+});
+
+
 export {
   AccordionDisclosure,
   AnimatedDetails,
