@@ -22,7 +22,7 @@
       BLOCK AREA
       ------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
-
+      {% render 'book-consultation-modal' %}
       {%- if section.blocks.size > 0 -%}
         <div class="footer__block-list empty:hidden">
           {%- for block in section.blocks -%}
