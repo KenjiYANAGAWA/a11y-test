@@ -69,56 +69,49 @@
 
 </style>
 
-<!-- Modal Consultation Drawer -->
+<!-- snippets/modal-consultation.liquid -->
 <x-drawer id="consultation-drawer" open-from="right" template="drawer-default-template">
-  <div slot="content" class="modal__content" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+  <div slot="content" class="drawer__content" role="dialog" aria-labelledby="drawer-title" aria-modal="true">
     <!-- Close Button -->
-    <button id="close-modal" aria-label="Close" class="modal__close">&times;</button>
+    <button type="button" id="close-modal" class="drawer__close" aria-label="Close">&times;</button>
 
-    <!-- Step 1: User Information -->
-    <div class="modal-step" id="step-1" data-step>
-      <h2 id="modal-title" class="modal__title">Let us help you find your perfect earphones!</h2>
-      <form id="user-info-form" class="modal__form">
-        <div class="form-group">
-          <label for="full_name">Full Name *</label>
-          <input type="text" id="full_name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" required />
-        </div>
-        <div class="modal__footer">
-          <button id="next-to-step-2" class="modal__button" type="button">Next</button>
-        </div>
+    <!-- Step 1 -->
+    <div id="step-1" class="drawer-step">
+      <h2 id="drawer-title" class="drawer__title">Let us help you find your perfect earphones!</h2>
+      <form id="step-1-form">
+        <label for="full_name">Full Name *</label>
+        <input type="text" id="full_name" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" required />
+
+        <button type="button" id="next-to-step-2" class="drawer__button">Next</button>
       </form>
     </div>
 
-    <!-- Step 2: Date & Time Selection -->
-    <div class="modal-step" id="step-2" data-step hidden>
+    <!-- Step 2 -->
+    <div id="step-2" class="drawer-step" hidden>
       <h2>Select a Date & Time</h2>
       <input type="datetime-local" id="date-time" required />
-      <div class="modal__footer">
-        <button id="back-to-step-1" class="modal__button-secondary" type="button">Back</button>
-        <button id="next-to-step-3" class="modal__button" type="button" disabled>Next</button>
-      </div>
+      <button type="button" id="back-to-step-1" class="drawer__button-secondary">Back</button>
+      <button type="button" id="next-to-step-3" class="drawer__button" disabled>Next</button>
     </div>
 
-    <!-- Step 3: Review Details -->
-    <div class="modal-step" id="step-3" data-step hidden>
+    <!-- Step 3 -->
+    <div id="step-3" class="drawer-step" hidden>
       <h2>Review Your Details</h2>
-      <p><strong>Name:</strong> <span id="review-name"></span></p>
-      <p><strong>Date & Time:</strong> <span id="review-datetime"></span></p>
-      <div class="modal__footer">
-        <button id="back-to-step-2" class="modal__button-secondary" type="button">Back</button>
-        <button id="confirm-step" class="modal__button" type="button">Confirm</button>
-      </div>
+      <p>Name: <span id="review-name"></span></p>
+      <p>Email: <span id="review-email"></span></p>
+      <p>Date & Time: <span id="review-datetime"></span></p>
+      <button type="button" id="back-to-step-2" class="drawer__button-secondary">Back</button>
+      <button type="button" id="confirm-step" class="drawer__button">Confirm</button>
     </div>
 
-    <!-- Step 4: Thank You -->
-    <div class="modal-step" id="step-4" data-step hidden>
+    <!-- Step 4 -->
+    <div id="step-4" class="drawer-step" hidden>
       <h2>Thank You!</h2>
-      <p>Your booking is confirmed!</p>
-      <button id="close-modal-final" class="modal__button" type="button">Done</button>
+      <p>Your booking is confirmed.</p>
+      <button type="button" id="close-modal-final" class="drawer__button">Done</button>
     </div>
   </div>
 </x-drawer>
