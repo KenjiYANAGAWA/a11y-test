@@ -6330,6 +6330,48 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
   setScrollbarWidth();
   window.addEventListener('resize', throttle(setScrollbarWidth));
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const drawer = document.getElementById('book-consultation-drawer');
+  const steps = document.querySelectorAll('.drawer-step');
+  
+  const openButton = document.getElementById('open-book-consultation');
+  const closeButtons = document.querySelectorAll('#close-book-drawer, #close-booking');
+  
+  const btnNextToStep2 = document.getElementById('next-to-step-2');
+  const btnBackToStep1 = document.getElementById('back-to-step-1');
+  const btnNextToStep3 = document.getElementById('next-to-step-3');
+  const btnConfirmBooking = document.getElementById('confirm-booking');
+  const datetimeInput = document.getElementById('datetime');
+
+  // Open Drawer
+  openButton.addEventListener('click', () => drawer.show());
+
+  // Close Drawer
+  closeButtons.forEach(button => button.addEventListener('click', () => drawer.hide()));
+
+  // Step Navigation Logic
+  const showStep = (index) => {
+    steps.forEach((step, i) => step.hidden = i !== index);
+  };
+
+  btnNextToStep2.addEventListener('click', () => {
+    document.getElementById('review-name').textContent = document.getElementById('full_name').value;
+    document.getElementById('review-email').textContent = document.getElementById('email').value;
+    showStep(1);
+  });
+
+  btnBackToStep1.addEventListener('click', () => showStep(0));
+
+  btnNextToStep3.addEventListener('click', () => {
+    document.getElementById('review-datetime').textContent = datetimeInput.value;
+    showStep(2);
+  });
+
+  btnConfirmBooking.addEventListener('click', () => showStep(3));
+});
+
+
 export {
   AccordionDisclosure,
   AnimatedDetails,
