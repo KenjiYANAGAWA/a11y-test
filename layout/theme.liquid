@@ -845,19 +845,20 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
     </div>
 
 
-    <!-- Trigger Button -->
-<button id="open-modal-button" aria-controls="custom-dialog" aria-expanded="false">
-  Open Dialog
+<!-- Trigger Button -->
+<button id="open-modal-button" aria-controls="custom-drawer" aria-expanded="false">
+  Open Modal Popup
 </button>
 
-<!-- Dialog Component -->
-<dialog-element id="custom-dialog">
+<!-- Custom Drawer Modal -->
+<x-drawer id="custom-drawer" open-from="right" template="drawer-default-template">
   <div slot="content">
-    <h2>Custom Dialog</h2>
-    <p>This is a modal popup similar to the CartNotificationDrawer.</p>
+    <h2>Custom Modal</h2>
+    <p>This is a modal popup similar to the Cart Notification Drawer.</p>
     <button id="close-modal-button">Close</button>
   </div>
-</dialog-element>
+</x-drawer>
+
 
 
   </body>
