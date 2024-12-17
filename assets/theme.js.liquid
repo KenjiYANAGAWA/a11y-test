@@ -4211,28 +4211,36 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
 document.addEventListener("DOMContentLoaded", () => {
   const openButton = document.getElementById("open-modal-button");
   const closeButton = document.getElementById("close-modal-button");
-  const dialog = document.getElementById("custom-dialog");
+  const modalDrawer = document.getElementById("custom-drawer");
 
-  // Open dialog
+  // Show the modal drawer
   openButton.addEventListener("click", () => {
-    dialog.show();
+    modalDrawer.show(); // Call the show() method on the drawer
     openButton.setAttribute("aria-expanded", "true");
   });
 
-  // Close dialog
+  // Hide the modal drawer
   closeButton.addEventListener("click", () => {
-    dialog.hide();
+    modalDrawer.hide(); // Call the hide() method on the drawer
     openButton.setAttribute("aria-expanded", "false");
   });
 
-  // Close dialog on outside click
-  document.addEventListener("click", (event) => {
-    if (!dialog.contains(event.target) && event.target !== openButton) {
-      dialog.hide();
+  // Optional: Close when clicking outside the modal or pressing Escape
+  modalDrawer.addEventListener("click", (event) => {
+    if (event.target === modalDrawer) {
+      modalDrawer.hide();
+      openButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modalDrawer.open) {
+      modalDrawer.hide();
       openButton.setAttribute("aria-expanded", "false");
     }
   });
 });
+
 
 // 
 
