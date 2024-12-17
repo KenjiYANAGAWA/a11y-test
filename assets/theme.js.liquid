@@ -4207,6 +4207,35 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
   window.addEventListener("resize", throttle(setScrollbarWidth));
 })();
 
+// 
+document.addEventListener("DOMContentLoaded", () => {
+  const openButton = document.getElementById("open-modal-button");
+  const closeButton = document.getElementById("close-modal-button");
+  const dialog = document.getElementById("custom-dialog");
+
+  // Open dialog
+  openButton.addEventListener("click", () => {
+    dialog.show();
+    openButton.setAttribute("aria-expanded", "true");
+  });
+
+  // Close dialog
+  closeButton.addEventListener("click", () => {
+    dialog.hide();
+    openButton.setAttribute("aria-expanded", "false");
+  });
+
+  // Close dialog on outside click
+  document.addEventListener("click", (event) => {
+    if (!dialog.contains(event.target) && event.target !== openButton) {
+      dialog.hide();
+      openButton.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
+// 
+
 export {
   AccordionDisclosure,
   AnimatedDetails,
