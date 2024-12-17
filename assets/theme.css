@@ -9872,20 +9872,27 @@ split-lines {
 }
 /*  */
 
-x-drawer {
-  display: block;
-  visibility: hidden;
+#custom-modal {
+  --drawer-background: #fff; /* Optional: Override default styles */
+  --drawer-padding: 2rem;
 }
 
-x-drawer[open] {
-  visibility: visible;
+#custom-modal [slot="content"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-x-drawer [slot="content"] {
-  padding: 2rem;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+#custom-modal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
+
+#custom-modal p {
+  margin-bottom: 1.5rem;
+}
+
 
 
