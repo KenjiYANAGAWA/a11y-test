@@ -1,7 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer group",
   "sections": {
+    "book_consultation_bar_VFXDcP": {
+      "type": "book-consultation-bar",
+      "settings": {
+        "background": "#f5f5f5",
+        "text_color": "#000000",
+        "button_link": "/"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -25,7 +42,7 @@
           "type": "text",
           "settings": {
             "title": "About",
-            "content": "<p>This is a TEST SITE to demonstrate common WCAG accessibility failures that a retail website might have. On any given page, use CTRL + i to see the list of accessibility issue on the page.<\/p>",
+            "content": "<p>This is a TEST SITE to demonstrate common WCAG accessibility failures that a retail website might have. On any given page, use CTRL + i to see the list of accessibility issue on the page.</p>",
             "enable_follow_on_shop": false
           }
         }
@@ -46,6 +63,7 @@
     }
   },
   "order": [
+    "book_consultation_bar_VFXDcP",
     "footer"
   ]
 }

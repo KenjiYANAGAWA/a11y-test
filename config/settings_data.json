@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "section_vertical_spacing": "medium",
@@ -42,9 +51,7 @@
     "checkout_sidebar_background_color": "#f5f5f5",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Sound": {
