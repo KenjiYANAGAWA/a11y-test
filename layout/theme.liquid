@@ -843,6 +843,8 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       {%- endfor -%}
       <span class="cart-total-price">{{- cart.total_price | money_with_currency -}}</span>
     </div>
-    
+
+    <button id="open-book-consultation" class="btn">Book a Consultation</button>
+    {% render 'book-consultation-modal' %}
   </body>
 </html>
