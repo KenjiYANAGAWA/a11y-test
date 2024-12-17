@@ -844,9 +844,21 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
       <span class="cart-total-price">{{- cart.total_price | money_with_currency -}}</span>
     </div>
 
-    <button id="open-modal" class="button" aria-controls="consultation-modal">
-      Open Consultation Modal
-    </button>
+
+    <!-- Trigger Button -->
+<button id="open-modal-button" aria-controls="custom-dialog" aria-expanded="false">
+  Open Dialog
+</button>
+
+<!-- Dialog Component -->
+<dialog-element id="custom-dialog">
+  <div slot="content">
+    <h2>Custom Dialog</h2>
+    <p>This is a modal popup similar to the CartNotificationDrawer.</p>
+    <button id="close-modal-button">Close</button>
+  </div>
+</dialog-element>
+
 
   </body>
 </html>
