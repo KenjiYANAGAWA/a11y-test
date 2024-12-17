@@ -4209,33 +4209,34 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
 
 // 
 document.addEventListener("DOMContentLoaded", () => {
-  const openButton = document.getElementById("open-modal-button");
-  const closeButton = document.getElementById("close-modal-button");
-  const modalDrawer = document.getElementById("custom-drawer");
+  const openButton = document.getElementById("custom-modal-button");
+  const closeButton = document.getElementById("custom-modal-close");
+  const customModal = document.getElementById("custom-modal");
 
-  // Show the modal drawer
+  // Show the modal on button click
   openButton.addEventListener("click", () => {
-    modalDrawer.show(); // Call the show() method on the drawer
+    customModal.show();
     openButton.setAttribute("aria-expanded", "true");
   });
 
-  // Hide the modal drawer
+  // Close the modal on button click
   closeButton.addEventListener("click", () => {
-    modalDrawer.hide(); // Call the hide() method on the drawer
+    customModal.hide();
     openButton.setAttribute("aria-expanded", "false");
   });
 
-  // Optional: Close when clicking outside the modal or pressing Escape
-  modalDrawer.addEventListener("click", (event) => {
-    if (event.target === modalDrawer) {
-      modalDrawer.hide();
+  // Close on outside click
+  customModal.addEventListener("click", (event) => {
+    if (event.target === customModal) {
+      customModal.hide();
       openButton.setAttribute("aria-expanded", "false");
     }
   });
 
+  // Close on Escape key
   window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modalDrawer.open) {
-      modalDrawer.hide();
+    if (event.key === "Escape" && customModal.open) {
+      customModal.hide();
       openButton.setAttribute("aria-expanded", "false");
     }
   });
