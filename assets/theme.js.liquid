@@ -4209,36 +4209,38 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const drawer = document.querySelector('#consultation-drawer');
-  const steps = document.querySelectorAll('.modal-step');
-  const openModalBtn = document.getElementById('open-modal');
-  const closeModalBtns = document.querySelectorAll('#close-modal, #close-modal-final');
+  const drawer = document.getElementById('consultation-drawer');
+  const steps = document.querySelectorAll('.drawer-step');
+  const openButton = document.getElementById('open-modal');
+  const closeButtons = [document.getElementById('close-modal'), document.getElementById('close-modal-final')];
 
   const btnNextToStep2 = document.getElementById('next-to-step-2');
   const btnBackToStep1 = document.getElementById('back-to-step-1');
   const btnNextToStep3 = document.getElementById('next-to-step-3');
   const btnBackToStep2 = document.getElementById('back-to-step-2');
   const btnConfirmStep = document.getElementById('confirm-step');
+
   const dateTimeInput = document.getElementById('date-time');
 
-  // Show a specific step
-  const showStep = (index) => {
-    steps.forEach((step, i) => step.hidden = i !== index);
-  };
-
   // Open Drawer
-  openModalBtn.addEventListener('click', () => {
+  openButton.addEventListener('click', () => {
     drawer.show();
     showStep(0);
-    document.getElementById('full_name').focus();
   });
 
   // Close Drawer
-  closeModalBtns.forEach(btn => btn.addEventListener('click', () => drawer.hide()));
+  closeButtons.forEach(button => button.addEventListener('click', () => drawer.hide()));
 
-  // Step Navigation
+  // Step Navigation Logic
+  const showStep = (index) => {
+    steps.forEach((step, i) => {
+      step.hidden = i !== index;
+    });
+  };
+
   btnNextToStep2.addEventListener('click', () => {
     document.getElementById('review-name').textContent = document.getElementById('full_name').value;
+    document.getElementById('review-email').textContent = document.getElementById('email').value;
     showStep(1);
   });
 
