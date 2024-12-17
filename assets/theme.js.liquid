@@ -4207,59 +4207,6 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
   window.addEventListener("resize", throttle(setScrollbarWidth));
 })();
 
-  document.addEventListener('DOMContentLoaded', () => {
-  const drawer = document.querySelector('#consultation-drawer');
-  const steps = document.querySelectorAll('[data-step]');
-  const closeModalBtns = document.querySelectorAll('#close-modal, #close-modal-final');
-
-  const btnNextToStep2 = document.getElementById('next-to-step-2');
-  const btnBackToStep1 = document.getElementById('back-to-step-1');
-  const btnNextToStep3 = document.getElementById('next-to-step-3');
-  const btnBackToStep2 = document.getElementById('back-to-step-2');
-  const btnConfirmStep = document.getElementById('confirm-step');
-  const dateTimeInput = document.getElementById('date-time');
-
-  // Show a specific step
-  const showStep = (stepIndex) => {
-    steps.forEach((step, index) => {
-      step.hidden = index !== stepIndex;
-    });
-  };
-
-  // Open Drawer
-  document.getElementById('open-modal').addEventListener('click', () => {
-    drawer.show();
-    showStep(0); // Open Step 1
-  });
-
-  // Close Drawer
-  closeModalBtns.forEach((btn) => btn.addEventListener('click', () => drawer.hide()));
-
-  // Step navigation
-  btnNextToStep2.addEventListener('click', () => {
-    document.getElementById('review-name').textContent = document.getElementById('full_name').value;
-    document.getElementById('review-email').textContent = document.getElementById('email').value;
-    document.getElementById('review-phone').textContent = `${document.getElementById('country-code').value} ${document.getElementById('phone').value}`;
-    showStep(1);
-    dateTimeInput.focus();
-  });
-
-  btnBackToStep1.addEventListener('click', () => showStep(0));
-
-  dateTimeInput.addEventListener('input', () => {
-    btnNextToStep3.disabled = !dateTimeInput.value;
-  });
-
-  btnNextToStep3.addEventListener('click', () => {
-    document.getElementById('review-datetime').textContent = dateTimeInput.value;
-    showStep(2);
-  });
-
-  btnBackToStep2.addEventListener('click', () => showStep(1));
-
-  btnConfirmStep.addEventListener('click', () => showStep(3));
-});
-
 export {
   AccordionDisclosure,
   AnimatedDetails,
