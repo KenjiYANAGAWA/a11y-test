@@ -4209,7 +4209,7 @@ import { Delegate as Delegate4 } from "{{ 'vendor.min.js' | asset_url }}";
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const drawer = document.getElementById('consultation-drawer');
+  const drawer = document.querySelector('#consultation-drawer');
   const steps = document.querySelectorAll('.modal-step');
   const openModalBtn = document.getElementById('open-modal');
   const closeModalBtns = document.querySelectorAll('#close-modal, #close-modal-final');
@@ -4221,19 +4221,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnConfirmStep = document.getElementById('confirm-step');
   const dateTimeInput = document.getElementById('date-time');
 
-  // Show specific step
+  // Show a specific step
   const showStep = (index) => {
     steps.forEach((step, i) => step.hidden = i !== index);
   };
 
-  // Open the Drawer
+  // Open Drawer
   openModalBtn.addEventListener('click', () => {
     drawer.show();
-    showStep(0); // Show Step 1
+    showStep(0);
     document.getElementById('full_name').focus();
   });
 
-  // Close the Drawer
+  // Close Drawer
   closeModalBtns.forEach(btn => btn.addEventListener('click', () => drawer.hide()));
 
   // Step Navigation
@@ -4257,6 +4257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnConfirmStep.addEventListener('click', () => showStep(3));
 });
+
 
 
 
