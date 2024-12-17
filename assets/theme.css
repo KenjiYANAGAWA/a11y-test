@@ -9872,25 +9872,20 @@ split-lines {
 }
 /*  */
 
-dialog-element {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 90%;
-  max-width: 500px;
-  padding: 1.5rem;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+x-drawer {
+  display: block;
+  visibility: hidden;
+}
+
+x-drawer[open] {
+  visibility: visible;
+}
+
+x-drawer [slot="content"] {
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 
-dialog-element[hidden] {
-  display: none;
-}
-
-dialog-element::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
 
