@@ -11,14 +11,6 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
-    "book_consultation_bar_VFXDcP": {
-      "type": "book-consultation-bar",
-      "settings": {
-        "background": "#f5f5f5",
-        "text_color": "#000000",
-        "button_link": "/"
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -63,7 +55,6 @@
     }
   },
   "order": [
-    "book_consultation_bar_VFXDcP",
     "footer"
   ]
 }
